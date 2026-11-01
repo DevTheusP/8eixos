@@ -18,7 +18,7 @@ export default function SobrePage() {
           Cada escola e cada pensador do catálogo respondeu às mesmas perguntas que você, do jeito que eles responderiam.
           Assim, todos ficam no mesmo mapa, e a compatibilidade mostra o quanto o seu perfil se parece com o deles.
         </p>
-        <p className="rounded-2xl bg-soft p-5 font-semibold text-navy">
+        <p className="rounded-2xl bg-brand-soft p-5 font-semibold text-brand">
           É uma ferramenta pra explorar ideias. Não é um teste científico nem diagnóstico psicológico.
         </p>
         <p>

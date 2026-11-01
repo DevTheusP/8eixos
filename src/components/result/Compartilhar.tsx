@@ -1,5 +1,6 @@
 'use client';
 
+import { Link as LinkIcon, Share2 } from 'lucide-react';
 import { useState } from 'react';
 
 export function Compartilhar({ params }: { params: string }) {
@@ -38,13 +39,13 @@ export function Compartilhar({ params }: { params: string }) {
 
   return (
     <div className="flex flex-wrap items-center gap-3">
-      <button type="button" onClick={compartilhar} className="rounded-xl bg-navy px-4 py-2.5 text-sm font-semibold text-white">
-        Compartilhar no story
+      <button type="button" onClick={compartilhar} className="press inline-flex items-center gap-2 rounded-xl bg-brand px-4 py-2.5 text-sm font-semibold text-white">
+        <Share2 aria-hidden size={16} /> Compartilhar no story
       </button>
-      <button type="button" onClick={copiarLink} className="rounded-xl border border-navy px-4 py-2.5 text-sm font-semibold text-navy">
-        Copiar link
+      <button type="button" onClick={copiarLink} className="press inline-flex items-center gap-2 rounded-xl border border-brand px-4 py-2.5 text-sm font-semibold text-brand hover:bg-brand-soft">
+        <LinkIcon aria-hidden size={16} /> Copiar link
       </button>
-      {status && <span className="text-sm text-navy" role="status">{status}</span>}
+      {status && <span className="text-sm text-brand" role="status">{status}</span>}
     </div>
   );
 }

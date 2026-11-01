@@ -16,7 +16,7 @@ export default function CreditosPage() {
           {com.map(t => (
             <li key={t.id}>
               {t.name}:{' '}
-              <a href={t.portrait!.source} target="_blank" rel="noopener noreferrer" className="text-navy underline">fonte</a>{' '}
+              <a href={t.portrait!.source} target="_blank" rel="noopener noreferrer" className="text-brand underline">fonte</a>{' '}
               · {t.portrait!.license}
             </li>
           ))}

@@ -36,10 +36,10 @@ async function Escola({ params }: { params: PageProps<'/escolas/[id]'>['params']
 
   return (
     <article className="space-y-5">
-      <header className="rounded-3xl bg-soft p-6 sm:p-8">
-        <span className="inline-block rounded-full bg-navy px-3 py-1 text-xs font-semibold text-white">{familia.name}</span>
-        <h1 className="mt-3 font-display text-4xl font-bold text-navy sm:text-5xl">{s.name}</h1>
-        <blockquote className="mt-4 text-lg text-navy sm:text-xl">“{s.quote}”</blockquote>
+      <header className="rounded-3xl bg-brand-soft p-6 sm:p-8">
+        <span className="inline-block rounded-full bg-brand px-3 py-1 text-xs font-semibold text-white">{familia.name}</span>
+        <h1 className="mt-3 font-display text-4xl font-bold text-brand sm:text-5xl">{s.name}</h1>
+        <blockquote className="mt-4 text-lg text-brand sm:text-xl">“{s.quote}”</blockquote>
         <p className="mt-4">{s.summary}</p>
       </header>
       <Section id="sofrimento" title={tituloSofrimento(s.name)}>
@@ -50,7 +50,7 @@ async function Escola({ params }: { params: PageProps<'/escolas/[id]'>['params']
         <Section id="pensadores" title="Pensadores ligados a esta escola">
           <div className="grid gap-3 sm:grid-cols-2">
             {thinkers.map(t => (
-              <Link key={t.id} href={`/pensadores/${t.id}`} className="flex items-center gap-3 rounded-2xl bg-tile p-3 hover:bg-soft">
+              <Link key={t.id} href={`/pensadores/${t.id}`} className="lift press flex items-center gap-3 rounded-2xl bg-tile p-3">
                 <Retrato thinker={t} size={56} />
                 <div><p className="font-semibold">{t.name}</p><p className="text-sm text-mute">{t.descriptor}</p></div>
               </Link>
@@ -62,8 +62,8 @@ async function Escola({ params }: { params: PageProps<'/escolas/[id]'>['params']
         <ul className="space-y-1">
           {proximas.map(p => (
             <li key={p.id} className="flex justify-between">
-              <Link href={`/escolas/${p.id}`} className="hover:text-navy">{nomes.get(p.id)}</Link>
-              <span className="font-semibold text-navy">{Math.round(p.score)}%</span>
+              <Link href={`/escolas/${p.id}`} className="hover:text-brand">{nomes.get(p.id)}</Link>
+              <span className="font-semibold text-brand">{Math.round(p.score)}%</span>
             </li>
           ))}
         </ul>

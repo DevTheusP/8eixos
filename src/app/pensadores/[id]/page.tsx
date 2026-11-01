@@ -34,13 +34,13 @@ async function Pensador({ params }: { params: PageProps<'/pensadores/[id]'>['par
 
   return (
     <article className="space-y-5">
-      <header className="flex flex-col gap-5 rounded-3xl bg-soft p-6 sm:flex-row sm:items-center sm:p-8">
+      <header className="flex flex-col gap-5 rounded-3xl bg-brand-soft p-6 sm:flex-row sm:items-center sm:p-8">
         <Retrato thinker={t} size={120} />
         <div>
-          <h1 className="font-display text-4xl font-bold text-navy sm:text-5xl">{t.name}</h1>
+          <h1 className="font-display text-4xl font-bold text-brand sm:text-5xl">{t.name}</h1>
           <p className="mt-1 text-mute">{t.descriptor} · {t.years}</p>
           {escola && (
-            <Link href={`/escolas/${escola.id}`} className="mt-3 inline-block rounded-full bg-navy px-3 py-1 text-xs font-semibold text-white">
+            <Link href={`/escolas/${escola.id}`} className="mt-3 inline-block rounded-full bg-brand px-3 py-1 text-xs font-semibold text-white">
               {escola.name}
             </Link>
           )}
@@ -54,7 +54,7 @@ async function Pensador({ params }: { params: PageProps<'/pensadores/[id]'>['par
         <Eixos vector={vectors.thinkers[t.id]} />
         <p className="mt-5 text-sm text-mute">
           Pelas respostas, a escola mais parecida com o pensamento de {t.name} é{' '}
-          <Link href={`/escolas/${maisProxima.id}`} className="font-semibold text-navy">{schools.get(maisProxima.id)!.name}</Link>{' '}
+          <Link href={`/escolas/${maisProxima.id}`} className="font-semibold text-brand">{schools.get(maisProxima.id)!.name}</Link>{' '}
           ({Math.round(maisProxima.score)}%).
         </p>
       </Section>

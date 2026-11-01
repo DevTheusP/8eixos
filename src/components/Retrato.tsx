@@ -15,7 +15,7 @@ export function Retrato({ thinker, size }: { thinker: Thinker; size: number }) {
   return (
     <div
       style={{ ...style, fontSize: size * 0.32 }}
-      className="flex flex-none items-center justify-center rounded-2xl bg-gradient-to-br from-[#b9b3a4] to-[#8d8677] font-display font-bold text-white"
+      className="flex flex-none items-center justify-center rounded-2xl bg-gradient-to-br from-[#9fb9b6] to-[#4f7c7d] font-display font-bold text-white"
       aria-label={thinker.name}
     >
       {iniciais(thinker.name)}

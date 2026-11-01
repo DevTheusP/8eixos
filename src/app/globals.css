@@ -1,16 +1,25 @@
 @import "tailwindcss";
 
+/* Paleta: papel claro, uma cor de marca escura com versão pastel, dois acentos e um tom quase preto pros botões. */
 :root {
-  --bg: #f2efe7;
-  --card: #f8f6f0;
-  --line: #e4dfd3;
-  --ink: #16181d;
-  --mute: #6b6a64;
-  --navy: #2c3f7c;
-  --soft: #d6deef;
-  --gold: #9a6a12;
-  --wine: #a3264f;
-  --tile: #efebe1;
+  --bg: #f3eee4;
+  --card: #faf7f0;
+  --line: #e6dccb;
+  --ink: #1c1915;
+  --mute: #6f675c;
+  --brand: #1e5a5c;
+  --brand-soft: #d5e7e4;
+  --ochre: #a8741a;
+  --clay: #b5502f;
+  --clay-soft: #f0b8a0;
+  --clay-faint: #f6e0d6;
+  --deep: #22180f;
+  --tile: #efe8db;
+  --tile-strong: #e9e1d2;
+  --track: #e2d9c8;
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 @theme inline {
@@ -19,11 +28,16 @@
   --color-line: var(--line);
   --color-ink: var(--ink);
   --color-mute: var(--mute);
-  --color-navy: var(--navy);
-  --color-soft: var(--soft);
-  --color-gold: var(--gold);
-  --color-wine: var(--wine);
+  --color-brand: var(--brand);
+  --color-brand-soft: var(--brand-soft);
+  --color-ochre: var(--ochre);
+  --color-clay: var(--clay);
+  --color-clay-soft: var(--clay-soft);
+  --color-clay-faint: var(--clay-faint);
+  --color-deep: var(--deep);
   --color-tile: var(--tile);
+  --color-tile-strong: var(--tile-strong);
+  --color-track: var(--track);
   --font-sans: var(--font-inter);
   --font-display: var(--font-bricolage);
 }
@@ -31,4 +45,137 @@
 body {
   background: var(--bg);
   color: var(--ink);
+}
+
+/* Feedback de toque: tudo que é clicável afunda um pouco. */
+.press {
+  transition: transform 160ms var(--ease-out), background-color 200ms ease, border-color 200ms ease, color 200ms ease;
+}
+.press:active {
+  transform: scale(0.97);
+}
+
+/* Cartões sobem levemente no hover, só onde existe mouse. */
+@media (hover: hover) and (pointer: fine) {
+  .lift {
+    transition: transform 220ms var(--ease-out), box-shadow 220ms var(--ease-out);
+  }
+  .lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px -18px rgb(34 24 15 / 0.35);
+  }
+  .group:hover .nudge {
+    transform: translateX(3px);
+  }
+}
+.nudge {
+  display: inline-block;
+  transition: transform 200ms var(--ease-out);
+}
+
+/* Entrada na tela, com atraso por item (--d) pra cascata. */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+.arrive {
+  animation: fade-up 520ms var(--ease-out) backwards;
+  animation-delay: var(--d, 0ms);
+}
+
+/* Seções que aparecem ao rolar; sem suporte, ficam simplesmente visíveis. */
+@supports (animation-timeline: view()) {
+  .reveal {
+    animation: fade-up linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 30%;
+  }
+}
+
+/* Troca de pergunta no quiz. */
+@keyframes question-in {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+}
+.question-in {
+  animation: question-in 260ms var(--ease-out) backwards;
+}
+
+/* Eixos: barra cresce a partir do centro e o marcador desliza até o valor. Só começa quando entra na tela. */
+@keyframes grow {
+  from {
+    transform: scaleX(0);
+  }
+}
+@keyframes knob {
+  from {
+    transform: translateX(50%);
+  }
+}
+.axis-fill {
+  transform-origin: var(--origin);
+  animation: grow 800ms var(--ease-out) backwards;
+  animation-delay: var(--d, 0ms);
+}
+.knob-track {
+  transform: translateX(var(--to));
+  animation: knob 800ms var(--ease-out) backwards;
+  animation-delay: var(--d, 0ms);
+}
+[data-inview="false"] .axis-fill,
+[data-inview="false"] .knob-track,
+[data-inview="false"] .ring-arc {
+  animation-play-state: paused;
+}
+
+/* Anel de compatibilidade desenhado. */
+@keyframes ring {
+  from {
+    stroke-dashoffset: var(--len);
+  }
+}
+.ring-arc {
+  animation: ring 1100ms var(--ease-out) backwards;
+  animation-delay: 150ms;
+}
+
+/* Brilho que atravessa o cartão recomendado de tempos em tempos. */
+@keyframes sheen {
+  0%, 70% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(220%);
+  }
+}
+.sheen {
+  position: relative;
+  overflow: hidden;
+}
+.sheen::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  width: 40%;
+  background: linear-gradient(100deg, transparent, rgb(255 255 255 / 0.08), transparent);
+  animation: sheen 5s var(--ease-in-out) infinite;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 1ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+  }
+  .sheen::after {
+    display: none;
+  }
 }

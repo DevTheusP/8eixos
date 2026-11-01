@@ -21,10 +21,10 @@ export default function EscolasPage() {
           if (daFamilia.length === 0) return null;
           return (
             <section key={f.id}>
-              <h2 className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-navy">{f.name}</h2>
+              <h2 className="mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-brand">{f.name}</h2>
               <div className="grid gap-3 sm:grid-cols-2">
                 {daFamilia.map(s => (
-                  <Link key={s.id} href={`/escolas/${s.id}`} className="rounded-2xl border border-line bg-card p-5 hover:bg-soft">
+                  <Link key={s.id} href={`/escolas/${s.id}`} className="lift press rounded-2xl border border-line bg-card p-5">
                     <p className="font-display text-2xl font-bold">{s.name}</p>
                     <p className="mt-1 text-sm text-mute">“{s.quote}”</p>
                   </Link>

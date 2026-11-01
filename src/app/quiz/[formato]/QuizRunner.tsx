@@ -1,5 +1,6 @@
 'use client';
 
+import { ArrowLeft, Check } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useEffect, useMemo, useState } from 'react';
 import { answer, back, clearState, isDone, loadState, saveState, type QuizState } from '@/lib/quiz-state';
@@ -61,13 +62,14 @@ export function QuizRunner({ formato, pool }: { formato: Formato; pool: Question
       <div className="mb-8">
         <div className="flex items-center justify-between text-sm text-mute">
           <span>{Math.min(state.index + 1, total)} de {total}</span>
-          <button type="button" onClick={goBack} disabled={state.index === 0} className="disabled:opacity-30">← Voltar</button>
+          <button type="button" onClick={goBack} disabled={state.index === 0} className="press inline-flex items-center gap-1 rounded-full px-2 py-1 hover:bg-tile disabled:opacity-30"><ArrowLeft aria-hidden size={14} /> Voltar</button>
         </div>
-        <div className="mt-2 h-1.5 rounded-full bg-line">
-          <div className="h-1.5 rounded-full bg-navy transition-all" style={{ width: `${(state.index / total) * 100}%` }} />
+        <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-line">
+          <div className="h-1.5 origin-left rounded-full bg-brand transition-transform duration-300 ease-[var(--ease-out)]" style={{ transform: `scaleX(${state.index / total})` }} />
         </div>
       </div>
 
+      <div key={q.id} className="question-in">
       {q.kind === 'forced' ? (
         <div>
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.12em] text-mute">Qual frase combina mais com você?</p>
@@ -86,11 +88,13 @@ export function QuizRunner({ formato, pool }: { formato: Formato; pool: Question
             key={label}
             type="button"
             onClick={() => choose(i as AnswerIndex)}
-            className={`rounded-xl border px-4 py-3 text-left font-medium transition hover:border-navy ${atual === i ? 'border-navy bg-soft' : 'border-line bg-card'}`}
+            className={`press flex items-center justify-between rounded-xl border px-4 py-3 text-left font-medium hover:border-brand ${atual === i ? 'border-brand bg-brand-soft text-brand' : 'border-line bg-card'}`}
           >
             {label}
+            {atual === i && <Check aria-hidden size={18} />}
           </button>
         ))}
+      </div>
       </div>
     </div>
   );
