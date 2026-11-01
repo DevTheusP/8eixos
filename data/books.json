@@ -1,0 +1,219 @@
+[
+  {
+    "id": "marco-aurelio-1",
+    "thinkerId": "marco-aurelio",
+    "title": "Meditações",
+    "year": 180,
+    "amazonQuery": "Meditações Marco Aurélio"
+  },
+  {
+    "id": "epicteto-1",
+    "thinkerId": "epicteto",
+    "title": "Manual de Epicteto",
+    "year": 125,
+    "amazonQuery": "Manual Epicteto"
+  },
+  {
+    "id": "seneca-1",
+    "thinkerId": "seneca",
+    "title": "Cartas a Lucílio",
+    "year": 65,
+    "amazonQuery": "Cartas a Lucílio Sêneca"
+  },
+  {
+    "id": "seneca-2",
+    "thinkerId": "seneca",
+    "title": "Sobre a Brevidade da Vida",
+    "year": 49,
+    "amazonQuery": "Sobre a Brevidade da Vida Sêneca"
+  },
+  {
+    "id": "epicuro-1",
+    "thinkerId": "epicuro",
+    "title": "Carta sobre a Felicidade",
+    "year": -300,
+    "amazonQuery": "Carta sobre a Felicidade Epicuro"
+  },
+  {
+    "id": "lucrecio-1",
+    "thinkerId": "lucrecio",
+    "title": "Sobre a Natureza das Coisas",
+    "year": -55,
+    "amazonQuery": "Sobre a Natureza das Coisas Lucrécio"
+  },
+  {
+    "id": "diogenes-1",
+    "thinkerId": "diogenes",
+    "title": "Vidas e Doutrinas dos Filósofos Ilustres",
+    "year": 230,
+    "amazonQuery": "Vidas e Doutrinas dos Filósofos Ilustres Diógenes Laércio"
+  },
+  {
+    "id": "sexto-empirico-1",
+    "thinkerId": "sexto-empirico",
+    "title": "Hipotiposes Pirrônicas",
+    "year": 200,
+    "amazonQuery": "Hipotiposes Pirrônicas Sexto Empírico"
+  },
+  {
+    "id": "montaigne-1",
+    "thinkerId": "montaigne",
+    "title": "Os Ensaios",
+    "year": 1580,
+    "amazonQuery": "Os Ensaios Montaigne"
+  },
+  {
+    "id": "buda-1",
+    "thinkerId": "buda",
+    "title": "Dhammapada",
+    "year": -300,
+    "amazonQuery": "Dhammapada"
+  },
+  {
+    "id": "thich-nhat-hanh-1",
+    "thinkerId": "thich-nhat-hanh",
+    "title": "O Milagre da Atenção Plena",
+    "year": 1975,
+    "amazonQuery": "O Milagre da Atenção Plena Thich Nhat Hanh"
+  },
+  {
+    "id": "lao-tse-1",
+    "thinkerId": "lao-tse",
+    "title": "Tao Te Ching",
+    "year": -400,
+    "amazonQuery": "Tao Te Ching Lao Tsé"
+  },
+  {
+    "id": "zhuangzi-1",
+    "thinkerId": "zhuangzi",
+    "title": "Zhuangzi",
+    "year": -300,
+    "amazonQuery": "Zhuangzi Chuang Tzu"
+  },
+  {
+    "id": "agostinho-1",
+    "thinkerId": "agostinho",
+    "title": "Confissões",
+    "year": 400,
+    "amazonQuery": "Confissões Santo Agostinho"
+  },
+  {
+    "id": "pascal-1",
+    "thinkerId": "pascal",
+    "title": "Pensamentos",
+    "year": 1670,
+    "amazonQuery": "Pensamentos Pascal"
+  },
+  {
+    "id": "cs-lewis-1",
+    "thinkerId": "cs-lewis",
+    "title": "Cristianismo Puro e Simples",
+    "year": 1952,
+    "amazonQuery": "Cristianismo Puro e Simples C. S. Lewis"
+  },
+  {
+    "id": "kierkegaard-1",
+    "thinkerId": "kierkegaard",
+    "title": "Temor e Tremor",
+    "year": 1843,
+    "amazonQuery": "Temor e Tremor Kierkegaard"
+  },
+  {
+    "id": "dostoievski-1",
+    "thinkerId": "dostoievski",
+    "title": "Os Irmãos Karamázov",
+    "year": 1880,
+    "amazonQuery": "Os Irmãos Karamázov Dostoiévski"
+  },
+  {
+    "id": "gabriel-marcel-1",
+    "thinkerId": "gabriel-marcel",
+    "title": "Homo Viator",
+    "year": 1944,
+    "amazonQuery": "Homo Viator Gabriel Marcel"
+  },
+  {
+    "id": "sartre-1",
+    "thinkerId": "sartre",
+    "title": "O Existencialismo é um Humanismo",
+    "year": 1946,
+    "amazonQuery": "O Existencialismo é um Humanismo Sartre"
+  },
+  {
+    "id": "simone-de-beauvoir-1",
+    "thinkerId": "simone-de-beauvoir",
+    "title": "Por uma Moral da Ambiguidade",
+    "year": 1947,
+    "amazonQuery": "Por uma Moral da Ambiguidade Simone de Beauvoir"
+  },
+  {
+    "id": "simone-de-beauvoir-2",
+    "thinkerId": "simone-de-beauvoir",
+    "title": "O Segundo Sexo",
+    "year": 1949,
+    "amazonQuery": "O Segundo Sexo Simone de Beauvoir"
+  },
+  {
+    "id": "camus-1",
+    "thinkerId": "camus",
+    "title": "O Mito de Sísifo",
+    "year": 1942,
+    "amazonQuery": "O Mito de Sísifo Camus"
+  },
+  {
+    "id": "camus-2",
+    "thinkerId": "camus",
+    "title": "O Estrangeiro",
+    "year": 1942,
+    "amazonQuery": "O Estrangeiro Camus"
+  },
+  {
+    "id": "nietzsche-1",
+    "thinkerId": "nietzsche",
+    "title": "Assim Falou Zaratustra",
+    "year": 1883,
+    "amazonQuery": "Assim Falou Zaratustra Nietzsche"
+  },
+  {
+    "id": "schopenhauer-1",
+    "thinkerId": "schopenhauer",
+    "title": "Aforismos para a Sabedoria de Vida",
+    "year": 1851,
+    "amazonQuery": "Aforismos para a Sabedoria de Vida Schopenhauer"
+  },
+  {
+    "id": "cioran-1",
+    "thinkerId": "cioran",
+    "title": "Do Inconveniente de Ter Nascido",
+    "year": 1973,
+    "amazonQuery": "Do Inconveniente de Ter Nascido Cioran"
+  },
+  {
+    "id": "viktor-frankl-1",
+    "thinkerId": "viktor-frankl",
+    "title": "Em Busca de Sentido",
+    "year": 1946,
+    "amazonQuery": "Em Busca de Sentido Viktor Frankl"
+  },
+  {
+    "id": "confucio-1",
+    "thinkerId": "confucio",
+    "title": "Os Analectos",
+    "year": -400,
+    "amazonQuery": "Os Analectos Confúcio"
+  },
+  {
+    "id": "aristoteles-1",
+    "thinkerId": "aristoteles",
+    "title": "Ética a Nicômaco",
+    "year": -340,
+    "amazonQuery": "Ética a Nicômaco Aristóteles"
+  },
+  {
+    "id": "thoreau-1",
+    "thinkerId": "thoreau",
+    "title": "Walden",
+    "year": 1854,
+    "amazonQuery": "Walden Thoreau"
+  }
+]

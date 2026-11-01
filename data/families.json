@@ -1,0 +1,8 @@
+[
+  { "id": "virtude", "name": "Filosofias da virtude" },
+  { "id": "oriente", "name": "Caminhos orientais" },
+  { "id": "sentido", "name": "Filosofias do sentido" },
+  { "id": "prazer", "name": "Filosofias do prazer" },
+  { "id": "duvida", "name": "Filosofias da dúvida" },
+  { "id": "cristas", "name": "Tradições cristãs" }
+]

@@ -1,0 +1,10 @@
+[
+  { "id": "controle", "name": "Controle", "poleA": "Aceitar", "poleB": "Transformar", "param": "c" },
+  { "id": "bemviver", "name": "Bem viver", "poleA": "Virtude", "poleB": "Prazer", "param": "b" },
+  { "id": "sentido", "name": "Sentido", "poleA": "Dado", "poleB": "Criado por mim", "param": "s" },
+  { "id": "mundo", "name": "Mundo", "poleA": "Bom", "poleB": "Hostil", "param": "m" },
+  { "id": "eu", "name": "Eu", "poleA": "Indivíduo", "poleB": "Comunidade", "param": "e" },
+  { "id": "rotina", "name": "Rotina", "poleA": "Disciplina", "poleB": "Espontaneidade", "param": "r" },
+  { "id": "guia", "name": "Guia", "poleA": "Razão", "poleB": "Emoção", "param": "g" },
+  { "id": "verdade", "name": "Verdade", "poleA": "Certeza", "poleB": "Dúvida", "param": "v" }
+]

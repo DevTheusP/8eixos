@@ -1,0 +1,376 @@
+[
+  {
+    "id": "marco-aurelio",
+    "name": "Marco Aurélio",
+    "descriptor": "Imperador romano, estoico",
+    "years": "121–180",
+    "schoolId": "estoicismo",
+    "bio": "Imperador de Roma que escreveu, para si mesmo, as Meditações, um diário de exercícios estoicos. Governou em meio a guerras e pestes tentando agir com justiça e serenidade.",
+    "portrait": {
+      "file": "marco-aurelio.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:MSR-ra-61-b-1-DM.jpg",
+      "license": "CC BY-SA 4.0"
+    }
+  },
+  {
+    "id": "epicteto",
+    "name": "Epicteto",
+    "descriptor": "Filósofo estoico, ex-escravizado",
+    "years": "c. 50–135",
+    "schoolId": "estoicismo",
+    "bio": "Nasceu escravizado e se tornou um dos mestres mais influentes do estoicismo. Ensinava que ninguém pode tirar de nós a liberdade de escolher como reagir.",
+    "portrait": {
+      "file": "epicteto.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Epicteti_Enchiridion_Latinis_versibus_adumbratum_(Oxford_1715)_frontispiece_(cropped).jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "seneca",
+    "name": "Sêneca",
+    "descriptor": "Filósofo e escritor romano, estoico",
+    "years": "c. 4 a.C.–65",
+    "schoolId": "estoicismo",
+    "bio": "Filósofo, dramaturgo e conselheiro de Nero, escreveu cartas que ainda hoje ensinam a lidar com o tempo, a raiva e a morte. Viveu as contradições de ser estoico no centro do poder.",
+    "portrait": {
+      "file": "seneca.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Duble_herma_of_Socrates_and_Seneca_Antikensammlung_Berlin_07.jpg",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  {
+    "id": "epicuro",
+    "name": "Epicuro",
+    "descriptor": "Filósofo grego, fundador do epicurismo",
+    "years": "341–270 a.C.",
+    "schoolId": "epicurismo",
+    "bio": "Fundou em Atenas o Jardim, uma escola aberta a mulheres e escravizados. Ensinava que o prazer simples e a amizade, sem medo dos deuses e da morte, bastam para uma vida feliz.",
+    "portrait": {
+      "file": "epicuro.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Epikouros_BM_1843.jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "lucrecio",
+    "name": "Lucrécio",
+    "descriptor": "Poeta e filósofo romano, epicurista",
+    "years": "c. 99–55 a.C.",
+    "schoolId": "epicurismo",
+    "bio": "Escreveu Sobre a Natureza das Coisas, um longo poema que explica o universo como átomos em movimento. Queria libertar as pessoas do medo da morte e dos deuses.",
+    "portrait": {
+      "file": "lucrecio.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Lucretius_pointing_to_the_casus.jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "diogenes",
+    "name": "Diógenes",
+    "descriptor": "Filósofo cínico grego",
+    "years": "c. 412–323 a.C.",
+    "schoolId": "cinismo",
+    "bio": "Morava num barril em Atenas e fazia da própria vida um protesto contra as convenções. Dizem que pediu a Alexandre, o Grande, só que saísse da frente do sol.",
+    "portrait": {
+      "file": "diogenes.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Diogenes_Mosaic_R%C3%B6misch-Germanisches_Museum.jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "antistenes",
+    "name": "Antístenes",
+    "descriptor": "Filósofo grego, discípulo de Sócrates",
+    "years": "c. 446–366 a.C.",
+    "schoolId": "cinismo",
+    "bio": "Discípulo de Sócrates, é considerado o precursor do cinismo. Ensinava que a virtude basta para a felicidade e que ela pode ser aprendida com esforço.",
+    "portrait": {
+      "file": "antistenes.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Antisthenes_Pio-Clementino_Inv288.jpg",
+      "license": "CC BY 3.0"
+    }
+  },
+  {
+    "id": "pirro",
+    "name": "Pirro",
+    "descriptor": "Filósofo grego, fundador do ceticismo",
+    "years": "c. 360–270 a.C.",
+    "schoolId": "ceticismo",
+    "bio": "Viajou com Alexandre, o Grande, até a Índia e voltou ensinando a suspender o julgamento. Dizem que vivia tão tranquilo que nada parecia abalá-lo.",
+    "portrait": {
+      "file": "pirro.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Pyrrho_Heliensis_-_Illustrium_philosophorum_et_sapientum_effigies_ab_eorum_numistatibus_extractae.png",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "sexto-empirico",
+    "name": "Sexto Empírico",
+    "descriptor": "Médico e filósofo cético grego",
+    "years": "c. 160–210",
+    "schoolId": "ceticismo",
+    "bio": "Médico que reuniu por escrito os argumentos do ceticismo antigo. Para ele, opor razões iguais dos dois lados leva à suspensão do juízo e, com ela, à tranquilidade.",
+    "portrait": null
+  },
+  {
+    "id": "montaigne",
+    "name": "Michel de Montaigne",
+    "descriptor": "Ensaísta francês do Renascimento",
+    "years": "1533–1592",
+    "schoolId": "ceticismo",
+    "bio": "Inventou o ensaio como forma de se examinar com franqueza e humor. Seu lema era uma pergunta: que sei eu?",
+    "portrait": {
+      "file": "montaigne.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Portrait_of_Michel_de_Montaigne,_circa_unknown.jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "buda",
+    "name": "Buda (Sidarta Gautama)",
+    "descriptor": "Mestre espiritual indiano, fundador do budismo",
+    "years": "c. 563–483 a.C.",
+    "schoolId": "budismo",
+    "bio": "Príncipe que abandonou o palácio para entender o sofrimento humano. Depois de anos de busca, ensinou o caminho do meio entre o prazer e a privação.",
+    "portrait": {
+      "file": "buda.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Buddha_in_Sarnath_Museum_(Dhammajak_Mutra).jpg",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  {
+    "id": "thich-nhat-hanh",
+    "name": "Thich Nhat Hanh",
+    "descriptor": "Monge zen vietnamita",
+    "years": "1926–2022",
+    "schoolId": "budismo",
+    "bio": "Monge zen e ativista pela paz que popularizou a atenção plena no Ocidente. Ensinava a encontrar alegria no momento presente e a cuidar uns dos outros.",
+    "portrait": {
+      "file": "thich-nhat-hanh.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Thich_Nhat_Hanh_12_(cropped).jpg",
+      "license": "CC BY-SA 2.0"
+    }
+  },
+  {
+    "id": "lao-tse",
+    "name": "Lao-Tsé",
+    "descriptor": "Sábio chinês, fundador do taoísmo",
+    "years": "c. séc. VI a.C.",
+    "schoolId": "taoismo",
+    "bio": "Figura lendária a quem se atribui o Tao Te Ching. Ensinava que a água, macia e humilde, vence o que é duro.",
+    "portrait": null
+  },
+  {
+    "id": "zhuangzi",
+    "name": "Zhuangzi",
+    "descriptor": "Filósofo taoísta chinês",
+    "years": "c. 369–286 a.C.",
+    "schoolId": "taoismo",
+    "bio": "Contador de histórias e paradoxos que levou o taoísmo ao bom humor. Sonhou que era uma borboleta e acordou sem saber se era um homem que sonhou ser borboleta ou o contrário.",
+    "portrait": null
+  },
+  {
+    "id": "agostinho",
+    "name": "Agostinho de Hipona",
+    "descriptor": "Teólogo e filósofo cristão",
+    "years": "354–430",
+    "schoolId": "cristianismo-agostiniano",
+    "bio": "Bispo no norte da África que contou sua conversão nas Confissões. Uniu a filosofia grega à fé cristã e marcou todo o pensamento ocidental.",
+    "portrait": {
+      "file": "agostinho.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Saint_Augustine_by_Philippe_de_Champaigne.jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "pascal",
+    "name": "Blaise Pascal",
+    "descriptor": "Matemático e filósofo cristão francês",
+    "years": "1623–1662",
+    "schoolId": "cristianismo-agostiniano",
+    "bio": "Gênio da matemática e da física que deixou anotações sobre a condição humana, reunidas nos Pensamentos. Disse que o coração tem razões que a própria razão desconhece.",
+    "portrait": {
+      "file": "pascal.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Blaise_Pascal_Versailles,_circa_1690.JPG",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "cs-lewis",
+    "name": "C. S. Lewis",
+    "descriptor": "Escritor e professor britânico",
+    "years": "1898–1963",
+    "schoolId": "cristianismo-agostiniano",
+    "bio": "Professor de Oxford e Cambridge, autor de As Crônicas de Nárnia. Foi ateu até a vida adulta e se tornou um dos defensores mais lidos da fé cristã.",
+    "portrait": {
+      "file": "cs-lewis.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:CS_Lewis_photo_on_dust_jacket.jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "kierkegaard",
+    "name": "Søren Kierkegaard",
+    "descriptor": "Filósofo e teólogo dinamarquês",
+    "years": "1813–1855",
+    "schoolId": "existencialismo-cristao",
+    "bio": "Considerado o pai do existencialismo, escreveu sobre angústia, desespero e fé. Para ele, ser cristão é uma escolha pessoal e arriscada, nunca um costume.",
+    "portrait": {
+      "file": "kierkegaard.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:S%C3%B8ren_Kierkegaard_(1813-1855)_-_(cropped).jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "dostoievski",
+    "name": "Fiódor Dostoiévski",
+    "descriptor": "Romancista russo",
+    "years": "1821–1881",
+    "schoolId": "existencialismo-cristao",
+    "bio": "Autor de Crime e Castigo e Os Irmãos Karamázov, explorou como poucos a liberdade, a culpa e a fé. Seus personagens discutem se, sem Deus, tudo seria permitido.",
+    "portrait": {
+      "file": "dostoievski.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Vasily_Perov_-_%D0%9F%D0%BE%D1%80%D1%82%D1%80%D0%B5%D1%82_%D0%A4.%D0%9C.%D0%94%D0%BE%D1%81%D1%82%D0%BE%D0%B5%D0%B2%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_-_Google_Art_Project.jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "gabriel-marcel",
+    "name": "Gabriel Marcel",
+    "descriptor": "Filósofo e dramaturgo francês",
+    "years": "1889–1973",
+    "schoolId": "existencialismo-cristao",
+    "bio": "Filósofo do encontro, da esperança e da fidelidade. Defendia que a vida é um mistério a ser vivido, não um problema a ser resolvido.",
+    "portrait": null
+  },
+  {
+    "id": "sartre",
+    "name": "Jean-Paul Sartre",
+    "descriptor": "Filósofo e escritor francês",
+    "years": "1905–1980",
+    "schoolId": "existencialismo-ateu",
+    "bio": "Principal nome do existencialismo, recusou o Nobel de Literatura em 1964. Disse que estamos condenados a ser livres e que somos responsáveis por tudo o que fazemos.",
+    "portrait": {
+      "file": "sartre.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Jean_Paul_Sartre_1965.jpg",
+      "license": "CC BY-SA 3.0 nl"
+    }
+  },
+  {
+    "id": "simone-de-beauvoir",
+    "name": "Simone de Beauvoir",
+    "descriptor": "Filósofa e escritora francesa",
+    "years": "1908–1986",
+    "schoolId": "existencialismo-ateu",
+    "bio": "Filósofa existencialista e autora de O Segundo Sexo, obra decisiva do feminismo. Mostrou que minha liberdade depende também da liberdade dos outros.",
+    "portrait": {
+      "file": "simone-de-beauvoir.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Simone_De_Beauvoir_(cropped).jpg",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  {
+    "id": "camus",
+    "name": "Albert Camus",
+    "descriptor": "Escritor e filósofo franco-argelino",
+    "years": "1913–1960",
+    "schoolId": "absurdismo",
+    "bio": "Autor de O Estrangeiro e O Mito de Sísifo, recebeu o Nobel de Literatura em 1957. Defendia viver com lucidez e revolta num mundo sem sentido dado.",
+    "portrait": {
+      "file": "camus.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Albert_Camus,_gagnant_de_prix_Nobel,_portrait_en_buste,_pos%C3%A9_au_bureau,_faisant_face_%C3%A0_gauche,_cigarette_de_tabagisme.jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "nietzsche",
+    "name": "Friedrich Nietzsche",
+    "descriptor": "Filósofo alemão",
+    "years": "1844–1900",
+    "schoolId": null,
+    "bio": "Anunciou a morte de Deus e alertou para o niilismo que viria depois dela. Propôs criar novos valores e dizer sim à vida, inclusive à dor.",
+    "portrait": {
+      "file": "nietzsche.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Nietzsche187a.jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "schopenhauer",
+    "name": "Arthur Schopenhauer",
+    "descriptor": "Filósofo alemão, pessimista",
+    "years": "1788–1860",
+    "schoolId": null,
+    "bio": "Viu o mundo como expressão de uma vontade cega que nunca se satisfaz. Encontrava alívio na arte, na música e na compaixão.",
+    "portrait": {
+      "file": "schopenhauer.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Arthur_Schopenhauer_by_J_Sch%C3%A4fer,_1859b.jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "cioran",
+    "name": "Emil Cioran",
+    "descriptor": "Ensaísta romeno-francês",
+    "years": "1911–1995",
+    "schoolId": null,
+    "bio": "Escritor de aforismos pessimistas e brilhantes sobre a dúvida, a insônia e o desencanto. Transformou o desespero em estilo literário.",
+    "portrait": {
+      "file": "cioran.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Cioran_in_Romania.jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "viktor-frankl",
+    "name": "Viktor Frankl",
+    "descriptor": "Psiquiatra austríaco, criador da logoterapia",
+    "years": "1905–1997",
+    "schoolId": "logoterapia",
+    "bio": "Sobreviveu a Auschwitz e escreveu Em Busca de Sentido, um dos livros mais lidos do século XX. Mostrou que, mesmo no sofrimento extremo, é possível encontrar um porquê.",
+    "portrait": {
+      "file": "viktor-frankl.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Viktor_Frankl2.jpg",
+      "license": "CC BY-SA 3.0 de"
+    }
+  },
+  {
+    "id": "confucio",
+    "name": "Confúcio",
+    "descriptor": "Pensador e educador chinês",
+    "years": "551–479 a.C.",
+    "schoolId": null,
+    "bio": "Mestre chinês que ensinou a cultivar a virtude pelo estudo, pelo respeito aos rituais e pelos laços de família. Seus ensinamentos moldaram a cultura do Leste Asiático.",
+    "portrait": {
+      "file": "confucio.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Confucius,_fresco_from_a_Western_Han_tomb_of_Dongping_County,_Shandong_province,_China_(cropped).jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "aristoteles",
+    "name": "Aristóteles",
+    "descriptor": "Filósofo grego",
+    "years": "384–322 a.C.",
+    "schoolId": null,
+    "bio": "Aluno de Platão e professor de Alexandre, o Grande, escreveu sobre quase tudo. Na Ética a Nicômaco, ensinou que a felicidade vem de praticar as virtudes até virarem hábito.",
+    "portrait": {
+      "file": "aristoteles.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Aristotle_Altemps_Inv8575.jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "thoreau",
+    "name": "Henry David Thoreau",
+    "descriptor": "Escritor e naturalista americano",
+    "years": "1817–1862",
+    "schoolId": null,
+    "bio": "Viveu dois anos numa cabana à beira do lago Walden para viver de forma simples e deliberada. Defendeu a desobediência civil contra leis injustas.",
+    "portrait": {
+      "file": "thoreau.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Benjamin_D._Maxham_-_Henry_David_Thoreau_-_Restored.jpg",
+      "license": "Public domain"
+    }
+  }
+]

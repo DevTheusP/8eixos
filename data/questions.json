@@ -1,0 +1,854 @@
+[
+  {
+    "id": "controle_01",
+    "axis": "controle",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "Quando algo foge do meu controle, prefiro aceitar do que me desgastar."
+  },
+  {
+    "id": "controle_02",
+    "axis": "controle",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "Muito do sofrimento vem de querer que as coisas sejam diferentes do que são."
+  },
+  {
+    "id": "controle_03",
+    "axis": "controle",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "Desejar menos é um caminho mais seguro para a paz do que conquistar mais."
+  },
+  {
+    "id": "controle_04",
+    "axis": "controle",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "Diante de uma perda, procuro aceitar antes de tentar consertar."
+  },
+  {
+    "id": "controle_05",
+    "axis": "controle",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "Não vale a pena se revoltar contra o que não pode ser mudado."
+  },
+  {
+    "id": "controle_06",
+    "axis": "controle",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "Consigo abrir mão de um plano sem sentir que perdi algo meu."
+  },
+  {
+    "id": "controle_07",
+    "axis": "controle",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "A serenidade vale mais do que vencer uma disputa."
+  },
+  {
+    "id": "controle_08",
+    "axis": "controle",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "Me apegar a pessoas e coisas costuma me trazer mais dor do que alegria."
+  },
+  {
+    "id": "controle_09",
+    "axis": "controle",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "Se algo está errado na minha vida, minha primeira reação é agir para mudar."
+  },
+  {
+    "id": "controle_10",
+    "axis": "controle",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "Aceitar uma injustiça calado é uma forma de ser cúmplice."
+  },
+  {
+    "id": "controle_11",
+    "axis": "controle",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "Meus desejos são o motor da minha vida, não um problema a ser eliminado."
+  },
+  {
+    "id": "controle_12",
+    "axis": "controle",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "Prefiro lutar e perder a desistir sem tentar."
+  },
+  {
+    "id": "controle_13",
+    "axis": "controle",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "O destino é, em grande parte, o que a gente faz dele."
+  },
+  {
+    "id": "controle_14",
+    "axis": "controle",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "Ficar em paz com tudo pode virar desculpa para não fazer nada."
+  },
+  {
+    "id": "controle_15",
+    "axis": "controle",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "Quero deixar uma marca no mundo, não apenas passar por ele."
+  },
+  {
+    "id": "bemviver_01",
+    "axis": "bemviver",
+    "kind": "forced",
+    "polarity": "A",
+    "textLeft": "Uma vida correta, mesmo que difícil.",
+    "textRight": "Uma vida agradável, mesmo que comum."
+  },
+  {
+    "id": "bemviver_02",
+    "axis": "bemviver",
+    "kind": "forced",
+    "polarity": "B",
+    "textLeft": "Aproveitar bem cada dia.",
+    "textRight": "Fazer de cada dia um passo para ser alguém melhor."
+  },
+  {
+    "id": "bemviver_03",
+    "axis": "bemviver",
+    "kind": "forced",
+    "polarity": "A",
+    "textLeft": "Ser lembrado como uma pessoa íntegra.",
+    "textRight": "Ser lembrado como alguém que viveu intensamente."
+  },
+  {
+    "id": "bemviver_04",
+    "axis": "bemviver",
+    "kind": "forced",
+    "polarity": "B",
+    "textLeft": "Um fim de semana leve, sem obrigações.",
+    "textRight": "Um fim de semana cansativo, mas que ajudou alguém."
+  },
+  {
+    "id": "bemviver_05",
+    "axis": "bemviver",
+    "kind": "forced",
+    "polarity": "A",
+    "textLeft": "Cumprir uma promessa que me custa caro.",
+    "textRight": "Desfazer a promessa e evitar o sofrimento."
+  },
+  {
+    "id": "bemviver_06",
+    "axis": "bemviver",
+    "kind": "forced",
+    "polarity": "B",
+    "textLeft": "Uma carreira tranquila que me dá tempo para viver.",
+    "textRight": "Uma carreira exigente que dá sentido ao que faço."
+  },
+  {
+    "id": "bemviver_07",
+    "axis": "bemviver",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "Se tiver que escolher, prefiro ser bom a ser feliz."
+  },
+  {
+    "id": "bemviver_08",
+    "axis": "bemviver",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "O prazer é passageiro; o que fica é o caráter."
+  },
+  {
+    "id": "bemviver_09",
+    "axis": "bemviver",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "Uma vida confortável sem propósito seria uma vida desperdiçada."
+  },
+  {
+    "id": "bemviver_10",
+    "axis": "bemviver",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "Sinto que devo algo ao mundo, não só a mim mesmo."
+  },
+  {
+    "id": "bemviver_11",
+    "axis": "bemviver",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "Ser feliz é o objetivo principal da vida."
+  },
+  {
+    "id": "bemviver_12",
+    "axis": "bemviver",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "Os pequenos prazeres do dia a dia são o que mais importa."
+  },
+  {
+    "id": "bemviver_13",
+    "axis": "bemviver",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "Não vejo mal em buscar o que me faz sentir bem, desde que não prejudique ninguém."
+  },
+  {
+    "id": "bemviver_14",
+    "axis": "bemviver",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "Sofrer por um ideal me parece um desperdício da única vida que temos."
+  },
+  {
+    "id": "bemviver_15",
+    "axis": "bemviver",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "Uma boa refeição com amigos vale mais do que muita teoria sobre o sentido da vida."
+  },
+  {
+    "id": "sentido_01",
+    "axis": "sentido",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "O universo tem uma ordem e um propósito, mesmo que eu não entenda tudo."
+  },
+  {
+    "id": "sentido_02",
+    "axis": "sentido",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "Existe um sentido para a minha vida que não fui eu que inventei."
+  },
+  {
+    "id": "sentido_03",
+    "axis": "sentido",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "Acredito que nada acontece totalmente por acaso."
+  },
+  {
+    "id": "sentido_04",
+    "axis": "sentido",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "Há certo e errado de verdade, independente do que as pessoas pensam."
+  },
+  {
+    "id": "sentido_05",
+    "axis": "sentido",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "A natureza humana tem uma finalidade, e viver bem é cumpri-la."
+  },
+  {
+    "id": "sentido_06",
+    "axis": "sentido",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "Sinto que faço parte de algo maior do que eu."
+  },
+  {
+    "id": "sentido_07",
+    "axis": "sentido",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "As verdades mais importantes sobre como viver foram descobertas ou reveladas, não inventadas."
+  },
+  {
+    "id": "sentido_08",
+    "axis": "sentido",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "Quando olho para o céu à noite, sinto que há uma intenção por trás de tudo."
+  },
+  {
+    "id": "sentido_09",
+    "axis": "sentido",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "A vida não tem sentido pronto; cada um precisa criar o seu."
+  },
+  {
+    "id": "sentido_10",
+    "axis": "sentido",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "O universo é indiferente ao que acontece comigo."
+  },
+  {
+    "id": "sentido_11",
+    "axis": "sentido",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "Os valores são criações humanas, e isso não os torna menos importantes."
+  },
+  {
+    "id": "sentido_12",
+    "axis": "sentido",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "Somos resultado do acaso, e isso nos deixa livres."
+  },
+  {
+    "id": "sentido_13",
+    "axis": "sentido",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "Ninguém pode me dizer qual é o propósito da minha vida."
+  },
+  {
+    "id": "sentido_14",
+    "axis": "sentido",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "Se existe sentido, é aquele que eu escolho dar às coisas."
+  },
+  {
+    "id": "sentido_15",
+    "axis": "sentido",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "Prefiro construir minhas próprias respostas a seguir respostas prontas."
+  },
+  {
+    "id": "mundo_01",
+    "axis": "mundo",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "No fundo, a maioria das pessoas é boa."
+  },
+  {
+    "id": "mundo_02",
+    "axis": "mundo",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "Apesar de tudo, a vida vale muito a pena."
+  },
+  {
+    "id": "mundo_03",
+    "axis": "mundo",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "O mundo está cheio de coisas bonitas esperando para ser notadas."
+  },
+  {
+    "id": "mundo_04",
+    "axis": "mundo",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "As coisas tendem a se ajeitar com o tempo."
+  },
+  {
+    "id": "mundo_05",
+    "axis": "mundo",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "Confio nas pessoas até que me deem motivo para não confiar."
+  },
+  {
+    "id": "mundo_06",
+    "axis": "mundo",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "O sofrimento existe, mas não é a última palavra."
+  },
+  {
+    "id": "mundo_07",
+    "axis": "mundo",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "Vejo o futuro da humanidade com esperança."
+  },
+  {
+    "id": "mundo_08",
+    "axis": "mundo",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "A vida é, em grande parte, sofrimento."
+  },
+  {
+    "id": "mundo_09",
+    "axis": "mundo",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "O mundo é um lugar perigoso, e é preciso estar sempre atento."
+  },
+  {
+    "id": "mundo_10",
+    "axis": "mundo",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "A maioria das pessoas age por interesse próprio, mesmo quando parece generosa."
+  },
+  {
+    "id": "mundo_11",
+    "axis": "mundo",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "A felicidade é rara e dura pouco."
+  },
+  {
+    "id": "mundo_12",
+    "axis": "mundo",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "A história humana é uma sucessão de tragédias."
+  },
+  {
+    "id": "mundo_13",
+    "axis": "mundo",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "Esperar o pior me protege de decepções."
+  },
+  {
+    "id": "mundo_14",
+    "axis": "mundo",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "Por trás das aparências, a existência é absurda."
+  },
+  {
+    "id": "mundo_15",
+    "axis": "mundo",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "O progresso é uma ilusão: os problemas só mudam de forma."
+  },
+  {
+    "id": "eu_01",
+    "axis": "eu",
+    "kind": "forced",
+    "polarity": "A",
+    "textLeft": "Seguir meu próprio caminho, mesmo sozinho.",
+    "textRight": "Seguir junto com os meus, mesmo cedendo."
+  },
+  {
+    "id": "eu_02",
+    "axis": "eu",
+    "kind": "forced",
+    "polarity": "B",
+    "textLeft": "Viver para a minha família e a minha comunidade.",
+    "textRight": "Viver para realizar meus próprios sonhos."
+  },
+  {
+    "id": "eu_03",
+    "axis": "eu",
+    "kind": "forced",
+    "polarity": "A",
+    "textLeft": "Ser fiel a mim mesmo.",
+    "textRight": "Ser fiel às pessoas que dependem de mim."
+  },
+  {
+    "id": "eu_04",
+    "axis": "eu",
+    "kind": "forced",
+    "polarity": "B",
+    "textLeft": "Um trabalho que ajuda muita gente.",
+    "textRight": "Um trabalho que me realiza pessoalmente."
+  },
+  {
+    "id": "eu_05",
+    "axis": "eu",
+    "kind": "forced",
+    "polarity": "A",
+    "textLeft": "Ter liberdade para decidir tudo sozinho.",
+    "textRight": "Ter pessoas com quem decidir tudo junto."
+  },
+  {
+    "id": "eu_06",
+    "axis": "eu",
+    "kind": "forced",
+    "polarity": "B",
+    "textLeft": "Quando erro, penso primeiro em quem eu decepcionei.",
+    "textRight": "Quando erro, penso primeiro em como posso melhorar."
+  },
+  {
+    "id": "eu_07",
+    "axis": "eu",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "A pessoa a quem mais devo satisfação sou eu mesmo."
+  },
+  {
+    "id": "eu_08",
+    "axis": "eu",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "Prefiro depender só de mim."
+  },
+  {
+    "id": "eu_09",
+    "axis": "eu",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "A opinião da maioria não deveria guiar minhas escolhas."
+  },
+  {
+    "id": "eu_10",
+    "axis": "eu",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "Crescer como pessoa exige, às vezes, se afastar dos outros."
+  },
+  {
+    "id": "eu_11",
+    "axis": "eu",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "Cada um é responsável pela própria felicidade."
+  },
+  {
+    "id": "eu_12",
+    "axis": "eu",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "Uma vida boa é impossível sem uma comunidade."
+  },
+  {
+    "id": "eu_13",
+    "axis": "eu",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "Eu me vejo mais como parte de um grupo do que como alguém isolado."
+  },
+  {
+    "id": "eu_14",
+    "axis": "eu",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "Ajudar os outros é a melhor forma de me realizar."
+  },
+  {
+    "id": "eu_15",
+    "axis": "eu",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "Tenho deveres com a sociedade, mesmo que não os tenha escolhido."
+  },
+  {
+    "id": "rotina_01",
+    "axis": "rotina",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "Hábitos firmes são a base de uma vida boa."
+  },
+  {
+    "id": "rotina_02",
+    "axis": "rotina",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "Costumes e tradições guardam uma sabedoria que não devemos descartar."
+  },
+  {
+    "id": "rotina_03",
+    "axis": "rotina",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "Prefiro planejar o meu dia a deixá-lo acontecer."
+  },
+  {
+    "id": "rotina_04",
+    "axis": "rotina",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "Disciplina é uma forma de liberdade."
+  },
+  {
+    "id": "rotina_05",
+    "axis": "rotina",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "Regras claras me dão tranquilidade."
+  },
+  {
+    "id": "rotina_06",
+    "axis": "rotina",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "Repetir as mesmas práticas todos os dias me fortalece."
+  },
+  {
+    "id": "rotina_07",
+    "axis": "rotina",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "Moderação em tudo é o melhor caminho."
+  },
+  {
+    "id": "rotina_08",
+    "axis": "rotina",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "Gosto de deixar a vida me surpreender."
+  },
+  {
+    "id": "rotina_09",
+    "axis": "rotina",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "Regras demais sufocam o que temos de melhor."
+  },
+  {
+    "id": "rotina_10",
+    "axis": "rotina",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "Seguir o fluxo costuma dar mais certo do que forçar um plano."
+  },
+  {
+    "id": "rotina_11",
+    "axis": "rotina",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "Prefiro a intensidade do momento à segurança da rotina."
+  },
+  {
+    "id": "rotina_12",
+    "axis": "rotina",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "Tradições devem ser questionadas, não apenas seguidas."
+  },
+  {
+    "id": "rotina_13",
+    "axis": "rotina",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "Mudo de planos com facilidade, e isso me faz bem."
+  },
+  {
+    "id": "rotina_14",
+    "axis": "rotina",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "A vida acontece no improviso."
+  },
+  {
+    "id": "rotina_15",
+    "axis": "rotina",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "Uma vida previsível demais me parece uma vida perdida."
+  },
+  {
+    "id": "guia_01",
+    "axis": "guia",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "Antes de uma decisão importante, prefiro pensar com calma a seguir o que sinto."
+  },
+  {
+    "id": "guia_02",
+    "axis": "guia",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "As emoções precisam ser governadas pela razão."
+  },
+  {
+    "id": "guia_03",
+    "axis": "guia",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "Quase todo problema fica menor quando analisado com lógica."
+  },
+  {
+    "id": "guia_04",
+    "axis": "guia",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "Desconfio de decisões tomadas no calor do momento."
+  },
+  {
+    "id": "guia_05",
+    "axis": "guia",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "Um bom argumento me convence mais do que uma história emocionante."
+  },
+  {
+    "id": "guia_06",
+    "axis": "guia",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "Consigo separar o que sinto do que é verdade."
+  },
+  {
+    "id": "guia_07",
+    "axis": "guia",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "Pensar bem é o primeiro passo para viver bem."
+  },
+  {
+    "id": "guia_08",
+    "axis": "guia",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "Paixões fortes costumam nos levar a erros."
+  },
+  {
+    "id": "guia_09",
+    "axis": "guia",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "O coração conhece coisas que a razão não alcança."
+  },
+  {
+    "id": "guia_10",
+    "axis": "guia",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "Confio na minha intuição mesmo quando não sei explicá-la."
+  },
+  {
+    "id": "guia_11",
+    "axis": "guia",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "Sentir profundamente é mais importante do que entender tudo."
+  },
+  {
+    "id": "guia_12",
+    "axis": "guia",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "Arte e música me ensinam mais sobre a vida do que livros de argumentos."
+  },
+  {
+    "id": "guia_13",
+    "axis": "guia",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "Decisões tomadas só com a cabeça costumam ser frias e erradas."
+  },
+  {
+    "id": "guia_14",
+    "axis": "guia",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "Minhas emoções são uma bússola confiável."
+  },
+  {
+    "id": "guia_15",
+    "axis": "guia",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "A razão sozinha não dá motivo para viver."
+  },
+  {
+    "id": "verdade_01",
+    "axis": "verdade",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "Existem verdades sobre a vida das quais tenho certeza."
+  },
+  {
+    "id": "verdade_02",
+    "axis": "verdade",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "É possível conhecer a verdade, se a gente se esforçar."
+  },
+  {
+    "id": "verdade_03",
+    "axis": "verdade",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "Quem duvida de tudo acaba sem chão."
+  },
+  {
+    "id": "verdade_04",
+    "axis": "verdade",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "Tenho convicções que nunca vou abandonar."
+  },
+  {
+    "id": "verdade_05",
+    "axis": "verdade",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "Algumas respostas para as grandes perguntas já foram encontradas."
+  },
+  {
+    "id": "verdade_06",
+    "axis": "verdade",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "Ter firmeza nas próprias crenças é uma virtude."
+  },
+  {
+    "id": "verdade_07",
+    "axis": "verdade",
+    "kind": "likert",
+    "polarity": "A",
+    "text": "Quando estudo um assunto a fundo, chego a conclusões firmes."
+  },
+  {
+    "id": "verdade_08",
+    "axis": "verdade",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "Quanto mais aprendo, mais percebo que não sei."
+  },
+  {
+    "id": "verdade_09",
+    "axis": "verdade",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "Desconfio de quem tem certeza demais."
+  },
+  {
+    "id": "verdade_10",
+    "axis": "verdade",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "Mudo de opinião com facilidade quando encontro bons argumentos."
+  },
+  {
+    "id": "verdade_11",
+    "axis": "verdade",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "Sobre as grandes perguntas da vida, suspender o julgamento é o mais honesto."
+  },
+  {
+    "id": "verdade_12",
+    "axis": "verdade",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "Nossos sentidos e nossa mente nos enganam com frequência."
+  },
+  {
+    "id": "verdade_13",
+    "axis": "verdade",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "Prefiro conviver com perguntas abertas a aceitar respostas fáceis."
+  },
+  {
+    "id": "verdade_14",
+    "axis": "verdade",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "Toda certeza deveria ser tratada como provisória."
+  },
+  {
+    "id": "verdade_15",
+    "axis": "verdade",
+    "kind": "likert",
+    "polarity": "B",
+    "text": "Duvidar é a forma mais honesta de pensar."
+  }
+]
