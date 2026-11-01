@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
 import { SiteHeader } from '@/components/SiteHeader';
-import { getQuestions } from '@/lib/data';
+import { getAxes, getQuestions } from '@/lib/data';
 import { FORMATOS, type Formato } from '@/lib/selection';
 import { QuizRunner } from './QuizRunner';
 
@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: PageProps<'/quiz/[formato]'>)
 async function QuizBody({ params }: { params: PageProps<'/quiz/[formato]'>['params'] }) {
   const { formato } = await params;
   if (!(formato in FORMATOS)) notFound();
-  return <QuizRunner formato={formato as Formato} pool={getQuestions()} />;
+  return <QuizRunner formato={formato as Formato} pool={getQuestions()} axes={getAxes()} />;
 }
 
 export default function QuizPage({ params }: PageProps<'/quiz/[formato]'>) {
