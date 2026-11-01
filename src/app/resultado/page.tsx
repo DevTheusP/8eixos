@@ -4,8 +4,11 @@ import { SiteHeader } from '@/components/SiteHeader';
 import { Distincao } from '@/components/result/Distincao';
 import { Eixos } from '@/components/result/Eixos';
 import { Escolas } from '@/components/result/Escolas';
+import { CompareForms } from '@/components/CompareForms';
 import { Hero } from '@/components/result/Hero';
 import { Indice } from '@/components/result/Indice';
+import { Lida } from '@/components/result/Lida';
+import { Livros } from '@/components/result/Livros';
 import { Pensadores } from '@/components/result/Pensadores';
 import { Section } from '@/components/result/Section';
 import { buildResult } from '@/lib/result';
@@ -20,6 +23,9 @@ const ITENS = [
   { id: 'distincao', label: 'Distinção' },
   { id: 'pensadores', label: 'Pensadores' },
   { id: 'escolas', label: 'Escolas' },
+  { id: 'lida', label: 'Como você lida' },
+  { id: 'livros', label: 'Livros' },
+  { id: 'comparar', label: 'Compare' },
 ];
 
 async function Resultado({ searchParams }: { searchParams: PageProps<'/resultado'>['searchParams'] }) {
@@ -40,6 +46,11 @@ async function Resultado({ searchParams }: { searchParams: PageProps<'/resultado
         <Section id="distincao" title="O que te distingue"><Distincao result={result} /></Section>
         <Section id="pensadores" title="Pensadores mais próximos de você"><Pensadores result={result} /></Section>
         <Section id="escolas" title="Outras escolas e o seu oposto"><Escolas result={result} /></Section>
+        <Section id="lida" title="Como você lida com…"><Lida school={result.school.school} /></Section>
+        <Section id="livros" title="Para ler">
+          <Livros thinkerIds={[result.thinker.thinker.id, ...result.byDimension.map(d => d.thinker.id)]} />
+        </Section>
+        <Section id="comparar" title="Compare"><CompareForms vector={v} /></Section>
       </div>
       <aside><Indice itens={ITENS} /></aside>
     </div>
