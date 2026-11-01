@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
 import { SiteHeader } from '@/components/SiteHeader';
+import { Compartilhar } from '@/components/result/Compartilhar';
 import { Distincao } from '@/components/result/Distincao';
 import { Eixos } from '@/components/result/Eixos';
 import { Escolas } from '@/components/result/Escolas';
@@ -12,7 +13,7 @@ import { Livros } from '@/components/result/Livros';
 import { Pensadores } from '@/components/result/Pensadores';
 import { Section } from '@/components/result/Section';
 import { buildResult } from '@/lib/result';
-import { paramsToVector } from '@/lib/url';
+import { paramsToVector, vectorToParams } from '@/lib/url';
 import { Invalido } from './Invalido';
 
 export const metadata: Metadata = { title: 'Seu resultado', robots: { index: false } };
@@ -41,7 +42,7 @@ async function Resultado({ searchParams }: { searchParams: PageProps<'/resultado
             Sua filosofia <span className="text-navy">de vida</span>
           </h1>
         </div>
-        <Hero result={result} />
+        <Hero result={result} share={<Compartilhar params={vectorToParams(v)} />} />
         <Section id="eixos" title="Seus 8 eixos"><Eixos vector={v} /></Section>
         <Section id="distincao" title="O que te distingue"><Distincao result={result} /></Section>
         <Section id="pensadores" title="Pensadores mais próximos de você"><Pensadores result={result} /></Section>
