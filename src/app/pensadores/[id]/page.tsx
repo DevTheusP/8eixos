@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
 import { Cta } from '@/components/Cta';
-import { Retrato } from '@/components/Retrato';
+import { CreditoRetrato, Retrato } from '@/components/Retrato';
 import { SiteHeader } from '@/components/SiteHeader';
 import { Eixos } from '@/components/result/Eixos';
 import { Livros } from '@/components/result/Livros';
@@ -46,7 +46,10 @@ async function Pensador({ params }: { params: PageProps<'/pensadores/[id]'>['par
           )}
         </div>
       </header>
-      <Section id="bio" title="Quem foi"><p>{t.bio}</p></Section>
+      <Section id="bio" title="Quem foi">
+        <p>{t.bio}</p>
+        <div className="mt-4"><CreditoRetrato thinker={t} /></div>
+      </Section>
       <Section id="eixos" title="Nos 8 eixos">
         <Eixos vector={vectors.thinkers[t.id]} />
         <p className="mt-5 text-sm text-mute">

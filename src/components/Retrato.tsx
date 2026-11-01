@@ -22,3 +22,16 @@ export function Retrato({ thinker, size }: { thinker: Thinker; size: number }) {
     </div>
   );
 }
+
+export function CreditoRetrato({ thinker }: { thinker: Thinker }) {
+  if (!thinker.portrait) return null;
+  return (
+    <p className="text-xs text-mute">
+      Imagem:{' '}
+      <a href={thinker.portrait.source} target="_blank" rel="noopener noreferrer" className="underline">
+        Wikimedia Commons
+      </a>{' '}
+      · {thinker.portrait.license}
+    </p>
+  );
+}

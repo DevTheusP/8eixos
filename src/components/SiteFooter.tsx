@@ -11,6 +11,7 @@ export function SiteFooter() {
           <Link href="/escolas" className="hover:text-ink">Escolas</Link>
           <Link href="/pensadores" className="hover:text-ink">Pensadores</Link>
           <Link href="/privacidade" className="hover:text-ink">Privacidade</Link>
+          <Link href="/creditos" className="hover:text-ink">Créditos</Link>
         </nav>
       </div>
     </footer>
