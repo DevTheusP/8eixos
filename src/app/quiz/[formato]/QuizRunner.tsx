@@ -26,6 +26,7 @@ export function QuizRunner({ formato, pool }: { formato: Formato; pool: Question
     const usable = saved && saved.questionIds.every(id => byId.has(id)) ? saved : null;
     const s = usable ?? freshState(formato, pool);
     saveState(s);
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- estado só existe no navegador (sessionStorage + sorteio); inicializar na renderização quebraria a hidratação
     setState(s);
   }, [formato, pool, byId]);
 
