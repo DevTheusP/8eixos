@@ -1,5 +1,4 @@
-// Nome provisório: o nome definitivo e o domínio são decisão do usuário.
-export const SITE_NAME = 'Filosofia de Vida';
+export const SITE_NAME = '8eixos';
 export function siteUrl(env: Record<string, string | undefined>): string {
   if (env.NEXT_PUBLIC_SITE_URL) return env.NEXT_PUBLIC_SITE_URL;
   // Na Vercel, sem a variável configurada, usa o domínio de produção em vez de cair em localhost.

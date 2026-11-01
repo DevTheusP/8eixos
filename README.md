@@ -1,4 +1,4 @@
-# Filosofia de Vida (nome provisório)
+# 8eixos
 
 Quiz anônimo que mede você em 8 eixos e mostra qual escola filosófica de vida e quais pensadores mais se parecem com você.
 
