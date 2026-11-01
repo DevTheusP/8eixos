@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Bricolage_Grotesque, Inter } from 'next/font/google';
+import { SiteFooter } from '@/components/SiteFooter';
 import { SITE_NAME, SITE_URL } from '@/lib/site';
 import './globals.css';
 
@@ -15,7 +16,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
     <html lang="pt-BR" className={`${inter.variable} ${bricolage.variable} h-full antialiased`}>
-      <body className="flex min-h-full flex-col font-sans">{children}</body>
+      <body className="flex min-h-full flex-col font-sans">
+        {children}
+        <SiteFooter />
+      </body>
     </html>
   );
 }
