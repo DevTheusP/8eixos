@@ -1,0 +1,208 @@
+[
+  {
+    "id": "estoicismo",
+    "name": "Estoicismo",
+    "familyId": "virtude",
+    "quote": "Não escolho o que me acontece, escolho como respondo. É aí que mora a minha liberdade.",
+    "summary": "Escola grega e romana que ensina a separar o que depende de nós do que não depende. Para os estoicos, a única coisa realmente boa é a virtude, e a paz vem de viver de acordo com a razão e com a natureza.",
+    "lida": {
+      "sofrimento": "Separa o que depende de você do que não depende, e coloca sua energia só no primeiro grupo. A dor de fora não decide quem você é.",
+      "morte": "Lembra dela todos os dias, sem medo: a morte é natural, e pensar nela deixa claro o que importa agora.",
+      "felicidade": "Vem de agir bem, não de ter sorte. Uma vida virtuosa é feliz mesmo quando não é confortável.",
+      "relacoes": "Trata cada pessoa como parte de uma mesma família humana. Cumpre seus deveres com os outros sem depender da aprovação deles."
+    },
+    "thinkerIds": [
+      "marco-aurelio",
+      "seneca",
+      "epicteto"
+    ]
+  },
+  {
+    "id": "epicurismo",
+    "name": "Epicurismo",
+    "familyId": "prazer",
+    "quote": "Pouco me basta: amigos, tranquilidade e nenhum medo do que não posso controlar.",
+    "summary": "Filosofia fundada por Epicuro em Atenas que busca o prazer como ausência de dor e de perturbação. Nada de excessos: a vida boa é simples, cercada de amigos e livre do medo dos deuses e da morte.",
+    "lida": {
+      "sofrimento": "Lembra que a dor forte costuma ser curta e a longa costuma ser leve. Corta desejos desnecessários para sofrer menos.",
+      "morte": "Não teme: enquanto você existe, a morte não está; quando ela chega, você já não está.",
+      "felicidade": "É tranquilidade do corpo e da mente, não festa. Um pão, água e boa companhia já fazem muito.",
+      "relacoes": "A amizade é o maior bem da vida. Prefere poucos amigos de verdade a muita vida pública."
+    },
+    "thinkerIds": [
+      "epicuro",
+      "lucrecio"
+    ]
+  },
+  {
+    "id": "cinismo",
+    "name": "Cinismo",
+    "familyId": "virtude",
+    "quote": "Preciso de quase nada, e é por isso que ninguém manda em mim.",
+    "summary": "Escola grega que vivia a virtude de forma radical, rejeitando riqueza, fama e convenções sociais. Os cínicos queriam viver segundo a natureza e provocavam a sociedade para mostrar o quanto ela é artificial.",
+    "lida": {
+      "sofrimento": "Treina o corpo e a mente para precisar de pouco. Quem não depende de conforto não sofre quando ele falta.",
+      "morte": "Encara com desdém: é só mais um acontecimento natural, sem cerimônia.",
+      "felicidade": "É liberdade e autossuficiência. Quanto menos você precisa, mais livre você é.",
+      "relacoes": "Diz a verdade na cara, mesmo que incomode. Se considera cidadão do mundo, não de um grupo."
+    },
+    "thinkerIds": [
+      "diogenes",
+      "antistenes"
+    ]
+  },
+  {
+    "id": "ceticismo",
+    "name": "Ceticismo",
+    "familyId": "duvida",
+    "quote": "Não sei se estou certo, e descobri que isso me deixa em paz.",
+    "summary": "Tradição que nasce com Pirro na Grécia e propõe suspender o julgamento sobre o que não pode ser provado. Para os céticos, a tranquilidade aparece quando paramos de brigar por certezas.",
+    "lida": {
+      "sofrimento": "Sofre o que não pode evitar, mas não soma a isso a angústia de achar que é um mal absoluto.",
+      "morte": "Não afirma o que vem depois. Sem certeza de que é ruim, não há por que se torturar.",
+      "felicidade": "É a calma que vem de não precisar ter razão sobre tudo.",
+      "relacoes": "Segue os costumes do lugar onde vive e evita brigas por opinião. Escuta mais do que impõe."
+    },
+    "thinkerIds": [
+      "pirro",
+      "sexto-empirico",
+      "montaigne"
+    ]
+  },
+  {
+    "id": "budismo",
+    "name": "Budismo",
+    "familyId": "oriente",
+    "quote": "Sofro quando me agarro. Quando solto, sobra espaço para a compaixão.",
+    "summary": "Caminho iniciado por Sidarta Gautama, o Buda, que vê no apego a raiz do sofrimento. Pela atenção plena, pela ética e pela meditação, busca-se a libertação e a compaixão por todos os seres.",
+    "lida": {
+      "sofrimento": "Olha para ele com atenção, sem fugir nem se agarrar. Entende de onde vem o apego que o alimenta.",
+      "morte": "Faz parte da impermanência de tudo. Lembrar dela ajuda a soltar o que não dá para segurar.",
+      "felicidade": "Não está em ter mais, e sim em desejar menos e estar presente.",
+      "relacoes": "Cultiva compaixão e bondade com todos, inclusive com quem não é próximo."
+    },
+    "thinkerIds": [
+      "buda",
+      "thich-nhat-hanh"
+    ]
+  },
+  {
+    "id": "taoismo",
+    "name": "Taoísmo",
+    "familyId": "oriente",
+    "quote": "Não empurro o rio. Aprendo a nadar com ele.",
+    "summary": "Tradição chinesa ligada a Lao-Tsé e Zhuangzi que busca viver em harmonia com o Tao, o fluxo natural das coisas. Valoriza a simplicidade, a espontaneidade e o agir sem forçar.",
+    "lida": {
+      "sofrimento": "Para de resistir ao que é. Como a água, contorna o obstáculo em vez de brigar com ele.",
+      "morte": "É uma volta natural, como as estações. Não há por que lamentar o que segue o curso da natureza.",
+      "felicidade": "Está na simplicidade e em deixar as coisas acontecerem no tempo delas.",
+      "relacoes": "Lidera e convive sem impor. Quem não compete não encontra inimigos."
+    },
+    "thinkerIds": [
+      "lao-tse",
+      "zhuangzi"
+    ]
+  },
+  {
+    "id": "cristianismo-agostiniano",
+    "name": "Cristianismo agostiniano",
+    "familyId": "cristas",
+    "quote": "Meu coração vive inquieto até encontrar descanso em algo maior do que eu.",
+    "summary": "Tradição cristã que segue Agostinho de Hipona: o ser humano foi feito para Deus, e só o amor bem ordenado traz paz. Une fé e razão, e vê na graça a força que transforma a vida.",
+    "lida": {
+      "sofrimento": "Vê nele um lugar de encontro com Deus e de amadurecimento, sem fingir que não dói.",
+      "morte": "Não é o fim, mas passagem. A esperança da vida eterna muda o jeito de viver agora.",
+      "felicidade": "Está em amar o que merece ser amado, na ordem certa. Bens passageiros não preenchem o coração.",
+      "relacoes": "O amor ao próximo nasce do amor a Deus. Perdoar e servir são partes da fé."
+    },
+    "thinkerIds": [
+      "agostinho",
+      "pascal",
+      "cs-lewis"
+    ]
+  },
+  {
+    "id": "existencialismo-cristao",
+    "name": "Existencialismo cristão",
+    "familyId": "cristas",
+    "quote": "Ninguém pode crer por mim. A decisão de dar o salto é só minha.",
+    "summary": "Corrente que nasce com Kierkegaard e une fé cristã e angústia existencial. A fé não é conforto pronto, mas uma escolha pessoal e apaixonada, feita diante da dúvida.",
+    "lida": {
+      "sofrimento": "Não esconde a angústia. Atravessa o desespero como caminho para uma fé mais verdadeira.",
+      "morte": "Encara de frente, como algo que torna cada escolha séria e única.",
+      "felicidade": "Vem de se tornar quem você é diante de Deus, não de seguir a multidão.",
+      "relacoes": "Valoriza o encontro verdadeiro entre pessoas, sem máscaras nem papéis sociais."
+    },
+    "thinkerIds": [
+      "kierkegaard",
+      "dostoievski",
+      "gabriel-marcel"
+    ]
+  },
+  {
+    "id": "existencialismo-ateu",
+    "name": "Existencialismo ateu",
+    "familyId": "sentido",
+    "quote": "Ninguém me deu um manual. Sou o que faço com a liberdade que tenho.",
+    "summary": "Corrente francesa do século XX, com Sartre e Simone de Beauvoir, que afirma que a existência vem antes da essência. Sem um sentido dado, cada pessoa é responsável por criar o seu através das escolhas.",
+    "lida": {
+      "sofrimento": "Não usa como desculpa. Mesmo na pior situação, ainda escolhe como agir.",
+      "morte": "É o limite que torna a vida sua. Nada depois dela vai justificar o que você não fez.",
+      "felicidade": "Vem de viver com autenticidade, assumindo as próprias escolhas.",
+      "relacoes": "A liberdade dos outros importa tanto quanto a sua. Engajar-se no mundo é parte de ser livre."
+    },
+    "thinkerIds": [
+      "sartre",
+      "simone-de-beauvoir"
+    ]
+  },
+  {
+    "id": "absurdismo",
+    "name": "Absurdismo",
+    "familyId": "sentido",
+    "quote": "O mundo não me responde, e mesmo assim eu escolho viver com intensidade.",
+    "summary": "Filosofia de Albert Camus: buscamos sentido num universo que não responde. A saída não é desistir nem se iludir, mas se revoltar, viver com lucidez e amar a vida assim mesmo.",
+    "lida": {
+      "sofrimento": "Reconhece o absurdo sem se render a ele. A revolta é a resposta.",
+      "morte": "Não procura consolo no além. Saber que a vida acaba é motivo para vivê-la por inteiro.",
+      "felicidade": "É possível mesmo sem sentido final, como Sísifo empurrando sua pedra.",
+      "relacoes": "A revolta une as pessoas: eu me revolto, logo nós existimos."
+    },
+    "thinkerIds": [
+      "camus"
+    ]
+  },
+  {
+    "id": "niilismo",
+    "name": "Niilismo",
+    "familyId": "duvida",
+    "quote": "Nada tem sentido por si só, e não vou fingir que tem.",
+    "summary": "Posição que nega que a vida tenha sentido, valor ou verdade objetiva. Discutida a fundo por Nietzsche, que a via como crise a ser superada, ela aparece em pensadores do pessimismo e da dúvida radical.",
+    "lida": {
+      "sofrimento": "Não vê nele lição nem propósito. É só parte de um mundo indiferente.",
+      "morte": "É o fim de tudo, sem drama e sem promessa.",
+      "felicidade": "Desconfia dela como ilusão passageira.",
+      "relacoes": "Não acredita em deveres impostos. Cada vínculo vale o que vale, sem garantia."
+    },
+    "thinkerIds": [
+      "nietzsche",
+      "cioran"
+    ]
+  },
+  {
+    "id": "logoterapia",
+    "name": "Logoterapia",
+    "familyId": "sentido",
+    "quote": "Não posso escolher tudo o que me acontece, mas posso encontrar um sentido em cada situação.",
+    "summary": "Abordagem criada por Viktor Frankl, sobrevivente dos campos de concentração, que vê na busca de sentido a força principal da vida humana. O sentido não é inventado: é descoberto em cada situação.",
+    "lida": {
+      "sofrimento": "Quando não pode ser evitado, encontra nele um sentido. Quem tem um porquê suporta quase qualquer como.",
+      "morte": "A finitude dá peso a cada escolha. O que você viveu fica guardado como realidade.",
+      "felicidade": "Não é perseguida diretamente: chega como consequência de se dedicar a algo ou a alguém.",
+      "relacoes": "Sair de si para servir e amar é o caminho para se realizar."
+    },
+    "thinkerIds": [
+      "viktor-frankl"
+    ]
+  }
+]
