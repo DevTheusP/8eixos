@@ -1,11 +1,12 @@
 import { affiliateUrl, booksFor } from '@/lib/books';
 import { getBooks, getThinkers } from '@/lib/data';
+import { Section } from './Section';
 
-export function Livros({ thinkerIds }: { thinkerIds: string[] }) {
+export function Livros({ thinkerIds, title }: { thinkerIds: string[]; title?: string }) {
   const nomes = new Map(getThinkers().map(t => [t.id, t.name]));
   const livros = booksFor(thinkerIds, getBooks());
   if (livros.length === 0) return null;
-  return (
+  const grade = (
     <div className="grid gap-3 sm:grid-cols-3">
       {livros.map(({ thinkerId, book }) => (
         <a
@@ -22,4 +23,5 @@ export function Livros({ thinkerIds }: { thinkerIds: string[] }) {
       ))}
     </div>
   );
+  return title ? <Section id="livros" title={title}>{grade}</Section> : grade;
 }

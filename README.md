@@ -7,7 +7,7 @@ Quiz anônimo que mede você em 8 eixos e mostra qual escola filosófica de vida
 
 ## Rodar localmente
 
-Precisa de Node 20 ou mais novo.
+Precisa de Node 22.12 ou mais novo.
 
 ```bash
 npm install

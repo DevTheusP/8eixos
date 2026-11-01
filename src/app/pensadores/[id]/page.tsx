@@ -55,7 +55,7 @@ async function Pensador({ params }: { params: PageProps<'/pensadores/[id]'>['par
           ({Math.round(maisProxima.score)}%).
         </p>
       </Section>
-      <Section id="livros" title="Para ler"><Livros thinkerIds={[t.id]} /></Section>
+      <Livros title="Para ler" thinkerIds={[t.id]} />
       <Cta />
     </article>
   );

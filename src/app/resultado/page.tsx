@@ -48,9 +48,7 @@ async function Resultado({ searchParams }: { searchParams: PageProps<'/resultado
         <Section id="pensadores" title="Pensadores mais próximos de você"><Pensadores result={result} /></Section>
         <Section id="escolas" title="Outras escolas e o seu oposto"><Escolas result={result} /></Section>
         <Section id="lida" title="Como você lida com…"><Lida school={result.school.school} /></Section>
-        <Section id="livros" title="Para ler">
-          <Livros thinkerIds={[result.thinker.thinker.id, ...result.byDimension.map(d => d.thinker.id)]} />
-        </Section>
+        <Livros title="Para ler" thinkerIds={[result.thinker.thinker.id, ...result.byDimension.map(d => d.thinker.id)]} />
         <Section id="comparar" title="Compare"><CompareForms vector={v} /></Section>
       </div>
       <aside><Indice itens={ITENS} /></aside>

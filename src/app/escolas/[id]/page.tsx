@@ -10,7 +10,7 @@ import { Livros } from '@/components/result/Livros';
 import { Section } from '@/components/result/Section';
 import { getFamilies, getSchools, getThinkers, getVectors } from '@/lib/data';
 import { rank } from '@/lib/matching';
-import { resumo } from '@/lib/text';
+import { resumo, tituloSofrimento } from '@/lib/text';
 
 export function generateStaticParams() {
   return getSchools().map(s => ({ id: s.id }));
@@ -42,7 +42,7 @@ async function Escola({ params }: { params: PageProps<'/escolas/[id]'>['params']
         <blockquote className="mt-4 text-lg text-navy sm:text-xl">“{s.quote}”</blockquote>
         <p className="mt-4">{s.summary}</p>
       </header>
-      <Section id="sofrimento" title={`Como o ${s.name.toLowerCase()} lida com o sofrimento`}>
+      <Section id="sofrimento" title={tituloSofrimento(s.name)}>
         <p>{s.lida.sofrimento}</p>
       </Section>
       <Section id="eixos" title="Nos 8 eixos"><Eixos vector={vectors.schools[s.id]} /></Section>
@@ -68,7 +68,7 @@ async function Escola({ params }: { params: PageProps<'/escolas/[id]'>['params']
           ))}
         </ul>
       </Section>
-      {thinkers.length > 0 && <Section id="livros" title="Para ler"><Livros thinkerIds={s.thinkerIds} /></Section>}
+      <Livros title="Para ler" thinkerIds={s.thinkerIds} />
       <Cta />
     </article>
   );
