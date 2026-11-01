@@ -50,7 +50,7 @@ async function Escola({ params }: { params: PageProps<'/escolas/[id]'>['params']
         <Section id="pensadores" title="Pensadores ligados a esta escola">
           <div className="grid gap-3 sm:grid-cols-2">
             {thinkers.map(t => (
-              <Link key={t.id} href={`/pensadores/${t.id}`} className="lift press flex items-center gap-3 rounded-2xl bg-tile p-3">
+              <Link key={t.id} href={`/pensadores/${t.id}`} className=" press flex items-center gap-3 rounded-2xl bg-tile p-3">
                 <Retrato thinker={t} size={56} />
                 <div><p className="font-semibold">{t.name}</p><p className="text-sm text-mute">{t.descriptor}</p></div>
               </Link>

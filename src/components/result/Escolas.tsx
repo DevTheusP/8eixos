@@ -15,7 +15,7 @@ export function Escolas({ result }: { result: Result }) {
           ))}
         </ul>
       </div>
-      <Link href={`/escolas/${result.opposite.id}`} className="lift press block rounded-2xl bg-brand-soft p-5">
+      <Link href={`/escolas/${result.opposite.id}`} className=" press block rounded-2xl bg-brand-soft p-5">
         <p className="font-semibold">Seu oposto filosófico</p>
         <p className="font-display text-3xl font-bold text-brand">{result.opposite.name}</p>
         <p className="mt-1 text-sm italic">“{result.opposite.quote}”</p>

@@ -1,19 +1,16 @@
 import type { LucideIcon } from 'lucide-react';
-import type { CSSProperties, ReactNode } from 'react';
-import { InView } from '@/components/InView';
+import type { ReactNode } from 'react';
 
+// Seções do resultado: separadas por um filete dourado e espaço, sem caixa em volta.
 export function Section({ id, title, icon: Icone, children, className = '' }: {
   id: string; title?: string; icon?: LucideIcon; children: ReactNode; className?: string;
 }) {
   return (
-    <section id={id} className={`reveal scroll-mt-6 rounded-3xl border border-line bg-card p-5 sm:p-7 ${className}`}>
+    <section id={id} className={`scroll-mt-6 ${className}`}>
+      <div className="filete mb-8" />
       {title && (
-        <h2 className="mb-5 flex items-center gap-3 font-display text-2xl font-bold sm:text-3xl">
-          {Icone && (
-            <span className="flex h-9 w-9 flex-none items-center justify-center rounded-xl bg-brand-soft text-brand">
-              <Icone aria-hidden size={18} strokeWidth={2.2} />
-            </span>
-          )}
+        <h2 className="mb-6 flex items-center gap-3 font-display text-3xl sm:text-4xl">
+          {Icone && <Icone aria-hidden size={22} strokeWidth={1.8} className="text-gold" />}
           {title}
         </h2>
       )}
@@ -22,27 +19,12 @@ export function Section({ id, title, icon: Icone, children, className = '' }: {
   );
 }
 
-const R = 34;
-const LEN = 2 * Math.PI * R;
-
+// Compatibilidade como número em serifa: mais legível que um anel e sem copiar o visual de outros quizzes.
 export function Ring({ score, size = 'md' }: { score: number; size?: 'sm' | 'md' }) {
-  const px = size === 'md' ? 84 : 60;
-  const pct = Math.max(0, Math.min(100, score));
   return (
-    <InView className="relative flex-none" >
-      <svg width={px} height={px} viewBox="0 0 80 80" aria-hidden className="-rotate-90">
-        <circle cx="40" cy="40" r={R} fill="none" stroke="var(--track)" strokeWidth="5" />
-        <circle
-          className="ring-arc"
-          cx="40" cy="40" r={R} fill="none" stroke="var(--brand)" strokeWidth="5" strokeLinecap="round"
-          strokeDasharray={LEN} strokeDashoffset={LEN * (1 - pct / 100)}
-          style={{ '--len': `${LEN}` } as CSSProperties}
-        />
-      </svg>
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-brand">
-        <span className={`font-display font-bold ${size === 'md' ? 'text-xl' : 'text-sm'}`}>{Math.round(score)}%</span>
-        <span className="text-[9px] font-semibold tracking-[0.1em]">MATCH</span>
-      </div>
-    </InView>
+    <div className="flex-none text-right leading-none text-brand">
+      <span className={`font-display ${size === 'md' ? 'text-5xl' : 'text-3xl'}`}>{Math.round(score)}%</span>
+      <span className="block pt-1 text-xs font-semibold text-mute">compatível</span>
+    </div>
   );
 }

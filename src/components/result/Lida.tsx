@@ -16,7 +16,7 @@ export function Lida({ school }: { school: School }) {
       </div>
       {PAYWALL_ENABLED && TEMAS.map(t => (
         <div key={t.key} className="rounded-2xl bg-tile p-5">
-          <p className="font-semibold">{t.label} <span className="text-xs text-clay">NO RELATÓRIO</span></p>
+          <p className="font-semibold">{t.label} <span className="text-xs text-rose">no relatório</span></p>
           <p className="mt-1 select-none text-sm blur-sm" aria-hidden>Disponível no relatório completo da sua escola.</p>
         </div>
       ))}

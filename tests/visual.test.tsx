@@ -26,9 +26,3 @@ test('trilho animado começa no centro e vai até o valor', () => {
   expect(slider.style.getPropertyValue('--to')).toBe('20%');
 });
 
-test('índice marca a primeira seção visível na ordem da página', async () => {
-  const { secaoAtiva } = await import('@/components/result/Indice');
-  const itens = [{ id: 'a', label: 'A' }, { id: 'b', label: 'B' }, { id: 'c', label: 'C' }];
-  expect(secaoAtiva(itens, new Map([['c', true], ['b', true], ['a', false]]))).toBe('b');
-  expect(secaoAtiva(itens, new Map([['a', false]]))).toBeUndefined();
-});

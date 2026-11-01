@@ -38,7 +38,7 @@ async function Comparacao({ searchParams }: { searchParams: PageProps<'/comparar
       <Link href={`/resultado?${vectorToParams(eu)}`} className="text-sm text-brand">← Voltar ao meu resultado</Link>
       {!outro ? (
         <Section id="comparar" title="Comparar">
-          <p className="mb-4 rounded-xl bg-clay-faint px-4 py-3 text-sm text-clay">Esse link não é de um resultado. Confira se copiou o endereço inteiro.</p>
+          <p className="mb-4 rounded-xl bg-rose-faint px-4 py-3 text-sm text-rose">Esse link não é de um resultado. Confira se copiou o endereço inteiro.</p>
           <CompareForms vector={eu} />
         </Section>
       ) : (
@@ -51,18 +51,18 @@ async function Comparacao({ searchParams }: { searchParams: PageProps<'/comparar
                 <li key={c.axis}>
                   <div className="flex justify-between text-sm font-semibold">
                     <span>{ax.name}</span>
-                    <span className={c.sameSide ? 'text-brand' : 'text-clay'}>{c.sameSide ? 'Do mesmo lado' : 'Em lados opostos'} · {Math.round(c.diff)} pts</span>
+                    <span className={c.sameSide ? 'text-brand' : 'text-rose'}>{c.sameSide ? 'Do mesmo lado' : 'Em lados opostos'} · {Math.round(c.diff)} pts</span>
                   </div>
                   <div className="relative my-2 h-2 rounded-full bg-track">
                     <span className="absolute -top-1.5 h-5 w-5 -translate-x-1/2 rounded-full border-[3px] border-brand bg-white" style={{ left: `${c.a}%` }} title="Você" />
-                    <span className="absolute -top-1.5 h-5 w-5 -translate-x-1/2 rounded-full border-[3px] border-clay bg-white" style={{ left: `${c.b}%` }} title={outro.nome} />
+                    <span className="absolute -top-1.5 h-5 w-5 -translate-x-1/2 rounded-full border-[3px] border-rose bg-white" style={{ left: `${c.b}%` }} title={outro.nome} />
                   </div>
                   <div className="flex justify-between text-xs text-mute"><span>{ax.poleA}</span><span>{ax.poleB}</span></div>
                 </li>
               );
             })}
           </ul>
-          <p className="mt-5 text-xs text-mute"><span className="text-brand">●</span> Você <span className="ml-3 text-clay">●</span> {outro.nome}</p>
+          <p className="mt-5 text-xs text-mute"><span className="text-brand">●</span> Você <span className="ml-3 text-rose">●</span> {outro.nome}</p>
         </Section>
       )}
     </div>

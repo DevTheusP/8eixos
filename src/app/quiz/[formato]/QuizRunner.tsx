@@ -1,35 +1,22 @@
 'use client';
 
-import {
-  ArrowLeft, ArrowRight, Check, CircleHelp, Equal, Minus, RotateCcw, Shuffle, X, type LucideIcon,
-} from 'lucide-react';
+import { ArrowLeft, CircleHelp, RotateCcw, Shuffle } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { AXIS_ICONS } from '@/lib/icons';
+import { rosaRaios } from '@/lib/rosa';
 import {
   advance, back, canSwap, clearState, isDone, loadState, saveState, select, swap, type QuizState,
 } from '@/lib/quiz-state';
 import { computeVector } from '@/lib/scoring';
 import { selectQuestions, type Formato } from '@/lib/selection';
-import type { AnswerIndex, Axis, Question } from '@/lib/types';
+import { type AnswerIndex, type Axis, type AxisId, type Question } from '@/lib/types';
 import { vectorToParams } from '@/lib/url';
 
-type Opcao = { label: string; Icone: LucideIcon; cor: string };
-
-const LIKERT: Opcao[] = [
-  { label: 'Concordo totalmente', Icone: Check, cor: 'var(--brand)' },
-  { label: 'Concordo', Icone: Check, cor: 'var(--brand)' },
-  { label: 'Neutro', Icone: Minus, cor: 'var(--mute)' },
-  { label: 'Discordo', Icone: X, cor: 'var(--clay)' },
-  { label: 'Discordo totalmente', Icone: X, cor: 'var(--clay)' },
-];
-const FORCADA: Opcao[] = [
-  { label: 'Muito mais a da esquerda', Icone: ArrowLeft, cor: 'var(--brand)' },
-  { label: 'Mais a da esquerda', Icone: ArrowLeft, cor: 'var(--brand)' },
-  { label: 'Igual', Icone: Equal, cor: 'var(--mute)' },
-  { label: 'Mais a da direita', Icone: ArrowRight, cor: 'var(--ochre)' },
-  { label: 'Muito mais a da direita', Icone: ArrowRight, cor: 'var(--ochre)' },
-];
+// Escala de 5 pontos: círculos maiores nas pontas. Violeta = concordar / frase da esquerda, rosa = discordar / frase da direita.
+const TAMANHOS = [52, 40, 28, 40, 52];
+const CORES = ['var(--brand)', 'var(--brand)', 'var(--mute)', 'var(--rose)', 'var(--rose)'];
+const LIKERT = ['Concordo totalmente', 'Concordo', 'Neutro', 'Discordo', 'Discordo totalmente'];
+const FORCADA = ['Muito mais a da esquerda', 'Mais a da esquerda', 'Igual', 'Mais a da direita', 'Muito mais a da direita'];
 const PREF_AUTO = 'quiz:avancar-ao-responder';
 
 function freshState(formato: Formato, pool: Question[]): QuizState {
@@ -101,13 +88,10 @@ export function QuizRunner({ formato, pool, axes = [] }: { formato: Formato; poo
   const total = state.questionIds.length;
   const q = byId.get(state.questionIds[Math.min(state.index, total - 1)])!;
   const eixo = axisById.get(q.axis);
-  const IconeEixo = AXIS_ICONS[q.axis];
-  const opcoes = q.kind === 'forced' ? FORCADA : LIKERT;
+  const labels = q.kind === 'forced' ? FORCADA : LIKERT;
   const atual = state.answers[q.id];
   const respondidas = Object.keys(state.answers).filter(id => state.questionIds.includes(id)).length;
   const pct = Math.round((respondidas / total) * 100);
-  const segmentos = Math.max(8, Math.min(30, Math.ceil(total / 4)));
-  const porSegmento = total / segmentos;
 
   function alternarAuto() {
     const novo = !auto;
@@ -123,136 +107,146 @@ export function QuizRunner({ formato, pool, axes = [] }: { formato: Formato; poo
 
   return (
     <div className="mx-auto w-full max-w-3xl">
-      <div className="mb-3 flex items-center justify-between text-sm text-mute">
+      <div className="flex items-center justify-between text-sm text-mute">
         <span>Pergunta <strong className="text-ink">{Math.min(state.index + 1, total)} de {total}</strong></span>
-        <span className="flex items-center gap-3">
+        <span className="flex items-center gap-4">
           <span>{pct}% concluído</span>
-          <button type="button" onClick={reiniciar} className="press inline-flex items-center gap-1 rounded-full px-2 py-1 hover:bg-tile">
+          <button type="button" onClick={reiniciar} className="press inline-flex items-center gap-1 hover:text-ink">
             <RotateCcw aria-hidden size={13} /> Reiniciar
           </button>
         </span>
       </div>
-      <div className="mb-6 flex gap-1" aria-hidden>
-        {Array.from({ length: segmentos }, (_, k) => {
-          const cheio = Math.max(0, Math.min(1, respondidas / porSegmento - k));
-          return (
-            <span key={k} className="h-1.5 flex-1 overflow-hidden rounded-full bg-line">
-              <span className="block h-full origin-left rounded-full bg-brand transition-transform duration-300 ease-[var(--ease-out)]" style={{ transform: `scaleX(${cheio})` }} />
-            </span>
-          );
-        })}
+      <div className="mt-2 h-[3px] overflow-hidden rounded-full bg-track" aria-hidden>
+        <div className="h-full origin-left bg-gradient-to-r from-brand to-rose transition-transform duration-300 ease-[var(--ease-out)]" style={{ transform: `scaleX(${respondidas / total})` }} />
       </div>
 
-      <div className="relative overflow-hidden rounded-3xl border border-line border-t-4 border-t-brand bg-card p-5 shadow-[0_18px_40px_-28px_rgb(34_24_15/0.45)] sm:p-7">
-        <span aria-hidden className="pointer-events-none absolute right-5 top-2 select-none font-display text-7xl font-bold text-ink/[0.05] sm:text-8xl">
-          {String(state.index + 1).padStart(2, '0')}
-        </span>
-
-        <div className="relative mb-4 flex flex-wrap gap-2">
-          <span className="inline-flex items-center gap-2 rounded-full bg-brand-soft py-1 pl-1 pr-3 text-xs font-semibold uppercase tracking-[0.12em] text-brand">
-            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-brand text-white"><IconeEixo aria-hidden size={13} /></span>
-            {eixo?.name ?? q.axis}
-          </span>
+      <div className="mt-10 flex flex-col items-center text-center">
+        <div className="flex items-center gap-3 text-sm">
+          <MiniRosa axis={q.axis} />
+          <span className="font-semibold text-brand">{eixo?.name ?? q.axis}</span>
           <button
             type="button"
             onClick={() => setEntenda(v => !v)}
             aria-expanded={entenda}
-            className="press inline-flex items-center gap-1.5 rounded-full bg-tile px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-mute hover:text-ink"
+            className="press inline-flex items-center gap-1 text-mute underline decoration-line underline-offset-4 hover:text-ink"
           >
             <CircleHelp aria-hidden size={14} /> Entenda
           </button>
         </div>
         {entenda && eixo && (
-          <p className="question-in relative mb-4 rounded-xl bg-tile px-4 py-3 text-sm text-mute">
-            Esta pergunta mede onde você fica entre <strong className="text-ink">{eixo.poleA}</strong> e{' '}
-            <strong className="text-ink">{eixo.poleB}</strong> no eixo {eixo.name.toLowerCase()}. Não existe resposta certa: responda pelo que você pensa de verdade.
+          <p className="question-in mt-3 max-w-lg text-sm text-mute">
+            Esta pergunta mede onde você fica entre <strong className="text-brand">{eixo.poleA}</strong> e{' '}
+            <strong className="text-rose">{eixo.poleB}</strong>. Não existe resposta certa: responda pelo que você pensa de verdade.
           </p>
         )}
 
-        <div key={q.id} className={`relative ${viaTeclado ? '' : 'question-in'}`}>
+        <div key={q.id} className={`mt-6 w-full ${viaTeclado ? '' : 'question-in'}`}>
           {q.kind === 'forced' ? (
             <div>
-              <p className="mb-3 text-sm font-semibold text-mute">Qual frase combina mais com você?</p>
-              <div className="grid gap-3 sm:grid-cols-2">
-                <p className="rounded-2xl border-l-4 border-l-brand bg-tile p-4 font-display text-lg font-semibold">{q.textLeft}</p>
-                <p className="rounded-2xl border-l-4 border-l-ochre bg-tile p-4 font-display text-lg font-semibold">{q.textRight}</p>
+              <p className="mb-4 text-mute">Qual frase combina mais com você?</p>
+              <div className="grid gap-3 text-left sm:grid-cols-2">
+                <p className="rounded-xl border-t-4 border-t-brand bg-card p-5 font-display text-2xl">{q.textLeft}</p>
+                <p className="rounded-xl border-t-4 border-t-rose bg-card p-5 font-display text-2xl">{q.textRight}</p>
               </div>
             </div>
           ) : (
-            <p className="max-w-[85%] font-display text-2xl font-semibold leading-snug sm:text-3xl">{q.text}</p>
+            <p className="mx-auto max-w-2xl font-display text-4xl leading-tight sm:text-5xl">{q.text}</p>
           )}
 
-          <div className="mt-6 grid gap-2">
-            {opcoes.map(({ label, Icone, cor }, i) => {
+          <div className="mt-10 flex items-center justify-center gap-3 sm:gap-6">
+            <span className="hidden w-24 text-right text-sm font-semibold text-brand sm:block">{q.kind === 'forced' ? 'Esquerda' : 'Concordo'}</span>
+            {labels.map((label, i) => {
               const marcada = atual === i;
+              const cor = CORES[i];
               return (
                 <button
                   key={label}
                   type="button"
-                  aria-pressed={marcada}
                   aria-label={label}
+                  aria-pressed={marcada}
+                  title={label}
                   onClick={() => choose(i as AnswerIndex)}
-                  className={`press group flex items-center gap-3 rounded-xl border border-line border-l-4 px-3 py-3 text-left font-medium ${marcada ? 'bg-brand-soft' : 'bg-card hover:bg-tile'}`}
-                  style={marcada ? { borderColor: cor } : { borderLeftColor: cor }}
+                  className="press flex flex-none items-center justify-center rounded-full border-[3px] hover:scale-105"
+                  style={{
+                    width: TAMANHOS[i], height: TAMANHOS[i], borderColor: cor,
+                    background: marcada ? cor : `color-mix(in srgb, ${cor} 8%, transparent)`,
+                  }}
                 >
-                  <span className="flex h-7 w-7 flex-none items-center justify-center rounded-full border" style={{ color: cor, borderColor: `color-mix(in srgb, ${cor} 40%, transparent)` }}>
-                    <Icone aria-hidden size={14} strokeWidth={2.6} />
-                  </span>
-                  <span className="flex-1">{label}</span>
-                  <span className="hidden text-xs text-mute sm:inline">{i + 1}</span>
-                  <span aria-hidden className="flex h-4 w-4 items-center justify-center rounded-full border border-line">
-                    {marcada && <span className="h-2 w-2 rounded-full" style={{ background: cor }} />}
-                  </span>
+                  <span className="sr-only">{i + 1}</span>
                 </button>
               );
             })}
+            <span className="hidden w-24 text-left text-sm font-semibold text-rose sm:block">{q.kind === 'forced' ? 'Direita' : 'Discordo'}</span>
           </div>
+          <div className="mt-3 flex justify-between px-2 text-xs font-semibold sm:hidden">
+            <span className="text-brand">{q.kind === 'forced' ? 'Esquerda' : 'Concordo'}</span>
+            <span className="text-rose">{q.kind === 'forced' ? 'Direita' : 'Discordo'}</span>
+          </div>
+          <p className="mt-4 h-5 text-sm text-mute" aria-live="polite">{atual !== undefined ? labels[atual] : ''}</p>
         </div>
       </div>
 
-      <div className="mt-5 flex flex-wrap items-center justify-between gap-3">
+      <div className="mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-line pt-5 text-sm">
         <button
           type="button"
           onClick={() => { setViaTeclado(false); commit(back(state)); }}
           disabled={state.index === 0}
-          className="press inline-flex items-center gap-2 rounded-xl border border-line bg-card px-4 py-2.5 text-sm font-semibold disabled:opacity-40"
+          className="press inline-flex items-center gap-1.5 font-semibold text-mute hover:text-ink disabled:opacity-40"
         >
           <ArrowLeft aria-hidden size={16} /> Voltar
         </button>
-        <label className="flex cursor-pointer items-center gap-2 text-sm text-mute">
+        <span className="flex items-center gap-2 text-mute">
           <button
             type="button"
             role="switch"
             aria-checked={auto}
             aria-label="Avançar ao responder"
             onClick={alternarAuto}
-            className={`relative h-6 w-11 flex-none rounded-full transition-colors duration-200 ${auto ? 'bg-deep' : 'bg-track'}`}
+            className={`relative h-6 w-11 flex-none rounded-full transition-colors duration-200 ${auto ? 'bg-brand' : 'bg-track'}`}
           >
             <span className={`absolute left-0 top-0.5 h-5 w-5 rounded-full bg-white shadow transition-transform duration-200 ease-[var(--ease-out)] ${auto ? 'translate-x-[22px]' : 'translate-x-0.5'}`} />
           </button>
           <span aria-hidden>Avançar ao responder</span>
-        </label>
-        <div className="flex gap-2">
+        </span>
+        <span className="flex items-center gap-4">
           {canSwap(state, pool) && (
             <button
               type="button"
               onClick={() => { setViaTeclado(false); commit(swap(state, pool)); }}
-              className="press inline-flex items-center gap-2 rounded-xl border border-line bg-card px-4 py-2.5 text-sm font-semibold"
+              className="press inline-flex items-center gap-1.5 font-semibold text-mute hover:text-ink"
             >
-              <Shuffle aria-hidden size={16} /> Trocar
+              <Shuffle aria-hidden size={15} /> Trocar
             </button>
           )}
           <button
             type="button"
             onClick={() => { setViaTeclado(false); commit(advance(state)); }}
             disabled={atual === undefined}
-            className="press group inline-flex items-center gap-2 rounded-xl bg-deep px-4 py-2.5 text-sm font-semibold text-white disabled:opacity-40"
+            className="press rounded-full bg-brand px-5 py-2.5 font-semibold text-white disabled:opacity-40"
           >
-            Avançar <ArrowRight aria-hidden size={16} className="nudge" />
+            Avançar
           </button>
-        </div>
+        </span>
       </div>
       <p className="mt-4 hidden text-center text-xs text-mute sm:block">Atalhos: teclas 1 a 5 respondem, Enter avança, Backspace volta.</p>
     </div>
+  );
+}
+
+// A rosa em miniatura com o eixo da pergunta em destaque: mostra em que parte do mapa a pergunta está.
+function MiniRosa({ axis }: { axis: AxisId }) {
+  return (
+    <svg viewBox="-12 -12 24 24" width="28" height="28" aria-hidden>
+      <circle r="11" fill="none" stroke="var(--gold)" strokeOpacity="0.6" strokeWidth="0.8" />
+      {rosaRaios(10).map(r => {
+        const ativo = r.axis === axis;
+        return (
+          <g key={r.axis}>
+            <line x1={r.a.x} y1={r.a.y} x2={0} y2={0} stroke={ativo ? 'var(--brand)' : 'var(--gold)'} strokeOpacity={ativo ? 1 : 0.35} strokeWidth={ativo ? 2 : 0.7} strokeLinecap="round" />
+            <line x1={0} y1={0} x2={r.b.x} y2={r.b.y} stroke={ativo ? 'var(--rose)' : 'var(--gold)'} strokeOpacity={ativo ? 1 : 0.35} strokeWidth={ativo ? 2 : 0.7} strokeLinecap="round" />
+          </g>
+        );
+      })}
+    </svg>
   );
 }

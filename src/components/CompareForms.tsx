@@ -16,7 +16,7 @@ export function CompareForms({ vector }: { vector: Vector }) {
         <label className="flex items-center gap-2 font-semibold" htmlFor="outro-link"><Link2 aria-hidden size={16} className="text-brand" /> Com um amigo</label>
         <p className="text-sm text-mute">Cole o link do resultado de outra pessoa.</p>
         <input id="outro-link" name="outro" required placeholder="https://…/resultado?c=…" className="mt-3 w-full rounded-lg border border-line bg-card px-3 py-2 text-sm" />
-        <button className="press group mt-3 rounded-full bg-deep px-4 py-2 text-sm font-semibold text-white">Comparar <span className="nudge">→</span></button>
+        <button className="press group mt-3 rounded-full bg-deep px-4 py-2 text-sm font-semibold text-white">Comparar</button>
       </form>
       <form action="/comparar" method="get" className="rounded-2xl bg-tile p-5">
         <Hidden vector={vector} />
@@ -25,7 +25,7 @@ export function CompareForms({ vector }: { vector: Vector }) {
         <select id="outro-pensador" name="outro" className="mt-3 w-full rounded-lg border border-line bg-card px-3 py-2 text-sm">
           {thinkers.map(t => <option key={t.id} value={`pensador:${t.id}`}>{t.name}</option>)}
         </select>
-        <button className="press group mt-3 rounded-full bg-deep px-4 py-2 text-sm font-semibold text-white">Comparar <span className="nudge">→</span></button>
+        <button className="press group mt-3 rounded-full bg-deep px-4 py-2 text-sm font-semibold text-white">Comparar</button>
       </form>
     </div>
   );
