@@ -54,4 +54,4 @@ Veja `.env.example`.
 
 ## Licença
 
-Todos os direitos reservados.
+Todos os direitos reservados. Este código é visível, mas não pode ser copiado, modificado nem usado sem autorização por escrito. Veja [LICENSE](LICENSE).

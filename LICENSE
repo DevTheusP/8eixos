@@ -1,0 +1,58 @@
+Copyright (c) 2026 Matheus Persch. Todos os direitos reservados.
+Copyright (c) 2026 Matheus Persch. All rights reserved.
+
+PORTUGUÊS
+
+Este repositório não é software livre nem de código aberto. Ele pode estar
+visível publicamente, mas isso não concede nenhuma licença de uso.
+
+1. O que está protegido
+
+Todo o conteúdo deste repositório, incluindo, sem se limitar a:
+  a) o código-fonte;
+  b) as perguntas do quiz, seus textos, ordem e escalas de resposta;
+  c) o modelo de eixos, seus nomes e polos;
+  d) os perfis de escolas e pensadores, suas respostas, vetores e textos;
+  e) o algoritmo de cálculo e de compatibilidade e seus pesos;
+  f) o design, os textos da interface e a documentação.
+
+Imagens de terceiros (retratos da Wikimedia Commons) continuam sob as
+licenças originais indicadas em data/thinkers.json e na página /creditos.
+
+2. O que é permitido
+
+  a) ler o código na plataforma onde ele está publicado;
+  b) usar o site publicado como visitante.
+
+3. O que é proibido sem autorização prévia e por escrito do titular
+
+  a) copiar, reproduzir ou redistribuir o todo ou qualquer parte;
+  b) modificar, traduzir ou criar obras derivadas;
+  c) publicar ou hospedar uma cópia ou versão modificada;
+  d) usar qualquer parte para fins comerciais;
+  e) usar o conteúdo para treinar ou alimentar sistemas de inteligência
+     artificial, ou para gerar produtos concorrentes.
+
+4. Pedidos de autorização
+
+Abra uma issue no repositório ou entre em contato com o titular.
+
+5. Isenção de garantias
+
+O conteúdo é fornecido "no estado em que se encontra", sem garantias de
+qualquer tipo. O quiz é uma ferramenta de exploração de ideias, não um
+instrumento científico nem diagnóstico psicológico.
+
+ENGLISH
+
+This repository is not free or open-source software. It may be publicly
+visible, but that grants no license of any kind. All code, quiz questions,
+axis model, school and thinker profiles, vectors, scoring and matching
+algorithms, design and texts are protected. Third-party images keep their
+original licenses as listed in data/thinkers.json and on the /creditos page.
+
+You may read the code where it is published and use the deployed site as a
+visitor. Without prior written permission from the copyright holder you may
+not copy, redistribute, modify, translate, create derivative works, host a
+copy, use any part commercially, or use the content to train or feed AI
+systems. The work is provided "as is", without warranty of any kind.
