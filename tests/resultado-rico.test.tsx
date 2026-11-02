@@ -44,6 +44,6 @@ test('escolas próximas mostram a família de cada uma na cor dela', () => {
     const card = container.querySelector(`[data-escola="${school.id}"]`) as HTMLElement;
     const familia = familias.get(escolas.get(school.id)!.familyId)!;
     expect(card.textContent).toContain(familia.name);
-    expect(card.style.getPropertyValue('--brand')).toBe(familia.color);
+    expect(card.style.getPropertyValue('--brand-strong')).toBe(familia.color);
   }
 });

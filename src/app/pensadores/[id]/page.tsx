@@ -44,7 +44,7 @@ async function Pensador({ params }: { params: PageProps<'/pensadores/[id]'>['par
           <h1 className="font-display text-4xl font-bold text-brand sm:text-5xl">{t.name}</h1>
           <p className="mt-1 text-mute">{t.descriptor} · {t.years}</p>
           {escola && (
-            <Link href={`/escolas/${escola.id}`} className="mt-3 inline-block rounded-full bg-brand px-3 py-1 text-xs font-semibold text-white">
+            <Link href={`/escolas/${escola.id}`} className="mt-3 inline-block rounded-full bg-brand-strong px-3 py-1 text-xs font-semibold text-white">
               {escola.name}
             </Link>
           )}
@@ -67,7 +67,7 @@ async function Pensador({ params }: { params: PageProps<'/pensadores/[id]'>['par
           {parecidos('thinker', t.id, 4).map(p => {
             const o = getThinkers().find(x => x.id === p.id)!;
             return (
-              <Link key={o.id} href={`/pensadores/${o.id}`} className="press flex items-center gap-3 rounded-2xl bg-tile p-3 hover:bg-brand-soft">
+              <Link key={o.id} href={`/pensadores/${o.id}`} className="press flex min-w-0 items-center gap-3 rounded-2xl bg-tile p-3 hover:bg-brand-soft">
                 <Retrato thinker={o} size={48} />
                 <div className="min-w-0 flex-1"><p className="font-semibold">{o.name}</p><p className="truncate text-sm text-mute">{o.descriptor}</p></div>
                 <span className="font-display font-bold text-brand">{Math.round(p.score)}%</span>

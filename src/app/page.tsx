@@ -21,10 +21,10 @@ export default function Home() {
               descobre a escola filosófica e os pensadores mais parecidos com você, e ganha um card pronto pro story.
             </p>
             <div className="arrive mt-7 flex flex-wrap gap-3" style={{ '--d': '160ms' } as CSSProperties}>
-              <Link href="/quiz" className="press group rounded-full bg-deep px-6 py-3.5 font-semibold text-white">
+              <Link href="/quiz" className="press group brilho rounded-full px-6 py-3.5 font-semibold">
                 Descobrir minha filosofia <span className="nudge">→</span>
               </Link>
-              <a href="#eixos" className="press rounded-full border-2 border-deep px-6 py-3 font-semibold text-deep hover:bg-tile">Ver os 8 eixos</a>
+              <a href="#eixos" className="press rounded-full border-2 border-line px-6 py-3 font-semibold text-ink hover:bg-tile">Ver os 8 eixos</a>
             </div>
             <ul className="arrive mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm text-mute [&>li]:before:mr-2 [&>li]:before:content-['•']" style={{ '--d': '220ms' } as CSSProperties}>
               <li>Grátis</li>

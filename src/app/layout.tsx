@@ -1,14 +1,15 @@
 import { Analytics } from '@vercel/analytics/next';
 import type { Metadata } from 'next';
 import Script from 'next/script';
-import { Bricolage_Grotesque, Inter } from 'next/font/google';
+import { Manrope, Unbounded } from 'next/font/google';
+import { CeuEstrelado } from '@/components/CeuEstrelado';
 import { SiteFooter } from '@/components/SiteFooter';
 import { TrackClicks } from '@/components/TrackClicks';
 import { SITE_NAME, SITE_URL } from '@/lib/site';
 import './globals.css';
 
-const inter = Inter({ variable: '--font-inter', subsets: ['latin'] });
-const bricolage = Bricolage_Grotesque({ variable: '--font-bricolage', subsets: ['latin'] });
+const manrope = Manrope({ variable: '--font-manrope', subsets: ['latin'] });
+const unbounded = Unbounded({ variable: '--font-unbounded', subsets: ['latin'], weight: ['400', '500', '600', '700'] });
 
 // Google Analytics é opcional: só entra se o ID estiver configurado na Vercel.
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
@@ -21,8 +22,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
-    <html lang="pt-BR" className={`${inter.variable} ${bricolage.variable} h-full antialiased`}>
+    <html lang="pt-BR" className={`${manrope.variable} ${unbounded.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col font-sans">
+        <CeuEstrelado />
         {children}
         <SiteFooter />
         <TrackClicks />

@@ -150,7 +150,7 @@ export function QuizRunner({ formato, pool, axes = [] }: { formato: Formato; poo
 
         <div className="relative mb-4 flex flex-wrap gap-2">
           <span className="inline-flex items-center gap-2 rounded-full bg-brand-soft py-1 pl-1 pr-3 text-sm font-semibold text-brand">
-            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-brand text-white"><IconeEixo aria-hidden size={13} /></span>
+            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-brand-strong text-white"><IconeEixo aria-hidden size={13} /></span>
             {eixo?.name ?? q.axis}
           </span>
           <button

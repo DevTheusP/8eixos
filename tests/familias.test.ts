@@ -13,7 +13,11 @@ test('toda família tem cor-base e versão pastel', () => {
 
 test('o estilo da família troca as cores da marca na página', () => {
   const virtude = getFamilies().find(f => f.id === 'virtude')!;
-  expect(familyStyle(virtude)).toEqual({ '--brand': virtude.color, '--brand-soft': virtude.soft });
+  const st = familyStyle(virtude);
+  // No céu escuro: a cor pura fica pros blocos cheios, e a versão clareada pra texto e destaque.
+  expect(st['--brand-strong']).toBe(virtude.color);
+  expect(st['--brand']).toBe(`color-mix(in srgb, ${virtude.color} 62%, white)`);
+  expect(st['--brand-soft']).toBe(`color-mix(in srgb, ${virtude.color} 30%, transparent)`);
 });
 
 test('resultado estoico vem com a cor da família da virtude', () => {

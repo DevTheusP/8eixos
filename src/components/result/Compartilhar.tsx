@@ -44,7 +44,7 @@ export function Compartilhar({ params, escola, score, pensador }: { params: stri
 
   return (
     <div className="flex flex-wrap items-center gap-3">
-      <button type="button" onClick={compartilhar} className="press inline-flex items-center gap-2 rounded-xl bg-brand px-4 py-2.5 text-sm font-semibold text-white">
+      <button type="button" onClick={compartilhar} className="press inline-flex items-center gap-2 rounded-xl brilho px-4 py-2.5 text-sm font-semibold">
         <Share2 aria-hidden size={16} /> Compartilhar no story
       </button>
       <a

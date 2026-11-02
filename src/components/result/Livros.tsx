@@ -20,7 +20,7 @@ export function Livros({ thinkerIds, title }: { thinkerIds: string[]; title?: st
           className="lift press group flex gap-4 rounded-2xl bg-tile p-4"
         >
           {/* Capa desenhada: lombada escura e título na cor da marca, no lugar de foto de capa. */}
-          <span aria-hidden className="relative flex h-28 w-20 flex-none flex-col justify-end overflow-hidden rounded-md rounded-l-sm bg-brand p-2 shadow-[0_10px_20px_-12px_rgb(23_26_46_/_0.6)]">
+          <span aria-hidden className="relative flex h-28 w-20 flex-none flex-col justify-end overflow-hidden rounded-md rounded-l-sm bg-brand-strong p-2 shadow-[0_10px_20px_-12px_rgb(23_26_46_/_0.6)]">
             <span className="absolute inset-y-0 left-0 w-1.5 bg-black/20" />
             <span className="line-clamp-4 font-display text-[11px] font-bold leading-tight text-white">{book.title}</span>
           </span>

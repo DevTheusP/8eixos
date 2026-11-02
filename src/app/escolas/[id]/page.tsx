@@ -38,7 +38,7 @@ async function Escola({ params }: { params: PageProps<'/escolas/[id]'>['params']
   return (
     <article className="space-y-5" style={familyStyle(familia)}>
       <header className="rounded-3xl bg-brand-soft p-6 sm:p-8">
-        <span className="inline-block rounded-full bg-brand px-3 py-1 text-xs font-semibold text-white">{familia.name}</span>
+        <span className="inline-block rounded-full bg-brand-strong px-3 py-1 text-xs font-semibold text-white">{familia.name}</span>
         <h1 className="mt-3 font-display text-4xl font-bold text-brand sm:text-5xl">{s.name}</h1>
         <blockquote className="mt-4 text-lg text-brand sm:text-xl">“{s.quote}”</blockquote>
         <p className="mt-4">{s.summary}</p>

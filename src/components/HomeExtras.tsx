@@ -110,7 +110,7 @@ export function PreviaResultado() {
       <h2 className="font-display text-3xl font-bold sm:text-4xl">Veja como fica o seu resultado</h2>
       <p className="mt-2 max-w-2xl text-mute">Um exemplo de verdade: alguém que respondeu como um estoico. O seu vem na cor da sua escola.</p>
       <div className="relative mt-6 rounded-[28px] border border-line bg-bg p-4 sm:p-6" style={familyStyle(r.school.family)}>
-        <span className="absolute -top-3 left-6 rounded-full bg-deep px-3 py-1 text-xs font-semibold text-white">Exemplo</span>
+        <span className="absolute -top-3 left-6 rounded-full brilho px-3 py-1 text-xs font-semibold">Exemplo</span>
         <div className="pointer-events-none space-y-4 select-none" aria-hidden>
           <Hero result={r} params={vectorToParams(r.vector)} />
           <div className="rounded-3xl border border-line bg-card p-5"><Eixos vector={r.vector} ids={['controle', 'bemviver', 'guia']} /></div>
@@ -133,7 +133,7 @@ export function ComoFunciona() {
       <ol className="mt-6 grid gap-4 sm:grid-cols-3">
         {PASSOS.map((p, i) => (
           <li key={p.titulo} className="rounded-2xl border border-line bg-card p-5">
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-brand font-display font-bold text-white">{i + 1}</span>
+            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-strong font-display font-bold text-white">{i + 1}</span>
             <p className="mt-3 font-semibold">{p.titulo}</p>
             <p className="mt-1 text-sm text-mute">{p.texto}</p>
           </li>

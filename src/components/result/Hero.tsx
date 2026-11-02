@@ -10,7 +10,7 @@ export function Hero({ result, params, share }: { result: Result; params: string
   const pct = Math.max(0, Math.min(100, score));
   return (
     <section id="escola" className="grid scroll-mt-20 gap-4 lg:grid-cols-[1fr_15rem]">
-      <div className="arrive relative overflow-hidden rounded-3xl bg-brand p-6 text-white sm:p-8" style={{ '--d': '80ms' } as CSSProperties}>
+      <div className="arrive relative overflow-hidden rounded-3xl bg-brand-strong p-6 text-white sm:p-8" style={{ '--d': '80ms' } as CSSProperties}>
         <span aria-hidden className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-white/10" />
         <span aria-hidden className="pointer-events-none absolute -bottom-24 right-24 h-40 w-40 rounded-full bg-white/5" />
         <span className="relative inline-block rounded-full bg-white/15 px-3 py-1 text-xs font-semibold">{family.name}</span>

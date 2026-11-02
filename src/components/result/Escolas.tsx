@@ -29,7 +29,7 @@ export function Escolas({ result }: { result: Result }) {
                   <span className="font-semibold text-brand">Ver escola <span className="nudge">→</span></span>
                   <span className="font-display font-bold text-brand">{Math.round(score)}%</span>
                 </span>
-                <span className="mt-1.5 block h-1.5 overflow-hidden rounded-full bg-white/70">
+                <span className="mt-1.5 block h-1.5 overflow-hidden rounded-full bg-track">
                   <span className="block h-full rounded-full bg-brand" style={{ width: `${Math.max(0, Math.min(100, score))}%` } as CSSProperties} />
                 </span>
               </span>

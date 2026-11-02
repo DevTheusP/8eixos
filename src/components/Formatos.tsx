@@ -1,59 +1,82 @@
-import { Target, Telescope, Timer, Zap } from 'lucide-react';
 import Link from 'next/link';
 import type { CSSProperties } from 'react';
 import { FORMATOS, type Formato } from '@/lib/selection';
 
 const ORDEM: Formato[] = ['curta', 'completa', 'profunda'];
-const ICONES = { curta: Zap, completa: Target, profunda: Telescope };
 const NIVEL = { curta: 1, completa: 2, profunda: 3 };
+
+// Cada formato é uma constelação: quanto mais perguntas, mais estrelas. [x, y, raio] e ligações por índice.
+const CEU: Record<Formato, { estrelas: [number, number, number][]; linhas: [number, number][] }> = {
+  curta: {
+    estrelas: [[60, 100, 3], [120, 60, 2.5], [190, 80, 3.2], [240, 40, 2.4]],
+    linhas: [[0, 1], [1, 2], [2, 3]],
+  },
+  completa: {
+    estrelas: [[40, 110, 2.6], [85, 75, 3], [130, 95, 2.4], [160, 45, 3.6], [210, 60, 2.8], [250, 25, 2.2], [235, 110, 2.6], [175, 125, 2.2]],
+    linhas: [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [4, 6], [2, 7]],
+  },
+  profunda: {
+    estrelas: [[30, 60, 2.2], [70, 40, 3], [100, 80, 2.6], [60, 115, 2], [150, 70, 3.6], [175, 30, 2.4], [225, 22, 2], [190, 105, 2.6], [240, 90, 3], [270, 50, 2.2], [255, 130, 2.4]],
+    linhas: [[0, 1], [1, 2], [2, 3], [2, 4], [4, 5], [5, 6], [4, 7], [7, 8], [8, 9], [8, 10]],
+  },
+};
+
+function Constelacao({ f, acesa }: { f: Formato; acesa: boolean }) {
+  const { estrelas, linhas } = CEU[f];
+  return (
+    <svg viewBox="0 0 300 150" aria-hidden className="constelacao -mx-1 -mt-1 h-32 w-full" data-acesa={acesa}>
+      {linhas.map(([a, b]) => (
+        <line key={`${a}-${b}`} x1={estrelas[a][0]} y1={estrelas[a][1]} x2={estrelas[b][0]} y2={estrelas[b][1]} />
+      ))}
+      {estrelas.map(([x, y, r], i) => (
+        <circle key={i} cx={x} cy={y} r={r} style={{ animationDelay: `${-(i * 0.7) % 3}s` }} />
+      ))}
+    </svg>
+  );
+}
 
 // Os três formatos do quiz lado a lado. Usado na home e na página /quiz.
 export function Formatos() {
   return (
     <>
-      <div className="mt-6 grid gap-4 md:grid-cols-3">
+      <div className="mt-8 grid gap-5 md:grid-cols-3">
         {ORDEM.map((f, i) => {
           const info = FORMATOS[f];
-          const Icone = ICONES[f];
           const destaque = info.recomendado;
           return (
             <article
               key={f}
               style={{ '--d': `${180 + i * 80}ms` } as CSSProperties}
-              className={`arrive lift flex flex-col rounded-3xl border p-6 ${destaque ? 'sheen border-transparent bg-deep text-white shadow-xl' : 'border-line bg-card'}`}
+              className={`arrive lift press group vidro relative flex flex-col rounded-[28px] p-6 ${destaque ? 'border-brand/60 shadow-[0_30px_80px_-30px_rgb(140_110_255_/_0.7)]' : ''}`}
             >
+              <Constelacao f={f} acesa={destaque} />
               <div className="flex items-center justify-between">
-                <span className={`flex items-center gap-2 text-xs font-semibold ${destaque ? 'text-amber-soft' : 'text-amber'}`}>
-                  <Icone aria-hidden size={16} strokeWidth={2.4} />
-                  {info.titulo}
-                </span>
-                {destaque && <span className="rounded-full bg-card px-3 py-1 text-xs font-semibold text-ink">Recomendada</span>}
+                <span className="text-sm font-bold text-amber">{info.titulo}</span>
+                {destaque && <span className="brilho rounded-full px-3 py-1 text-xs font-extrabold">Recomendada</span>}
               </div>
-              <p className="mt-4 flex items-baseline gap-2">
-                <span className="font-display text-6xl font-bold">{info.perguntas}</span>
-                <span className="text-lg">perguntas</span>
+              <p className="mt-2 flex items-baseline gap-2">
+                <span className="font-display text-5xl font-bold">{info.perguntas}</span>
+                <span className="text-mute">perguntas</span>
               </p>
-              <p className={`mt-3 flex-1 ${destaque ? 'text-white/80' : 'text-mute'}`}>{info.descricao}</p>
-              <div className={`mt-4 flex items-center gap-4 border-t pt-4 text-sm ${destaque ? 'border-white/20 text-white/80' : 'border-line text-mute'}`}>
-                <span className="flex items-center gap-1.5"><Timer aria-hidden size={14} /> Aprox. {info.minutos} min</span>
-                <span className="flex items-center gap-1.5" aria-label={`Profundidade ${NIVEL[f]} de 3`}>
-                  Profundidade
-                  {[1, 2, 3].map(n => (
-                    <span key={n} className={`h-1.5 w-4 rounded-full ${n <= NIVEL[f] ? (destaque ? 'bg-amber-soft' : 'bg-amber') : (destaque ? 'bg-white/20' : 'bg-track')}`} />
-                  ))}
+              <p className="mt-3 flex-1 text-mute">{info.descricao}</p>
+              <div className="mt-5 flex items-center justify-between border-t border-line pt-4 text-sm text-mute">
+                <span>Aprox. {info.minutos} min</span>
+                <span aria-label={`Profundidade ${NIVEL[f]} de 3`} className="tracking-[3px] text-amber">
+                  {'✦'.repeat(NIVEL[f])}<span className="opacity-25">{'✦'.repeat(3 - NIVEL[f])}</span>
                 </span>
               </div>
+              {/* O link cobre o cartão inteiro (after:inset-0), mas o texto dele fica no botão. */}
               <Link
                 href={`/quiz/${f}`}
-                className={`press group mt-5 rounded-full px-5 py-3 text-center font-semibold ${destaque ? 'bg-card text-ink' : 'bg-deep text-white'}`}
+                className={`mt-5 rounded-full px-5 py-3 text-center font-bold transition-colors after:absolute after:inset-0 after:rounded-[28px] ${destaque ? 'brilho' : 'border border-line bg-tile group-hover:bg-tile-strong'}`}
               >
-                Começar versão {info.titulo.toLowerCase()} <span className="nudge">→</span>
+                Começar versão {info.titulo.toLowerCase()}
               </Link>
             </article>
           );
         })}
       </div>
-      <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-mute [&>li]:before:mr-2 [&>li]:before:content-['•']">
+      <ul className="mt-7 flex flex-wrap justify-center gap-x-7 gap-y-2 text-sm text-mute [&>li]:before:mr-2 [&>li]:before:text-amber [&>li]:before:content-['✦']">
         <li>Os três formatos medem os mesmos 8 eixos</li>
         <li>Anônimo, sem cadastro</li>
         <li>Resultado imediato</li>

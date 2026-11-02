@@ -1,26 +1,28 @@
 @import "tailwindcss";
 
-/* Paleta índigo: fundo frio bem claro, índigo como marca, menta e âmbar como acentos.
-   No resultado e nas páginas de escola, a cor da marca é trocada pela cor da família (lib/family-theme.ts). */
+/* Céu estrelado: noite azul-violeta, vidro translúcido nos cartões, dourado e lilás como acentos.
+   No resultado e nas páginas de escola, a cor da marca vira a cor da família (lib/family-theme.ts). */
 :root {
-  --bg: #f2f3f8;
-  --card: #fafbfe;
-  --line: #dfe2ee;
-  --ink: #171a2e;
-  --mute: #636780;
-  --brand: #3f48a8;
-  --brand-soft: #e0e3f8;
-  --mint: #2a9d7b;
-  --amber: #e0853a;
-  --amber-soft: #f5cfa9;
-  --amber-faint: #fbe9d7;
-  --deep: #1b1e3d;
-  --tile: #ecedf6;
-  --tile-strong: #e5e7f3;
-  --track: #dde0ef;
+  --bg: #070a1f;
+  --card: rgb(18 22 58 / 0.62);
+  --line: rgb(180 190 255 / 0.16);
+  --ink: #eef0ff;
+  --mute: #a7acd6;
+  --brand: #a493ff;
+  --brand-soft: rgb(164 147 255 / 0.16);
+  --brand-strong: #5b46d6;
+  --mint: #5ef2c0;
+  --amber: #ffd98a;
+  --amber-soft: #ffe7b8;
+  --amber-faint: rgb(255 217 138 / 0.12);
+  --deep: #6a55e8;
+  --tile: rgb(255 255 255 / 0.05);
+  --tile-strong: rgb(255 255 255 / 0.08);
+  --track: rgb(255 255 255 / 0.13);
 
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
   --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  color-scheme: dark;
 }
 
 @theme inline {
@@ -31,6 +33,7 @@
   --color-mute: var(--mute);
   --color-brand: var(--brand);
   --color-brand-soft: var(--brand-soft);
+  --color-brand-strong: var(--brand-strong);
   --color-mint: var(--mint);
   --color-amber: var(--amber);
   --color-amber-soft: var(--amber-soft);
@@ -39,13 +42,52 @@
   --color-tile: var(--tile);
   --color-tile-strong: var(--tile-strong);
   --color-track: var(--track);
-  --font-sans: var(--font-inter);
-  --font-display: var(--font-bricolage);
+  --font-sans: var(--font-manrope);
+  --font-display: var(--font-unbounded);
 }
 
 body {
   background: var(--bg);
   color: var(--ink);
+}
+
+/* Unbounded é larga: um pouco de aperto nos títulos deixa ela mais elegante. */
+.font-display {
+  letter-spacing: -0.02em;
+}
+
+/* Botão principal: degradê de estrela (dourado, rosa, lilás) com texto escuro. */
+.brilho {
+  background: linear-gradient(90deg, #ffd98a, #ffb4d9 55%, #c3b2ff);
+  color: #1a1030;
+}
+
+/* Cartão de vidro sobre o céu. */
+.vidro {
+  background: var(--card);
+  border: 1px solid var(--line);
+  backdrop-filter: blur(6px);
+}
+
+/* Constelação dos formatos: as linhas se desenham no hover; no recomendado já vêm desenhadas. */
+.constelacao line {
+  stroke: rgb(255 217 138 / 0.6);
+  stroke-width: 1.2;
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  transition: stroke-dashoffset 1.2s var(--ease-out);
+}
+.group:hover .constelacao line,
+.constelacao[data-acesa="true"] line {
+  stroke-dashoffset: 0;
+}
+@keyframes pisca {
+  0%, 100% { opacity: 0.95; }
+  50% { opacity: 0.35; }
+}
+.constelacao circle {
+  fill: #fff;
+  animation: pisca 3s ease-in-out infinite;
 }
 
 /* Feedback de toque: tudo que é clicável afunda um pouco. */
@@ -63,7 +105,8 @@ body {
   }
   .lift:hover {
     transform: translateY(-2px);
-    box-shadow: 0 14px 30px -18px rgb(23 26 46 / 0.28);
+    box-shadow: 0 24px 50px -24px rgb(164 147 255 / 0.45);
+    border-color: rgb(255 217 138 / 0.4);
   }
   .group:hover .nudge {
     transform: translateX(3px);
@@ -195,4 +238,12 @@ body {
   .leque:hover .leque-esq { transform: translateX(-38%) rotate(-12deg); }
   .leque:hover .leque-dir { transform: translateX(38%) rotate(12deg); }
   .leque:hover .leque-meio { transform: translateY(-14px) scale(1.03); }
+}
+
+/* Logo: a estrela gira bem devagar o tempo todo. */
+@keyframes gira {
+  to { rotate: 360deg; }
+}
+.logo-estrela {
+  animation: gira 40s linear infinite;
 }

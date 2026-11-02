@@ -38,7 +38,7 @@ export function Atalhos({ itens }: { itens: Item[] }) {
             <a
               href={`#${it.id}`}
               aria-current={ativo === it.id ? 'true' : undefined}
-              className={`press block rounded-full px-3 py-1.5 text-sm ${ativo === it.id ? 'bg-brand font-semibold text-white' : 'text-mute hover:bg-tile hover:text-ink'}`}
+              className={`press block rounded-full px-3 py-1.5 text-sm ${ativo === it.id ? 'bg-brand-strong font-semibold text-white' : 'text-mute hover:bg-tile hover:text-ink'}`}
             >
               {it.label}
             </a>
