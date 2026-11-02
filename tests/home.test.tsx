@@ -1,5 +1,6 @@
 // @vitest-environment jsdom
 import { render, screen, within } from '@testing-library/react';
+import { existsSync } from 'node:fs';
 import Home from '@/app/page';
 
 test('home com os 3 formatos, só a completa recomendada', () => {
@@ -22,8 +23,10 @@ test('home com os 3 formatos, só a completa recomendada', () => {
 
 test('mostra exemplos de card, o que você descobre e perguntas frequentes', () => {
   const { container } = render(<Home />);
-  const exemplos = [...container.querySelectorAll('.leque img[src^="/api/card?"]')];
+  // Exemplos da home são imagens fixas e leves (npm run exemplos), não geradas na hora.
+  const exemplos = [...container.querySelectorAll('.leque img[src^="/exemplos/"]')];
   expect(exemplos).toHaveLength(3);
+  for (const img of exemplos) expect(existsSync(`public${img.getAttribute('src')}`)).toBe(true);
   expect(screen.getByRole('heading', { name: 'O que você vai descobrir' })).toBeTruthy();
   expect(screen.getByRole('heading', { name: 'Perguntas frequentes' })).toBeTruthy();
   expect(container.querySelectorAll('details').length).toBeGreaterThanOrEqual(5);

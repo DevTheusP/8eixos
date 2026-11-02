@@ -1,10 +1,11 @@
+import Image from 'next/image';
 import type { CSSProperties, ReactNode } from 'react';
 import { InView } from '@/components/InView';
 import type { Result } from '@/lib/result';
 import { Retrato } from '../Retrato';
 
 // Topo do resultado: bloco cheio na cor da família (o mesmo do card de story) e, ao lado, a prévia do card pronto.
-export function Hero({ result, params, share }: { result: Result; params: string; share?: ReactNode }) {
+export function Hero({ result, params, share, cardSrc }: { result: Result; params: string; share?: ReactNode; cardSrc?: string }) {
   const { school, family, score } = result.school;
   const { thinker, score: tScore } = result.thinker;
   const pct = Math.max(0, Math.min(100, score));
@@ -36,14 +37,15 @@ export function Hero({ result, params, share }: { result: Result; params: string
         </div>
       </div>
       <div className="arrive flex items-center gap-4 rounded-3xl bg-brand-soft p-4 lg:flex-col lg:items-stretch" style={{ '--d': '200ms' } as CSSProperties}>
-        {/* eslint-disable-next-line @next/next/no-img-element -- imagem gerada na hora pela rota do card */}
-        <img
+        {/* Otimizador do Next: entrega um WebP pequeno no tamanho da tela em vez do PNG de 1080×1920. */}
+        <Image
           data-card-previa
-          src={`/api/card?${params}`}
+          src={cardSrc ?? `/api/card?${params}`}
           alt={`Card de story: ${school.name}, ${Math.round(score)}% compatível`}
           width={1080}
           height={1920}
-          className="aspect-[9/16] h-auto w-28 flex-none rounded-xl bg-brand/20 object-cover shadow-[0_18px_40px_-20px_rgb(23_26_46_/_0.5)] sm:w-36 lg:w-full"
+          sizes="(min-width: 1024px) 224px, (min-width: 640px) 144px, 112px"
+          className="carregando aspect-[9/16] h-auto w-28 flex-none rounded-xl object-cover text-transparent shadow-[0_18px_40px_-20px_rgb(0_0_0_/_0.6)] sm:w-36 lg:w-full"
         />
         <div className="min-w-0 flex-1 space-y-3">
           <p className="text-sm font-semibold text-brand">Seu card já está pronto pro story</p>

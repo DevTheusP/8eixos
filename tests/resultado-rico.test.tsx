@@ -31,7 +31,9 @@ test('topo do resultado mostra a prévia do card de story com os parâmetros do 
   const r = buildResult(getVectors().schools['estoicismo']);
   const { container } = render(<Hero result={r} params="c=10&b=20" />);
   const img = container.querySelector('img[data-card-previa]') as HTMLImageElement;
-  expect(img.getAttribute('src')).toBe('/api/card?c=10&b=20');
+  // Passa pelo otimizador de imagens (WebP do tamanho da tela), mas a origem é o card do próprio resultado.
+  expect(decodeURIComponent(img.getAttribute('src')!)).toContain('/api/card?c=10&b=20');
+  expect(img.getAttribute('src')).toMatch(/^\/_next\/image\?/);
   expect(screen.getAllByText(r.thinker.thinker.name, { exact: false }).length).toBeGreaterThan(0);
 });
 
