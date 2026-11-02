@@ -38,7 +38,7 @@ export default function LivrosPage() {
             </h2>
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {g.livros.map(b => (
-                <a key={b.id} href={affiliateUrl(b, process.env.NEXT_PUBLIC_AMAZON_TAG)} target="_blank" rel="sponsored noopener noreferrer"
+                <a key={b.id} href={affiliateUrl(b, process.env.NEXT_PUBLIC_AMAZON_TAG)} target="_blank" rel="sponsored noopener noreferrer" data-track="clique_amazon" data-track-livro={b.title}
                   className="press rounded-2xl border border-line bg-card p-4 hover:border-brand">
                   <p className="font-display text-lg font-bold leading-tight">{b.title}</p>
                   <p className="text-sm text-mute">{thinkers.get(b.thinkerId)?.name}{b.year > 0 ? `, ${b.year}` : ''}</p>

@@ -12,6 +12,7 @@ import {
 import { computeVector } from '@/lib/scoring';
 import { selectQuestions, type Formato } from '@/lib/selection';
 import type { AnswerIndex, Axis, Question } from '@/lib/types';
+import { track } from '@/lib/track';
 import { vectorToParams } from '@/lib/url';
 
 type Opcao = { label: string; Icone: LucideIcon; cor: string };
@@ -69,6 +70,7 @@ export function QuizRunner({ formato, pool, axes = [] }: { formato: Formato; poo
     if (isDone(next)) {
       const v = computeVector(next.questionIds.map(id => byId.get(id)!), next.answers);
       clearState(formato);
+      track('quiz_fim', { formato });
       router.push(`/resultado?${vectorToParams(v)}`);
       return;
     }
@@ -80,9 +82,10 @@ export function QuizRunner({ formato, pool, axes = [] }: { formato: Formato; poo
   const choose = useCallback((i: AnswerIndex, teclado = false) => {
     if (!state) return;
     setViaTeclado(teclado);
+    if (Object.keys(state.answers).length === 0) track('quiz_inicio', { formato });
     const marcado = select(state, i);
     commit(auto ? advance(marcado) : marcado);
-  }, [state, auto, commit]);
+  }, [state, auto, commit, formato]);
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {

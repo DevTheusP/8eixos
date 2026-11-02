@@ -3,6 +3,7 @@
 import { Link as LinkIcon, MessageCircle, Share2 } from 'lucide-react';
 import { useState } from 'react';
 import { textoCompartilhar, whatsappUrl } from '@/lib/share';
+import { track } from '@/lib/track';
 
 export function Compartilhar({ params, escola, score, pensador }: { params: string; escola: string; score: number; pensador: string }) {
   const dados = () => ({ escola, score, pensador, url: location.href });
@@ -10,6 +11,7 @@ export function Compartilhar({ params, escola, score, pensador }: { params: stri
 
   async function compartilhar() {
     setStatus('Gerando imagem…');
+    track('compartilhar_story', { escola });
     try {
       const blob = await (await fetch(`/api/card?${params}`)).blob();
       const file = new File([blob], 'minha-filosofia.png', { type: 'image/png' });
@@ -32,6 +34,7 @@ export function Compartilhar({ params, escola, score, pensador }: { params: stri
 
   async function copiarLink() {
     try {
+      track('copiar_link', { escola });
       await navigator.clipboard.writeText(location.href);
       setStatus('Link copiado!');
     } catch {
@@ -49,6 +52,8 @@ export function Compartilhar({ params, escola, score, pensador }: { params: stri
         onClick={e => { e.currentTarget.href = whatsappUrl(dados()); }}
         target="_blank"
         rel="noopener noreferrer"
+        data-track="compartilhar_whatsapp"
+        data-track-escola={escola}
         className="press inline-flex items-center gap-2 rounded-xl border border-brand px-4 py-2.5 text-sm font-semibold text-brand hover:bg-brand-soft"
       >
         <MessageCircle aria-hidden size={16} /> WhatsApp

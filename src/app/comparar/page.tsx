@@ -66,8 +66,8 @@ async function Comparacao({ searchParams }: { searchParams: PageProps<'/comparar
             </div>
           </div>
           <div className="mb-6 flex flex-wrap gap-3">
-            <a href={cardUrl} download="nossa-comparacao.png" className="press rounded-xl bg-brand px-4 py-2.5 text-sm font-semibold text-white">Baixar card da comparação</a>
-            <a href={whatsappComparacao(euNome, outroNome, Math.round(matchScore(eu, outro.vector)))} target="_blank" rel="noopener noreferrer" className="press rounded-xl border border-brand px-4 py-2.5 text-sm font-semibold text-brand">Mandar no WhatsApp</a>
+            <a href={cardUrl} download="nossa-comparacao.png" data-track="baixar_card_comparacao" className="press rounded-xl bg-brand px-4 py-2.5 text-sm font-semibold text-white">Baixar card da comparação</a>
+            <a href={whatsappComparacao(euNome, outroNome, Math.round(matchScore(eu, outro.vector)))} target="_blank" rel="noopener noreferrer" data-track="whatsapp_comparacao" className="press rounded-xl border border-brand px-4 py-2.5 text-sm font-semibold text-brand">Mandar no WhatsApp</a>
           </div>
           <ul className="space-y-4">
             {compareVectors(eu, outro.vector).map(c => {

@@ -15,6 +15,8 @@ export function Livros({ thinkerIds, title }: { thinkerIds: string[]; title?: st
           href={affiliateUrl(book, process.env.NEXT_PUBLIC_AMAZON_TAG)}
           target="_blank"
           rel="sponsored noopener noreferrer"
+          data-track="clique_amazon"
+          data-track-livro={book.title}
           className="lift press group rounded-2xl bg-tile p-4"
         >
           <p className="font-display text-lg font-bold leading-tight">{book.title}</p>
