@@ -60,3 +60,12 @@ test('cor de fundo do card é a cor da família escurecida', async () => {
   expect(escurecer('#ffffff', 0.5)).toBe('#808080');
   expect(escurecer('#2f5d8a', 0)).toBe('#2f5d8a');
 });
+
+test('cada eixo do card mostra o lado pra onde a pessoa pende, mesmo perto do meio', async () => {
+  const { poloDoCard } = await import('@/lib/labels');
+  const { getAxes } = await import('@/lib/data');
+  const controle = getAxes().find(a => a.id === 'controle')!;
+  expect(poloDoCard(controle, 20)).toEqual({ lado: 'A', nome: 'Aceitar', percent: 80, decidido: true });
+  expect(poloDoCard(controle, 56)).toEqual({ lado: 'B', nome: 'Transformar', percent: 56, decidido: false });
+  expect(poloDoCard(controle, 50)).toMatchObject({ nome: 'Aceitar', percent: 50, decidido: false });
+});

@@ -1,5 +1,5 @@
 import { getAxes } from './data';
-import type { Vector } from './types';
+import type { Axis, Vector } from './types';
 
 export type IntensityLabel = 'Equilibrado' | 'Tende' | 'Forte' | 'Muito forte';
 
@@ -24,4 +24,10 @@ export function tracosFortes(v: Vector, n: number) {
       const lado = pole as 'A' | 'B';
       return { axis, pole: lado, percent, label, nome: lado === 'A' ? axis.poleA : axis.poleB, desc: lado === 'A' ? axis.descA : axis.descB };
     });
+}
+
+// No card, cada eixo sempre mostra um lado: o que a pessoa pende, mesmo que pouco. No meio exato, o primeiro polo.
+export function poloDoCard(axis: Axis, v: number) {
+  const lado: 'A' | 'B' = v <= 50 ? 'A' : 'B';
+  return { lado, nome: lado === 'A' ? axis.poleA : axis.poleB, percent: Math.round(Math.max(v, 100 - v)), decidido: intensity(v).pole !== null };
 }

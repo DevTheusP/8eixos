@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import { cardFonts, CORES_EIXO, escurecer, iconeSvg, retratoDataUri } from '@/lib/card-assets';
 import { getAxes, getFamilies } from '@/lib/data';
 import { POLE_ICONS } from '@/lib/icons';
-import { intensity } from '@/lib/labels';
+import { poloDoCard } from '@/lib/labels';
 import { buildResult } from '@/lib/result';
 import { qrDataUri } from '@/lib/share';
 import { SITE_URL } from '@/lib/site';
@@ -81,8 +81,8 @@ export async function GET(req: Request) {
 
         {/* Escola */}
         <div style={{ display: 'flex', marginTop: 64, fontSize: 32, fontWeight: 600, color: TEXTO }}>{r.school.family.name}</div>
-        <div style={{ display: 'flex', fontFamily: 'Bricolage', fontWeight: 800, fontSize: nome.length > 20 ? 72 : nome.length > 12 ? 100 : 124, lineHeight: 1.05, letterSpacing: -2, marginTop: 6 }}>{nome}</div>
-        <div style={{ display: 'flex', alignItems: 'center', marginTop: 34 }}>
+        <div style={{ display: 'flex', fontFamily: 'Bricolage', fontWeight: 800, fontSize: nome.length > 20 ? 72 : nome.length > 12 ? 100 : 124, lineHeight: 1.15, letterSpacing: -2, marginTop: 2 }}>{nome}</div>
+        <div style={{ display: 'flex', alignItems: 'center', marginTop: nome.length > 12 ? 22 : 44 }}>
           <span style={{ display: 'flex', background: 'white', color: fundo, borderRadius: 999, padding: '10px 26px', fontFamily: 'Bricolage', fontWeight: 800, fontSize: 36 }}>
             {`${Math.round(r.school.score)}% compatível`}
           </span>
@@ -111,26 +111,20 @@ export async function GET(req: Request) {
 
           <Painel titulo="Meus 8 eixos">
             {getAxes().map(axis => {
-              const info = intensity(v[axis.id]);
-              const corEixo = info.pole === null ? 'rgba(255,255,255,0.75)' : CORES_EIXO[axis.id];
-              const Icone = POLE_ICONS[axis.id][info.pole ?? (v[axis.id] < 50 ? 'A' : 'B')];
-              const polo = info.pole === null ? 'Equilibrado' : info.pole === 'A' ? axis.poleA : axis.poleB;
-              const forca = info.pole === null ? 0.06 : (info.percent - 50) / 50;
+              const p = poloDoCard(axis, v[axis.id]);
+              const corEixo = CORES_EIXO[axis.id];
+              const destaque = p.decidido ? corEixo : 'white';
+              const Icone = POLE_ICONS[axis.id][p.lado];
               return (
-                <div key={axis.id} style={{ display: 'flex', alignItems: 'center', padding: '9px 0' }}>
-                  <div style={{ display: 'flex', width: 54, height: 54, borderRadius: 16, background: info.pole === null ? 'rgba(255,255,255,0.14)' : corEixo, alignItems: 'center', justifyContent: 'center' }}>
-                    {iconeSvg(Icone, info.pole === null ? 'white' : fundo, 28)}
+                <div key={axis.id} style={{ display: 'flex', alignItems: 'center', padding: '12px 0' }}>
+                  <div style={{ display: 'flex', width: 58, height: 58, borderRadius: 18, background: corEixo, alignItems: 'center', justifyContent: 'center' }}>
+                    {iconeSvg(Icone, fundo, 30)}
                   </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', flex: 1, marginLeft: 18 }}>
-                    <span style={{ fontSize: 24, color: TEXTO }}>{axis.name}</span>
-                    <span style={{ fontSize: 30, fontWeight: 700, color: corEixo, lineHeight: 1.1 }}>{polo}</span>
+                  <span style={{ display: 'flex', flex: 1, margin: '0 12px 0 20px', fontSize: p.nome.length > 11 ? 26 : 33, fontWeight: 600 }}>{p.nome}</span>
+                  <div style={{ display: 'flex', width: 64, flexShrink: 0, height: 10, borderRadius: 999, background: 'rgba(255,255,255,0.16)', marginRight: 12 }}>
+                    <div style={{ display: 'flex', width: `${p.percent}%`, height: 10, borderRadius: 999, background: destaque }} />
                   </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
-                    <span style={{ fontFamily: 'Bricolage', fontWeight: 800, fontSize: 36, color: corEixo }}>{`${info.percent}%`}</span>
-                    <div style={{ display: 'flex', width: 96, height: 8, borderRadius: 999, background: 'rgba(255,255,255,0.14)', marginTop: 4 }}>
-                      <div style={{ display: 'flex', width: `${Math.max(6, forca * 100)}%`, height: 8, borderRadius: 999, background: corEixo }} />
-                    </div>
-                  </div>
+                  <span style={{ display: 'flex', width: 96, flexShrink: 0, justifyContent: 'flex-end', fontFamily: 'Bricolage', fontWeight: 800, fontSize: 42, color: destaque }}>{`${p.percent}%`}</span>
                 </div>
               );
             })}
