@@ -196,7 +196,7 @@ export function Familias() {
             <p className="relative font-display text-lg font-bold text-brand">{f.name}</p>
             <p className="relative mt-3 flex flex-wrap gap-2 text-sm">
               {escolas.filter(s => s.familyId === f.id).map(s => (
-                <Link key={s.id} href={`/escolas/${s.id}`} className="press rounded-full border border-line bg-tile px-3 py-1 font-semibold text-ink hover:bg-tile-strong">{s.name}</Link>
+                <Link key={s.id} href={`/escolas/${s.id}`} className="press rounded-full border border-line bg-tile px-3 py-1.5 font-display text-xs font-medium text-ink hover:bg-tile-strong">{s.name}</Link>
               ))}
             </p>
           </div>

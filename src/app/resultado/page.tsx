@@ -56,7 +56,7 @@ async function Resultado({ searchParams }: { searchParams: PageProps<'/resultado
   const params = vectorToParams(v);
   return (
     <div className="space-y-5" style={familyStyle(result.school.family)}>
-      <LembrarResultado params={params} />
+      <LembrarResultado params={params} resumo={{ escola: result.school.school.name, familia: result.school.family.name, cor: result.school.family.color, score: Math.round(result.school.score) }} />
       <Atalhos itens={ITENS} />
       <div className="min-w-0 space-y-5">
         <div>

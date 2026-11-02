@@ -93,17 +93,25 @@ export function loadState(formato: Formato): QuizState | null {
 
 const ULTIMO = 'quiz:ultimo-resultado';
 
-export function saveLastResult(params: string): void {
+export interface ResumoResultado { escola: string; familia: string; cor: string; score: number }
+
+// Guarda os parâmetros do resultado e um resumo pra home mostrar a escola sem recalcular nada.
+export function saveLastResult(params: string, resumo?: ResumoResultado): void {
   try {
-    localStorage.setItem(ULTIMO, params);
+    localStorage.setItem(ULTIMO, JSON.stringify({ params, resumo }));
   } catch {
     // sem storage: só não lembra o último resultado
   }
 }
 
-export function loadLastResult(): string | null {
+// Aceita também o formato antigo, que guardava só os parâmetros como texto.
+export function loadLastResult(): { params: string; resumo?: ResumoResultado } | null {
   try {
-    return localStorage.getItem(ULTIMO);
+    const raw = localStorage.getItem(ULTIMO);
+    if (!raw) return null;
+    if (!raw.startsWith('{')) return { params: raw };
+    const v = JSON.parse(raw) as { params?: unknown; resumo?: ResumoResultado };
+    return typeof v.params === 'string' ? { params: v.params, resumo: v.resumo } : null;
   } catch {
     return null;
   }
