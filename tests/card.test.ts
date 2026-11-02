@@ -21,3 +21,21 @@ test('card traz QR code apontando pro resultado', async () => {
   const uri = await qrDataUri('https://8eixos.vercel.app/resultado?c=1');
   expect(uri.startsWith('data:image/svg+xml')).toBe(true);
 });
+
+test('retrato do pensador embutido no card (ou nada, se não houver foto)', async () => {
+  const { retratoDataUri } = await import('@/lib/card-assets');
+  const { getThinkers } = await import('@/lib/data');
+  const com = getThinkers().find(t => t.id === 'marco-aurelio')!;
+  const sem = getThinkers().find(t => !t.portrait)!;
+  expect(retratoDataUri(com)?.startsWith('data:image/jpeg;base64,')).toBe(true);
+  expect(retratoDataUri(sem)).toBeNull();
+});
+
+test('ícones do card viram SVG puro (sem componente React)', async () => {
+  const { iconeSvg } = await import('@/lib/card-assets');
+  const { POLE_ICONS } = await import('@/lib/icons');
+  for (const par of Object.values(POLE_ICONS)) {
+    expect(iconeSvg(par.A, '#000', 24)?.type).toBe('svg');
+    expect(iconeSvg(par.B, '#000', 24)?.type).toBe('svg');
+  }
+});
