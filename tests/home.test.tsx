@@ -19,3 +19,14 @@ test('home com os 3 formatos, só a completa recomendada', () => {
   }
   expect(screen.getByRole('heading', { level: 1 }).textContent).toMatch(/Qual é a sua filosofia de vida\?/);
 });
+
+test('mostra exemplos de card, o que você descobre e perguntas frequentes', () => {
+  const { container } = render(<Home />);
+  const exemplos = [...container.querySelectorAll('img[src^="/api/card?"]')];
+  expect(exemplos).toHaveLength(3);
+  expect(screen.getByRole('heading', { name: 'O que você vai descobrir' })).toBeTruthy();
+  expect(screen.getByRole('heading', { name: 'Perguntas frequentes' })).toBeTruthy();
+  expect(container.querySelectorAll('details').length).toBeGreaterThanOrEqual(5);
+  const ld = container.querySelector('script[type="application/ld+json"]');
+  expect(JSON.parse(ld!.textContent!)['@type']).toBe('FAQPage');
+});

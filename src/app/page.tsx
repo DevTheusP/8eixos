@@ -2,6 +2,7 @@ import { Target, Telescope, Timer, Zap } from 'lucide-react';
 import Link from 'next/link';
 import type { CSSProperties } from 'react';
 import { Continuar } from '@/components/Continuar';
+import { Descobre, Exemplos, Faq } from '@/components/HomeExtras';
 import { SiteHeader } from '@/components/SiteHeader';
 import { FORMATOS, type Formato } from '@/lib/selection';
 
@@ -65,6 +66,9 @@ export default function Home() {
           <li>Anônimo, sem cadastro</li>
           <li>Resultado imediato</li>
         </ul>
+        <Exemplos />
+        <Descobre />
+        <Faq />
       </main>
     </>
   );
