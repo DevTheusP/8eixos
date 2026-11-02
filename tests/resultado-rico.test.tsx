@@ -1,0 +1,49 @@
+// @vitest-environment jsdom
+import { render, screen } from '@testing-library/react';
+import { Escolas } from '@/components/result/Escolas';
+import { Hero } from '@/components/result/Hero';
+import { Tracos } from '@/components/result/Tracos';
+import { getFamilies, getSchools, getVectors } from '@/lib/data';
+import { tracosFortes } from '@/lib/labels';
+import { buildResult } from '@/lib/result';
+import { AXIS_IDS, type Vector } from '@/lib/types';
+
+const neutro = Object.fromEntries(AXIS_IDS.map(a => [a, 50])) as Vector;
+
+test('traços fortes: os eixos mais decididos primeiro, sem os equilibrados', () => {
+  const t = tracosFortes({ ...neutro, controle: 20, guia: 95, eu: 58, verdade: 70 }, 3);
+  expect(t.map(x => x.axis.id)).toEqual(['guia', 'controle', 'verdade']);
+  expect(t[0]).toMatchObject({ pole: 'B', nome: 'Emoção', percent: 95, label: 'Muito forte' });
+  expect(t[0].desc).toBe(t[0].axis.descB);
+  expect(t[1].desc).toBe(t[1].axis.descA);
+  expect(tracosFortes(neutro, 3)).toEqual([]);
+});
+
+test('seção de traços mostra a frase de cada polo forte', () => {
+  const v = { ...neutro, controle: 15 };
+  render(<Tracos vector={v} />);
+  const [t] = tracosFortes(v, 3);
+  expect(screen.getByText(t.desc.charAt(0).toUpperCase() + t.desc.slice(1))).toBeTruthy();
+  expect(screen.getByText('Aceitar')).toBeTruthy();
+});
+
+test('topo do resultado mostra a prévia do card de story com os parâmetros do resultado', () => {
+  const r = buildResult(getVectors().schools['estoicismo']);
+  const { container } = render(<Hero result={r} params="c=10&b=20" />);
+  const img = container.querySelector('img[data-card-previa]') as HTMLImageElement;
+  expect(img.getAttribute('src')).toBe('/api/card?c=10&b=20');
+  expect(screen.getAllByText(r.thinker.thinker.name, { exact: false }).length).toBeGreaterThan(0);
+});
+
+test('escolas próximas mostram a família de cada uma na cor dela', () => {
+  const r = buildResult(getVectors().schools['estoicismo']);
+  const { container } = render(<Escolas result={r} />);
+  const familias = new Map(getFamilies().map(f => [f.id, f]));
+  const escolas = new Map(getSchools().map(s => [s.id, s]));
+  for (const { school } of r.otherSchools) {
+    const card = container.querySelector(`[data-escola="${school.id}"]`) as HTMLElement;
+    const familia = familias.get(escolas.get(school.id)!.familyId)!;
+    expect(card.textContent).toContain(familia.name);
+    expect(card.style.getPropertyValue('--brand')).toBe(familia.color);
+  }
+});

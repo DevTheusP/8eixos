@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import type { CSSProperties } from 'react';
-import { Compass, Fingerprint, HeartHandshake, Library, Scale, Users } from 'lucide-react';
+import { Compass, Fingerprint, Gem, HeartHandshake, Library, Scale, Users } from 'lucide-react';
 import { Suspense } from 'react';
 import { SiteHeader } from '@/components/SiteHeader';
 import { Compartilhar } from '@/components/result/Compartilhar';
@@ -15,6 +15,7 @@ import { Lida } from '@/components/result/Lida';
 import { Livros } from '@/components/result/Livros';
 import { Pensadores } from '@/components/result/Pensadores';
 import { Section } from '@/components/result/Section';
+import { Tracos } from '@/components/result/Tracos';
 import { familyStyle } from '@/lib/family-theme';
 import { buildResult } from '@/lib/result';
 import { paramsToVector, vectorToParams } from '@/lib/url';
@@ -38,6 +39,7 @@ export async function generateMetadata({ searchParams }: PageProps<'/resultado'>
 
 const ITENS = [
   { id: 'escola', label: 'Sua escola' },
+  { id: 'tracos', label: 'Traços' },
   { id: 'eixos', label: 'Eixos' },
   { id: 'distincao', label: 'Fora do comum' },
   { id: 'pensadores', label: 'Pensadores' },
@@ -51,9 +53,10 @@ async function Resultado({ searchParams }: { searchParams: PageProps<'/resultado
   const v = paramsToVector(await searchParams);
   if (!v) return <Invalido />;
   const result = buildResult(v);
+  const params = vectorToParams(v);
   return (
     <div className="space-y-5" style={familyStyle(result.school.family)}>
-      <LembrarResultado params={vectorToParams(v)} />
+      <LembrarResultado params={params} />
       <Atalhos itens={ITENS} />
       <div className="min-w-0 space-y-5">
         <div>
@@ -61,7 +64,8 @@ async function Resultado({ searchParams }: { searchParams: PageProps<'/resultado
             Sua filosofia <span className="text-brand">de vida</span>
           </h1>
         </div>
-        <Hero result={result} share={<Compartilhar params={vectorToParams(v)} escola={result.school.school.name} score={result.school.score} pensador={result.thinker.thinker.name} />} />
+        <Hero result={result} params={params} share={<Compartilhar params={params} escola={result.school.school.name} score={result.school.score} pensador={result.thinker.thinker.name} />} />
+        <Section id="tracos" title="Seus traços mais fortes" icon={Gem}><Tracos vector={v} /></Section>
         <Section id="eixos" title="Sua posição em cada eixo" icon={Compass}><Eixos vector={v} /></Section>
         <Section id="distincao" title="Onde você foge do comum" icon={Fingerprint}><Distincao result={result} /></Section>
         <Section id="pensadores" title="Pensadores mais próximos de você" icon={Users}><Pensadores result={result} /></Section>

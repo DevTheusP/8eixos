@@ -112,7 +112,7 @@ export function PreviaResultado() {
       <div className="relative mt-6 rounded-[28px] border border-line bg-bg p-4 sm:p-6" style={familyStyle(r.school.family)}>
         <span className="absolute -top-3 left-6 rounded-full bg-deep px-3 py-1 text-xs font-semibold text-white">Exemplo</span>
         <div className="pointer-events-none space-y-4 select-none" aria-hidden>
-          <Hero result={r} />
+          <Hero result={r} params={vectorToParams(r.vector)} />
           <div className="rounded-3xl border border-line bg-card p-5"><Eixos vector={r.vector} ids={['controle', 'bemviver', 'guia']} /></div>
         </div>
       </div>

@@ -22,7 +22,7 @@ test('home com os 3 formatos, só a completa recomendada', () => {
 
 test('mostra exemplos de card, o que você descobre e perguntas frequentes', () => {
   const { container } = render(<Home />);
-  const exemplos = [...container.querySelectorAll('img[src^="/api/card?"]')];
+  const exemplos = [...container.querySelectorAll('.leque img[src^="/api/card?"]')];
   expect(exemplos).toHaveLength(3);
   expect(screen.getByRole('heading', { name: 'O que você vai descobrir' })).toBeTruthy();
   expect(screen.getByRole('heading', { name: 'Perguntas frequentes' })).toBeTruthy();
