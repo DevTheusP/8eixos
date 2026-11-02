@@ -19,7 +19,21 @@ import { buildResult } from '@/lib/result';
 import { paramsToVector, vectorToParams } from '@/lib/url';
 import { Invalido } from './Invalido';
 
-export const metadata: Metadata = { title: 'Seu resultado', robots: { index: false } };
+export async function generateMetadata({ searchParams }: PageProps<'/resultado'>): Promise<Metadata> {
+  const v = paramsToVector(await searchParams);
+  if (!v) return { title: 'Seu resultado', robots: { index: false } };
+  const r = buildResult(v);
+  const titulo = `${r.school.school.name}: ${Math.round(r.school.score)}% compatível`;
+  const descricao = `Minha filosofia de vida é ${r.school.school.name} e eu penso como ${r.thinker.thinker.name}. Qual é a sua?`;
+  const imagem = { url: `/api/og?${vectorToParams(v)}`, width: 1200, height: 630, alt: titulo };
+  return {
+    title: titulo,
+    description: descricao,
+    robots: { index: false },
+    openGraph: { title: titulo, description: descricao, images: [imagem], type: 'website' },
+    twitter: { card: 'summary_large_image', title: titulo, description: descricao, images: [imagem.url] },
+  };
+}
 
 const ITENS = [
   { id: 'escola', label: 'Sua escola' },
