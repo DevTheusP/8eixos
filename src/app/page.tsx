@@ -1,6 +1,7 @@
 import { Target, Telescope, Timer, Zap } from 'lucide-react';
 import Link from 'next/link';
 import type { CSSProperties } from 'react';
+import { Continuar } from '@/components/Continuar';
 import { SiteHeader } from '@/components/SiteHeader';
 import { FORMATOS, type Formato } from '@/lib/selection';
 
@@ -12,6 +13,7 @@ export default function Home() {
     <>
       <SiteHeader />
       <main className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 sm:py-16">
+        <Continuar />
         <p className="arrive mb-3 text-xs font-semibold text-amber">— Escolha o formato</p>
         <h1 className="arrive font-display text-4xl font-bold leading-tight tracking-tight sm:text-6xl" style={{ '--d': '60ms' } as CSSProperties}>
           Qual é a sua <span className="text-brand">filosofia de vida?</span>

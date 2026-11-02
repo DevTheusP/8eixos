@@ -16,7 +16,7 @@ const pool: Question[] = AX.flatMap(axis => Array.from({ length: 15 }, (_, i) =>
     : { kind: 'likert' as const, text: `${axis} frase ${i}` }),
 })));
 
-beforeEach(() => { sessionStorage.clear(); localStorage.clear(); push.mockReset(); });
+beforeEach(() => { localStorage.clear(); push.mockReset(); });
 
 test('mostra Likert com 5 botões e progresso', async () => {
   const onlyLikert = pool.filter(q => q.kind === 'likert');
@@ -55,7 +55,7 @@ test('ao concluir vai para o resultado e limpa o progresso', async () => {
   render(<QuizRunner formato="curta" pool={pool} />);
   fireEvent.click(await screen.findByRole('button', { name: 'Concordo totalmente' }));
   expect(push).toHaveBeenCalledWith('/resultado?c=0&b=50&s=50&m=50&e=50&r=50&g=50&v=50');
-  expect(sessionStorage.getItem('quiz:curta')).toBeNull();
+  expect(localStorage.getItem('quiz:curta')).toBeNull();
 });
 
 test('mostra o eixo da pergunta e explica no "Entenda"', async () => {

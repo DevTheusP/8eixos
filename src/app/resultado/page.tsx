@@ -10,6 +10,7 @@ import { Escolas } from '@/components/result/Escolas';
 import { CompareForms } from '@/components/CompareForms';
 import { Hero } from '@/components/result/Hero';
 import { Atalhos } from '@/components/result/Atalhos';
+import { LembrarResultado } from '@/components/result/LembrarResultado';
 import { Lida } from '@/components/result/Lida';
 import { Livros } from '@/components/result/Livros';
 import { Pensadores } from '@/components/result/Pensadores';
@@ -52,6 +53,7 @@ async function Resultado({ searchParams }: { searchParams: PageProps<'/resultado
   const result = buildResult(v);
   return (
     <div className="space-y-5" style={familyStyle(result.school.family)}>
+      <LembrarResultado params={vectorToParams(v)} />
       <Atalhos itens={ITENS} />
       <div className="min-w-0 space-y-5">
         <div>
