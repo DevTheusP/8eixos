@@ -52,6 +52,7 @@ export async function GET(req: Request) {
             <span style={{ fontSize: 40, fontWeight: 700, color: cor.brand }}>E a sua, qual é?</span>
             <span style={{ fontSize: 30, color: C.mute, marginTop: 8 }}>{`Aponte a câmera ou acesse ${host}`}</span>
           </div>
+          {/* eslint-disable-next-line @next/next/no-img-element -- imagem dentro do ImageResponse (Satori), não é página */}
           <img src={qr} width={190} height={190} alt="" />
         </div>
       </div>
