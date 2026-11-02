@@ -215,5 +215,47 @@
     "title": "Walden",
     "year": 1854,
     "amazonQuery": "Walden Thoreau"
+  },
+  {
+    "id": "antistenes-1",
+    "thinkerId": "antistenes",
+    "title": "Vidas e doutrinas dos filósofos ilustres",
+    "year": 230,
+    "amazonQuery": "Vidas e doutrinas dos filósofos ilustres Diógenes Laércio"
+  },
+  {
+    "id": "pirro-1",
+    "thinkerId": "pirro",
+    "title": "Vidas e doutrinas dos filósofos ilustres",
+    "year": 230,
+    "amazonQuery": "Vidas e doutrinas dos filósofos ilustres Diógenes Laércio"
+  },
+  {
+    "id": "mencio-1",
+    "thinkerId": "mencio",
+    "title": "Mêncio",
+    "year": -300,
+    "amazonQuery": "Mêncio livro Mencius"
+  },
+  {
+    "id": "espinosa-1",
+    "thinkerId": "espinosa",
+    "title": "Ética",
+    "year": 1677,
+    "amazonQuery": "Ética Espinosa"
+  },
+  {
+    "id": "espinosa-2",
+    "thinkerId": "espinosa",
+    "title": "Tratado teológico-político",
+    "year": 1670,
+    "amazonQuery": "Tratado teológico-político Espinosa"
+  },
+  {
+    "id": "aristipo-1",
+    "thinkerId": "aristipo",
+    "title": "Vidas e doutrinas dos filósofos ilustres",
+    "year": 230,
+    "amazonQuery": "Vidas e doutrinas dos filósofos ilustres Diógenes Laércio"
   }
 ]

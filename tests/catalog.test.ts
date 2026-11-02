@@ -8,8 +8,8 @@ import { AXIS_IDS, type Vector } from '@/lib/types';
 test('catálogo da v1 completo e consistente', () => {
   const schools = getSchools();
   const thinkers = getThinkers();
-  expect(schools).toHaveLength(12);
-  expect(thinkers.length).toBeGreaterThanOrEqual(30);
+  expect(schools).toHaveLength(16);
+  expect(thinkers.length).toBeGreaterThanOrEqual(33);
   const vs = getVectors();
   const familias = new Set(getFamilies().map(f => f.id));
   const ids = new Set(thinkers.map(t => t.id));

@@ -9,9 +9,9 @@ test('pensadores parecidos: os mais próximos, sem o próprio', () => {
   expect(r[0].score).toBeGreaterThanOrEqual(r[3].score);
 });
 
-test('uma página por par de escolas (66), sempre na mesma ordem', () => {
+test('uma página por par de escolas (120), sempre na mesma ordem', () => {
   const ps = vs.generateStaticParams();
-  expect(ps).toHaveLength(66);
+  expect(ps).toHaveLength(120);
   for (const p of ps) expect(p.id < p.outro).toBe(true);
 });
 

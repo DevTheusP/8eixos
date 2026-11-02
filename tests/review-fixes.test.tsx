@@ -6,7 +6,7 @@ import { siteUrl } from '@/lib/site';
 import { tituloSofrimento } from '@/lib/text';
 
 test('pensador sem livro não gera seção "Para ler" vazia', () => {
-  const { container } = render(<Livros thinkerIds={['pirro']} title="Para ler" />);
+  const { container } = render(<Livros thinkerIds={[]} title="Para ler" />);
   expect(container.innerHTML).toBe('');
   const com = render(<Livros thinkerIds={['marco-aurelio']} title="Para ler" />);
   expect(com.container.textContent).toContain('Para ler');

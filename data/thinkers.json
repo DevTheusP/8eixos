@@ -158,7 +158,11 @@
     "years": "c. séc. VI a.C.",
     "schoolId": "taoismo",
     "bio": "Figura lendária a quem se atribui o Tao Te Ching. Ensinava que a água, macia e humilde, vence o que é duro.",
-    "portrait": null
+    "portrait": {
+      "file": "lao-tse.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Zhang_Lu-Laozi_Riding_an_Ox_(cropped).jpg",
+      "license": "Public domain"
+    }
   },
   {
     "id": "zhuangzi",
@@ -167,7 +171,11 @@
     "years": "c. 369–286 a.C.",
     "schoolId": "taoismo",
     "bio": "Contador de histórias e paradoxos que levou o taoísmo ao bom humor. Sonhou que era uma borboleta e acordou sem saber se era um homem que sonhou ser borboleta ou o contrário.",
-    "portrait": null
+    "portrait": {
+      "file": "zhuangzi.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Zhuangzi.png",
+      "license": "Public domain"
+    }
   },
   {
     "id": "agostinho",
@@ -339,7 +347,7 @@
     "name": "Confúcio",
     "descriptor": "Pensador e educador chinês",
     "years": "551–479 a.C.",
-    "schoolId": null,
+    "schoolId": "confucionismo",
     "bio": "Mestre chinês que ensinou a cultivar a virtude pelo estudo, pelo respeito aos rituais e pelos laços de família. Seus ensinamentos moldaram a cultura do Leste Asiático.",
     "portrait": {
       "file": "confucio.webp",
@@ -352,7 +360,7 @@
     "name": "Aristóteles",
     "descriptor": "Filósofo grego",
     "years": "384–322 a.C.",
-    "schoolId": null,
+    "schoolId": "aristotelismo",
     "bio": "Aluno de Platão e professor de Alexandre, o Grande, escreveu sobre quase tudo. Na Ética a Nicômaco, ensinou que a felicidade vem de praticar as virtudes até virarem hábito.",
     "portrait": {
       "file": "aristoteles.webp",
@@ -370,6 +378,45 @@
     "portrait": {
       "file": "thoreau.webp",
       "source": "https://commons.wikimedia.org/wiki/File:Benjamin_D._Maxham_-_Henry_David_Thoreau_-_Restored.jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "mencio",
+    "name": "Mêncio",
+    "descriptor": "Filósofo confuciano chinês",
+    "years": "c. 372–289 a.C.",
+    "schoolId": "confucionismo",
+    "bio": "Principal seguidor de Confúcio, ensinou que todo ser humano nasce com sementes de bondade que precisam ser cultivadas. Viajou aconselhando reis a governar com benevolência e defendeu que o povo pode depor um tirano.",
+    "portrait": {
+      "file": "mencio.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Half_Portraits_of_the_Great_Sage_and_Virtuous_Men_of_Old_-_Meng_Ke_(%E5%AD%9F%E8%BB%BB).jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "espinosa",
+    "name": "Baruch Espinosa",
+    "descriptor": "Filósofo holandês, racionalista",
+    "years": "1632–1677",
+    "schoolId": "espinosismo",
+    "bio": "Filósofo de Amsterdã, expulso da comunidade judaica aos 23 anos, que viveu polindo lentes e escrevendo a Ética. Identificou Deus com a Natureza, defendeu a liberdade de pensamento e leu a Bíblia como documento histórico, o que lhe rendeu fama de herege em vida.",
+    "portrait": {
+      "file": "espinosa.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Baruch_Spinoza_portrait_HAB_original.jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "aristipo",
+    "name": "Aristipo de Cirene",
+    "descriptor": "Filósofo grego, fundador da escola cirenaica",
+    "years": "c. 435–356 a.C.",
+    "schoolId": "hedonismo",
+    "bio": "Discípulo de Sócrates, fundou a escola cirenaica e ensinou que o prazer do momento é o bem supremo. Viveu na corte de Dionísio de Siracusa e ficou famoso por se adaptar a qualquer situação. Resumia sua postura assim: possuo o prazer, mas não sou possuído por ele.",
+    "portrait": {
+      "file": "aristipo.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Aristippus.jpg",
       "license": "Public domain"
     }
   }

@@ -47,7 +47,7 @@ export function buildResult(v: Vector): Result {
     farthestThinkers: rt.slice(-3).reverse().map(r => thinkers.get(r.id)!),
     unusual: mostUnusual(v, catalogo),
     common: mostCommon(v, catalogo),
-    // Tensão compara com o catálogo inteiro (escolas + pensadores): 42 perfis dão uma raridade mais confiável.
+    // Tensão compara com o catálogo inteiro (escolas + pensadores): o dobro de perfis dá uma raridade mais confiável.
     tension: tensao(v, [...catalogo, ...Object.values(vectors.thinkers)]),
   };
 }

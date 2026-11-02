@@ -3,14 +3,14 @@ import Link from 'next/link';
 import type { CSSProperties } from 'react';
 import { Eixos } from '@/components/result/Eixos';
 import { Hero } from '@/components/result/Hero';
-import { getAxes, getFamilies, getSchools, getVectors } from '@/lib/data';
+import { getAxes, getFamilies, getSchools, getThinkers, getVectors } from '@/lib/data';
 import { familyStyle } from '@/lib/family-theme';
 import { POLE_ICONS } from '@/lib/icons';
 import { buildResult } from '@/lib/result';
 import { vectorToParams } from '@/lib/url';
 
 const DESCOBRE = [
-  { Icone: Compass, titulo: 'Sua escola filosófica', texto: 'Entre 12 escolas, da Grécia antiga ao século XX, qual pensa mais parecido com você.' },
+  { Icone: Compass, titulo: 'Sua escola filosófica', texto: `Entre ${getSchools().length} escolas, da Grécia antiga ao século XX, qual pensa mais parecido com você.` },
   { Icone: Users, titulo: 'Pensadores como você', texto: 'De Marco Aurélio a Camus: quem responderia o quiz do mesmo jeito que você.' },
   { Icone: Fingerprint, titulo: 'Sua posição em 8 eixos', texto: 'Aceitar ou transformar, razão ou emoção, certeza ou dúvida, e outros cinco.' },
   { Icone: Zap, titulo: 'Sua combinação rara', texto: 'O par de posições que quase ninguém junta e que diz muito sobre você.' },
@@ -123,7 +123,7 @@ export function PreviaResultado() {
 const PASSOS = [
   { titulo: 'Responda', texto: 'Diga o quanto concorda com frases sobre controle, prazer, sentido, razão e outras grandes perguntas. Não existe resposta certa.' },
   { titulo: 'Veja sua forma', texto: 'Cada resposta puxa um dos 8 eixos pra um lado. No fim, você vê onde fica em cada um.' },
-  { titulo: 'Descubra sua escola', texto: 'Comparamos seu perfil com 12 escolas e 30 pensadores que responderam às mesmas perguntas.' },
+  { titulo: 'Descubra sua escola', texto: `Comparamos seu perfil com ${getSchools().length} escolas e ${getThinkers().length} pensadores que responderam às mesmas perguntas.` },
 ];
 
 export function ComoFunciona() {

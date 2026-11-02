@@ -204,5 +204,70 @@
     "thinkerIds": [
       "viktor-frankl"
     ]
+  },
+  {
+    "id": "aristotelismo",
+    "name": "Aristotelismo",
+    "familyId": "virtude",
+    "quote": "Viro quem eu pratico ser. Cultivo bons hábitos, bons amigos e escolhas pensadas, e a felicidade vem de viver bem.",
+    "summary": "Tradição de Aristóteles que vê a felicidade como uma vida inteira de virtudes praticadas até virarem hábito. Cada virtude é o justo meio entre dois excessos, encontrado pela prudência. Amigos, comunidade política e até a sorte contam para uma vida plena.",
+    "lida": {
+      "sofrimento": "Delibera sobre o que ainda pode ser feito e age. Reconhece que grandes infortúnios ferem até o virtuoso, que os suporta com dignidade sem fingir que não doem.",
+      "morte": "Vê a morte como o limite natural de uma vida que só pode ser julgada por inteiro. Enfrentá-la por uma causa nobre é o ápice da coragem.",
+      "felicidade": "É a eudaimonia: viver e agir bem, com excelência, ao longo da vida toda. Pede virtude, mas também amigos, saúde e recursos suficientes.",
+      "relacoes": "O ser humano é um animal político e precisa de amigos para ser feliz. A amizade mais alta é entre pessoas boas que querem o bem uma da outra."
+    },
+    "thinkerIds": [
+      "aristoteles"
+    ]
+  },
+  {
+    "id": "confucionismo",
+    "name": "Confucionismo",
+    "familyId": "oriente",
+    "quote": "Cultivo a mim mesmo todos os dias para honrar minha família e servir bem à minha comunidade.",
+    "summary": "Tradição chinesa de Confúcio e Mêncio que busca a virtude pelo estudo, pelo ritual e pelos deveres de família e sociedade. Vê a pessoa como parte de uma rede de relações e acredita que o cultivo moral constante, guiado pelos sábios antigos, traz harmonia à comunidade.",
+    "lida": {
+      "sofrimento": "Encara a dificuldade como prova que forja o caráter. Em vez de fugir, volta-se para si, corrige o que pode e segue cumprindo o dever.",
+      "morte": "Honra os mortos com luto e ritos aos ancestrais, mas prefere tratar da vida: 'se ainda não conheço a vida, como conhecer a morte?'.",
+      "felicidade": "Está na alegria de aprender, de praticar o que se aprendeu e de viver em harmonia com a família e os amigos.",
+      "relacoes": "Cada relação tem deveres próprios, de pais e filhos a governantes e povo. A piedade filial é a raiz de toda benevolência."
+    },
+    "thinkerIds": [
+      "confucio",
+      "mencio"
+    ]
+  },
+  {
+    "id": "espinosismo",
+    "name": "Espinosismo",
+    "familyId": "virtude",
+    "quote": "Não quero chorar nem condenar o que me acontece. Quero entender, porque entender me deixa mais livre e mais alegre.",
+    "summary": "A ética de Baruch Espinosa: Deus ou Natureza é tudo o que existe, e ser livre é compreender a necessidade em vez de servir às paixões. A virtude é a própria potência de agir, e a alegria é o sinal de que ela cresce. Recusa a moral da culpa e do medo, critica a superstição e defende a liberdade de pensar.",
+    "lida": {
+      "sofrimento": "Procura entender a causa da tristeza em vez de lutar contra ela. Quando um afeto é compreendido com clareza, ele deixa de dominar você.",
+      "morte": "Pensa pouco nela. O homem livre medita sobre a vida, não sobre a morte, e o que a mente entende do eterno não depende do tempo.",
+      "felicidade": "É o aumento da potência de agir e de compreender. A felicidade não é prêmio por ser virtuoso: é a própria virtude vivida com alegria.",
+      "relacoes": "Nada é mais útil a uma pessoa do que outra pessoa guiada pela razão. Responde ao ódio com generosidade e quer para os outros o bem que quer para si."
+    },
+    "thinkerIds": [
+      "espinosa"
+    ]
+  },
+  {
+    "id": "hedonismo",
+    "name": "Hedonismo",
+    "familyId": "prazer",
+    "quote": "Só o agora é meu: quero gozar o prazer que ele me oferece, sem ser escravo de nada.",
+    "summary": "Escola cirenaica fundada por Aristipo, que via no prazer presente e corporal o único bem. Diferente do epicurismo, não busca a calma nem a ausência de dor: busca o prazer vivo e intenso de cada momento. O passado já foi, o futuro é incerto, e o sábio aprende a desfrutar sem se deixar dominar.",
+    "lida": {
+      "sofrimento": "A dor é um movimento áspero e passageiro, como o prazer. Não adianta antecipá-la nem remoer a que passou.",
+      "morte": "Não é tema central: o que importa é o prazer que ainda se pode viver. A vida vale pelo que oferece agora.",
+      "felicidade": "Não é tranquilidade, é prazer vivo e positivo, de preferência do corpo. A felicidade é só a soma desses momentos.",
+      "relacoes": "Amigos e amores são fonte de prazer e de ajuda, e valem por isso. Aristipo gozava da companhia sem se prender a ninguém."
+    },
+    "thinkerIds": [
+      "aristipo"
+    ]
   }
 ]
