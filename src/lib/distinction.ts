@@ -32,3 +32,24 @@ export function mostCommon(u: Vector, catalog: Vector[]): { axis: AxisId; center
   }
   return { axis: best, centered: Math.abs(u[best] - 50) < 10 };
 }
+
+type Lado = { axis: AxisId; pole: 'A' | 'B' };
+
+// Par de posições marcantes da pessoa que quase ninguém do catálogo combina. Só conta como tensão se for rara (até 25%).
+export function tensao(u: Vector, catalog: Vector[]): { a: Lado; b: Lado; count: number; total: number } | null {
+  const marcantes = AXIS_IDS.filter(ax => Math.abs(u[ax] - 50) >= 15);
+  const lado = (v: number) => (v < 50 ? 'A' : 'B') as 'A' | 'B';
+  let melhor: { a: Lado; b: Lado; count: number; total: number } | null = null;
+  for (let i = 0; i < marcantes.length; i++) {
+    for (let j = i + 1; j < marcantes.length; j++) {
+      const [x, y] = [marcantes[i], marcantes[j]];
+      const count = catalog.filter(p =>
+        Math.abs(p[x] - 50) >= 10 && Math.abs(p[y] - 50) >= 10 && lado(p[x]) === lado(u[x]) && lado(p[y]) === lado(u[y]),
+      ).length;
+      if (!melhor || count < melhor.count) {
+        melhor = { a: { axis: x, pole: lado(u[x]) }, b: { axis: y, pole: lado(u[y]) }, count, total: catalog.length };
+      }
+    }
+  }
+  return melhor && melhor.count / melhor.total <= 0.25 ? melhor : null;
+}
