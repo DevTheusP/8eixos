@@ -3,6 +3,7 @@ import type { CSSProperties } from 'react';
 import { Continuar } from '@/components/Continuar';
 import { ComoFunciona, Descobre, Familias, Faq, LequeCards, OitoEixos, PreviaResultado } from '@/components/HomeExtras';
 import { SiteHeader } from '@/components/SiteHeader';
+import { Transparencia } from '@/components/Transparencia';
 import { Formatos } from '@/components/Formatos';
 
 export default function Home() {
@@ -46,6 +47,7 @@ export default function Home() {
           <p className="mt-2 text-mute">Quanto mais perguntas, mais detalhado o resultado.</p>
           <Formatos />
         </section>
+        <Transparencia />
         <Faq />
       </main>
     </>
