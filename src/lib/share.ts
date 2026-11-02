@@ -1,4 +1,5 @@
 import QRCode from 'qrcode';
+import { SITE_URL } from './site';
 
 type Dados = { escola: string; score: number; pensador: string; url: string };
 
@@ -14,4 +15,8 @@ export function whatsappUrl(d: Dados): string {
 export async function qrDataUri(url: string, cor = '#171a2e'): Promise<string> {
   const svg = await QRCode.toString(url, { type: 'svg', margin: 1, color: { dark: cor, light: '#ffffff' } });
   return `data:image/svg+xml;base64,${Buffer.from(svg).toString('base64')}`;
+}
+
+export function whatsappComparacao(eu: string, outro: string, score: number): string {
+  return `https://wa.me/?text=${encodeURIComponent(`${eu} e ${outro}: ${score}% compatíveis na filosofia de vida. Faça o quiz e compare com a gente: ${SITE_URL}`)}`;
 }
