@@ -180,3 +180,19 @@ body {
     display: none;
   }
 }
+
+/* Cards do topo da home: flutuam devagar, cada um no seu ritmo, e abrem em leque no hover. */
+@keyframes flutuar {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -10px; }
+}
+.leque-card {
+  transition: transform 450ms var(--ease-out);
+  animation: flutuar 6s var(--ease-in-out) infinite;
+  animation-delay: var(--f, 0s);
+}
+@media (hover: hover) and (pointer: fine) {
+  .leque:hover .leque-esq { transform: translateX(-38%) rotate(-12deg); }
+  .leque:hover .leque-dir { transform: translateX(38%) rotate(12deg); }
+  .leque:hover .leque-meio { transform: translateY(-14px) scale(1.03); }
+}

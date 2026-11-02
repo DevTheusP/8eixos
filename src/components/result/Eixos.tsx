@@ -7,10 +7,10 @@ import type { Vector } from '@/lib/types';
 
 const CORES = ['var(--brand)', 'var(--mint)', 'var(--amber)'];
 
-export function Eixos({ vector }: { vector: Vector }) {
+export function Eixos({ vector, ids }: { vector: Vector; ids?: string[] }) {
   return (
-    <InView className="grid gap-x-8 gap-y-6 sm:grid-cols-2">
-      {getAxes().map((axis, i) => {
+    <InView className="-mx-3 grid gap-x-8 gap-y-6 overflow-x-clip px-3 sm:grid-cols-2">
+      {getAxes().filter(a => !ids || ids.includes(a.id)).map((axis, i) => {
         const v = vector[axis.id];
         const info = intensity(v);
         const cor = info.pole ? CORES[i % CORES.length] : 'var(--mute)';
