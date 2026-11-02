@@ -6,7 +6,7 @@ export type Vector = Record<AxisId, number>;
 
 export type AnswerIndex = 0 | 1 | 2 | 3 | 4;
 
-export interface Axis { id: AxisId; name: string; poleA: string; poleB: string; param: string }
+export interface Axis { id: AxisId; name: string; poleA: string; poleB: string; param: string; descA: string; descB: string }
 
 export interface Question {
   id: string;

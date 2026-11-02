@@ -161,8 +161,7 @@ export function QuizRunner({ formato, pool, axes = [] }: { formato: Formato; poo
         </div>
         {entenda && eixo && (
           <p className="question-in relative mb-4 rounded-xl bg-tile px-4 py-3 text-sm text-mute">
-            Esta pergunta mede onde você fica entre <strong className="text-ink">{eixo.poleA}</strong> e{' '}
-            <strong className="text-ink">{eixo.poleB}</strong> no eixo {eixo.name.toLowerCase()}. Não existe resposta certa: responda pelo que você pensa de verdade.
+            {explicacao(q, eixo)} Não existe resposta certa: responda pelo que você pensa de verdade.
           </p>
         )}
 
@@ -251,5 +250,19 @@ export function QuizRunner({ formato, pool, axes = [] }: { formato: Formato; poo
       </div>
       <p className="mt-4 hidden text-center text-xs text-mute sm:block">Atalhos: teclas 1 a 5 respondem, Enter avança, Backspace volta.</p>
     </div>
+  );
+}
+
+// Diz pra onde cada resposta puxa, usando a descrição de cada polo do eixo.
+function explicacao(q: Question, eixo: Axis) {
+  const [primeiro, segundo] = q.polarity === 'A'
+    ? [{ nome: eixo.poleA, desc: eixo.descA }, { nome: eixo.poleB, desc: eixo.descB }]
+    : [{ nome: eixo.poleB, desc: eixo.descB }, { nome: eixo.poleA, desc: eixo.descA }];
+  const quando = q.kind === 'forced' ? ['Escolher a frase da esquerda', 'a da direita'] : ['Se você concorda', 'se discorda'];
+  return (
+    <>
+      {quando[0]}, puxa pra <strong className="text-ink">{primeiro.nome}</strong>: {primeiro.desc} E {quando[1]}, pra{' '}
+      <strong className="text-ink">{segundo.nome}</strong>: {segundo.desc}
+    </>
   );
 }
