@@ -57,3 +57,28 @@ test('cartões das famílias na home usam a cor da família no escuro, sem o fun
     expect(card.style.background).not.toContain(f.soft);
   }
 });
+
+test('distinção explica em frase completa o que é incomum e o que é comum', async () => {
+  const { textoIncomum, textoComum } = await import('@/components/result/Distincao');
+  expect(textoIncomum('mundo', 'B', 94)).toBe('No eixo Mundo, você puxa mais para hostil do que 94% das escolas.');
+  expect(textoComum('guia', true)).toBe('No eixo Guia, você fica no meio, entre razão e emoção, como a maioria das escolas.');
+  expect(textoComum('guia', false, 'A')).toBe('No eixo Guia, você puxa para razão na mesma medida que a maioria das escolas.');
+});
+
+test('como você lida mostra os quatro temas da escola', async () => {
+  const { Lida } = await import('@/components/result/Lida');
+  const s = getSchools()[0];
+  render(<Lida school={s} />);
+  for (const t of ['Sofrimento', 'Morte', 'Felicidade', 'Relações']) expect(screen.getByText(t)).toBeTruthy();
+  expect(screen.getByText(s.lida.relacoes)).toBeTruthy();
+});
+
+test('cada eixo diz o que a posição significa', async () => {
+  const { Eixos } = await import('@/components/result/Eixos');
+  const { getAxes } = await import('@/lib/data');
+  const controle = getAxes().find(a => a.id === 'controle')!;
+  const { container } = render(<Eixos vector={{ ...neutro, controle: 15 }} />);
+  const desc = controle.descA.charAt(0).toUpperCase() + controle.descA.slice(1);
+  expect(container.querySelector('[data-axis="controle"]')!.textContent).toContain(desc);
+  expect(container.querySelector('[data-axis="guia"]')!.textContent).toContain('Você fica no meio');
+});
