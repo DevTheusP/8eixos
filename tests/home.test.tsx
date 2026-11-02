@@ -33,3 +33,13 @@ test('mostra exemplos de card, o que você descobre e perguntas frequentes', () 
   const ld = container.querySelector('script[type="application/ld+json"]');
   expect(JSON.parse(ld!.textContent!)['@type']).toBe('FAQPage');
 });
+
+test('seção de transparência com link pro código e pra sugerir correções', async () => {
+  const { SITE_REPO } = await import('@/lib/site');
+  render(<Home />);
+  expect(screen.getByRole('heading', { name: 'Feito à vista de todos' })).toBeTruthy();
+  const hrefs = screen.getAllByRole('link').map(a => a.getAttribute('href'));
+  expect(hrefs).toContain(SITE_REPO);
+  expect(hrefs).toContain(`${SITE_REPO}/issues`);
+  expect(screen.getByText(/não mudam o cálculo/)).toBeTruthy();
+});
