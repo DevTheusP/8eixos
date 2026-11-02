@@ -24,7 +24,7 @@ const CEU: Record<Formato, { estrelas: [number, number, number][]; linhas: [numb
 function Constelacao({ f, acesa }: { f: Formato; acesa: boolean }) {
   const { estrelas, linhas } = CEU[f];
   return (
-    <svg viewBox="0 0 300 150" aria-hidden className="constelacao -mx-1 -mt-1 h-32 w-full" data-acesa={acesa}>
+    <svg viewBox="0 0 300 150" aria-hidden className="constelacao -mx-1 -mt-2 h-20 w-full" data-acesa={acesa}>
       {linhas.map(([a, b]) => (
         <line key={`${a}-${b}`} x1={estrelas[a][0]} y1={estrelas[a][1]} x2={estrelas[b][0]} y2={estrelas[b][1]} />
       ))}
@@ -39,7 +39,7 @@ function Constelacao({ f, acesa }: { f: Formato; acesa: boolean }) {
 export function Formatos() {
   return (
     <>
-      <div className="mt-8 grid gap-5 md:grid-cols-3">
+      <div className="mt-6 grid gap-4 md:grid-cols-3">
         {ORDEM.map((f, i) => {
           const info = FORMATOS[f];
           const destaque = info.recomendado;
@@ -47,7 +47,7 @@ export function Formatos() {
             <article
               key={f}
               style={{ '--d': `${180 + i * 80}ms` } as CSSProperties}
-              className={`arrive lift press group vidro relative flex flex-col rounded-[28px] p-6 ${destaque ? 'border-brand/60 shadow-[0_30px_80px_-30px_rgb(140_110_255_/_0.7)]' : ''}`}
+              className={`arrive lift press group vidro relative flex flex-col rounded-[28px] p-5 ${destaque ? 'border-brand/60 shadow-[0_30px_80px_-30px_rgb(140_110_255_/_0.7)]' : ''}`}
             >
               <Constelacao f={f} acesa={destaque} />
               <div className="flex items-center justify-between">
@@ -55,11 +55,11 @@ export function Formatos() {
                 {destaque && <span className="brilho rounded-full px-3 py-1 text-xs font-extrabold">Recomendada</span>}
               </div>
               <p className="mt-2 flex items-baseline gap-2">
-                <span className="font-display text-5xl font-bold">{info.perguntas}</span>
+                <span className="font-display text-4xl font-bold">{info.perguntas}</span>
                 <span className="text-mute">perguntas</span>
               </p>
-              <p className="mt-3 flex-1 text-mute">{info.descricao}</p>
-              <div className="mt-5 flex items-center justify-between border-t border-line pt-4 text-sm text-mute">
+              <p className="mt-2 flex-1 text-sm text-mute">{info.descricao}</p>
+              <div className="mt-4 flex items-center justify-between border-t border-line pt-3 text-sm text-mute">
                 <span>Aprox. {info.minutos} min</span>
                 <span aria-label={`Profundidade ${NIVEL[f]} de 3`} className="tracking-[3px] text-amber">
                   {'✦'.repeat(NIVEL[f])}<span className="opacity-25">{'✦'.repeat(3 - NIVEL[f])}</span>
@@ -68,7 +68,7 @@ export function Formatos() {
               {/* O link cobre o cartão inteiro (after:inset-0), mas o texto dele fica no botão. */}
               <Link
                 href={`/quiz/${f}`}
-                className={`mt-5 rounded-full px-5 py-3 text-center font-bold transition-colors after:absolute after:inset-0 after:rounded-[28px] ${destaque ? 'brilho' : 'border border-line bg-tile group-hover:bg-tile-strong'}`}
+                className={`mt-4 rounded-full px-5 py-2.5 text-center font-bold transition-colors after:absolute after:inset-0 after:rounded-[28px] ${destaque ? 'brilho' : 'border border-line bg-tile group-hover:bg-tile-strong'}`}
               >
                 Começar versão {info.titulo.toLowerCase()}
               </Link>
@@ -76,7 +76,7 @@ export function Formatos() {
           );
         })}
       </div>
-      <ul className="mt-7 flex flex-wrap justify-center gap-x-7 gap-y-2 text-sm text-mute [&>li]:before:mr-2 [&>li]:before:text-amber [&>li]:before:content-['✦']">
+      <ul className="mt-5 flex flex-wrap justify-center gap-x-7 gap-y-2 text-sm text-mute [&>li]:before:mr-2 [&>li]:before:text-amber [&>li]:before:content-['✦']">
         <li>Os três formatos medem os mesmos 8 eixos</li>
         <li>Anônimo, sem cadastro</li>
         <li>Resultado imediato</li>

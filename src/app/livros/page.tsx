@@ -2,6 +2,7 @@ import { BookOpen } from 'lucide-react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Cta } from '@/components/Cta';
+import { ano, Capa } from '@/components/result/Livros';
 import { SiteHeader } from '@/components/SiteHeader';
 import { affiliateUrl } from '@/lib/books';
 import { getBooks, getFamilies, getSchools, getThinkers } from '@/lib/data';
@@ -36,13 +37,14 @@ export default function LivrosPage() {
               <BookOpen aria-hidden size={20} />
               {g.familia ? <Link href={`/escolas/${g.id}`} className="hover:underline">{g.titulo}</Link> : g.titulo}
             </h2>
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
               {g.livros.map(b => (
                 <a key={b.id} href={affiliateUrl(b, process.env.NEXT_PUBLIC_AMAZON_TAG)} target="_blank" rel="sponsored noopener noreferrer" data-track="clique_amazon" data-track-livro={b.title}
-                  className="press rounded-2xl border border-line bg-card p-4 hover:border-brand">
-                  <p className="font-display text-lg font-bold leading-tight">{b.title}</p>
-                  <p className="text-sm text-mute">{thinkers.get(b.thinkerId)?.name}{b.year > 0 ? `, ${b.year}` : ''}</p>
-                  <p className="mt-2 text-sm font-semibold text-brand">Ver na Amazon</p>
+                  className="press group flex min-w-0 flex-col rounded-2xl bg-tile p-3 transition-colors hover:bg-tile-strong">
+                  <Capa book={b} />
+                  <span className="mt-3 font-bold leading-snug">{b.title}</span>
+                  <span className="mt-0.5 text-sm text-mute">{thinkers.get(b.thinkerId)?.name} · {ano(b.year)}</span>
+                  <span className="mt-auto pt-3 text-sm font-semibold text-brand">Ver na Amazon <span className="nudge">→</span></span>
                 </a>
               ))}
             </div>

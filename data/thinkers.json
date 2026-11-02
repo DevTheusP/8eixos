@@ -110,7 +110,11 @@
     "years": "c. 160–210",
     "schoolId": "ceticismo",
     "bio": "Médico que reuniu por escrito os argumentos do ceticismo antigo. Para ele, opor razões iguais dos dois lados leva à suspensão do juízo e, com ela, à tranquilidade.",
-    "portrait": null
+    "portrait": {
+      "file": "sexto-empirico.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Sextus_Empiricus_-_engraving_by_G._F._Riedel_-_1801.jpg",
+      "license": "Public domain"
+    }
   },
   {
     "id": "montaigne",
@@ -249,7 +253,11 @@
     "years": "1889–1973",
     "schoolId": "existencialismo-cristao",
     "bio": "Filósofo do encontro, da esperança e da fidelidade. Defendia que a vida é um mistério a ser vivido, não um problema a ser resolvido.",
-    "portrait": null
+    "portrait": {
+      "file": "gabriel-marcel.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Gabriel_Marcel_en_1969.jpg",
+      "license": "CC0"
+    }
   },
   {
     "id": "sartre",

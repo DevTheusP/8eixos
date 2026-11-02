@@ -26,7 +26,7 @@ test('retrato do pensador embutido no card (ou nada, se não houver foto)', asyn
   const { retratoDataUri } = await import('@/lib/card-assets');
   const { getThinkers } = await import('@/lib/data');
   const com = getThinkers().find(t => t.id === 'marco-aurelio')!;
-  const sem = getThinkers().find(t => !t.portrait)!;
+  const sem = { ...com, id: 'sem-foto', portrait: null };
   expect(retratoDataUri(com)?.startsWith('data:image/jpeg;base64,')).toBe(true);
   expect(retratoDataUri(sem)).toBeNull();
 });
