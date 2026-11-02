@@ -53,16 +53,23 @@ export function Faq() {
     mainEntity: FAQ.map(f => ({ '@type': 'Question', name: f.p, acceptedAnswer: { '@type': 'Answer', text: f.r } })),
   };
   return (
-    <section className="reveal mt-20">
-      <h2 className="font-display text-3xl font-bold sm:text-4xl">Perguntas frequentes</h2>
-      <div className="mt-6 divide-y divide-line rounded-2xl border border-line bg-card">
-        {FAQ.map(f => (
-          <details key={f.p} className="group p-5">
-            <summary className="flex cursor-pointer list-none items-center justify-between font-semibold">
-              {f.p}
-              <span aria-hidden className="text-brand transition-transform duration-200 group-open:rotate-45">+</span>
+    <section className="reveal mt-24 grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+      <div className="lg:sticky lg:top-24 lg:self-start">
+        <h2 className="font-display text-3xl font-bold sm:text-4xl">Perguntas frequentes</h2>
+        <p className="mt-3 max-w-sm text-mute">O que todo mundo pergunta antes de começar. Ficou alguma dúvida? O quiz responde melhor que a gente.</p>
+        <Link href="/quiz" className="press group brilho mt-6 inline-block rounded-full px-6 py-3 font-bold">
+          Fazer o quiz <span className="nudge">→</span>
+        </Link>
+      </div>
+      <div className="space-y-3">
+        {FAQ.map((f, i) => (
+          <details key={f.p} className="faq group vidro rounded-2xl" style={{ '--d': `${i * 60}ms` } as CSSProperties}>
+            <summary className="flex cursor-pointer list-none items-center gap-4 rounded-2xl p-5 font-semibold">
+              <span aria-hidden className="faq-estrela text-lg text-mute">✦</span>
+              <span className="flex-1">{f.p}</span>
+              <span aria-hidden className="faq-mais flex h-8 w-8 flex-none items-center justify-center rounded-full border border-line text-lg text-brand">+</span>
             </summary>
-            <p className="mt-2 text-mute">{f.r}</p>
+            <p className="faq-resposta px-5 pb-5 pl-14 leading-relaxed text-mute">{f.r}</p>
           </details>
         ))}
       </div>
@@ -184,12 +191,12 @@ export function Familias() {
       </div>
       <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {familias.map(f => (
-          <div key={f.id} className="rounded-2xl p-5" style={{ background: f.soft }}>
-            <span className="block h-6 w-6 rounded-md" style={{ background: f.color }} />
-            <p className="mt-3 font-display text-xl font-bold" style={{ color: f.color }}>{f.name}</p>
-            <p className="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-sm">
+          <div key={f.id} data-familia={f.id} style={familyStyle(f)} className="vidro lift relative overflow-hidden rounded-2xl border-t-4 border-t-brand-strong p-5">
+            <span aria-hidden className="pointer-events-none absolute inset-0 bg-brand-soft opacity-60" />
+            <p className="relative font-display text-lg font-bold text-brand">{f.name}</p>
+            <p className="relative mt-3 flex flex-wrap gap-2 text-sm">
               {escolas.filter(s => s.familyId === f.id).map(s => (
-                <Link key={s.id} href={`/escolas/${s.id}`} className="underline decoration-1 underline-offset-2 hover:opacity-70">{s.name}</Link>
+                <Link key={s.id} href={`/escolas/${s.id}`} className="press rounded-full border border-line bg-tile px-3 py-1 font-semibold text-ink hover:bg-tile-strong">{s.name}</Link>
               ))}
             </p>
           </div>

@@ -47,3 +47,13 @@ test('escolas próximas mostram a família de cada uma na cor dela', () => {
     expect(card.style.getPropertyValue('--brand-strong')).toBe(familia.color);
   }
 });
+
+test('cartões das famílias na home usam a cor da família no escuro, sem o fundo claro antigo', async () => {
+  const { Familias } = await import('@/components/HomeExtras');
+  const { container } = render(<Familias />);
+  for (const f of getFamilies()) {
+    const card = container.querySelector(`[data-familia="${f.id}"]`) as HTMLElement;
+    expect(card.style.getPropertyValue('--brand-strong')).toBe(f.color);
+    expect(card.style.background).not.toContain(f.soft);
+  }
+});
