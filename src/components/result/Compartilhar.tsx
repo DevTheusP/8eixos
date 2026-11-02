@@ -1,9 +1,11 @@
 'use client';
 
-import { Link as LinkIcon, Share2 } from 'lucide-react';
+import { Link as LinkIcon, MessageCircle, Share2 } from 'lucide-react';
 import { useState } from 'react';
+import { textoCompartilhar, whatsappUrl } from '@/lib/share';
 
-export function Compartilhar({ params }: { params: string }) {
+export function Compartilhar({ params, escola, score, pensador }: { params: string; escola: string; score: number; pensador: string }) {
+  const dados = () => ({ escola, score, pensador, url: location.href });
   const [status, setStatus] = useState<string | null>(null);
 
   async function compartilhar() {
@@ -12,7 +14,7 @@ export function Compartilhar({ params }: { params: string }) {
       const blob = await (await fetch(`/api/card?${params}`)).blob();
       const file = new File([blob], 'minha-filosofia.png', { type: 'image/png' });
       if (navigator.canShare?.({ files: [file] })) {
-        await navigator.share({ files: [file], text: 'Descobri minha filosofia de vida. E você?', url: location.href });
+        await navigator.share({ files: [file], text: textoCompartilhar(dados()), url: location.href });
         setStatus(null);
         return;
       }
@@ -42,6 +44,15 @@ export function Compartilhar({ params }: { params: string }) {
       <button type="button" onClick={compartilhar} className="press inline-flex items-center gap-2 rounded-xl bg-brand px-4 py-2.5 text-sm font-semibold text-white">
         <Share2 aria-hidden size={16} /> Compartilhar no story
       </button>
+      <a
+        href={whatsappUrl({ escola, score, pensador, url: '' })}
+        onClick={e => { e.currentTarget.href = whatsappUrl(dados()); }}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="press inline-flex items-center gap-2 rounded-xl border border-brand px-4 py-2.5 text-sm font-semibold text-brand hover:bg-brand-soft"
+      >
+        <MessageCircle aria-hidden size={16} /> WhatsApp
+      </a>
       <button type="button" onClick={copiarLink} className="press inline-flex items-center gap-2 rounded-xl border border-brand px-4 py-2.5 text-sm font-semibold text-brand hover:bg-brand-soft">
         <LinkIcon aria-hidden size={16} /> Copiar link
       </button>

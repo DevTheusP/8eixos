@@ -15,3 +15,9 @@ test('parâmetros inválidos → 400', async () => {
   const res = await GET(new Request('http://x/api/card?c=abc'));
   expect(res.status).toBe(400);
 });
+
+test('card traz QR code apontando pro resultado', async () => {
+  const { qrDataUri } = await import('@/lib/share');
+  const uri = await qrDataUri('https://8eixos.vercel.app/resultado?c=1');
+  expect(uri.startsWith('data:image/svg+xml')).toBe(true);
+});

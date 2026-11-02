@@ -2,8 +2,9 @@ import { ImageResponse } from 'next/og';
 import { getAxes } from '@/lib/data';
 import { intensity } from '@/lib/labels';
 import { buildResult } from '@/lib/result';
+import { qrDataUri } from '@/lib/share';
 import { SITE_URL } from '@/lib/site';
-import { paramsToVector } from '@/lib/url';
+import { paramsToVector, vectorToParams } from '@/lib/url';
 
 const C = { bg: '#f2f3f8', brand: '#3f48a8', brandSoft: '#e0e3f8', ink: '#171a2e', mute: '#636780', tile: '#ecedf6' };
 
@@ -13,6 +14,7 @@ export async function GET(req: Request) {
   const r = buildResult(v);
   const host = new URL(SITE_URL).host;
   const cor = { ...C, brand: r.school.family.color, brandSoft: r.school.family.soft };
+  const qr = await qrDataUri(`${SITE_URL}/resultado?${vectorToParams(v)}`, r.school.family.color);
 
   return new ImageResponse(
     (
@@ -45,9 +47,12 @@ export async function GET(req: Request) {
           })}
         </div>
         <div style={{ display: 'flex', flexGrow: 1 }} />
-        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 34, color: C.mute }}>
-          <span>E a sua, qual é?</span>
-          <span style={{ color: cor.brand, fontWeight: 700 }}>{host}</span>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: 'white', borderRadius: 32, padding: 28 }}>
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <span style={{ fontSize: 40, fontWeight: 700, color: cor.brand }}>E a sua, qual é?</span>
+            <span style={{ fontSize: 30, color: C.mute, marginTop: 8 }}>{`Aponte a câmera ou acesse ${host}`}</span>
+          </div>
+          <img src={qr} width={190} height={190} alt="" />
         </div>
       </div>
     ),

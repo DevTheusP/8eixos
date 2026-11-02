@@ -61,7 +61,7 @@ async function Resultado({ searchParams }: { searchParams: PageProps<'/resultado
             Sua filosofia <span className="text-brand">de vida</span>
           </h1>
         </div>
-        <Hero result={result} share={<Compartilhar params={vectorToParams(v)} />} />
+        <Hero result={result} share={<Compartilhar params={vectorToParams(v)} escola={result.school.school.name} score={result.school.score} pensador={result.thinker.thinker.name} />} />
         <Section id="eixos" title="Sua posição em cada eixo" icon={Compass}><Eixos vector={v} /></Section>
         <Section id="distincao" title="Onde você foge do comum" icon={Fingerprint}><Distincao result={result} /></Section>
         <Section id="pensadores" title="Pensadores mais próximos de você" icon={Users}><Pensadores result={result} /></Section>
