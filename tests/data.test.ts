@@ -10,3 +10,10 @@ test('8 eixos na ordem e com params únicos', () => {
 test('famílias da v1', () => {
   expect(getFamilies().map(f => f.id)).toEqual(['virtude', 'oriente', 'sentido', 'prazer', 'duvida', 'cristas']);
 });
+
+test('cada polo tem uma descrição curta', () => {
+  for (const a of getAxes()) {
+    expect(a.descA.length).toBeGreaterThan(20);
+    expect(a.descB.length).toBeGreaterThan(20);
+  }
+});

@@ -14,6 +14,10 @@ export default function PrivacidadePage() {
           Suas respostas ficam só no seu navegador enquanto você responde. O resultado é guardado apenas como 8 números no
           endereço da página, e é isso que vai junto quando você compartilha o link.
         </p>
+        <p>
+          Medimos visitas e ações como começar o quiz, compartilhar e clicar num livro, de forma anônima e sem cookies de
+          rastreamento (Vercel Analytics), só pra saber o que funciona.
+        </p>
         <p>Os links de livros levam à Amazon, que tem a própria política de privacidade.</p>
       </main>
     </>

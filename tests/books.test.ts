@@ -17,3 +17,10 @@ test('pega só o primeiro livro de cada pensador', () => {
   const dois = [b, { ...b, id: 'm2', title: 'Outro' }];
   expect(booksFor(['marco-aurelio'], dois)).toEqual([{ thinkerId: 'marco-aurelio', book: b }]);
 });
+
+test('capa real do livro quando existe, e nada quando não tem (cai na capa desenhada)', async () => {
+  const { capaDoLivro } = await import('@/lib/books');
+  expect(capaDoLivro('marco-aurelio-1')).toBe('/capas/marco-aurelio-1.webp');
+  expect(capaDoLivro('cioran-1')).toBeNull();
+  expect(capaDoLivro('../../etc/passwd')).toBeNull();
+});

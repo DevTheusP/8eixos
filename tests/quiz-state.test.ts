@@ -1,4 +1,4 @@
-import { advance, answer, back, canSwap, isDone, loadState, saveState, select, swap, type QuizState } from '@/lib/quiz-state';
+import { advance, answer, back, canSwap, isDone, loadLastResult, loadState, saveLastResult, saveState, select, swap, type QuizState } from '@/lib/quiz-state';
 import type { Question } from '@/lib/types';
 
 const base = (): QuizState => ({ formato: 'curta', questionIds: ['a', 'b'], answers: {}, index: 0 });
@@ -21,18 +21,18 @@ test('conclui na última', () => {
 });
 test('salva e carrega do sessionStorage', () => {
   const mem = new Map<string, string>();
-  vi.stubGlobal('sessionStorage', { getItem: (k: string) => mem.get(k) ?? null, setItem: (k: string, v: string) => mem.set(k, v), removeItem: (k: string) => mem.delete(k) });
+  vi.stubGlobal('localStorage', { getItem: (k: string) => mem.get(k) ?? null, setItem: (k: string, v: string) => mem.set(k, v), removeItem: (k: string) => mem.delete(k) });
   saveState(answer(base(), 2));
   expect(loadState('curta')).toMatchObject({ index: 1, answers: { a: 2 } });
   expect(loadState('completa')).toBeNull();
 });
 test('storage indisponível não quebra', () => {
-  vi.stubGlobal('sessionStorage', { getItem() { throw new Error(); }, setItem() { throw new Error(); } });
+  vi.stubGlobal('localStorage', { getItem() { throw new Error(); }, setItem() { throw new Error(); } });
   expect(loadState('curta')).toBeNull();
   expect(() => saveState(base())).not.toThrow();
 });
 test('estado salvo corrompido é ignorado', () => {
-  vi.stubGlobal('sessionStorage', { getItem: () => '{"formato":"curta","questionIds":"x"}', setItem() {} });
+  vi.stubGlobal('localStorage', { getItem: () => '{"formato":"curta","questionIds":"x"}', setItem() {} });
   expect(loadState('curta')).toBeNull();
 });
 
@@ -64,4 +64,19 @@ describe('selecionar, avançar e trocar', () => {
     expect(canSwap(s, pool)).toBe(false);
     expect(swap(s, pool, () => 0)).toEqual(s);
   });
+});
+
+test('progresso sobrevive a fechar a aba (fica no localStorage)', () => {
+  const mem = new Map<string, string>();
+  vi.stubGlobal('localStorage', { getItem: (k: string) => mem.get(k) ?? null, setItem: (k: string, v: string) => mem.set(k, v), removeItem: (k: string) => mem.delete(k) });
+  saveState(answer(base(), 1));
+  expect([...mem.keys()]).toEqual(['quiz:curta']);
+});
+
+test('guarda e devolve o último resultado', () => {
+  const mem = new Map<string, string>();
+  vi.stubGlobal('localStorage', { getItem: (k: string) => mem.get(k) ?? null, setItem: (k: string, v: string) => mem.set(k, v), removeItem: (k: string) => mem.delete(k) });
+  expect(loadLastResult()).toBeNull();
+  saveLastResult('c=1&b=2&s=3&m=4&e=5&r=6&g=7&v=8');
+  expect(loadLastResult()).toBe('c=1&b=2&s=3&m=4&e=5&r=6&g=7&v=8');
 });

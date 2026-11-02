@@ -10,6 +10,16 @@
       "guia": 45,
       "verdade": 66.7
     },
+    "aristotelismo": {
+      "controle": 66.7,
+      "bemviver": 35,
+      "sentido": 26.7,
+      "mundo": 33.3,
+      "eu": 78.3,
+      "rotina": 21.7,
+      "guia": 18.3,
+      "verdade": 28.3
+    },
     "budismo": {
       "controle": 15,
       "bemviver": 36.7,
@@ -40,6 +50,16 @@
       "guia": 45,
       "verdade": 48.3
     },
+    "confucionismo": {
+      "controle": 55,
+      "bemviver": 15,
+      "sentido": 15,
+      "mundo": 26.7,
+      "eu": 86.7,
+      "rotina": 8.3,
+      "guia": 26.7,
+      "verdade": 26.7
+    },
     "cristianismo-agostiniano": {
       "controle": 31.7,
       "bemviver": 15,
@@ -59,6 +79,16 @@
       "rotina": 48.3,
       "guia": 23.3,
       "verdade": 28.3
+    },
+    "espinosismo": {
+      "controle": 43.3,
+      "bemviver": 46.7,
+      "sentido": 45,
+      "mundo": 41.7,
+      "eu": 41.7,
+      "rotina": 41.7,
+      "guia": 13.3,
+      "verdade": 26.7
     },
     "estoicismo": {
       "controle": 23.3,
@@ -89,6 +119,16 @@
       "rotina": 65,
       "guia": 75,
       "verdade": 53.3
+    },
+    "hedonismo": {
+      "controle": 55,
+      "bemviver": 95,
+      "sentido": 75,
+      "mundo": 41.7,
+      "eu": 13.3,
+      "rotina": 78.3,
+      "guia": 73.3,
+      "verdade": 58.3
     },
     "logoterapia": {
       "controle": 61.7,
@@ -141,6 +181,16 @@
       "rotina": 50,
       "guia": 26.7,
       "verdade": 40
+    },
+    "aristipo": {
+      "controle": 53.3,
+      "bemviver": 95,
+      "sentido": 73.3,
+      "mundo": 40,
+      "eu": 13.3,
+      "rotina": 76.7,
+      "guia": 70,
+      "verdade": 56.7
     },
     "aristoteles": {
       "controle": 61.7,
@@ -242,6 +292,16 @@
       "guia": 23.3,
       "verdade": 28.3
     },
+    "espinosa": {
+      "controle": 43.3,
+      "bemviver": 48.3,
+      "sentido": 45,
+      "mundo": 43.3,
+      "eu": 40,
+      "rotina": 41.7,
+      "guia": 13.3,
+      "verdade": 25
+    },
     "gabriel-marcel": {
       "controle": 51.7,
       "bemviver": 23.3,
@@ -291,6 +351,16 @@
       "rotina": 15,
       "guia": 6.7,
       "verdade": 36.7
+    },
+    "mencio": {
+      "controle": 65,
+      "bemviver": 15,
+      "sentido": 13.3,
+      "mundo": 15,
+      "eu": 83.3,
+      "rotina": 20,
+      "guia": 51.7,
+      "verdade": 20
     },
     "montaigne": {
       "controle": 36.7,

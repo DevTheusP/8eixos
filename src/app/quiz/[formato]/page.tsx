@@ -12,7 +12,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps<'/quiz/[formato]'>) {
   const { formato } = await params;
   const info = FORMATOS[formato as Formato];
-  return info ? { title: `Quiz ${info.titulo.toLowerCase()} (${info.perguntas} perguntas)` } : {};
+  return info ? { title: `Versão ${info.titulo.toLowerCase()} (${info.perguntas} perguntas)` } : {};
 }
 
 async function QuizBody({ params }: { params: PageProps<'/quiz/[formato]'>['params'] }) {

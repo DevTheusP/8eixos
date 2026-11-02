@@ -6,11 +6,11 @@ export const FORMATOS: Record<Formato, {
   perguntas: number; porEixo: number; minutos: number; titulo: string; descricao: string; recomendado: boolean;
 }> = {
   curta: {
-    perguntas: 32, porEixo: 4, minutos: 5, titulo: 'Curta',
+    perguntas: 32, porEixo: 4, minutos: 5, titulo: 'Rápida',
     descricao: 'Uma primeira leitura rápida da sua filosofia de vida.', recomendado: false,
   },
   completa: {
-    perguntas: 64, porEixo: 8, minutos: 10, titulo: 'Completa',
+    perguntas: 64, porEixo: 8, minutos: 10, titulo: 'Equilibrada',
     descricao: 'O equilíbrio entre tempo e detalhe. Aproxima melhor você das escolas e dos pensadores.', recomendado: true,
   },
   profunda: {

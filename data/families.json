@@ -1,8 +1,8 @@
 [
-  { "id": "virtude", "name": "Filosofias da virtude" },
-  { "id": "oriente", "name": "Caminhos orientais" },
-  { "id": "sentido", "name": "Filosofias do sentido" },
-  { "id": "prazer", "name": "Filosofias do prazer" },
-  { "id": "duvida", "name": "Filosofias da dúvida" },
-  { "id": "cristas", "name": "Tradições cristãs" }
+  { "id": "virtude", "name": "Filosofias da virtude", "color": "#2f5d8a", "soft": "#dbe6f2" },
+  { "id": "oriente", "name": "Caminhos orientais", "color": "#2f7a5b", "soft": "#d7ece2" },
+  { "id": "sentido", "name": "Filosofias do sentido", "color": "#b4562a", "soft": "#f5e0d4" },
+  { "id": "prazer", "name": "Filosofias do prazer", "color": "#b0365f", "soft": "#f3d9e3" },
+  { "id": "duvida", "name": "Filosofias da dúvida", "color": "#4a4f5c", "soft": "#e0e2e7" },
+  { "id": "cristas", "name": "Tradições cristãs", "color": "#5b3a86", "soft": "#e7dff3" }
 ]

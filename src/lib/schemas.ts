@@ -10,9 +10,12 @@ export const axisSchema = z.object({
   poleA: z.string().min(1),
   poleB: z.string().min(1),
   param: z.string().length(1),
+  descA: z.string().min(1),
+  descB: z.string().min(1),
 });
 
-export const familySchema = z.object({ id: z.string().min(1), name: z.string().min(1) });
+const hex = z.string().regex(/^#[0-9a-fA-F]{6}$/);
+export const familySchema = z.object({ id: z.string().min(1), name: z.string().min(1), color: hex, soft: hex });
 
 export const questionSchema = z.object({
   id: z.string().min(1),

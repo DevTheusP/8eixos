@@ -12,6 +12,7 @@ test('buildResult com catálogo real', () => {
   expect(r.byDimension).toHaveLength(3);
   expect(r.byDimension.map(d => d.thinker.id)).not.toContain(r.thinker.thinker.id);
   expect(r.farthestThinkers).toHaveLength(3);
+  expect(r).toHaveProperty('tension');
 });
 test('buildResult com tudo neutro não quebra', () => {
   const neutro = Object.fromEntries(AXIS_IDS.map(a => [a, 50])) as Vector;

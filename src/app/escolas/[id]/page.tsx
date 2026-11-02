@@ -10,6 +10,7 @@ import { Livros } from '@/components/result/Livros';
 import { Section } from '@/components/result/Section';
 import { getFamilies, getSchools, getThinkers, getVectors } from '@/lib/data';
 import { rank } from '@/lib/matching';
+import { familyStyle } from '@/lib/family-theme';
 import { resumo, tituloSofrimento } from '@/lib/text';
 
 export function generateStaticParams() {
@@ -35,9 +36,9 @@ async function Escola({ params }: { params: PageProps<'/escolas/[id]'>['params']
   const nomes = new Map(getSchools().map(x => [x.id, x.name]));
 
   return (
-    <article className="space-y-5">
+    <article className="space-y-5" style={familyStyle(familia)}>
       <header className="rounded-3xl bg-brand-soft p-6 sm:p-8">
-        <span className="inline-block rounded-full bg-brand px-3 py-1 text-xs font-semibold text-white">{familia.name}</span>
+        <span className="inline-block rounded-full bg-brand-strong px-3 py-1 text-xs font-semibold text-white">{familia.name}</span>
         <h1 className="mt-3 font-display text-4xl font-bold text-brand sm:text-5xl">{s.name}</h1>
         <blockquote className="mt-4 text-lg text-brand sm:text-xl">“{s.quote}”</blockquote>
         <p className="mt-4">{s.summary}</p>
@@ -58,6 +59,14 @@ async function Escola({ params }: { params: PageProps<'/escolas/[id]'>['params']
           </div>
         </Section>
       )}
+      <Section id="comparar-escolas" title={`Compare ${s.name.toLowerCase()} com outra escola`}>
+        <div className="flex flex-wrap gap-2">
+          {getSchools().filter(x => x.id !== s.id).map(x => {
+            const [a, b] = [s.id, x.id].sort();
+            return <Link key={x.id} href={`/escolas/${a}/vs/${b}`} className="press rounded-full border border-line bg-card px-3 py-1.5 text-sm hover:border-brand">{x.name}</Link>;
+          })}
+        </div>
+      </Section>
       <Section id="proximas" title="Escolas mais parecidas">
         <ul className="space-y-1">
           {proximas.map(p => (

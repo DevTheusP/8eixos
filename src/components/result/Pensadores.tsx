@@ -8,36 +8,40 @@ export function Pensadores({ result }: { result: Result }) {
   const { thinker, score } = result.thinker;
   return (
     <div>
-      <div className="flex items-center gap-4 rounded-2xl border-t-[3px] border-brand bg-tile-strong p-4">
-        <Retrato thinker={thinker} size={84} />
+      <Link href={`/pensadores/${thinker.id}`} className="lift press group flex flex-col gap-4 rounded-2xl bg-brand-soft p-5 sm:flex-row sm:items-center">
+        <Retrato thinker={thinker} size={112} />
         <div className="min-w-0 flex-1">
-          <p className="font-display text-2xl font-bold">{thinker.name}</p>
+          <p className="text-xs font-semibold text-brand">O mais parecido com você</p>
+          <p className="font-display text-3xl font-bold leading-tight">{thinker.name}</p>
           <p className="text-sm text-mute">{thinker.descriptor} · {thinker.years}</p>
-          <Link href={`/pensadores/${thinker.id}`} className="mt-1 inline-block text-sm font-semibold text-brand">
-            + Saber mais sobre {thinker.name}
-          </Link>
+          <p className="mt-2 text-sm leading-relaxed text-ink/80">{thinker.bio}</p>
+          <p className="mt-2 text-sm font-semibold text-brand">Ler sobre {thinker.name} <span className="nudge">→</span></p>
         </div>
         <Ring score={score} />
-      </div>
-      <p className="mt-5 text-xs font-semibold uppercase tracking-[0.14em] text-brand">Também próximos, por dimensão</p>
-      <div className="mt-2 grid gap-2 sm:grid-cols-3">
+      </Link>
+      <p className="mt-6 text-sm font-semibold">Parecidos com você em cada área</p>
+      <div className="mt-2 grid gap-3 sm:grid-cols-3">
         {result.byDimension.map(d => (
-          <Link key={d.dim} href={`/pensadores/${d.thinker.id}`} className="lift press flex items-center gap-3 rounded-xl bg-tile p-3">
-            <Retrato thinker={d.thinker} size={40} />
-            <div className="min-w-0 flex-1">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.1em] text-brand">{DIMENSOES[d.dim].label}</p>
-              <p className="truncate text-sm font-semibold">{d.thinker.name}</p>
+          <Link key={d.dim} href={`/pensadores/${d.thinker.id}`} className="lift press flex flex-col items-start rounded-2xl border border-line bg-card p-4">
+            <div className="flex w-full items-start justify-between gap-2">
+              <Retrato thinker={d.thinker} size={64} />
+              <span className="font-display text-xl font-bold text-brand">{Math.round(d.score)}%</span>
             </div>
-            <span className="font-display font-bold text-brand">{Math.round(d.score)}%</span>
+            <p className="mt-3 text-xs font-semibold text-brand">{DIMENSOES[d.dim].label}</p>
+            <p className="font-display text-lg font-bold leading-tight">{d.thinker.name}</p>
+            <p className="text-xs text-mute">{d.thinker.descriptor}</p>
           </Link>
         ))}
       </div>
-      <p className="mt-4 flex flex-wrap items-center gap-2 text-xs">
-        <span className="font-semibold uppercase tracking-[0.14em] text-mute">Mais distantes</span>
+      <div className="mt-5 flex flex-wrap items-center gap-2 text-sm">
+        <span className="font-semibold text-mute">Pensam o oposto de você</span>
         {result.farthestThinkers.map(t => (
-          <span key={t.id} className="rounded-full bg-tile-strong px-3 py-1 text-mute">{t.name}</span>
+          <Link key={t.id} href={`/pensadores/${t.id}`} className="press inline-flex items-center gap-2 rounded-full bg-tile-strong py-1 pl-1 pr-3 text-mute hover:text-ink">
+            <Retrato thinker={t} size={24} />
+            {t.name}
+          </Link>
         ))}
-      </p>
+      </div>
     </div>
   );
 }

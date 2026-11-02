@@ -1,5 +1,5 @@
 import { getFamilies, getSchools, getThinkers, getVectors } from './data';
-import { mostCommon, mostUnusual } from './distinction';
+import { mostCommon, mostUnusual, tensao } from './distinction';
 import { DIMENSOES, rank } from './matching';
 import type { Family, School, Thinker, Vector } from './types';
 
@@ -15,6 +15,7 @@ export interface Result {
   farthestThinkers: Thinker[];
   unusual: ReturnType<typeof mostUnusual>;
   common: ReturnType<typeof mostCommon>;
+  tension: ReturnType<typeof tensao>;
 }
 
 export function buildResult(v: Vector): Result {
@@ -46,5 +47,7 @@ export function buildResult(v: Vector): Result {
     farthestThinkers: rt.slice(-3).reverse().map(r => thinkers.get(r.id)!),
     unusual: mostUnusual(v, catalogo),
     common: mostCommon(v, catalogo),
+    // Tensão compara com o catálogo inteiro (escolas + pensadores): o dobro de perfis dá uma raridade mais confiável.
+    tension: tensao(v, [...catalogo, ...Object.values(vectors.thinkers)]),
   };
 }

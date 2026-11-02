@@ -63,15 +63,16 @@ export function isDone(s: QuizState): boolean {
 
 export function saveState(s: QuizState): void {
   try {
-    sessionStorage.setItem(key(s.formato), JSON.stringify(s));
+    localStorage.setItem(key(s.formato), JSON.stringify(s));
   } catch {
     // Sem storage (aba privada, bloqueio): o quiz segue sem salvar progresso.
+    // localStorage e não sessionStorage: no celular a aba fecha o tempo todo e o progresso precisa sobreviver.
   }
 }
 
 export function clearState(f: Formato): void {
   try {
-    sessionStorage.removeItem(key(f));
+    localStorage.removeItem(key(f));
   } catch {
     // idem
   }
@@ -79,12 +80,30 @@ export function clearState(f: Formato): void {
 
 export function loadState(formato: Formato): QuizState | null {
   try {
-    const raw = sessionStorage.getItem(key(formato));
+    const raw = localStorage.getItem(key(formato));
     if (!raw) return null;
     const s = JSON.parse(raw);
     const valido = s && s.formato === formato && Array.isArray(s.questionIds) && typeof s.answers === 'object'
       && s.answers !== null && Number.isInteger(s.index) && s.index >= 0 && s.index <= s.questionIds.length;
     return valido ? (s as QuizState) : null;
+  } catch {
+    return null;
+  }
+}
+
+const ULTIMO = 'quiz:ultimo-resultado';
+
+export function saveLastResult(params: string): void {
+  try {
+    localStorage.setItem(ULTIMO, params);
+  } catch {
+    // sem storage: só não lembra o último resultado
+  }
+}
+
+export function loadLastResult(): string | null {
+  try {
+    return localStorage.getItem(ULTIMO);
   } catch {
     return null;
   }

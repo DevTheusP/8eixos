@@ -1,10 +1,74 @@
 [
-  { "id": "controle", "name": "Controle", "poleA": "Aceitar", "poleB": "Transformar", "param": "c" },
-  { "id": "bemviver", "name": "Bem viver", "poleA": "Virtude", "poleB": "Prazer", "param": "b" },
-  { "id": "sentido", "name": "Sentido", "poleA": "Dado", "poleB": "Criado por mim", "param": "s" },
-  { "id": "mundo", "name": "Mundo", "poleA": "Bom", "poleB": "Hostil", "param": "m" },
-  { "id": "eu", "name": "Eu", "poleA": "Indivíduo", "poleB": "Comunidade", "param": "e" },
-  { "id": "rotina", "name": "Rotina", "poleA": "Disciplina", "poleB": "Espontaneidade", "param": "r" },
-  { "id": "guia", "name": "Guia", "poleA": "Razão", "poleB": "Emoção", "param": "g" },
-  { "id": "verdade", "name": "Verdade", "poleA": "Certeza", "poleB": "Dúvida", "param": "v" }
+  {
+    "id": "controle",
+    "name": "Controle",
+    "poleA": "Aceitar",
+    "poleB": "Transformar",
+    "param": "c",
+    "descA": "você busca paz aceitando o que não depende de você.",
+    "descB": "você prefere agir e mudar o que está ao seu alcance."
+  },
+  {
+    "id": "bemviver",
+    "name": "Bem viver",
+    "poleA": "Virtude",
+    "poleB": "Prazer",
+    "param": "b",
+    "descA": "uma vida boa é uma vida correta, mesmo quando custa.",
+    "descB": "uma vida boa é uma vida bem aproveitada e leve."
+  },
+  {
+    "id": "sentido",
+    "name": "Sentido",
+    "poleA": "Dado",
+    "poleB": "Criado por mim",
+    "param": "s",
+    "descA": "o sentido da vida já existe, em Deus, na natureza ou no cosmos, e você o descobre.",
+    "descB": "o sentido não vem pronto: cada pessoa constrói o seu."
+  },
+  {
+    "id": "mundo",
+    "name": "Mundo",
+    "poleA": "Bom",
+    "poleB": "Hostil",
+    "param": "m",
+    "descA": "você olha o mundo e as pessoas com confiança e esperança.",
+    "descB": "você vê o mundo como duro, trágico ou indiferente."
+  },
+  {
+    "id": "eu",
+    "name": "Eu",
+    "poleA": "Indivíduo",
+    "poleB": "Comunidade",
+    "param": "e",
+    "descA": "sua prioridade é a própria liberdade e o próprio caminho.",
+    "descB": "você se realiza nos laços, nos deveres e no bem dos outros."
+  },
+  {
+    "id": "rotina",
+    "name": "Rotina",
+    "poleA": "Disciplina",
+    "poleB": "Espontaneidade",
+    "param": "r",
+    "descA": "hábitos, tradição e regras dão forma à sua vida.",
+    "descB": "você prefere improviso, mudança e intensidade."
+  },
+  {
+    "id": "guia",
+    "name": "Guia",
+    "poleA": "Razão",
+    "poleB": "Emoção",
+    "param": "g",
+    "descA": "nas decisões, você confia mais no pensamento e na lógica.",
+    "descB": "nas decisões, você confia mais no que sente e na intuição."
+  },
+  {
+    "id": "verdade",
+    "name": "Verdade",
+    "poleA": "Certeza",
+    "poleB": "Dúvida",
+    "param": "v",
+    "descA": "você acredita que dá pra chegar a verdades firmes.",
+    "descB": "você desconfia de certezas e prefere perguntas abertas."
+  }
 ]

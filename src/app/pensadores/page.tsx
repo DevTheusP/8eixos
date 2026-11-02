@@ -19,7 +19,7 @@ export default function PensadoresPage() {
         <h1 className="font-display text-4xl font-bold sm:text-5xl">Pensadores</h1>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {thinkers.map(t => (
-            <Link key={t.id} href={`/pensadores/${t.id}`} className="lift press flex items-center gap-3 rounded-2xl border border-line bg-card p-3">
+            <Link key={t.id} href={`/pensadores/${t.id}`} className="lift press flex min-w-0 items-center gap-3 rounded-2xl border border-line bg-card p-3">
               <Retrato thinker={t} size={56} />
               <div className="min-w-0"><p className="font-semibold">{t.name}</p><p className="truncate text-sm text-mute">{t.descriptor}</p></div>
             </Link>
