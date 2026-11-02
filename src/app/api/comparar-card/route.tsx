@@ -1,4 +1,5 @@
 import { ImageResponse } from 'next/og';
+import { cardFonts } from '@/lib/card-assets';
 import { nomeSeguro, resumoComparacao } from '@/lib/compare';
 import { getAxes } from '@/lib/data';
 import { matchScore } from '@/lib/matching';
@@ -19,7 +20,7 @@ export async function GET(req: Request) {
 
   return new ImageResponse(
     (
-      <div style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', background: C.bg, padding: 80, color: C.ink }}>
+      <div style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', background: C.bg, padding: 80, color: C.ink, fontFamily: 'Inter' }}>
         <div style={{ display: 'flex', fontSize: 34, color: C.mute }}>Nossas filosofias de vida</div>
         <div style={{ display: 'flex', fontSize: 92, fontWeight: 700, color: C.brand, marginTop: 16, lineHeight: 1.05 }}>{`${na} e ${nb}`}</div>
         <div style={{ display: 'flex', fontSize: 64, fontWeight: 700, marginTop: 20 }}>{`${Math.round(matchScore(a, b))}% compatíveis`}</div>
@@ -39,6 +40,6 @@ export async function GET(req: Request) {
         <div style={{ display: 'flex', fontSize: 36, color: C.brand, fontWeight: 700 }}>Compare com quem você quiser no 8eixos</div>
       </div>
     ),
-    { width: 1080, height: 1920 },
+    { width: 1080, height: 1920, fonts: cardFonts() },
   );
 }

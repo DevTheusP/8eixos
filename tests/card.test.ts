@@ -39,3 +39,24 @@ test('ícones do card viram SVG puro (sem componente React)', async () => {
     expect(iconeSvg(par.B, '#000', 24)?.type).toBe('svg');
   }
 });
+
+test('card carrega as fontes do site, com peso de título e de texto', async () => {
+  const { cardFonts } = await import('@/lib/card-assets');
+  const fontes = cardFonts();
+  expect(fontes.find(f => f.name === 'Bricolage' && f.weight === 800)?.data.byteLength).toBeGreaterThan(10000);
+  expect(fontes.find(f => f.name === 'Inter' && f.weight === 400)?.data.byteLength).toBeGreaterThan(10000);
+});
+
+test('cada eixo tem uma cor própria no card, todas diferentes', async () => {
+  const { CORES_EIXO } = await import('@/lib/card-assets');
+  const { AXIS_IDS } = await import('@/lib/types');
+  const cores = AXIS_IDS.map(a => CORES_EIXO[a]);
+  expect(cores.every(c => /^#[0-9a-f]{6}$/i.test(c))).toBe(true);
+  expect(new Set(cores).size).toBe(8);
+});
+
+test('cor de fundo do card é a cor da família escurecida', async () => {
+  const { escurecer } = await import('@/lib/card-assets');
+  expect(escurecer('#ffffff', 0.5)).toBe('#808080');
+  expect(escurecer('#2f5d8a', 0)).toBe('#2f5d8a');
+});
