@@ -80,20 +80,20 @@ export async function GET(req: Request) {
         </div>
 
         {/* Escola */}
-        <div style={{ display: 'flex', marginTop: 64, fontSize: 32, fontWeight: 600, color: TEXTO }}>{r.school.family.name}</div>
-        <div style={{ display: 'flex', fontFamily: 'Bricolage', fontWeight: 800, fontSize: nome.length > 20 ? 72 : nome.length > 12 ? 100 : 124, lineHeight: 1.15, letterSpacing: -2, marginTop: 2 }}>{nome}</div>
-        <div style={{ display: 'flex', alignItems: 'center', marginTop: nome.length > 12 ? 22 : 44 }}>
+        <div style={{ display: 'flex', flexShrink: 0, marginTop: 44, fontSize: 30, fontWeight: 600, color: TEXTO }}>{r.school.family.name}</div>
+        <div style={{ display: 'flex', fontFamily: 'Bricolage', fontWeight: 800, fontSize: nome.length > 20 ? 70 : nome.length > 12 ? 92 : 112, lineHeight: 1.1, letterSpacing: -2, marginTop: 4, flexShrink: 0 }}>{nome}</div>
+        <div style={{ display: 'flex', alignItems: 'center', marginTop: 22, flexShrink: 0 }}>
           <span style={{ display: 'flex', background: 'white', color: fundo, borderRadius: 999, padding: '10px 26px', fontFamily: 'Bricolage', fontWeight: 800, fontSize: 36 }}>
             {`${Math.round(r.school.score)}% compatível`}
           </span>
         </div>
-        <div style={{ display: 'flex', marginTop: 26, fontSize: 34, lineHeight: 1.35, color: 'rgba(255,255,255,0.9)' }}>{`“${r.school.school.quote}”`}</div>
+        <div style={{ display: 'flex', flexShrink: 0, marginTop: 24, fontSize: 32, lineHeight: 1.35, color: 'rgba(255,255,255,0.9)' }}>{`“${r.school.school.quote}”`}</div>
 
         {/* Pensador + 8 eixos */}
-        <div style={{ display: 'flex', marginTop: 40 }}>
-          <div style={{ display: 'flex', flexDirection: 'column', width: 380, background: PAINEL, borderRadius: 40, overflow: 'hidden', marginRight: 24 }}>
+        <div style={{ display: 'flex', marginTop: 34, flexShrink: 0 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', width: 340, background: PAINEL, borderRadius: 40, overflow: 'hidden', marginRight: 24 }}>
             <div style={{ display: 'flex', position: 'relative' }}>
-              <Foto t={pensador} tamanho={380} raio={0} cor={cor} />
+              <Foto t={pensador} tamanho={340} raio={0} cor={cor} />
               <div style={{ display: 'flex', position: 'absolute', left: 0, right: 0, bottom: 0, height: 200, background: `linear-gradient(180deg, rgba(0,0,0,0) 0%, ${escurecer(cor, 0.5)} 100%)` }} />
               <span style={{ position: 'absolute', left: 28, bottom: 8, fontFamily: 'Bricolage', fontWeight: 800, fontSize: 104, lineHeight: 1 }}>{`${Math.round(r.thinker.score)}%`}</span>
             </div>
@@ -116,7 +116,7 @@ export async function GET(req: Request) {
               const destaque = p.decidido ? corEixo : 'white';
               const Icone = POLE_ICONS[axis.id][p.lado];
               return (
-                <div key={axis.id} style={{ display: 'flex', alignItems: 'center', padding: '12px 0' }}>
+                <div key={axis.id} style={{ display: 'flex', alignItems: 'center', padding: '10px 0' }}>
                   <div style={{ display: 'flex', width: 58, height: 58, borderRadius: 18, background: corEixo, alignItems: 'center', justifyContent: 'center' }}>
                     {iconeSvg(Icone, fundo, 30)}
                   </div>
@@ -132,13 +132,13 @@ export async function GET(req: Request) {
         </div>
 
         {/* Pensadores por área + escolas próximas */}
-        <div style={{ display: 'flex', marginTop: 24 }}>
+        <div style={{ display: 'flex', marginTop: 22, flexShrink: 0 }}>
           <div style={{ display: 'flex', flex: 1, marginRight: 24 }}>
             <Painel titulo="Também penso como">
               {r.byDimension.map(d => (
-                <div key={d.dim} style={{ display: 'flex', alignItems: 'center', padding: '9px 0' }}>
+                <div key={d.dim} style={{ display: 'flex', alignItems: 'center', padding: '8px 0' }}>
                   <Foto t={d.thinker} tamanho={64} raio={999} cor={cor} />
-                  <span style={{ display: 'flex', flex: 1, margin: '0 14px 0 18px', fontSize: 28, fontWeight: 600, lineHeight: 1.15 }}>{d.thinker.name}</span>
+                  <span style={{ display: 'flex', flex: 1, margin: '0 14px 0 16px', fontSize: 26, fontWeight: 600, lineHeight: 1.15 }}>{d.thinker.name}</span>
                   <span style={{ fontFamily: 'Bricolage', fontWeight: 800, fontSize: 32 }}>{`${Math.round(d.score)}%`}</span>
                 </div>
               ))}
@@ -146,11 +146,11 @@ export async function GET(req: Request) {
           </div>
           <Painel titulo="Escolas próximas">
             {r.otherSchools.map(({ school, score }) => (
-              <div key={school.id} style={{ display: 'flex', alignItems: 'center', padding: '9px 0' }}>
+              <div key={school.id} style={{ display: 'flex', alignItems: 'center', padding: '8px 0' }}>
                 <div style={{ display: 'flex', width: 64, height: 64, borderRadius: 20, background: familias.get(school.familyId)!.soft, alignItems: 'center', justifyContent: 'center' }}>
                   <div style={{ display: 'flex', width: 26, height: 26, borderRadius: 999, background: familias.get(school.familyId)!.color }} />
                 </div>
-                <span style={{ display: 'flex', flex: 1, margin: '0 14px 0 18px', fontSize: 28, fontWeight: 600, lineHeight: 1.15 }}>{school.name}</span>
+                <span style={{ display: 'flex', flex: 1, margin: '0 14px 0 16px', fontSize: 26, fontWeight: 600, lineHeight: 1.15 }}>{school.name}</span>
                 <span style={{ fontFamily: 'Bricolage', fontWeight: 800, fontSize: 32 }}>{`${Math.round(score)}%`}</span>
               </div>
             ))}
@@ -159,7 +159,7 @@ export async function GET(req: Request) {
 
         {/* Rodapé */}
         <div style={{ display: 'flex', flexGrow: 1 }} />
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTop: '2px solid rgba(255,255,255,0.18)', paddingTop: 30 }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTop: '2px solid rgba(255,255,255,0.18)', paddingTop: 30, flexShrink: 0 }}>
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             <span style={{ fontFamily: 'Bricolage', fontWeight: 800, fontSize: 46 }}>E a sua, qual é?</span>
             <span style={{ fontSize: 30, fontWeight: 600, color: TEXTO, marginTop: 6 }}>{`Descubra em ${host}`}</span>
