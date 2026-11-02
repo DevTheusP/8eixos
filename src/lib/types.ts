@@ -18,7 +18,7 @@ export interface Question {
   textRight?: string;
 }
 
-export interface Family { id: string; name: string }
+export interface Family { id: string; name: string; color: string; soft: string }
 
 export interface School {
   id: string;

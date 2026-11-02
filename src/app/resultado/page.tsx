@@ -14,6 +14,7 @@ import { Lida } from '@/components/result/Lida';
 import { Livros } from '@/components/result/Livros';
 import { Pensadores } from '@/components/result/Pensadores';
 import { Section } from '@/components/result/Section';
+import { familyStyle } from '@/lib/family-theme';
 import { buildResult } from '@/lib/result';
 import { paramsToVector, vectorToParams } from '@/lib/url';
 import { Invalido } from './Invalido';
@@ -36,7 +37,7 @@ async function Resultado({ searchParams }: { searchParams: PageProps<'/resultado
   if (!v) return <Invalido />;
   const result = buildResult(v);
   return (
-    <div className="grid gap-6 lg:grid-cols-[1fr_230px]">
+    <div className="grid gap-6 lg:grid-cols-[1fr_230px]" style={familyStyle(result.school.family)}>
       <div className="min-w-0 space-y-5">
         <div>
           <p className="arrive mb-1 text-xs font-semibold uppercase tracking-[0.14em] text-brand">— Análise concluída</p>

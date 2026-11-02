@@ -8,7 +8,8 @@ import { SiteHeader } from '@/components/SiteHeader';
 import { Eixos } from '@/components/result/Eixos';
 import { Livros } from '@/components/result/Livros';
 import { Section } from '@/components/result/Section';
-import { getSchools, getThinkers, getVectors } from '@/lib/data';
+import { getFamilies, getSchools, getThinkers, getVectors } from '@/lib/data';
+import { familyStyle } from '@/lib/family-theme';
 import { rank } from '@/lib/matching';
 import { resumo } from '@/lib/text';
 
@@ -31,9 +32,11 @@ async function Pensador({ params }: { params: PageProps<'/pensadores/[id]'>['par
   const schools = new Map(getSchools().map(s => [s.id, s]));
   const escola = t.schoolId ? schools.get(t.schoolId) : undefined;
   const maisProxima = rank(vectors.thinkers[t.id], vectors.schools)[0];
+  // Sem escola própria, o pensador usa a cor da família da escola mais parecida com ele.
+  const familia = getFamilies().find(f => f.id === (escola ?? schools.get(maisProxima.id)!).familyId)!;
 
   return (
-    <article className="space-y-5">
+    <article className="space-y-5" style={familyStyle(familia)}>
       <header className="flex flex-col gap-5 rounded-3xl bg-brand-soft p-6 sm:flex-row sm:items-center sm:p-8">
         <Retrato thinker={t} size={120} />
         <div>
