@@ -2,19 +2,18 @@
 
 import { useEffect, useState } from 'react';
 
-type Item = { id: string; label: string; locked?: boolean };
+type Item = { id: string; label: string };
 
 export function secaoAtiva(itens: Item[], visivel: Map<string, boolean>): string | undefined {
   return itens.find(it => visivel.get(it.id))?.id;
 }
 
-export function Indice({ itens }: { itens: Item[] }) {
+// Atalhos das seções numa faixa fixa no topo; a seção visível fica destacada.
+export function Atalhos({ itens }: { itens: Item[] }) {
   const [ativo, setAtivo] = useState(itens[0]?.id);
 
-  // Marca a seção que está mais perto do topo da tela.
   useEffect(() => {
     if (typeof IntersectionObserver === 'undefined') return;
-    // O observer só avisa o que mudou; guardo o estado de todas pra escolher a primeira visível na ordem da página.
     const visivel = new Map<string, boolean>();
     const io = new IntersectionObserver(
       entries => {
@@ -22,7 +21,7 @@ export function Indice({ itens }: { itens: Item[] }) {
         const id = secaoAtiva(itens, visivel);
         if (id) setAtivo(id);
       },
-      { rootMargin: '-20% 0px -60% 0px' },
+      { rootMargin: '-25% 0px -60% 0px' },
     );
     for (const it of itens) {
       const el = document.getElementById(it.id);
@@ -32,18 +31,16 @@ export function Indice({ itens }: { itens: Item[] }) {
   }, [itens]);
 
   return (
-    <nav className="sticky top-6 hidden rounded-3xl border border-line bg-card p-4 lg:block" aria-label="Nesta página">
-      <p className="mb-2 text-xs font-semibold uppercase tracking-[0.14em] text-mute">Nesta página</p>
-      <ol>
-        {itens.map((it, i) => (
-          <li key={it.id}>
+    <nav aria-label="Seções do resultado" className="sticky top-0 z-10 -mx-4 border-b border-line bg-bg/90 px-4 py-2 backdrop-blur sm:-mx-6 sm:px-6">
+      <ol className="flex gap-1.5 overflow-x-auto [scrollbar-width:none]">
+        {itens.map(it => (
+          <li key={it.id} className="flex-none">
             <a
               href={`#${it.id}`}
               aria-current={ativo === it.id ? 'true' : undefined}
-              className={`press flex gap-3 rounded-lg px-3 py-2 text-sm ${ativo === it.id ? 'bg-brand-soft font-semibold text-brand' : 'hover:bg-tile'} ${it.locked ? 'text-mute' : ''}`}
+              className={`press block rounded-full px-3 py-1.5 text-sm ${ativo === it.id ? 'bg-brand font-semibold text-white' : 'text-mute hover:bg-tile hover:text-ink'}`}
             >
-              <span className="w-4 text-xs text-mute">{String(i + 1).padStart(2, '0')}</span>
-              {it.label}{it.locked ? ' 🔒' : ''}
+              {it.label}
             </a>
           </li>
         ))}

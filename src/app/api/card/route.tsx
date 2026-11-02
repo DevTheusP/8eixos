@@ -5,7 +5,7 @@ import { buildResult } from '@/lib/result';
 import { SITE_URL } from '@/lib/site';
 import { paramsToVector } from '@/lib/url';
 
-const C = { bg: '#f3eee4', brand: '#1e5a5c', brandSoft: '#d5e7e4', ink: '#1c1915', mute: '#6f675c', tile: '#efe8db' };
+const C = { bg: '#f2f3f8', brand: '#3f48a8', brandSoft: '#e0e3f8', ink: '#171a2e', mute: '#636780', tile: '#ecedf6' };
 
 export async function GET(req: Request) {
   const v = paramsToVector(Object.fromEntries(new URL(req.url).searchParams));
@@ -17,16 +17,16 @@ export async function GET(req: Request) {
   return new ImageResponse(
     (
       <div style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', background: C.bg, padding: 80, color: C.ink }}>
-        <div style={{ display: 'flex', fontSize: 34, color: C.mute, letterSpacing: 4 }}>MINHA FILOSOFIA DE VIDA</div>
+        <div style={{ display: 'flex', fontSize: 34, color: C.mute, }}>Minha filosofia de vida</div>
         <div style={{ display: 'flex', flexDirection: 'column', marginTop: 40, background: cor.brandSoft, borderRadius: 48, padding: 56 }}>
           <div style={{ display: 'flex', alignSelf: 'flex-start', background: cor.brand, color: 'white', borderRadius: 999, padding: '10px 24px', fontSize: 30 }}>
             {r.school.family.name}
           </div>
           <div style={{ display: 'flex', fontSize: 96, fontWeight: 700, color: cor.brand, marginTop: 24, lineHeight: 1.05 }}>{r.school.school.name}</div>
-          <div style={{ display: 'flex', fontSize: 64, fontWeight: 700, color: cor.brand, marginTop: 12 }}>{`${Math.round(r.school.score)}% match`}</div>
+          <div style={{ display: 'flex', fontSize: 64, fontWeight: 700, color: cor.brand, marginTop: 12 }}>{`${Math.round(r.school.score)}% compatível`}</div>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', marginTop: 36, background: C.tile, borderRadius: 40, padding: 44 }}>
-          <div style={{ display: 'flex', fontSize: 30, color: C.mute }}>PENSADOR MAIS PRÓXIMO</div>
+          <div style={{ display: 'flex', fontSize: 30, color: C.mute }}>Pensador mais parecido comigo</div>
           <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 12, fontSize: 56, fontWeight: 700 }}>
             <span>{r.thinker.thinker.name}</span>
             <span style={{ color: cor.brand }}>{`${Math.round(r.thinker.score)}%`}</span>

@@ -1,22 +1,23 @@
 @import "tailwindcss";
 
-/* Paleta: papel claro, uma cor de marca escura com versão pastel, dois acentos e um tom quase preto pros botões. */
+/* Paleta índigo: fundo frio bem claro, índigo como marca, menta e âmbar como acentos.
+   No resultado e nas páginas de escola, a cor da marca é trocada pela cor da família (lib/family-theme.ts). */
 :root {
-  --bg: #f3eee4;
-  --card: #faf7f0;
-  --line: #e6dccb;
-  --ink: #1c1915;
-  --mute: #6f675c;
-  --brand: #1e5a5c;
-  --brand-soft: #d5e7e4;
-  --ochre: #a8741a;
-  --clay: #b5502f;
-  --clay-soft: #f0b8a0;
-  --clay-faint: #f6e0d6;
-  --deep: #22180f;
-  --tile: #efe8db;
-  --tile-strong: #e9e1d2;
-  --track: #e2d9c8;
+  --bg: #f2f3f8;
+  --card: #fafbfe;
+  --line: #dfe2ee;
+  --ink: #171a2e;
+  --mute: #636780;
+  --brand: #3f48a8;
+  --brand-soft: #e0e3f8;
+  --mint: #2a9d7b;
+  --amber: #e0853a;
+  --amber-soft: #f5cfa9;
+  --amber-faint: #fbe9d7;
+  --deep: #1b1e3d;
+  --tile: #ecedf6;
+  --tile-strong: #e5e7f3;
+  --track: #dde0ef;
 
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
   --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
@@ -30,10 +31,10 @@
   --color-mute: var(--mute);
   --color-brand: var(--brand);
   --color-brand-soft: var(--brand-soft);
-  --color-ochre: var(--ochre);
-  --color-clay: var(--clay);
-  --color-clay-soft: var(--clay-soft);
-  --color-clay-faint: var(--clay-faint);
+  --color-mint: var(--mint);
+  --color-amber: var(--amber);
+  --color-amber-soft: var(--amber-soft);
+  --color-amber-faint: var(--amber-faint);
   --color-deep: var(--deep);
   --color-tile: var(--tile);
   --color-tile-strong: var(--tile-strong);
@@ -62,7 +63,7 @@ body {
   }
   .lift:hover {
     transform: translateY(-2px);
-    box-shadow: 0 14px 30px -18px rgb(34 24 15 / 0.35);
+    box-shadow: 0 14px 30px -18px rgb(23 26 46 / 0.28);
   }
   .group:hover .nudge {
     transform: translateX(3px);

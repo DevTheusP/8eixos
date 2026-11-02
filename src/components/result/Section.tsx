@@ -22,26 +22,17 @@ export function Section({ id, title, icon: Icone, children, className = '' }: {
   );
 }
 
-const R = 34;
-const LEN = 2 * Math.PI * R;
-
+// Compatibilidade como barra: número grande + trilho preenchido até o valor.
 export function Ring({ score, size = 'md' }: { score: number; size?: 'sm' | 'md' }) {
-  const px = size === 'md' ? 84 : 60;
   const pct = Math.max(0, Math.min(100, score));
   return (
-    <InView className="relative flex-none" >
-      <svg width={px} height={px} viewBox="0 0 80 80" aria-hidden className="-rotate-90">
-        <circle cx="40" cy="40" r={R} fill="none" stroke="var(--track)" strokeWidth="5" />
-        <circle
-          className="ring-arc"
-          cx="40" cy="40" r={R} fill="none" stroke="var(--brand)" strokeWidth="5" strokeLinecap="round"
-          strokeDasharray={LEN} strokeDashoffset={LEN * (1 - pct / 100)}
-          style={{ '--len': `${LEN}` } as CSSProperties}
-        />
-      </svg>
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-brand">
-        <span className={`font-display font-bold ${size === 'md' ? 'text-xl' : 'text-sm'}`}>{Math.round(score)}%</span>
-        <span className="text-[9px] font-semibold tracking-[0.1em]">MATCH</span>
+    <InView className={`flex-none ${size === 'md' ? 'w-32' : 'w-24'}`}>
+      <p className="flex items-baseline justify-end gap-1 text-brand">
+        <span className={`font-display font-bold ${size === 'md' ? 'text-3xl' : 'text-xl'}`}>{Math.round(score)}%</span>
+        <span className="text-xs font-semibold">compatível</span>
+      </p>
+      <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-track">
+        <div className="axis-fill h-full rounded-full bg-brand" style={{ width: `${pct}%`, '--origin': 'left' } as CSSProperties} />
       </div>
     </InView>
   );

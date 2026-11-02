@@ -5,7 +5,7 @@ import { POLE_ICONS } from '@/lib/icons';
 import { intensity } from '@/lib/labels';
 import type { Vector } from '@/lib/types';
 
-const CORES = ['var(--brand)', 'var(--ochre)', 'var(--clay)'];
+const CORES = ['var(--brand)', 'var(--mint)', 'var(--amber)'];
 
 export function Eixos({ vector }: { vector: Vector }) {
   return (

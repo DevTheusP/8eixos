@@ -14,7 +14,7 @@ test('home com os 3 formatos, só a completa recomendada', () => {
   const hrefs = screen.getAllByRole('link').map(a => a.getAttribute('href'));
   expect(hrefs).toEqual(expect.arrayContaining(['/quiz/curta', '/quiz/completa', '/quiz/profunda']));
   expect(container.textContent).not.toMatch(/100\s*%/);
-  for (const t of ['Anônimo, sem cadastro', 'Resultado imediato', 'Todos os formatos usam os mesmos 8 eixos']) {
+  for (const t of ['Anônimo, sem cadastro', 'Resultado imediato', 'Os três formatos medem os mesmos 8 eixos']) {
     expect(screen.getByText(t)).toBeTruthy();
   }
   expect(screen.getByRole('heading', { level: 1 }).textContent).toMatch(/Qual é a sua filosofia de vida\?/);

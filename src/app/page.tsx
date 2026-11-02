@@ -12,7 +12,7 @@ export default function Home() {
     <>
       <SiteHeader />
       <main className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 sm:py-16">
-        <p className="arrive mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-clay">— Escolha o formato</p>
+        <p className="arrive mb-3 text-xs font-semibold text-amber">— Escolha o formato</p>
         <h1 className="arrive font-display text-4xl font-bold leading-tight tracking-tight sm:text-6xl" style={{ '--d': '60ms' } as CSSProperties}>
           Qual é a sua <span className="text-brand">filosofia de vida?</span>
         </h1>
@@ -33,7 +33,7 @@ export default function Home() {
                 className={`arrive lift flex flex-col rounded-3xl border p-6 ${destaque ? 'sheen border-transparent bg-deep text-white shadow-xl' : 'border-line bg-card'}`}
               >
                 <div className="flex items-center justify-between">
-                  <span className={`flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] ${destaque ? 'text-clay-soft' : 'text-clay'}`}>
+                  <span className={`flex items-center gap-2 text-xs font-semibold ${destaque ? 'text-amber-soft' : 'text-amber'}`}>
                     <Icone aria-hidden size={16} strokeWidth={2.4} />
                     {info.titulo}
                   </span>
@@ -59,7 +59,7 @@ export default function Home() {
         </div>
 
         <ul className="arrive mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-mute [&>li]:before:mr-2 [&>li]:before:content-['•']">
-          <li>Todos os formatos usam os mesmos 8 eixos</li>
+          <li>Os três formatos medem os mesmos 8 eixos</li>
           <li>Anônimo, sem cadastro</li>
           <li>Resultado imediato</li>
         </ul>

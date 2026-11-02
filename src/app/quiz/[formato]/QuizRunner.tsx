@@ -20,15 +20,15 @@ const LIKERT: Opcao[] = [
   { label: 'Concordo totalmente', Icone: Check, cor: 'var(--brand)' },
   { label: 'Concordo', Icone: Check, cor: 'var(--brand)' },
   { label: 'Neutro', Icone: Minus, cor: 'var(--mute)' },
-  { label: 'Discordo', Icone: X, cor: 'var(--clay)' },
-  { label: 'Discordo totalmente', Icone: X, cor: 'var(--clay)' },
+  { label: 'Discordo', Icone: X, cor: 'var(--amber)' },
+  { label: 'Discordo totalmente', Icone: X, cor: 'var(--amber)' },
 ];
 const FORCADA: Opcao[] = [
   { label: 'Muito mais a da esquerda', Icone: ArrowLeft, cor: 'var(--brand)' },
   { label: 'Mais a da esquerda', Icone: ArrowLeft, cor: 'var(--brand)' },
   { label: 'Igual', Icone: Equal, cor: 'var(--mute)' },
-  { label: 'Mais a da direita', Icone: ArrowRight, cor: 'var(--ochre)' },
-  { label: 'Muito mais a da direita', Icone: ArrowRight, cor: 'var(--ochre)' },
+  { label: 'Mais a da direita', Icone: ArrowRight, cor: 'var(--mint)' },
+  { label: 'Muito mais a da direita', Icone: ArrowRight, cor: 'var(--mint)' },
 ];
 const PREF_AUTO = 'quiz:avancar-ao-responder';
 
@@ -128,7 +128,7 @@ export function QuizRunner({ formato, pool, axes = [] }: { formato: Formato; poo
         <span className="flex items-center gap-3">
           <span>{pct}% concluído</span>
           <button type="button" onClick={reiniciar} className="press inline-flex items-center gap-1 rounded-full px-2 py-1 hover:bg-tile">
-            <RotateCcw aria-hidden size={13} /> Reiniciar
+            <RotateCcw aria-hidden size={13} /> Recomeçar
           </button>
         </span>
       </div>
@@ -144,12 +144,9 @@ export function QuizRunner({ formato, pool, axes = [] }: { formato: Formato; poo
       </div>
 
       <div className="relative overflow-hidden rounded-3xl border border-line border-t-4 border-t-brand bg-card p-5 shadow-[0_18px_40px_-28px_rgb(34_24_15/0.45)] sm:p-7">
-        <span aria-hidden className="pointer-events-none absolute right-5 top-2 select-none font-display text-7xl font-bold text-ink/[0.05] sm:text-8xl">
-          {String(state.index + 1).padStart(2, '0')}
-        </span>
 
         <div className="relative mb-4 flex flex-wrap gap-2">
-          <span className="inline-flex items-center gap-2 rounded-full bg-brand-soft py-1 pl-1 pr-3 text-xs font-semibold uppercase tracking-[0.12em] text-brand">
+          <span className="inline-flex items-center gap-2 rounded-full bg-brand-soft py-1 pl-1 pr-3 text-sm font-semibold text-brand">
             <span className="flex h-6 w-6 items-center justify-center rounded-full bg-brand text-white"><IconeEixo aria-hidden size={13} /></span>
             {eixo?.name ?? q.axis}
           </span>
@@ -157,9 +154,9 @@ export function QuizRunner({ formato, pool, axes = [] }: { formato: Formato; poo
             type="button"
             onClick={() => setEntenda(v => !v)}
             aria-expanded={entenda}
-            className="press inline-flex items-center gap-1.5 rounded-full bg-tile px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-mute hover:text-ink"
+            className="press inline-flex items-center gap-1.5 rounded-full bg-tile px-3 py-1 text-xs font-semibold text-mute hover:text-ink"
           >
-            <CircleHelp aria-hidden size={14} /> Entenda
+            <CircleHelp aria-hidden size={14} /> O que isso mede?
           </button>
         </div>
         {entenda && eixo && (
@@ -175,7 +172,7 @@ export function QuizRunner({ formato, pool, axes = [] }: { formato: Formato; poo
               <p className="mb-3 text-sm font-semibold text-mute">Qual frase combina mais com você?</p>
               <div className="grid gap-3 sm:grid-cols-2">
                 <p className="rounded-2xl border-l-4 border-l-brand bg-tile p-4 font-display text-lg font-semibold">{q.textLeft}</p>
-                <p className="rounded-2xl border-l-4 border-l-ochre bg-tile p-4 font-display text-lg font-semibold">{q.textRight}</p>
+                <p className="rounded-2xl border-l-4 border-l-mint bg-tile p-4 font-display text-lg font-semibold">{q.textRight}</p>
               </div>
             </div>
           ) : (
@@ -224,13 +221,13 @@ export function QuizRunner({ formato, pool, axes = [] }: { formato: Formato; poo
             type="button"
             role="switch"
             aria-checked={auto}
-            aria-label="Avançar ao responder"
+            aria-label="Passar sozinho ao responder"
             onClick={alternarAuto}
             className={`relative h-6 w-11 flex-none rounded-full transition-colors duration-200 ${auto ? 'bg-deep' : 'bg-track'}`}
           >
             <span className={`absolute left-0 top-0.5 h-5 w-5 rounded-full bg-white shadow transition-transform duration-200 ease-[var(--ease-out)] ${auto ? 'translate-x-[22px]' : 'translate-x-0.5'}`} />
           </button>
-          <span aria-hidden>Avançar ao responder</span>
+          <span aria-hidden>Passar sozinho ao responder</span>
         </label>
         <div className="flex gap-2">
           {canSwap(state, pool) && (
@@ -239,7 +236,7 @@ export function QuizRunner({ formato, pool, axes = [] }: { formato: Formato; poo
               onClick={() => { setViaTeclado(false); commit(swap(state, pool)); }}
               className="press inline-flex items-center gap-2 rounded-xl border border-line bg-card px-4 py-2.5 text-sm font-semibold"
             >
-              <Shuffle aria-hidden size={16} /> Trocar
+              <Shuffle aria-hidden size={16} /> Outra pergunta
             </button>
           )}
           <button

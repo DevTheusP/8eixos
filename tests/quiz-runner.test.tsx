@@ -63,18 +63,18 @@ test('mostra o eixo da pergunta e explica no "Entenda"', async () => {
   render(<QuizRunner formato="curta" pool={pool} axes={getAxes()} />);
   await screen.findByRole('button', { name: 'Concordo totalmente' });
   expect(screen.getByText('Guia')).toBeTruthy();
-  fireEvent.click(screen.getByRole('button', { name: /Entenda/ }));
+  fireEvent.click(screen.getByRole('button', { name: /O que isso mede/ }));
   expect(document.body.textContent).toMatch(/entre Razão e Emoção/);
 });
 
-test('com "Avançar ao responder" desligado, só avança no botão', async () => {
+test('com "Passar sozinho" desligado, só avança no botão', async () => {
   const ids = pool.filter(q => q.kind === 'likert').slice(0, 3).map(q => q.id);
   saveState({ formato: 'curta', questionIds: ids, answers: {}, index: 0 });
   render(<QuizRunner formato="curta" pool={pool} />);
   await screen.findByRole('button', { name: 'Concordo totalmente' });
   const avancar = screen.getByRole('button', { name: /^Avançar/ }) as HTMLButtonElement;
   expect(avancar.disabled).toBe(true);
-  fireEvent.click(screen.getByRole('switch', { name: 'Avançar ao responder' }));
+  fireEvent.click(screen.getByRole('switch', { name: 'Passar sozinho ao responder' }));
   fireEvent.click(screen.getByRole('button', { name: 'Discordo' }));
   expect(document.body.textContent).toContain('Pergunta 1 de 3');
   expect(avancar.disabled).toBe(false);
@@ -82,11 +82,11 @@ test('com "Avançar ao responder" desligado, só avança no botão', async () =>
   expect(document.body.textContent).toContain('Pergunta 2 de 3');
 });
 
-test('Trocar substitui por outra do mesmo eixo', async () => {
+test('"Outra pergunta" substitui por outra do mesmo eixo', async () => {
   saveState({ formato: 'curta', questionIds: ['controle_01'], answers: {}, index: 0 });
   render(<QuizRunner formato="curta" pool={pool} />);
   await screen.findByText('controle frase 0');
-  fireEvent.click(screen.getByRole('button', { name: /Trocar/ }));
+  fireEvent.click(screen.getByRole('button', { name: /Outra pergunta/ }));
   expect(screen.queryByText('controle frase 0')).toBeNull();
   expect(document.body.textContent).toMatch(/controle frase [1-7](?!\d)/);
 });
@@ -100,11 +100,11 @@ test('teclas 1 a 5 respondem', async () => {
   expect(document.body.textContent).toContain('Pergunta 2 de 3');
 });
 
-test('Reiniciar volta pra primeira pergunta', async () => {
+test('Recomeçar volta pra primeira pergunta', async () => {
   const ids = pool.slice(0, 32).map(q => q.id);
   saveState({ formato: 'curta', questionIds: ids, answers: { [ids[0]]: 1 }, index: 1 });
   render(<QuizRunner formato="curta" pool={pool} />);
   await screen.findByRole('button', { name: 'Concordo totalmente' });
-  fireEvent.click(screen.getByRole('button', { name: /Reiniciar/ }));
+  fireEvent.click(screen.getByRole('button', { name: /Recomeçar/ }));
   expect(document.body.textContent).toContain('Pergunta 1 de 32');
 });

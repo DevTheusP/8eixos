@@ -19,13 +19,13 @@ export function Pensadores({ result }: { result: Result }) {
         </div>
         <Ring score={score} />
       </div>
-      <p className="mt-5 text-xs font-semibold uppercase tracking-[0.14em] text-brand">Também próximos, por dimensão</p>
+      <p className="mt-5 text-xs font-semibold text-brand">Parecidos com você em cada área</p>
       <div className="mt-2 grid gap-2 sm:grid-cols-3">
         {result.byDimension.map(d => (
           <Link key={d.dim} href={`/pensadores/${d.thinker.id}`} className="lift press flex items-center gap-3 rounded-xl bg-tile p-3">
             <Retrato thinker={d.thinker} size={40} />
             <div className="min-w-0 flex-1">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.1em] text-brand">{DIMENSOES[d.dim].label}</p>
+              <p className="text-[10px] font-semibold text-brand">{DIMENSOES[d.dim].label}</p>
               <p className="truncate text-sm font-semibold">{d.thinker.name}</p>
             </div>
             <span className="font-display font-bold text-brand">{Math.round(d.score)}%</span>
@@ -33,7 +33,7 @@ export function Pensadores({ result }: { result: Result }) {
         ))}
       </div>
       <p className="mt-4 flex flex-wrap items-center gap-2 text-xs">
-        <span className="font-semibold uppercase tracking-[0.14em] text-mute">Mais distantes</span>
+        <span className="font-semibold text-mute">Pensam o oposto de você</span>
         {result.farthestThinkers.map(t => (
           <span key={t.id} className="rounded-full bg-tile-strong px-3 py-1 text-mute">{t.name}</span>
         ))}
