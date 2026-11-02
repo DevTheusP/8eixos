@@ -10,6 +10,7 @@ import { Livros } from '@/components/result/Livros';
 import { Section } from '@/components/result/Section';
 import { getFamilies, getSchools, getThinkers, getVectors } from '@/lib/data';
 import { familyStyle } from '@/lib/family-theme';
+import { parecidos } from '@/lib/catalogo';
 import { rank } from '@/lib/matching';
 import { resumo } from '@/lib/text';
 
@@ -60,6 +61,20 @@ async function Pensador({ params }: { params: PageProps<'/pensadores/[id]'>['par
           <Link href={`/escolas/${maisProxima.id}`} className="font-semibold text-brand">{schools.get(maisProxima.id)!.name}</Link>{' '}
           ({Math.round(maisProxima.score)}%).
         </p>
+      </Section>
+      <Section id="parecidos" title={`Quem pensa parecido com ${t.name}`}>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {parecidos('thinker', t.id, 4).map(p => {
+            const o = getThinkers().find(x => x.id === p.id)!;
+            return (
+              <Link key={o.id} href={`/pensadores/${o.id}`} className="press flex items-center gap-3 rounded-2xl bg-tile p-3 hover:bg-brand-soft">
+                <Retrato thinker={o} size={48} />
+                <div className="min-w-0 flex-1"><p className="font-semibold">{o.name}</p><p className="truncate text-sm text-mute">{o.descriptor}</p></div>
+                <span className="font-display font-bold text-brand">{Math.round(p.score)}%</span>
+              </Link>
+            );
+          })}
+        </div>
       </Section>
       <Livros title="Para ler" thinkerIds={[t.id]} />
       <Cta />

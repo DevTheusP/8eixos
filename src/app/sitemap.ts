@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next';
+import { paresDeEscolas } from '@/lib/catalogo';
 import { getSchools, getThinkers } from '@/lib/data';
 import { SITE_URL } from '@/lib/site';
 
@@ -8,5 +9,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...fixas.map(p => ({ url: `${SITE_URL}${p}` })),
     ...getSchools().map(s => ({ url: `${SITE_URL}/escolas/${s.id}` })),
     ...getThinkers().map(t => ({ url: `${SITE_URL}/pensadores/${t.id}` })),
+    ...paresDeEscolas().map(p => ({ url: `${SITE_URL}/escolas/${p.id}/vs/${p.outro}` })),
   ];
 }

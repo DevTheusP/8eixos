@@ -59,6 +59,14 @@ async function Escola({ params }: { params: PageProps<'/escolas/[id]'>['params']
           </div>
         </Section>
       )}
+      <Section id="comparar-escolas" title={`Compare ${s.name.toLowerCase()} com outra escola`}>
+        <div className="flex flex-wrap gap-2">
+          {getSchools().filter(x => x.id !== s.id).map(x => {
+            const [a, b] = [s.id, x.id].sort();
+            return <Link key={x.id} href={`/escolas/${a}/vs/${b}`} className="press rounded-full border border-line bg-card px-3 py-1.5 text-sm hover:border-brand">{x.name}</Link>;
+          })}
+        </div>
+      </Section>
       <Section id="proximas" title="Escolas mais parecidas">
         <ul className="space-y-1">
           {proximas.map(p => (
