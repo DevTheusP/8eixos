@@ -78,5 +78,7 @@ test('guarda e devolve o último resultado', () => {
   vi.stubGlobal('localStorage', { getItem: (k: string) => mem.get(k) ?? null, setItem: (k: string, v: string) => mem.set(k, v), removeItem: (k: string) => mem.delete(k) });
   expect(loadLastResult()).toBeNull();
   saveLastResult('c=1&b=2&s=3&m=4&e=5&r=6&g=7&v=8');
-  expect(loadLastResult()).toBe('c=1&b=2&s=3&m=4&e=5&r=6&g=7&v=8');
+  expect(loadLastResult()?.params).toBe('c=1&b=2&s=3&m=4&e=5&r=6&g=7&v=8');
+  localStorage.setItem('quiz:ultimo-resultado', 'c=9&b=9&s=9&m=9&e=9&r=9&g=9&v=9');
+  expect(loadLastResult()).toEqual({ params: 'c=9&b=9&s=9&m=9&e=9&r=9&g=9&v=9' });
 });
