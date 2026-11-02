@@ -10,7 +10,8 @@
     "test": "vitest run",
     "vectors": "tsx scripts/build-vectors.ts",
     "validate": "tsx scripts/validate-profile.ts",
-    "check:axes": "tsx scripts/check-axes.ts"
+    "check:axes": "tsx scripts/check-axes.ts",
+    "exemplos": "tsx scripts/gerar-exemplos.ts"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

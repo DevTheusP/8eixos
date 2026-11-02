@@ -6,6 +6,7 @@ import { Hero } from '@/components/result/Hero';
 import { getAxes, getFamilies, getSchools, getThinkers, getVectors } from '@/lib/data';
 import { familyStyle } from '@/lib/family-theme';
 import { POLE_ICONS } from '@/lib/icons';
+import { exemploSrc, vetorPrevia } from '@/lib/exemplos';
 import { buildResult } from '@/lib/result';
 import { vectorToParams } from '@/lib/url';
 
@@ -93,13 +94,14 @@ export function LequeCards() {
     <div className="leque relative mx-auto h-[420px] w-full max-w-[460px] sm:h-[520px]" aria-label="Exemplos de card de resultado">
       {LEQUE.filter(c => vs[c.id]).map((c, i) => (
         <div key={c.id} className={`absolute left-1/2 top-4 w-[48%] -translate-x-1/2 ${i === 1 ? 'z-10' : 'z-0'}`}>
-          {/* eslint-disable-next-line @next/next/no-img-element -- card gerado sob demanda por /api/card */}
+          {/* eslint-disable-next-line @next/next/no-img-element -- imagem fixa e leve (npm run exemplos) */}
           <img
-            src={`/api/card?${vectorToParams(vs[c.id])}`}
+            src={exemploSrc(c.id)}
+            fetchPriority={i === 1 ? 'high' : 'auto'}
             alt={`Exemplo de card: ${nomes.get(c.id)}`}
             width={1080}
             height={1920}
-            className={`leque-card ${c.cls} h-auto w-full rounded-[22px] shadow-[0_24px_50px_-24px_rgb(23_26_46/0.55)]`}
+            className={`leque-card carregando ${c.cls} h-auto w-full rounded-[22px] text-transparent shadow-[0_24px_50px_-24px_rgb(0_0_0/0.7)]`}
             style={{ transform: c.base, '--f': c.f } as CSSProperties}
           />
         </div>
@@ -109,9 +111,7 @@ export function LequeCards() {
 }
 
 export function PreviaResultado() {
-  // Alguém parecido com um estoico, mas não idêntico: o exemplo mostra um resultado realista.
-  const e = getVectors().schools['estoicismo'];
-  const r = buildResult({ ...e, eu: e.eu - 14, mundo: e.mundo + 10, verdade: e.verdade + 12 });
+  const r = buildResult(vetorPrevia());
   return (
     <section className="reveal mt-20">
       <h2 className="font-display text-3xl font-bold sm:text-4xl">Veja como fica o seu resultado</h2>
@@ -119,7 +119,7 @@ export function PreviaResultado() {
       <div className="relative mt-6 rounded-[28px] border border-line bg-bg p-4 sm:p-6" style={familyStyle(r.school.family)}>
         <span className="absolute -top-3 left-6 rounded-full brilho px-3 py-1 text-xs font-semibold">Exemplo</span>
         <div className="pointer-events-none space-y-4 select-none" aria-hidden>
-          <Hero result={r} params={vectorToParams(r.vector)} />
+          <Hero result={r} params={vectorToParams(r.vector)} cardSrc={exemploSrc('previa')} />
           <div className="rounded-3xl border border-line bg-card p-5"><Eixos vector={r.vector} ids={['controle', 'bemviver', 'guia']} /></div>
         </div>
       </div>
