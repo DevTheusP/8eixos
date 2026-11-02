@@ -10,6 +10,7 @@ export function SiteFooter() {
           <Link href="/sobre" className="hover:text-ink">Como funciona</Link>
           <Link href="/escolas" className="hover:text-ink">Escolas</Link>
           <Link href="/pensadores" className="hover:text-ink">Pensadores</Link>
+          <Link href="/livros" className="hover:text-ink">Livros</Link>
           <Link href="/privacidade" className="hover:text-ink">Privacidade</Link>
           <Link href="/creditos" className="hover:text-ink">Créditos</Link>
         </nav>
