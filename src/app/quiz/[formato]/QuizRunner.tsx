@@ -4,7 +4,7 @@ import {
   ArrowLeft, ArrowRight, Check, CircleHelp, Equal, Minus, RotateCcw, Shuffle, X, type LucideIcon,
 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState, type CSSProperties } from 'react';
 import { AXIS_ICONS } from '@/lib/icons';
 import {
   advance, back, canSwap, clearState, isDone, loadState, saveState, select, swap, type QuizState,
@@ -15,21 +15,22 @@ import type { AnswerIndex, Axis, Question } from '@/lib/types';
 import { track } from '@/lib/track';
 import { vectorToParams } from '@/lib/url';
 
-type Opcao = { label: string; Icone: LucideIcon; cor: string };
+type Opcao = { label: string; Icone: LucideIcon; cor: string; forca: 0 | 1 | 2 };
 
+// Concordar em verde-água, discordar em rosa, neutro em lilás; nas de "esquerda × direita", azul e dourado.
 const LIKERT: Opcao[] = [
-  { label: 'Concordo totalmente', Icone: Check, cor: 'var(--brand)' },
-  { label: 'Concordo', Icone: Check, cor: 'var(--brand)' },
-  { label: 'Neutro', Icone: Minus, cor: 'var(--mute)' },
-  { label: 'Discordo', Icone: X, cor: 'var(--amber)' },
-  { label: 'Discordo totalmente', Icone: X, cor: 'var(--amber)' },
+  { label: 'Concordo totalmente', Icone: Check, cor: '#5ef2c0', forca: 2 },
+  { label: 'Concordo', Icone: Check, cor: '#5ef2c0', forca: 1 },
+  { label: 'Neutro', Icone: Minus, cor: '#b9b2e6', forca: 0 },
+  { label: 'Discordo', Icone: X, cor: '#ff8fb1', forca: 1 },
+  { label: 'Discordo totalmente', Icone: X, cor: '#ff8fb1', forca: 2 },
 ];
 const FORCADA: Opcao[] = [
-  { label: 'Muito mais a da esquerda', Icone: ArrowLeft, cor: 'var(--brand)' },
-  { label: 'Mais a da esquerda', Icone: ArrowLeft, cor: 'var(--brand)' },
-  { label: 'Igual', Icone: Equal, cor: 'var(--mute)' },
-  { label: 'Mais a da direita', Icone: ArrowRight, cor: 'var(--mint)' },
-  { label: 'Muito mais a da direita', Icone: ArrowRight, cor: 'var(--mint)' },
+  { label: 'Muito mais a da esquerda', Icone: ArrowLeft, cor: '#8fb3ff', forca: 2 },
+  { label: 'Mais a da esquerda', Icone: ArrowLeft, cor: '#8fb3ff', forca: 1 },
+  { label: 'Igual', Icone: Equal, cor: '#b9b2e6', forca: 0 },
+  { label: 'Mais a da direita', Icone: ArrowRight, cor: '#ffd98a', forca: 1 },
+  { label: 'Muito mais a da direita', Icone: ArrowRight, cor: '#ffd98a', forca: 2 },
 ];
 const PREF_AUTO = 'quiz:avancar-ao-responder';
 
@@ -182,7 +183,7 @@ export function QuizRunner({ formato, pool, axes = [] }: { formato: Formato; poo
           )}
 
           <div className="mt-6 grid gap-2">
-            {opcoes.map(({ label, Icone, cor }, i) => {
+            {opcoes.map(({ label, Icone, cor, forca }, i) => {
               const marcada = atual === i;
               return (
                 <button
@@ -191,17 +192,27 @@ export function QuizRunner({ formato, pool, axes = [] }: { formato: Formato; poo
                   aria-pressed={marcada}
                   aria-label={label}
                   onClick={() => choose(i as AnswerIndex)}
-                  className={`press group flex items-center gap-3 rounded-xl border border-line border-l-4 px-3 py-3 text-left font-medium ${marcada ? 'bg-brand-soft' : 'bg-card hover:bg-tile'}`}
-                  style={marcada ? { borderColor: cor } : { borderLeftColor: cor }}
+                  className="opcao press group flex items-center gap-4 rounded-2xl border px-4 py-3.5 text-left"
+                  style={{
+                    '--cor': cor,
+                    borderColor: marcada ? cor : 'var(--line)',
+                    background: marcada ? `color-mix(in srgb, ${cor} 16%, rgb(18 22 58 / 0.7))` : 'rgb(18 22 58 / 0.55)',
+                    boxShadow: marcada ? `0 0 0 1px ${cor}, 0 12px 30px -16px ${cor}` : undefined,
+                  } as CSSProperties}
                 >
-                  <span className="flex h-7 w-7 flex-none items-center justify-center rounded-full border" style={{ color: cor, borderColor: `color-mix(in srgb, ${cor} 40%, transparent)` }}>
-                    <Icone aria-hidden size={14} strokeWidth={2.6} />
+                  <span
+                    className="flex h-9 w-9 flex-none items-center justify-center rounded-xl transition-colors"
+                    style={forca === 2 || marcada ? { background: cor, color: '#0b0d26' } : { background: `color-mix(in srgb, ${cor} 18%, transparent)`, color: cor }}
+                  >
+                    <Icone aria-hidden size={17} strokeWidth={2.8} />
                   </span>
-                  <span className="flex-1">{label}</span>
-                  <span className="hidden text-xs text-mute sm:inline">{i + 1}</span>
-                  <span aria-hidden className="flex h-4 w-4 items-center justify-center rounded-full border border-line">
-                    {marcada && <span className="h-2 w-2 rounded-full" style={{ background: cor }} />}
+                  <span className="flex-1 font-display text-sm font-medium tracking-tight sm:text-base" style={marcada ? { color: cor } : undefined}>{label}</span>
+                  <span aria-hidden className="flex gap-1">
+                    {[1, 2].map(n => (
+                      <span key={n} className="h-1.5 w-3 rounded-full" style={{ background: n <= forca ? cor : 'var(--track)', opacity: n <= forca ? 1 : 0.6 }} />
+                    ))}
                   </span>
+                  <kbd aria-hidden className="hidden h-6 min-w-6 items-center justify-center rounded-md border border-line bg-tile px-1.5 text-xs text-mute sm:flex">{i + 1}</kbd>
                 </button>
               );
             })}

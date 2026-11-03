@@ -1,6 +1,6 @@
 'use client';
 
-import { Heart, X } from 'lucide-react';
+import { Coffee, X } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { Compartilhar } from './Compartilhar';
 
@@ -59,8 +59,8 @@ export function FimDoResultado({ params, escola, score, pensador }: Props) {
           <div className="mt-4">
             <Compartilhar params={params} escola={escola} score={score} pensador={pensador} />
           </div>
-          <a href="#apoie" onClick={() => setAberto(false)} className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#ffb4d9] hover:underline">
-            <Heart aria-hidden size={14} className="fill-current" /> ou apoie o 8eixos com um Pix
+          <a href="#apoie" onClick={() => setAberto(false)} className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-amber hover:underline">
+            <Coffee aria-hidden size={15} /> ou me paga um café com Pix
           </a>
         </div>
       )}

@@ -1,17 +1,17 @@
 'use client';
 
-import { Check, Copy, Heart } from 'lucide-react';
+import { Check, Coffee, Copy } from 'lucide-react';
 import QRCode from 'qrcode';
 import { useEffect, useMemo, useState } from 'react';
 import { payloadPix } from '@/lib/pix';
 import { PIX_CHAVE, PIX_CIDADE, PIX_NOME } from '@/lib/site';
 import { track } from '@/lib/track';
 
-const VALORES = [5, 10, 20];
+const VALORES = [1, 5, 10];
 
 // Apoio por Pix: QR code e "copia e cola" no padrão do Banco Central, com valores sugeridos ou valor livre.
 export function Apoie({ id = 'apoie' }: { id?: string }) {
-  const [valor, setValor] = useState<number | undefined>(10);
+  const [valor, setValor] = useState<number | undefined>(5);
   const [qr, setQr] = useState<string | null>(null);
   const [copiado, setCopiado] = useState(false);
   const codigo = useMemo(() => payloadPix({ chave: PIX_CHAVE, nome: PIX_NOME, cidade: PIX_CIDADE, valor }), [valor]);
@@ -38,24 +38,24 @@ export function Apoie({ id = 'apoie' }: { id?: string }) {
   const escolher = (v: number | undefined) => { setValor(v); track('apoio_valor', { valor: v ?? 'livre' }); };
 
   return (
-    <section id={id} className="reveal relative mt-24 scroll-mt-20 overflow-hidden rounded-[32px] border border-[#ffb4d9]/30 p-6 sm:p-10" style={{ background: 'linear-gradient(135deg, rgb(255 180 217 / 0.12), rgb(18 22 58 / 0.65) 55%, rgb(195 178 255 / 0.12))' }}>
-      <span aria-hidden className="pointer-events-none absolute -left-16 -top-20 h-60 w-60 rounded-full bg-[#ffb4d9]/20 blur-3xl" />
+    <section id={id} className="reveal relative mt-24 scroll-mt-20 overflow-hidden rounded-[32px] border border-amber/25 p-6 sm:p-10" style={{ background: 'linear-gradient(135deg, rgb(255 217 138 / 0.10), rgb(18 22 58 / 0.7) 55%)' }}>
+      <span aria-hidden className="pointer-events-none absolute -left-16 -top-20 h-60 w-60 rounded-full bg-amber/15 blur-3xl" />
       <div className="relative grid items-center gap-8 lg:grid-cols-[1.1fr_auto]">
         <div>
-          <p className="flex items-center gap-2 text-sm font-semibold text-[#ffb4d9]"><Heart aria-hidden size={16} className="fill-current" /> Apoie o projeto</p>
-          <h2 className="mt-2 font-display text-3xl font-bold sm:text-4xl">O 8eixos é grátis e sem anúncios</h2>
+          <p className="flex items-center gap-2 text-sm font-semibold text-amber"><Coffee aria-hidden size={17} /> Apoie o projeto</p>
+          <h2 className="mt-2 font-display text-3xl font-bold sm:text-4xl">Me paga um café?</h2>
           <p className="mt-3 max-w-xl text-mute">
-            Se o quiz te fez pensar, um Pix de qualquer valor ajuda a manter o site no ar e a trazer novas escolas e pensadores.
+            O 8eixos é grátis e sem anúncios. Se o quiz te fez pensar, um Pix de qualquer valor ajuda a manter o site no ar e a trazer novas escolas e pensadores.
           </p>
           <div className="mt-6 flex flex-wrap gap-2">
             {VALORES.map(v => (
               <button key={v} type="button" onClick={() => escolher(v)} aria-pressed={valor === v}
-                className={`press rounded-full px-5 py-2.5 font-display text-sm font-bold transition-colors ${valor === v ? 'brilho' : 'border border-line bg-tile hover:bg-tile-strong'}`}>
+                className={`press rounded-full px-5 py-2.5 font-display text-sm font-bold transition-colors ${valor === v ? 'bg-amber text-bg' : 'border border-line bg-tile hover:bg-tile-strong'}`}>
                 {`R$ ${v}`}
               </button>
             ))}
             <button type="button" onClick={() => escolher(undefined)} aria-pressed={valor === undefined}
-              className={`press rounded-full px-5 py-2.5 text-sm font-bold transition-colors ${valor === undefined ? 'brilho' : 'border border-line bg-tile hover:bg-tile-strong'}`}>
+              className={`press rounded-full px-5 py-2.5 text-sm font-bold transition-colors ${valor === undefined ? 'bg-amber text-bg' : 'border border-line bg-tile hover:bg-tile-strong'}`}>
               Outro valor
             </button>
           </div>
@@ -70,7 +70,7 @@ export function Apoie({ id = 'apoie' }: { id?: string }) {
           </div>
         </div>
         <div className="mx-auto flex flex-col items-center">
-          <div className="rounded-3xl bg-white p-3 shadow-[0_30px_60px_-25px_rgb(255_180_217_/_0.5)]">
+          <div className="rounded-3xl bg-white p-3 shadow-[0_30px_60px_-25px_rgb(255_217_138_/_0.45)]">
             {qr
               // eslint-disable-next-line @next/next/no-img-element -- QR gerado na hora no navegador
               ? <img src={qr} alt="QR code do Pix de apoio" width={200} height={200} className="h-[200px] w-[200px]" />

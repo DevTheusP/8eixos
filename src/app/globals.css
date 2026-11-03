@@ -332,3 +332,14 @@ body {
 .fim-sobe {
   animation: fim-sobe 420ms var(--ease-out);
 }
+
+/* Opções de resposta do quiz: acendem na cor da opção e deslizam um pouco no hover. */
+.opcao {
+  transition: transform 220ms var(--ease-out), border-color 200ms ease, background-color 200ms ease, box-shadow 250ms ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .opcao:hover {
+    transform: translateX(4px);
+    border-color: color-mix(in srgb, var(--cor) 60%, transparent) !important;
+  }
+}
