@@ -12,3 +12,9 @@ export const SITE_URL = siteUrl({
   VERCEL_PROJECT_PRODUCTION_URL: process.env.VERCEL_PROJECT_PRODUCTION_URL,
 });
 export const PAYWALL_ENABLED = process.env.NEXT_PUBLIC_PAYWALL_ENABLED === 'true';
+
+// Pix de apoio: chave aleatória (não expõe CPF, e-mail nem telefone). O nome do código é o do projeto;
+// o nome real do titular só aparece no app do banco de quem paga, como em qualquer Pix.
+export const PIX_CHAVE = 'fea91e3a-8975-4edc-92de-80d025b66b63';
+export const PIX_NOME = '8eixos';
+export const PIX_CIDADE = 'Brasil';

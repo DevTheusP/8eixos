@@ -123,7 +123,7 @@ Mockup de referência: [`2026-10-31-resultado-mockup.html`](2026-10-31-resultado
 
 ## 8. Relatório pago
 
-- **Preço:** R$ 14,90 por resultado, via Pix. Única referência real de preço no Brasil pra esse formato é o 12axes (R$ 14,99). Revisar depois de ter dados de conversão.
+- **Preço:** R$ 9,90 por resultado, via Pix (decisão do usuário em 2026-11-02, abaixo dos R$ 14,99 do 12axes, pra facilitar a compra por impulso). Revisar depois de ter dados de conversão.
 - **Conteúdo:** cada eixo explicado pra aquele resultado; pontos cegos (onde a escola principal discordaria da pessoa); como lida com morte, felicidade e relações; 7 práticas da escola pro dia a dia; PDF pra baixar.
 - **Segurança:** o conteúdo do relatório é gerado **no servidor** e só entregue com um token de pagamento válido pra aquele vetor de resultado. Nada do relatório pode estar no bundle do front.
 - **Reembolso:** 7 dias, com página de política (como o 12axes).

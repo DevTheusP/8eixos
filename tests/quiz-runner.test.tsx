@@ -64,9 +64,12 @@ test('mostra o eixo da pergunta e explica no "Entenda"', async () => {
   await screen.findByRole('button', { name: 'Concordo totalmente' });
   expect(screen.getByText('Guia')).toBeTruthy();
   fireEvent.click(screen.getByRole('button', { name: /O que isso mede/ }));
-  // guia_01 é afirmação do polo A (Razão): concordar puxa pra Razão, discordar pra Emoção.
-  expect(document.body.textContent).toMatch(/Se você concorda, puxa pra Razão/);
-  expect(document.body.textContent).toMatch(/se discorda, pra Emoção/);
+  // guia_01 é afirmação do polo A (Razão): concordar puxa pra Razão, discordar pra Emoção. Abre por cima, numa janela.
+  const janela = screen.getByRole('dialog', { name: 'Sobre esta pergunta' });
+  expect(janela.textContent).toMatch(/Se você concorda.*Razão/);
+  expect(janela.textContent).toMatch(/Se você discorda.*Emoção/);
+  fireEvent.keyDown(document, { key: 'Escape' });
+  expect(screen.queryByRole('dialog')).toBeNull();
 });
 
 test('com "Passar sozinho" desligado, só avança no botão', async () => {

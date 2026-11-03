@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
 import { SiteHeader } from '@/components/SiteHeader';
 import { getAxes, getQuestions } from '@/lib/data';
+import { escolasPorPolo } from '@/lib/exemplos-eixo';
 import { FORMATOS, type Formato } from '@/lib/selection';
 import { QuizRunner } from './QuizRunner';
 
@@ -18,7 +19,7 @@ export async function generateMetadata({ params }: PageProps<'/quiz/[formato]'>)
 async function QuizBody({ params }: { params: PageProps<'/quiz/[formato]'>['params'] }) {
   const { formato } = await params;
   if (!(formato in FORMATOS)) notFound();
-  return <QuizRunner formato={formato as Formato} pool={getQuestions()} axes={getAxes()} />;
+  return <QuizRunner formato={formato as Formato} pool={getQuestions()} axes={getAxes()} exemplos={escolasPorPolo(2)} />;
 }
 
 export default function QuizPage({ params }: PageProps<'/quiz/[formato]'>) {

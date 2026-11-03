@@ -6,9 +6,11 @@ import { SiteHeader } from '@/components/SiteHeader';
 import { Compartilhar } from '@/components/result/Compartilhar';
 import { Distincao } from '@/components/result/Distincao';
 import { Eixos } from '@/components/result/Eixos';
+import { FimDoResultado } from '@/components/result/FimDoResultado';
 import { Escolas } from '@/components/result/Escolas';
 import { CompareForms } from '@/components/CompareForms';
 import { Hero } from '@/components/result/Hero';
+import { Apoie } from '@/components/Apoie';
 import { Atalhos } from '@/components/result/Atalhos';
 import { LembrarResultado } from '@/components/result/LembrarResultado';
 import { Lida } from '@/components/result/Lida';
@@ -73,6 +75,8 @@ async function Resultado({ searchParams }: { searchParams: PageProps<'/resultado
         <Section id="lida" title="Como você lida com…" icon={HeartHandshake}><Lida school={result.school.school} /></Section>
         <Livros title="Para ler" thinkerIds={[result.thinker.thinker.id, ...result.byDimension.map(d => d.thinker.id)]} />
         <Section id="comparar" title="Compare" icon={Scale}><CompareForms vector={v} /></Section>
+        <FimDoResultado params={params} escola={result.school.school.name} score={result.school.score} pensador={result.thinker.thinker.name} />
+        <Apoie id="apoie" />
       </div>
     </div>
   );

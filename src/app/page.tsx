@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { CSSProperties } from 'react';
+import { Apoie } from '@/components/Apoie';
 import { Continuar } from '@/components/Continuar';
 import { ComoFunciona, Descobre, Familias, Faq, LequeCards, OitoEixos, PreviaResultado } from '@/components/HomeExtras';
 import { SiteHeader } from '@/components/SiteHeader';
@@ -48,6 +49,7 @@ export default function Home() {
           <Formatos />
         </section>
         <Transparencia />
+        <Apoie />
         <Faq />
       </main>
     </>

@@ -1,21 +1,21 @@
 import type { CSSProperties } from 'react';
 import { POLE_ICONS } from '@/lib/icons';
-import { tracosFortes } from '@/lib/labels';
+import { CORES_EIXO } from '@/lib/cores';
+import { tracosPrincipais } from '@/lib/labels';
 import type { Vector } from '@/lib/types';
 
-const CORES = ['var(--brand)', 'var(--mint)', 'var(--amber)'];
 
 // Os três eixos em que a pessoa mais se decidiu, cada um com a frase do polo.
 export function Tracos({ vector }: { vector: Vector }) {
-  const tracos = tracosFortes(vector, 3);
+  const tracos = tracosPrincipais(vector, 3);
   if (tracos.length === 0) {
     return <p className="text-sm text-mute">Você ficou perto do centro em todos os eixos: nenhum lado pesa mais que o outro.</p>;
   }
   return (
     <div className="grid gap-3 sm:grid-cols-3">
-      {tracos.map((t, i) => {
+      {tracos.map(t => {
         const Icone = POLE_ICONS[t.axis.id][t.pole];
-        const cor = CORES[i % CORES.length];
+        const cor = CORES_EIXO[t.axis.id];
         return (
           <div
             key={t.axis.id}
@@ -26,7 +26,7 @@ export function Tracos({ vector }: { vector: Vector }) {
               <span className="flex h-11 w-11 items-center justify-center rounded-2xl text-white" style={{ background: cor }}>
                 <Icone aria-hidden size={22} strokeWidth={2.2} />
               </span>
-              <span className="text-xs font-semibold" style={{ color: cor } as CSSProperties}>{t.label} · {t.percent}%</span>
+              <span className="text-xs font-semibold" style={{ color: cor } as CSSProperties}>{t.leve ? 'Leve tendência' : t.label} · {t.percent}%</span>
             </div>
             <p className="mt-4 text-xs font-semibold text-mute">{t.axis.name}</p>
             <p className="font-display text-2xl font-bold" style={{ color: cor }}>{t.nome}</p>

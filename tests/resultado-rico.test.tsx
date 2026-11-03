@@ -84,3 +84,13 @@ test('cada eixo diz o que a posição significa', async () => {
   expect(container.querySelector('[data-axis="controle"]')!.textContent).toContain(desc);
   expect(container.querySelector('[data-axis="guia"]')!.textContent).toContain('Você fica no meio');
 });
+
+test('traços: completa até 3 com leves tendências quando a pessoa ficou perto do meio', async () => {
+  const { tracosPrincipais } = await import('@/lib/labels');
+  const v = { ...neutro, controle: 15, guia: 56, eu: 46, verdade: 52 };
+  const t = tracosPrincipais(v, 3);
+  expect(t.map(x => [x.axis.id, x.leve])).toEqual([['controle', false], ['guia', true], ['eu', true]]);
+  expect(t[1].nome).toBe('Emoção');
+  render(<Tracos vector={v} />);
+  expect(screen.getAllByText(/Leve tendência/)).toHaveLength(2);
+});

@@ -4,7 +4,7 @@ import { SITE_REPO } from '@/lib/site';
 const PONTOS: { Icone: LucideIcon; titulo: string; texto: string; cor: string }[] = [
   {
     Icone: ShieldCheck, titulo: 'Independente', cor: '#8fb3ff',
-    texto: 'Sem vínculo com religião, partido ou escola filosófica. Nenhuma escola paga para aparecer no seu resultado. Os links de livros são de afiliado da Amazon e não mudam o cálculo.',
+    texto: 'Sem vínculo com religião, partido ou escola filosófica. Nenhuma escola paga para aparecer no seu resultado. Os links de livros só levam até a Amazon e não mudam o cálculo.',
   },
   {
     Icone: Calculator, titulo: 'Cálculo à vista', cor: '#7fdba6',

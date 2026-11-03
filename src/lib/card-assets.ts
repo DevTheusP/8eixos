@@ -3,7 +3,7 @@ import type { LucideIcon } from 'lucide-react';
 import { createElement, type ReactElement } from 'react';
 import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
-import type { AxisId, Thinker } from './types';
+import type { Thinker } from './types';
 
 // O gerador de imagem não lê webp: os cards usam a cópia JPG pequena de cada retrato (public/retratos/jpg).
 export function retratoDataUri(t: Thinker): string | null {
@@ -44,17 +44,7 @@ export function cardFonts(): Fonte[] {
   return fontes;
 }
 
-// Uma cor por eixo, clara o bastante pra ler sobre o fundo escuro do card.
-export const CORES_EIXO: Record<AxisId, string> = {
-  controle: '#8fb3ff',
-  bemviver: '#f6c76e',
-  sentido: '#ff9f6b',
-  mundo: '#7fdba6',
-  eu: '#c9a8ff',
-  rotina: '#6fd3f0',
-  guia: '#ff8fb1',
-  verdade: '#e6e1c8',
-};
+export { CORES_EIXO } from './cores';
 
 // Mistura a cor com preto: t = 0 mantém, t = 1 vira preto.
 export function escurecer(hex: string, t: number): string {

@@ -31,3 +31,17 @@ export function poloDoCard(axis: Axis, v: number) {
   const lado: 'A' | 'B' = v <= 50 ? 'A' : 'B';
   return { lado, nome: lado === 'A' ? axis.poleA : axis.poleB, percent: Math.round(Math.max(v, 100 - v)), decidido: intensity(v).pole !== null };
 }
+
+// Os n eixos em que a pessoa mais pende, mesmo que pouco: os decididos vêm primeiro, e o resto é marcado como leve.
+// Eixos exatamente no meio ficam de fora (não há lado pra mostrar).
+export function tracosPrincipais(v: Vector, n: number) {
+  return getAxes()
+    .filter(axis => v[axis.id] !== 50)
+    .map(axis => ({ axis, dist: Math.abs(v[axis.id] - 50), info: intensity(v[axis.id]), p: poloDoCard(axis, v[axis.id]) }))
+    .sort((a, b) => b.dist - a.dist)
+    .slice(0, n)
+    .map(({ axis, info, p }) => ({
+      axis, pole: p.lado, nome: p.nome, percent: p.percent, label: info.label,
+      desc: p.lado === 'A' ? axis.descA : axis.descB, leve: info.pole === null,
+    }));
+}

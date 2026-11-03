@@ -104,14 +104,23 @@ export function saveLastResult(params: string, resumo?: ResumoResultado): void {
   }
 }
 
+const PARAMS_OK = /^[a-z]=\d{1,3}(&[a-z]=\d{1,3}){7}$/;
+
+function resumoValido(r: unknown): r is ResumoResultado {
+  const x = r as Partial<ResumoResultado> | null;
+  return !!x && typeof x.escola === 'string' && typeof x.familia === 'string' && typeof x.score === 'number'
+    && typeof x.cor === 'string' && /^#[0-9a-f]{6}$/i.test(x.cor);
+}
+
 // Aceita também o formato antigo, que guardava só os parâmetros como texto.
 export function loadLastResult(): { params: string; resumo?: ResumoResultado } | null {
   try {
     const raw = localStorage.getItem(ULTIMO);
     if (!raw) return null;
-    if (!raw.startsWith('{')) return { params: raw };
-    const v = JSON.parse(raw) as { params?: unknown; resumo?: ResumoResultado };
-    return typeof v.params === 'string' ? { params: v.params, resumo: v.resumo } : null;
+    const v = (raw.startsWith('{') ? JSON.parse(raw) : { params: raw }) as { params?: unknown; resumo?: unknown };
+    // O que vem do navegador é validado: parâmetros no formato do resultado e um resumo com tipos e cor esperados.
+    if (typeof v.params !== 'string' || !PARAMS_OK.test(v.params)) return null;
+    return { params: v.params, resumo: resumoValido(v.resumo) ? v.resumo : undefined };
   } catch {
     return null;
   }
