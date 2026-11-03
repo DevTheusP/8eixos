@@ -257,5 +257,306 @@
     "title": "Vidas e doutrinas dos filósofos ilustres",
     "year": 230,
     "amazonQuery": "Vidas e doutrinas dos filósofos ilustres Diógenes Laércio"
+  },
+  {
+    "id": "platao-1",
+    "thinkerId": "platao",
+    "title": "A República",
+    "year": -375,
+    "amazonQuery": "A República Platão"
+  },
+  {
+    "id": "socrates-1",
+    "thinkerId": "socrates",
+    "title": "Apologia de Sócrates (Platão)",
+    "year": -399,
+    "amazonQuery": "Apologia de Sócrates Platão"
+  },
+  {
+    "id": "plotino-1",
+    "thinkerId": "plotino",
+    "title": "Enéadas",
+    "year": 270,
+    "amazonQuery": "Enéadas Plotino"
+  },
+  {
+    "id": "iris-murdoch-1",
+    "thinkerId": "iris-murdoch",
+    "title": "A Soberania do Bem",
+    "year": 1970,
+    "amazonQuery": "A Soberania do Bem Iris Murdoch"
+  },
+  {
+    "id": "tomas-de-aquino-1",
+    "thinkerId": "tomas-de-aquino",
+    "title": "Suma Teológica",
+    "year": 1274,
+    "amazonQuery": "Suma Teológica Tomás de Aquino"
+  },
+  {
+    "id": "chesterton-1",
+    "thinkerId": "chesterton",
+    "title": "Ortodoxia",
+    "year": 1908,
+    "amazonQuery": "Ortodoxia Chesterton"
+  },
+  {
+    "id": "dogen-1",
+    "thinkerId": "dogen",
+    "title": "Shobogenzo",
+    "year": 1253,
+    "amazonQuery": "Shobogenzo Dogen"
+  },
+  {
+    "id": "shunryu-suzuki-1",
+    "thinkerId": "shunryu-suzuki",
+    "title": "Mente Zen, Mente de Principiante",
+    "year": 1970,
+    "amazonQuery": "Mente Zen Mente de Principiante Shunryu Suzuki"
+  },
+  {
+    "id": "alan-watts-1",
+    "thinkerId": "alan-watts",
+    "title": "A Sabedoria da Insegurança",
+    "year": 1951,
+    "amazonQuery": "A Sabedoria da Insegurança Alan Watts"
+  },
+  {
+    "id": "bentham-1",
+    "thinkerId": "bentham",
+    "title": "Uma Introdução aos Princípios da Moral e da Legislação",
+    "year": 1789,
+    "amazonQuery": "Introdução aos Princípios da Moral e da Legislação Bentham"
+  },
+  {
+    "id": "stuart-mill-1",
+    "thinkerId": "stuart-mill",
+    "title": "Sobre a Liberdade",
+    "year": 1859,
+    "amazonQuery": "Sobre a Liberdade John Stuart Mill"
+  },
+  {
+    "id": "peter-singer-1",
+    "thinkerId": "peter-singer",
+    "title": "Ética Prática",
+    "year": 1979,
+    "amazonQuery": "Ética Prática Peter Singer"
+  },
+  {
+    "id": "kant-1",
+    "thinkerId": "kant",
+    "title": "Fundamentação da Metafísica dos Costumes",
+    "year": 1785,
+    "amazonQuery": "Fundamentação da Metafísica dos Costumes Kant"
+  },
+  {
+    "id": "william-james-1",
+    "thinkerId": "william-james",
+    "title": "Pragmatismo",
+    "year": 1907,
+    "amazonQuery": "Pragmatismo William James"
+  },
+  {
+    "id": "john-dewey-1",
+    "thinkerId": "john-dewey",
+    "title": "Democracia e Educação",
+    "year": 1916,
+    "amazonQuery": "Democracia e Educação John Dewey"
+  },
+  {
+    "id": "bertrand-russell-1",
+    "thinkerId": "bertrand-russell",
+    "title": "Os Problemas da Filosofia",
+    "year": 1912,
+    "amazonQuery": "Os Problemas da Filosofia Bertrand Russell"
+  },
+  {
+    "id": "carl-sagan-1",
+    "thinkerId": "carl-sagan",
+    "title": "Cosmos",
+    "year": 1980,
+    "amazonQuery": "Cosmos Carl Sagan"
+  },
+  {
+    "id": "mary-wollstonecraft-1",
+    "thinkerId": "mary-wollstonecraft",
+    "title": "Reivindicação dos Direitos da Mulher",
+    "year": 1792,
+    "amazonQuery": "Reivindicação dos Direitos da Mulher Mary Wollstonecraft"
+  },
+  {
+    "id": "voltaire-1",
+    "thinkerId": "voltaire",
+    "title": "Cândido, ou o Otimismo",
+    "year": 1759,
+    "amazonQuery": "Cândido Voltaire"
+  },
+  {
+    "id": "emerson-1",
+    "thinkerId": "emerson",
+    "title": "Autoconfiança",
+    "year": 1841,
+    "amazonQuery": "Autoconfiança Emerson"
+  },
+  {
+    "id": "hume-1",
+    "thinkerId": "hume",
+    "title": "Investigação sobre o Entendimento Humano",
+    "year": 1748,
+    "amazonQuery": "Investigação sobre o Entendimento Humano David Hume"
+  },
+  {
+    "id": "simone-weil-1",
+    "thinkerId": "simone-weil",
+    "title": "A Gravidade e a Graça",
+    "year": 1947,
+    "amazonQuery": "A Gravidade e a Graça Simone Weil"
+  },
+  {
+    "id": "martha-nussbaum-1",
+    "thinkerId": "martha-nussbaum",
+    "title": "Sem Fins Lucrativos: Por que a Democracia Precisa das Humanidades",
+    "year": 2010,
+    "amazonQuery": "Sem Fins Lucrativos Martha Nussbaum"
+  },
+  {
+    "id": "hannah-arendt-1",
+    "thinkerId": "hannah-arendt",
+    "title": "Eichmann em Jerusalém",
+    "year": 1963,
+    "amazonQuery": "Eichmann em Jerusalém Hannah Arendt"
+  },
+  {
+    "id": "rousseau-1",
+    "thinkerId": "rousseau",
+    "title": "Do Contrato Social",
+    "year": 1762,
+    "amazonQuery": "Do Contrato Social Rousseau"
+  },
+  {
+    "id": "machado-de-assis-1",
+    "thinkerId": "machado-de-assis",
+    "title": "Memórias Póstumas de Brás Cubas",
+    "year": 1881,
+    "amazonQuery": "Memórias Póstumas de Brás Cubas Machado de Assis"
+  },
+  {
+    "id": "allan-kardec-1",
+    "thinkerId": "allan-kardec",
+    "title": "O Livro dos Espíritos",
+    "year": 1857,
+    "amazonQuery": "O Livro dos Espíritos Allan Kardec"
+  },
+  {
+    "id": "chico-xavier-1",
+    "thinkerId": "chico-xavier",
+    "title": "Nosso Lar",
+    "year": 1944,
+    "amazonQuery": "Nosso Lar Chico Xavier"
+  },
+  {
+    "id": "leon-denis-1",
+    "thinkerId": "leon-denis",
+    "title": "Depois da Morte",
+    "year": 1890,
+    "amazonQuery": "Depois da Morte Léon Denis"
+  },
+  {
+    "id": "rumi-1",
+    "thinkerId": "rumi",
+    "title": "Divã de Shams de Tabriz",
+    "year": 1260,
+    "amazonQuery": "Divã de Shams de Tabriz Rumi"
+  },
+  {
+    "id": "al-ghazali-1",
+    "thinkerId": "al-ghazali",
+    "title": "A Alquimia da Felicidade",
+    "year": 1100,
+    "amazonQuery": "A Alquimia da Felicidade Al-Ghazali"
+  },
+  {
+    "id": "maimonides-1",
+    "thinkerId": "maimonides",
+    "title": "Guia dos Perplexos",
+    "year": 1190,
+    "amazonQuery": "Guia dos Perplexos Maimônides"
+  },
+  {
+    "id": "martin-buber-1",
+    "thinkerId": "martin-buber",
+    "title": "Eu e Tu",
+    "year": 1923,
+    "amazonQuery": "Eu e Tu Martin Buber"
+  },
+  {
+    "id": "abraham-heschel-1",
+    "thinkerId": "abraham-heschel",
+    "title": "O Schabat",
+    "year": 1951,
+    "amazonQuery": "O Schabat Abraham Joshua Heschel"
+  },
+  {
+    "id": "adi-shankara-1",
+    "thinkerId": "adi-shankara",
+    "title": "Vivekachudamani: A Joia Suprema do Discernimento",
+    "year": 800,
+    "amazonQuery": "Vivekachudamani Adi Shankara"
+  },
+  {
+    "id": "vivekananda-1",
+    "thinkerId": "vivekananda",
+    "title": "Raja Yoga",
+    "year": 1896,
+    "amazonQuery": "Raja Yoga Vivekananda"
+  },
+  {
+    "id": "gandhi-1",
+    "thinkerId": "gandhi",
+    "title": "Autobiografia: Minha Vida e Minhas Experiências com a Verdade",
+    "year": 1927,
+    "amazonQuery": "Autobiografia Gandhi"
+  },
+  {
+    "id": "leopardi-1",
+    "thinkerId": "leopardi",
+    "title": "Pensamentos",
+    "year": 1845,
+    "amazonQuery": "Pensamentos Giacomo Leopardi"
+  },
+  {
+    "id": "desmond-tutu-1",
+    "thinkerId": "desmond-tutu",
+    "title": "O Livro do Perdão",
+    "year": 2014,
+    "amazonQuery": "O Livro do Perdão Desmond Tutu"
+  },
+  {
+    "id": "nelson-mandela-1",
+    "thinkerId": "nelson-mandela",
+    "title": "Longa Caminhada até a Liberdade",
+    "year": 1994,
+    "amazonQuery": "Longa Caminhada até a Liberdade Nelson Mandela"
+  },
+  {
+    "id": "martin-luther-king-1",
+    "thinkerId": "martin-luther-king",
+    "title": "Por Que Não Podemos Esperar",
+    "year": 1964,
+    "amazonQuery": "Por Que Não Podemos Esperar Martin Luther King Jr."
+  },
+  {
+    "id": "dalai-lama-1",
+    "thinkerId": "dalai-lama",
+    "title": "A Arte da Felicidade",
+    "year": 1998,
+    "amazonQuery": "A Arte da Felicidade Dalai Lama"
+  },
+  {
+    "id": "krishnamurti-1",
+    "thinkerId": "krishnamurti",
+    "title": "A Primeira e Última Liberdade",
+    "year": 1954,
+    "amazonQuery": "A Primeira e Última Liberdade Krishnamurti"
   }
 ]
