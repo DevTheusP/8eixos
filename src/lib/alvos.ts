@@ -3,12 +3,13 @@ import type { Vector } from './types';
 
 // Com quem dá para comparar o resultado: qualquer pensador ou escola do catálogo.
 export type OpcaoComparacao = {
-  valor: string; nome: string; descricao: string; tipo: 'Pensador' | 'Escola'; retrato?: string; cor: string; busca: string;
+  valor: string; nome: string; descricao: string; tipo: 'Pensador' | 'Escola'; retrato?: string; cor: string; busca: string; vector: Vector;
 };
 
 export const semAcento = (t: string) => t.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
 
 export function opcoesComparacao(): OpcaoComparacao[] {
+  const vetores = getVectors();
   const escolas = getSchools();
   const cor = new Map(getFamilies().map(f => [f.id, f.color]));
   const corEscola = new Map(escolas.map(e => [e.id, cor.get(e.familyId) ?? '#5b46d6']));
@@ -16,13 +17,13 @@ export function opcoesComparacao(): OpcaoComparacao[] {
   const pensadores: OpcaoComparacao[] = getThinkers().map(t => ({
     valor: `pensador:${t.id}`, nome: t.name, descricao: t.descriptor ?? '', tipo: 'Pensador',
     retrato: t.portrait ? `/retratos/${t.portrait.file}` : undefined, cor: corEscola.get(t.schoolId ?? '') ?? '#5b46d6',
-    busca: semAcento(`${t.name} ${t.descriptor ?? ''} ${nomeEscola.get(t.schoolId ?? '') ?? ''}`),
+    busca: semAcento(`${t.name} ${t.descriptor ?? ''} ${nomeEscola.get(t.schoolId ?? '') ?? ''}`), vector: vetores.thinkers[t.id],
   }));
   const daEscola: OpcaoComparacao[] = escolas.map(e => ({
     valor: `escola:${e.id}`, nome: e.name, descricao: 'Escola filosófica', tipo: 'Escola', cor: corEscola.get(e.id)!,
-    busca: semAcento(e.name),
+    busca: semAcento(e.name), vector: vetores.schools[e.id],
   }));
-  return [...pensadores, ...daEscola].sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR'));
+  return [...pensadores, ...daEscola].filter(o => o.vector).sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR'));
 }
 
 export function resolverAlvo(valor: string): { nome: string; vector: Vector } | null {
