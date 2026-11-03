@@ -18,6 +18,10 @@ export interface Question {
   textRight?: string;
 }
 
+// Etapa final de múltipla escolha: cada alternativa já traz uma posição (0 = polo A, 100 = polo B) em alguns eixos.
+export interface RetratoOpcao { id: string; texto: string; efeitos: Partial<Record<AxisId, number>> }
+export interface RetratoPergunta { id: string; pergunta: string; opcoes: RetratoOpcao[] }
+
 export interface Family { id: string; name: string; color: string; soft: string }
 
 export interface School {

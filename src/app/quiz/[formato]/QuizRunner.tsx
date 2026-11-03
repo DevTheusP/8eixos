@@ -11,7 +11,8 @@ import {
 } from '@/lib/quiz-state';
 import { computeVector } from '@/lib/scoring';
 import { selectQuestions, type Formato } from '@/lib/selection';
-import type { AnswerIndex, Axis, AxisId, Question } from '@/lib/types';
+import type { AnswerIndex, Axis, AxisId, Question, RetratoPergunta } from '@/lib/types';
+import { RetratoFinal } from './RetratoFinal';
 import { SobrePergunta } from './SobrePergunta';
 import { track } from '@/lib/track';
 import { vectorToParams } from '@/lib/url';
@@ -51,8 +52,9 @@ function lerPreferencia(): boolean {
   }
 }
 
-export function QuizRunner({ formato, pool, axes = [], exemplos }: {
+export function QuizRunner({ formato, pool, axes = [], exemplos, retrato = [] }: {
   formato: Formato; pool: Question[]; axes?: Axis[]; exemplos?: Partial<Record<AxisId, { A: string[]; B: string[] }>>;
+  retrato?: RetratoPergunta[];
 }) {
   const router = useRouter();
   const byId = useMemo(() => new Map(pool.map(q => [q.id, q])), [pool]);
@@ -75,19 +77,28 @@ export function QuizRunner({ formato, pool, axes = [], exemplos }: {
     setAuto(lerPreferencia());
   }, [formato, pool, byId]);
 
+  const finalizar = useCallback((s: QuizState) => {
+    const escolhas = s.retrato ?? {};
+    const v = computeVector(s.questionIds.map(id => byId.get(id)!), s.answers, retrato, escolhas);
+    registrarVistas([...s.questionIds, ...(s.skipped ?? [])]);
+    clearState(formato);
+    track('quiz_fim', { formato, retrato: Object.keys(escolhas).length });
+    router.push(`/resultado?${vectorToParams(v)}`);
+  }, [byId, formato, retrato, router]);
+
   const commit = useCallback((next: QuizState) => {
     if (isDone(next)) {
-      const v = computeVector(next.questionIds.map(id => byId.get(id)!), next.answers);
-      registrarVistas([...next.questionIds, ...(next.skipped ?? [])]);
-      clearState(formato);
-      track('quiz_fim', { formato });
-      router.push(`/resultado?${vectorToParams(v)}`);
-      return;
+      const respondeuRetrato = retrato.length > 0 && retrato.every(p => next.retrato?.[p.id] !== undefined);
+      if (retrato.length === 0 || respondeuRetrato) return finalizar(next);
+      if (next.retrato === undefined) {
+        next = { ...next, retrato: {} };
+        track('retrato_inicio', { formato });
+      }
     }
     saveState(next);
     setState(next);
     setEntenda(false);
-  }, [byId, formato, router]);
+  }, [finalizar, formato, retrato]);
 
   const choose = useCallback((i: AnswerIndex, teclado = false) => {
     if (!state) return;
@@ -99,7 +110,7 @@ export function QuizRunner({ formato, pool, axes = [], exemplos }: {
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
-      if (!state || e.metaKey || e.ctrlKey || e.altKey) return;
+      if (!state || isDone(state) || e.metaKey || e.ctrlKey || e.altKey) return;
       const n = Number(e.key);
       if (n >= 1 && n <= 5) choose((n - 1) as AnswerIndex, true);
       else if (e.key === 'Enter') { setViaTeclado(true); commit(advance(state)); }
@@ -110,6 +121,28 @@ export function QuizRunner({ formato, pool, axes = [], exemplos }: {
   }, [state, choose, commit]);
 
   if (!state) return <p className="py-20 text-center text-mute">Preparando as perguntas…</p>;
+
+  if (isDone(state) && retrato.length > 0) {
+    const escolhas = state.retrato ?? {};
+    return (
+      <RetratoFinal
+        perguntas={retrato}
+        escolhas={escolhas}
+        onEscolher={(pergunta, opcao) => commit({ ...state, retrato: { ...escolhas, [pergunta]: opcao } })}
+        onPular={() => { track('retrato_pular', { formato, respondidas: Object.keys(escolhas).length }); finalizar(state); }}
+        onVoltar={() => {
+          // Volta uma pergunta do retrato; da primeira, volta para a última pergunta normal.
+          const ultima = [...retrato].reverse().find(p => escolhas[p.id] !== undefined);
+          if (ultima) {
+            const { [ultima.id]: _removida, ...resto } = escolhas;
+            commit({ ...state, retrato: resto });
+          } else {
+            commit({ ...back(state), retrato: undefined });
+          }
+        }}
+      />
+    );
+  }
 
   const total = state.questionIds.length;
   const q = byId.get(state.questionIds[Math.min(state.index, total - 1)])!;

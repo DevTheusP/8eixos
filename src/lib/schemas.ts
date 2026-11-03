@@ -27,6 +27,16 @@ export const questionSchema = z.object({
   textRight: z.string().min(1).optional(),
 });
 
+export const retratoSchema = z.object({
+  id: z.string().regex(/^[a-z]+$/),
+  pergunta: z.string().min(1),
+  opcoes: z.array(z.object({
+    id: z.string().regex(/^[a-z]$/),
+    texto: z.string().min(1),
+    efeitos: z.partialRecord(axisIdSchema, z.number().min(0).max(100)),
+  })).min(2),
+});
+
 export const schoolSchema = z.object({
   id: z.string().min(1),
   name: z.string().min(1),
