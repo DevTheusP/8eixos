@@ -11,7 +11,8 @@ import {
 } from '@/lib/quiz-state';
 import { computeVector } from '@/lib/scoring';
 import { selectQuestions, type Formato } from '@/lib/selection';
-import type { AnswerIndex, Axis, Question } from '@/lib/types';
+import type { AnswerIndex, Axis, AxisId, Question } from '@/lib/types';
+import { SobrePergunta } from './SobrePergunta';
 import { track } from '@/lib/track';
 import { vectorToParams } from '@/lib/url';
 
@@ -46,13 +47,16 @@ function lerPreferencia(): boolean {
   }
 }
 
-export function QuizRunner({ formato, pool, axes = [] }: { formato: Formato; pool: Question[]; axes?: Axis[] }) {
+export function QuizRunner({ formato, pool, axes = [], exemplos }: {
+  formato: Formato; pool: Question[]; axes?: Axis[]; exemplos?: Partial<Record<AxisId, { A: string[]; B: string[] }>>;
+}) {
   const router = useRouter();
   const byId = useMemo(() => new Map(pool.map(q => [q.id, q])), [pool]);
   const axisById = useMemo(() => new Map(axes.map(a => [a.id, a])), [axes]);
   const [state, setState] = useState<QuizState | null>(null);
   const [auto, setAuto] = useState(true);
   const [entenda, setEntenda] = useState(false);
+  const fecharEntenda = useCallback(() => setEntenda(false), []);
   // Troca por teclado não anima: ação repetida muitas vezes fica mais rápida sem movimento.
   const [viaTeclado, setViaTeclado] = useState(false);
 
@@ -156,18 +160,14 @@ export function QuizRunner({ formato, pool, axes = [] }: { formato: Formato; poo
           </span>
           <button
             type="button"
-            onClick={() => setEntenda(v => !v)}
-            aria-expanded={entenda}
+            onClick={() => setEntenda(true)}
+            aria-haspopup="dialog"
             className="press inline-flex items-center gap-1.5 rounded-full bg-tile px-3 py-1 text-xs font-semibold text-mute hover:text-ink"
           >
             <CircleHelp aria-hidden size={14} /> O que isso mede?
           </button>
         </div>
-        {entenda && eixo && (
-          <p className="question-in relative mb-4 rounded-xl bg-tile px-4 py-3 text-sm text-mute">
-            {explicacao(q, eixo)} Não existe resposta certa: responda pelo que você pensa de verdade.
-          </p>
-        )}
+        {entenda && eixo && <SobrePergunta q={q} eixo={eixo} exemplos={exemplos?.[eixo.id]} onClose={fecharEntenda} />}
 
         <div key={q.id} className={`relative ${viaTeclado ? '' : 'question-in'}`}>
           {q.kind === 'forced' ? (
@@ -267,16 +267,3 @@ export function QuizRunner({ formato, pool, axes = [] }: { formato: Formato; poo
   );
 }
 
-// Diz pra onde cada resposta puxa, usando a descrição de cada polo do eixo.
-function explicacao(q: Question, eixo: Axis) {
-  const [primeiro, segundo] = q.polarity === 'A'
-    ? [{ nome: eixo.poleA, desc: eixo.descA }, { nome: eixo.poleB, desc: eixo.descB }]
-    : [{ nome: eixo.poleB, desc: eixo.descB }, { nome: eixo.poleA, desc: eixo.descA }];
-  const quando = q.kind === 'forced' ? ['Escolher a frase da esquerda', 'a da direita'] : ['Se você concorda', 'se discorda'];
-  return (
-    <>
-      {quando[0]}, puxa pra <strong className="text-ink">{primeiro.nome}</strong>: {primeiro.desc} E {quando[1]}, pra{' '}
-      <strong className="text-ink">{segundo.nome}</strong>: {segundo.desc}
-    </>
-  );
-}
