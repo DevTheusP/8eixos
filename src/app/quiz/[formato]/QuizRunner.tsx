@@ -16,9 +16,13 @@ import { SobrePergunta } from './SobrePergunta';
 import { track } from '@/lib/track';
 import { vectorToParams } from '@/lib/url';
 
-type Opcao = { label: string; Icone: LucideIcon; cor: string; forca: 0 | 1 | 2 };
+type Opcao = { label: string; Icone: LucideIcon | 'A' | 'B'; cor: string; forca: 0 | 1 | 2 };
 
-// Concordar em verde-água, discordar em rosa, neutro em lilás; nas de "esquerda × direita", azul e dourado.
+const COR_A = '#8fb3ff';
+const COR_B = '#ffd98a';
+
+// Concordar em verde-água, discordar em rosa, neutro em lilás; nas de frase A × frase B, azul e dourado.
+// A e B em vez de esquerda e direita: no celular as frases ficam uma embaixo da outra.
 const LIKERT: Opcao[] = [
   { label: 'Concordo totalmente', Icone: Check, cor: '#5ef2c0', forca: 2 },
   { label: 'Concordo', Icone: Check, cor: '#5ef2c0', forca: 1 },
@@ -27,11 +31,11 @@ const LIKERT: Opcao[] = [
   { label: 'Discordo totalmente', Icone: X, cor: '#ff8fb1', forca: 2 },
 ];
 const FORCADA: Opcao[] = [
-  { label: 'Muito mais a da esquerda', Icone: ArrowLeft, cor: '#8fb3ff', forca: 2 },
-  { label: 'Mais a da esquerda', Icone: ArrowLeft, cor: '#8fb3ff', forca: 1 },
+  { label: 'Muito mais a frase\u00a0A', Icone: 'A', cor: COR_A, forca: 2 },
+  { label: 'Mais a frase\u00a0A', Icone: 'A', cor: COR_A, forca: 1 },
   { label: 'Igual', Icone: Equal, cor: '#b9b2e6', forca: 0 },
-  { label: 'Mais a da direita', Icone: ArrowRight, cor: '#ffd98a', forca: 1 },
-  { label: 'Muito mais a da direita', Icone: ArrowRight, cor: '#ffd98a', forca: 2 },
+  { label: 'Mais a frase\u00a0B', Icone: 'B', cor: COR_B, forca: 1 },
+  { label: 'Muito mais a frase\u00a0B', Icone: 'B', cor: COR_B, forca: 2 },
 ];
 const PREF_AUTO = 'quiz:avancar-ao-responder';
 
@@ -175,8 +179,12 @@ export function QuizRunner({ formato, pool, axes = [], exemplos }: {
             <div>
               <p className="mb-3 text-sm font-semibold text-mute">Qual frase combina mais com você?</p>
               <div className="grid gap-3 sm:grid-cols-2">
-                <p className="rounded-2xl border-l-4 border-l-brand bg-tile p-4 font-display text-lg font-semibold">{q.textLeft}</p>
-                <p className="rounded-2xl border-l-4 border-l-mint bg-tile p-4 font-display text-lg font-semibold">{q.textRight}</p>
+                {([['A', q.textLeft, COR_A], ['B', q.textRight, COR_B]] as const).map(([letra, texto, cor]) => (
+                  <div key={letra} data-frase={letra} className="flex gap-3 rounded-2xl border-l-4 bg-tile p-4" style={{ borderLeftColor: cor }}>
+                    <span aria-hidden className="flex h-7 w-7 flex-none items-center justify-center rounded-lg font-display text-sm font-bold" style={{ background: cor, color: '#0b0d26' }}>{letra}</span>
+                    <p className="font-display text-lg font-semibold">{texto}</p>
+                  </div>
+                ))}
               </div>
             </div>
           ) : (
@@ -205,7 +213,9 @@ export function QuizRunner({ formato, pool, axes = [], exemplos }: {
                     className="flex h-9 w-9 flex-none items-center justify-center rounded-xl transition-colors"
                     style={forca === 2 || marcada ? { background: cor, color: '#0b0d26' } : { background: `color-mix(in srgb, ${cor} 18%, transparent)`, color: cor }}
                   >
-                    <Icone aria-hidden size={17} strokeWidth={2.8} />
+                    {typeof Icone === 'string'
+                      ? <span aria-hidden className="font-display text-sm font-bold">{Icone}</span>
+                      : <Icone aria-hidden size={17} strokeWidth={2.8} />}
                   </span>
                   <span className="flex-1 font-display text-sm font-medium tracking-tight sm:text-base" style={marcada ? { color: cor } : undefined}>{label}</span>
                   <span aria-hidden className="flex gap-1">
