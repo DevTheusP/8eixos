@@ -105,3 +105,13 @@ test('histórico de perguntas vistas soma a cada quiz e ignora lixo do navegador
   mem.set('quiz:vistas', 'não é json');
   expect(loadVistas()).toEqual({});
 });
+
+test('último resultado com casas decimais (o formato que o quiz gera) é lembrado', () => {
+  const mem = new Map<string, string>();
+  vi.stubGlobal('localStorage', { getItem: (k: string) => mem.get(k) ?? null, setItem: (k: string, v: string) => mem.set(k, v), removeItem: (k: string) => mem.delete(k) });
+  const params = 'c=12.5&b=31.7&s=12.5&m=50&e=90&r=20&g=15&v=30';
+  saveLastResult(params);
+  expect(loadLastResult()?.params).toBe(params);
+  mem.set('quiz:ultimo-resultado', JSON.stringify({ params: 'c=12.55&b=1&s=1&m=1&e=1&r=1&g=1&v=1' }));
+  expect(loadLastResult()).toBeNull();
+});

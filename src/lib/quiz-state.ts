@@ -128,7 +128,8 @@ export function saveLastResult(params: string, resumo?: ResumoResultado): void {
   }
 }
 
-const PARAMS_OK = /^[a-z]=\d{1,3}(&[a-z]=\d{1,3}){7}$/;
+// Mesmo formato de vectorToParams: até uma casa decimal por eixo.
+const PARAMS_OK = /^[a-z]=\d{1,3}(\.\d)?(&[a-z]=\d{1,3}(\.\d)?){7}$/;
 
 function resumoValido(r: unknown): r is ResumoResultado {
   const x = r as Partial<ResumoResultado> | null;
