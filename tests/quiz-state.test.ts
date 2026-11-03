@@ -82,3 +82,12 @@ test('guarda e devolve o último resultado', () => {
   localStorage.setItem('quiz:ultimo-resultado', 'c=9&b=9&s=9&m=9&e=9&r=9&g=9&v=9');
   expect(loadLastResult()).toEqual({ params: 'c=9&b=9&s=9&m=9&e=9&r=9&g=9&v=9' });
 });
+
+test('resumo salvo com dados estranhos é descartado (só os parâmetros ficam)', () => {
+  const mem = new Map<string, string>();
+  vi.stubGlobal('localStorage', { getItem: (k: string) => mem.get(k) ?? null, setItem: (k: string, v: string) => mem.set(k, v), removeItem: (k: string) => mem.delete(k) });
+  localStorage.setItem('quiz:ultimo-resultado', JSON.stringify({ params: 'c=1&b=2&s=3&m=4&e=5&r=6&g=7&v=8', resumo: { escola: 'X', familia: 'Y', cor: 'red;background:url(//mal.example)', score: 50 } }));
+  expect(loadLastResult()).toEqual({ params: 'c=1&b=2&s=3&m=4&e=5&r=6&g=7&v=8', resumo: undefined });
+  localStorage.setItem('quiz:ultimo-resultado', JSON.stringify({ params: 'javascript:alert(1)' }));
+  expect(loadLastResult()).toBeNull();
+});
