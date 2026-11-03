@@ -324,3 +324,11 @@ body {
   animation: flutuar 6s var(--ease-in-out) infinite, brilho-carregando 1.4s linear infinite;
   animation-delay: var(--f, 0s), 0s;
 }
+
+/* Cartão do fim do resultado: sobe de baixo ao aparecer. */
+@keyframes fim-sobe {
+  from { opacity: 0; translate: 0 24px; }
+}
+.fim-sobe {
+  animation: fim-sobe 420ms var(--ease-out);
+}
