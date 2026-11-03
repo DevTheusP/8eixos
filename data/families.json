@@ -5,5 +5,6 @@
   { "id": "prazer", "name": "Filosofias do prazer", "color": "#b0365f", "soft": "#f3d9e3" },
   { "id": "duvida", "name": "Filosofias da dúvida", "color": "#4a4f5c", "soft": "#e0e2e7" },
   { "id": "cristas", "name": "Tradições cristãs", "color": "#5b3a86", "soft": "#e7dff3" },
-  { "id": "razao", "name": "Razão e sociedade", "color": "#8a6d1f", "soft": "#f1e6c8" }
+  { "id": "razao", "name": "Razão e sociedade", "color": "#8a6d1f", "soft": "#f1e6c8" },
+  { "id": "fe", "name": "Caminhos de fé", "color": "#2a6f6f", "soft": "#d3e8e8" }
 ]

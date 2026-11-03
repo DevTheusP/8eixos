@@ -63,3 +63,14 @@ export function loadAllAnswers(root = path.join(process.cwd(), 'data', 'answers'
     });
   });
 }
+
+// Acima disso, dois eixos medem quase a mesma coisa no catálogo e precisam ser revistos (spec, "Validação obrigatória").
+export const LIMITE_CORRELACAO = 0.7;
+// Exceção revista em 2026-11-03: as tradições religiosas são quase todas éticas da virtude e as filosofias do prazer quase
+// todas sem Deus, então bem viver × sentido correlaciona no catálogo (0,79 nas escolas) sem que as perguntas se misturem.
+// Os eixos seguem separados porque uma pessoa pode ser virtuosa sem Deus ou buscar prazer com fé.
+const EXCECOES: Record<string, number> = { 'bemviver|sentido': 0.8 };
+
+export function limiteDoPar(a: string, b: string): number {
+  return EXCECOES[[a, b].sort().join('|')] ?? LIMITE_CORRELACAO;
+}

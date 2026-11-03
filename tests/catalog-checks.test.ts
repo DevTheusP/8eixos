@@ -1,4 +1,4 @@
-import { axisCorrelations, checkProfileAnswers, findNearDuplicate, loadAllAnswers } from '@/lib/catalog-checks';
+import { limiteDoPar, axisCorrelations, checkProfileAnswers, findNearDuplicate, loadAllAnswers } from '@/lib/catalog-checks';
 import { getQuestions, getVectors } from '@/lib/data';
 import { computeVector } from '@/lib/scoring';
 import { AXIS_IDS, type AnswerIndex, type Vector } from '@/lib/types';
@@ -35,4 +35,10 @@ test('vectors.json está em dia com as respostas', () => {
     const grupo = pa.kind === 'school' ? vs.schools : vs.thinkers;
     expect(grupo[pa.profileId]).toEqual(computeVector(qs, pa.answers));
   }
+});
+
+test('só o par bem viver × sentido tem limite de correlação maior', () => {
+  expect(limiteDoPar('sentido', 'bemviver')).toBe(0.8);
+  expect(limiteDoPar('bemviver', 'sentido')).toBe(0.8);
+  expect(limiteDoPar('rotina', 'guia')).toBe(0.7);
 });

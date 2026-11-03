@@ -4,7 +4,7 @@ import * as pensador from '@/app/pensadores/[id]/page';
 import sitemap from '@/app/sitemap';
 
 test('páginas estáticas de todas as escolas e pensadores', () => {
-  expect(escola.generateStaticParams()).toHaveLength(24);
+  expect(escola.generateStaticParams()).toHaveLength(30);
   expect(pensador.generateStaticParams().length).toBeGreaterThanOrEqual(30);
 });
 

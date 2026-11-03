@@ -84,7 +84,8 @@
     },
     "thinkerIds": [
       "buda",
-      "thich-nhat-hanh"
+      "thich-nhat-hanh",
+      "dalai-lama"
     ]
   },
   {
@@ -186,8 +187,7 @@
       "relacoes": "Não acredita em deveres impostos. Cada vínculo vale o que vale, sem garantia."
     },
     "thinkerIds": [
-      "nietzsche",
-      "cioran"
+      "nietzsche"
     ]
   },
   {
@@ -412,6 +412,113 @@
     "thinkerIds": [
       "emerson",
       "thoreau"
+    ]
+  },
+  {
+    "id": "espiritismo",
+    "name": "Espiritismo",
+    "familyId": "fe",
+    "quote": "Esta vida é uma etapa. Cada dor me ensina, e o amor é o que eu levo daqui.",
+    "summary": "Doutrina codificada por Allan Kardec na França do século XIX, que ele descrevia como ciência, filosofia e moral de raiz cristã. Para os espíritas, o espírito sobrevive à morte, renasce em novas vidas para evoluir e pode se comunicar com os vivos.",
+    "lida": {
+      "sofrimento": "Vê a dor como prova e aprendizado, ligada às escolhas desta vida ou de vidas passadas. Enfrentar com paciência ajuda o espírito a evoluir.",
+      "morte": "Para os espíritas, é só a passagem do espírito para outro plano. A vida continua, e os laços de amor não se rompem.",
+      "felicidade": "Cresce à medida que o espírito se melhora. Fazer o bem e vencer o próprio egoísmo traz paz já nesta vida.",
+      "relacoes": "A caridade está no centro de tudo. Ajudar o próximo, perdoar e tratar todos como irmãos é o caminho do progresso espiritual."
+    },
+    "thinkerIds": [
+      "allan-kardec",
+      "chico-xavier",
+      "leon-denis"
+    ]
+  },
+  {
+    "id": "sufismo",
+    "name": "Sufismo",
+    "familyId": "fe",
+    "quote": "Procuro Deus por dentro, e o amor é o caminho que me leva até Ele.",
+    "summary": "Caminho místico dentro do islã que busca a experiência direta de Deus pelo amor, pela oração e pela lembrança constante do divino. Para os sufis, é preciso purificar o coração e vencer o ego para se aproximar de Deus, com a ajuda de um mestre espiritual.",
+    "lida": {
+      "sofrimento": "Vê na dor uma forma de purificar o coração. O que machuca também pode aproximar de Deus.",
+      "morte": "É o reencontro da alma com Deus, para quem ela sempre quis voltar. Por isso os sufis aprendem a morrer para o ego ainda em vida.",
+      "felicidade": "Está na proximidade com Deus, não nas coisas do mundo. A poesia, a música e a oração ajudam a sentir essa presença.",
+      "relacoes": "Vê o amor humano como reflexo do amor divino. Servir aos outros com humildade faz parte do caminho."
+    },
+    "thinkerIds": [
+      "rumi",
+      "al-ghazali"
+    ]
+  },
+  {
+    "id": "judaismo",
+    "name": "Judaísmo",
+    "familyId": "fe",
+    "quote": "Minha fé se vive no dia a dia: nos mandamentos, na comunidade e na conversa com Deus.",
+    "summary": "Tradição de vida do povo judeu, guiada pela Torá e pelos mandamentos, que santifica o cotidiano, o estudo e o descanso do sábado. Para os judeus, a relação com Deus é uma aliança e um diálogo, que inclui perguntar, discutir e agir com justiça.",
+    "lida": {
+      "sofrimento": "Não esconde a dor nem a pergunta feita a Deus. Lamentar, questionar e buscar consolo na comunidade fazem parte da fé.",
+      "morte": "O luto é vivido junto: a comunidade cerca quem perdeu alguém. O que mais importa é como se viveu e o bem que se deixou.",
+      "felicidade": "Está em santificar a vida comum: a mesa, a família, o estudo e o sábado. Cumprir os mandamentos com alegria é um valor.",
+      "relacoes": "Justiça e ajuda ao próximo são deveres, não favores. A família e a comunidade são o lugar onde a fé acontece."
+    },
+    "thinkerIds": [
+      "maimonides",
+      "martin-buber",
+      "abraham-heschel"
+    ]
+  },
+  {
+    "id": "vedanta",
+    "name": "Vedanta",
+    "familyId": "oriente",
+    "quote": "Por baixo de tudo o que muda, existe em mim algo que é um com o todo.",
+    "summary": "Escola filosófica da Índia baseada nos Upanixades, os textos finais dos Vedas. Ensina que o eu mais profundo de cada pessoa, o atman, é um com Brahman, a realidade última, e que a libertação vem de reconhecer essa unidade.",
+    "lida": {
+      "sofrimento": "Nasce de confundir quem você é com o corpo, a mente e os papéis que ocupa. Conhecer o eu verdadeiro dissolve o medo.",
+      "morte": "Atinge o corpo, não o eu profundo. A alma segue de vida em vida até se libertar do ciclo dos renascimentos.",
+      "felicidade": "É a paz de reconhecer a unidade de tudo. O desejo por coisas passageiras nunca satisfaz por completo.",
+      "relacoes": "Se o mesmo divino vive em todos, servir ao outro é servir a Deus. Isso leva à tolerância e à não violência."
+    },
+    "thinkerIds": [
+      "adi-shankara",
+      "vivekananda",
+      "gandhi"
+    ]
+  },
+  {
+    "id": "pessimismo",
+    "name": "Pessimismo",
+    "familyId": "duvida",
+    "quote": "A vida dói mais do que promete, e dizer isso com franqueza me traz algum alívio.",
+    "summary": "Corrente que vê a existência marcada mais pela dor e pelo desejo insatisfeito do que pela felicidade. Com Schopenhauer, Leopardi e Cioran, o pessimismo não é só tristeza: é lucidez sobre a condição humana, com espaço para a arte, a ironia e a compaixão.",
+    "lida": {
+      "sofrimento": "Acha que ele é a regra da vida, não a exceção. Desejar menos e buscar a arte e a contemplação trazem alívio.",
+      "morte": "Não espera promessas para depois dela. Prefere encarar o fim com lucidez a se consolar com ilusões.",
+      "felicidade": "Desconfia das promessas de felicidade. O que existe de bom são momentos de alívio, de beleza e de calma.",
+      "relacoes": "Sabe que todos sofrem, e isso pede compaixão. Costuma preferir a solidão a convivências cheias de vaidade."
+    },
+    "thinkerIds": [
+      "schopenhauer",
+      "leopardi",
+      "cioran",
+      "machado-de-assis"
+    ]
+  },
+  {
+    "id": "ubuntu",
+    "name": "Ubuntu",
+    "familyId": "virtude",
+    "quote": "Eu sou porque nós somos. Minha humanidade cresce quando cuido da sua.",
+    "summary": "Ética de povos da África austral resumida na ideia \"eu sou porque nós somos\": alguém se torna pessoa por meio das outras pessoas. Desmond Tutu e Nelson Mandela levaram esse valor à vida pública, na luta contra o apartheid e na reconciliação da África do Sul.",
+    "lida": {
+      "sofrimento": "Não deixa ninguém sofrer sozinho. A dor de um membro da comunidade é responsabilidade de todos.",
+      "morte": "Quem morre continua presente na memória e na vida da comunidade. Honrar os que vieram antes faz parte do ubuntu.",
+      "felicidade": "Vem de pertencer e de contribuir. Ninguém é plenamente feliz enquanto o outro é humilhado.",
+      "relacoes": "Prefere o perdão e a reconciliação à vingança. Reconhece a humanidade até de quem errou."
+    },
+    "thinkerIds": [
+      "desmond-tutu",
+      "nelson-mandela"
     ]
   }
 ]

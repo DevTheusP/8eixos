@@ -8,7 +8,7 @@ test('8 eixos na ordem e com params únicos', () => {
 });
 
 test('famílias do catálogo', () => {
-  expect(getFamilies().map(f => f.id)).toEqual(['virtude', 'oriente', 'sentido', 'prazer', 'duvida', 'cristas', 'razao']);
+  expect(getFamilies().map(f => f.id)).toEqual(['virtude', 'oriente', 'sentido', 'prazer', 'duvida', 'cristas', 'razao', 'fe']);
 });
 
 test('cada polo tem uma descrição curta', () => {

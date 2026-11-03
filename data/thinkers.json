@@ -316,7 +316,7 @@
     "name": "Arthur Schopenhauer",
     "descriptor": "Filósofo alemão, pessimista",
     "years": "1788–1860",
-    "schoolId": null,
+    "schoolId": "pessimismo",
     "bio": "Viu o mundo como expressão de uma vontade cega que nunca se satisfaz. Encontrava alívio na arte, na música e na compaixão.",
     "portrait": {
       "file": "schopenhauer.webp",
@@ -329,7 +329,7 @@
     "name": "Emil Cioran",
     "descriptor": "Ensaísta romeno-francês",
     "years": "1911–1995",
-    "schoolId": null,
+    "schoolId": "pessimismo",
     "bio": "Escritor de aforismos pessimistas e brilhantes sobre a dúvida, a insônia e o desencanto. Transformou o desespero em estilo literário.",
     "portrait": {
       "file": "cioran.webp",
@@ -767,11 +767,228 @@
     "name": "Machado de Assis",
     "descriptor": "Escritor brasileiro",
     "years": "1839–1908",
-    "schoolId": null,
+    "schoolId": "pessimismo",
     "bio": "Neto de escravizados libertos, foi o primeiro presidente da Academia Brasileira de Letras e escreveu Memórias Póstumas de Brás Cubas e Dom Casmurro. Seus livros olham com ironia, ceticismo e certo pessimismo para a vaidade, o interesse e as ilusões humanas.",
     "portrait": {
       "file": "machado-de-assis.webp",
       "source": "https://commons.wikimedia.org/wiki/File:Machado_de_Assis_1904.jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "allan-kardec",
+    "name": "Allan Kardec",
+    "descriptor": "Educador francês, codificador do espiritismo",
+    "years": "1804–1869",
+    "schoolId": "espiritismo",
+    "bio": "Nome adotado pelo educador francês Hippolyte Léon Denizard Rivail, que publicou O Livro dos Espíritos em 1857. Organizou o espiritismo como doutrina sobre a imortalidade da alma, a reencarnação e a caridade, que ele via como continuação da moral de Jesus.",
+    "portrait": {
+      "file": "allan-kardec.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Photo_Kardec.jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "chico-xavier",
+    "name": "Chico Xavier",
+    "descriptor": "Médium espírita brasileiro",
+    "years": "1910–2002",
+    "schoolId": "espiritismo",
+    "bio": "Médium de Pedro Leopoldo, em Minas Gerais, publicou mais de 400 livros que atribuía aos espíritos, como Nosso Lar, e doou toda a renda deles para a caridade. Viveu de forma simples e se tornou o espírita mais conhecido do Brasil, falando de consolo, perdão e amor ao próximo.",
+    "portrait": {
+      "file": "chico-xavier.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Francisco_Candido_Xavier.jpg",
+      "license": "CC BY-SA 4.0"
+    }
+  },
+  {
+    "id": "leon-denis",
+    "name": "Léon Denis",
+    "descriptor": "Escritor espírita francês",
+    "years": "1846–1927",
+    "schoolId": "espiritismo",
+    "bio": "Um dos principais continuadores de Allan Kardec, percorreu a França dando palestras sobre o espiritismo. Em livros como O Problema do Ser, do Destino e da Dor, defendia que cada vida é uma etapa de aprendizado do espírito.",
+    "portrait": {
+      "file": "leon-denis.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Léon_denis_1870.jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "rumi",
+    "name": "Rumi",
+    "descriptor": "Poeta e místico sufi persa",
+    "years": "1207–1273",
+    "schoolId": "sufismo",
+    "bio": "Mestre sufi que viveu em Kônia, na atual Turquia, e escreveu o Masnavi, uma das obras mais lidas da poesia persa. Seus versos falam do amor como caminho até Deus, e seus seguidores fundaram a ordem dos dervixes rodopiantes.",
+    "portrait": {
+      "file": "rumi.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Mevlana-celaleddin-i-rumi-1.jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "al-ghazali",
+    "name": "Al-Ghazali",
+    "descriptor": "Teólogo e místico muçulmano persa",
+    "years": "c. 1058–1111",
+    "schoolId": "sufismo",
+    "bio": "Professor famoso em Bagdá, passou por uma crise de dúvida, largou o cargo e viveu anos como sufi itinerante. Na obra A Revivificação das Ciências Religiosas, uniu a lei islâmica à vida interior e mostrou que a fé precisa ser vivida no coração.",
+    "portrait": null
+  },
+  {
+    "id": "maimonides",
+    "name": "Maimônides",
+    "descriptor": "Filósofo, rabino e médico judeu",
+    "years": "1138–1204",
+    "schoolId": "judaismo",
+    "bio": "Nascido em Córdoba, foi médico na corte do Egito e escreveu o Guia dos Perplexos, que busca conciliar a fé judaica com a filosofia de Aristóteles. Também organizou a lei judaica no Mishné Torá e via na razão um caminho até Deus.",
+    "portrait": {
+      "file": "maimonides.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Moses_Maimonides._Photogravure._Wellcome_V0003789.jpg",
+      "license": "CC BY 4.0"
+    }
+  },
+  {
+    "id": "martin-buber",
+    "name": "Martin Buber",
+    "descriptor": "Filósofo judeu, nascido em Viena",
+    "years": "1878–1965",
+    "schoolId": "judaismo",
+    "bio": "Em Eu e Tu, de 1923, defendeu que a vida verdadeira acontece no encontro, quando tratamos o outro como pessoa e não como objeto. Inspirado no hassidismo, via nesse diálogo entre pessoas também o caminho para o diálogo com Deus.",
+    "portrait": {
+      "file": "martin-buber.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Martin_Buber_1963.jpg",
+      "license": "CC BY-SA 3.0 nl"
+    }
+  },
+  {
+    "id": "abraham-heschel",
+    "name": "Abraham Joshua Heschel",
+    "descriptor": "Rabino e filósofo judeu polonês-americano",
+    "years": "1907–1972",
+    "schoolId": "judaismo",
+    "bio": "Nascido em Varsóvia numa família de rabinos hassídicos, fugiu do nazismo e foi professor nos Estados Unidos. Escreveu sobre o espanto diante da vida e sobre o sábado como um santuário no tempo, e marchou ao lado de Martin Luther King em Selma.",
+    "portrait": {
+      "file": "abraham-heschel.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Heschel2.jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "adi-shankara",
+    "name": "Adi Shankara",
+    "descriptor": "Filósofo indiano do Vedanta",
+    "years": "c. 788–820",
+    "schoolId": "vedanta",
+    "bio": "Mestre indiano que sistematizou o Advaita Vedanta, a escola da não dualidade, em comentários aos Upanixades e à Bhagavad Gita. Ensinava que o mundo das diferenças é aparência e que o eu de cada pessoa é idêntico a Brahman, a realidade última.",
+    "portrait": {
+      "file": "adi-shankara.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Painting_of_Adi_Shankaracharya_seated_under_a_canopy_holding_a_pennon_in_his_left_hand_with_his_right_hand_in_the_gesture_of_discourse_with_four_disciples_seated_on_his_right,_Tanjore,_circa_19th_century.jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "vivekananda",
+    "name": "Swami Vivekananda",
+    "descriptor": "Monge hindu indiano",
+    "years": "1863–1902",
+    "schoolId": "vedanta",
+    "bio": "Discípulo de Ramakrishna, ficou famoso ao apresentar o hinduísmo no Parlamento Mundial das Religiões, em Chicago, em 1893. Ensinava que o divino está em cada pessoa e que servir aos pobres é a forma mais alta de adoração.",
+    "portrait": {
+      "file": "vivekananda.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Swami_Vivekananda-1893-09-signed.jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "gandhi",
+    "name": "Mahatma Gandhi",
+    "descriptor": "Líder da independência indiana",
+    "years": "1869–1948",
+    "schoolId": "vedanta",
+    "bio": "Advogado formado em Londres, liderou a luta pela independência da Índia com a resistência não violenta, que chamava de satyagraha, a força da verdade. Inspirado na Bhagavad Gita, defendia uma vida simples, o respeito entre as religiões e a coerência entre o que se pensa e o que se faz.",
+    "portrait": {
+      "file": "gandhi.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Mahatma-Gandhi,_studio,_1931.jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "leopardi",
+    "name": "Giacomo Leopardi",
+    "descriptor": "Poeta e filósofo italiano",
+    "years": "1798–1837",
+    "schoolId": "pessimismo",
+    "bio": "Autor dos Cantos e de um enorme diário de ideias, o Zibaldone, viveu com saúde frágil e muita solidão. Via a natureza como indiferente ao sofrimento humano, mas defendia que as pessoas se unissem e se ajudassem diante dessa condição.",
+    "portrait": {
+      "file": "leopardi.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Giacomo_Leopardi_Ferrazzi_2.jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "desmond-tutu",
+    "name": "Desmond Tutu",
+    "descriptor": "Arcebispo anglicano sul-africano",
+    "years": "1931–2021",
+    "schoolId": "ubuntu",
+    "bio": "Arcebispo da Cidade do Cabo e Nobel da Paz em 1984, foi uma das vozes mais fortes contra o apartheid. Depois presidiu a Comissão da Verdade e Reconciliação e fez do ubuntu e do perdão a base para reconstruir o país.",
+    "portrait": {
+      "file": "desmond-tutu.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Archbishop-Tutu-medium.jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "nelson-mandela",
+    "name": "Nelson Mandela",
+    "descriptor": "Líder sul-africano, Nobel da Paz",
+    "years": "1918–2013",
+    "schoolId": "ubuntu",
+    "bio": "Passou 27 anos preso por lutar contra o apartheid e, ao sair, escolheu a reconciliação em vez da vingança. Foi o primeiro presidente negro da África do Sul, eleito em 1994, e via no ubuntu o valor que une as pessoas.",
+    "portrait": {
+      "file": "nelson-mandela.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Nelson_Mandela_1994.jpg",
+      "license": "CC BY-SA 2.0"
+    }
+  },
+  {
+    "id": "martin-luther-king",
+    "name": "Martin Luther King Jr.",
+    "descriptor": "Pastor batista e líder dos direitos civis",
+    "years": "1929–1968",
+    "schoolId": null,
+    "bio": "Pastor batista americano, liderou o movimento pelos direitos civis dos negros nos Estados Unidos com a não violência inspirada em Jesus e em Gandhi. Fez o discurso Eu Tenho um Sonho em 1963 e recebeu o Nobel da Paz em 1964.",
+    "portrait": {
+      "file": "martin-luther-king.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Martin_Luther_King,_Jr..jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "dalai-lama",
+    "name": "Dalai Lama (Tenzin Gyatso)",
+    "descriptor": "Líder espiritual do budismo tibetano",
+    "years": "1935–",
+    "schoolId": "budismo",
+    "bio": "Reconhecido ainda criança como o 14º Dalai Lama, vive no exílio na Índia desde 1959. Nobel da Paz em 1989, ensina que a compaixão e a bondade são a fonte mais segura da felicidade, para quem tem religião e para quem não tem.",
+    "portrait": {
+      "file": "dalai-lama.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Dalai_Lama_1471_Luca_Galuzzi_2007.jpg",
+      "license": "CC BY-SA 2.5"
+    }
+  },
+  {
+    "id": "krishnamurti",
+    "name": "Jiddu Krishnamurti",
+    "descriptor": "Pensador espiritual indiano",
+    "years": "1895–1986",
+    "schoolId": null,
+    "bio": "Preparado pela Sociedade Teosófica para ser um novo instrutor do mundo, recusou o papel em 1929 e dissolveu a organização criada em torno dele. Pelo resto da vida ensinou que a verdade não vem de gurus nem de tradições, e sim da observação atenta de si mesmo.",
+    "portrait": {
+      "file": "krishnamurti.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Jiddu_Krishnamurti_01.jpg",
       "license": "Public domain"
     }
   }
