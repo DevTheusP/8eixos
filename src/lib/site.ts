@@ -12,3 +12,8 @@ export const SITE_URL = siteUrl({
   VERCEL_PROJECT_PRODUCTION_URL: process.env.VERCEL_PROJECT_PRODUCTION_URL,
 });
 export const PAYWALL_ENABLED = process.env.NEXT_PUBLIC_PAYWALL_ENABLED === 'true';
+
+// Pix de apoio: chave aleatória (não expõe CPF, e-mail nem telefone). O nome aparece no app do banco de quem paga.
+export const PIX_CHAVE = 'fea91e3a-8975-4edc-92de-80d025b66b63';
+export const PIX_NOME = 'Matheus Persch';
+export const PIX_CIDADE = 'Brasil';

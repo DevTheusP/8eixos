@@ -9,6 +9,7 @@ import { Eixos } from '@/components/result/Eixos';
 import { Escolas } from '@/components/result/Escolas';
 import { CompareForms } from '@/components/CompareForms';
 import { Hero } from '@/components/result/Hero';
+import { Apoie } from '@/components/Apoie';
 import { Atalhos } from '@/components/result/Atalhos';
 import { LembrarResultado } from '@/components/result/LembrarResultado';
 import { Lida } from '@/components/result/Lida';
@@ -73,6 +74,7 @@ async function Resultado({ searchParams }: { searchParams: PageProps<'/resultado
         <Section id="lida" title="Como você lida com…" icon={HeartHandshake}><Lida school={result.school.school} /></Section>
         <Livros title="Para ler" thinkerIds={[result.thinker.thinker.id, ...result.byDimension.map(d => d.thinker.id)]} />
         <Section id="comparar" title="Compare" icon={Scale}><CompareForms vector={v} /></Section>
+        <Apoie id="apoie" />
       </div>
     </div>
   );
