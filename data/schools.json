@@ -66,7 +66,8 @@
     "thinkerIds": [
       "pirro",
       "sexto-empirico",
-      "montaigne"
+      "montaigne",
+      "hume"
     ]
   },
   {
@@ -218,7 +219,8 @@
       "relacoes": "O ser humano é um animal político e precisa de amigos para ser feliz. A amizade mais alta é entre pessoas boas que querem o bem uma da outra."
     },
     "thinkerIds": [
-      "aristoteles"
+      "aristoteles",
+      "martha-nussbaum"
     ]
   },
   {
@@ -268,6 +270,148 @@
     },
     "thinkerIds": [
       "aristipo"
+    ]
+  },
+  {
+    "id": "platonismo",
+    "name": "Platonismo",
+    "familyId": "virtude",
+    "quote": "Busco o que é verdadeiro e bom por trás das aparências. Quanto mais entendo, melhor eu vivo.",
+    "summary": "Tradição que nasce com Sócrates e Platão em Atenas e vê no conhecimento do bem o caminho para viver bem. Para os platônicos, além do mundo que vemos existe uma realidade mais verdadeira, e a alma cresce quando se volta para a justiça, a verdade e a beleza.",
+    "lida": {
+      "sofrimento": "Examina o que dói com perguntas honestas. Lembra que cometer uma injustiça fere mais a alma do que sofrer uma.",
+      "morte": "Encara com serenidade, como Sócrates diante da cicuta. Para Platão, a alma é imortal e a morte pode ser uma libertação.",
+      "felicidade": "Vem de uma alma em ordem, em que a razão guia os desejos. Quem é justo é feliz, mesmo sem aplauso.",
+      "relacoes": "O amor verdadeiro leva da beleza de uma pessoa à beleza do próprio bem. A amizade e o diálogo ajudam a enxergar melhor."
+    },
+    "thinkerIds": [
+      "platao",
+      "socrates",
+      "plotino",
+      "hipatia",
+      "iris-murdoch",
+      "simone-weil"
+    ]
+  },
+  {
+    "id": "tomismo",
+    "name": "Tomismo",
+    "familyId": "cristas",
+    "quote": "Fé e razão não brigam em mim. As duas me levam ao mesmo Deus e à mesma verdade.",
+    "summary": "Tradição cristã de Tomás de Aquino que une a fé católica à filosofia de Aristóteles. Ensina que a razão pode conhecer muito sobre Deus e sobre o bem, que a graça aperfeiçoa a natureza e que a felicidade plena está em ver a Deus.",
+    "lida": {
+      "sofrimento": "Não vê nele um bem em si, mas confia que Deus pode tirar bem até do mal. Busca alívio e vive o que não pode mudar com paciência e esperança.",
+      "morte": "É passagem para o encontro com Deus. Você se prepara para ela vivendo bem e cultivando a esperança da vida eterna.",
+      "felicidade": "Nesta vida, vem de praticar as virtudes. A felicidade completa só se encontra na contemplação de Deus.",
+      "relacoes": "Ama o próximo como a si mesmo e busca o bem comum. A caridade é a forma de todas as virtudes."
+    },
+    "thinkerIds": [
+      "tomas-de-aquino",
+      "chesterton"
+    ]
+  },
+  {
+    "id": "zen",
+    "name": "Zen",
+    "familyId": "oriente",
+    "quote": "Quando lavo a louça, só lavo a louça. O despertar está neste instante, não em outro lugar.",
+    "summary": "Escola budista nascida na China, onde se chamava Chan, e desenvolvida no Japão, que valoriza a meditação sentada e a experiência direta acima das teorias. O zen ensina a despertar no momento presente, com simplicidade, atenção e menos apego às ideias que fazemos das coisas.",
+    "lida": {
+      "sofrimento": "Senta com ele em silêncio, sem fugir e sem dramatizar. Observa os pensamentos passarem como nuvens.",
+      "morte": "Vida e morte fazem parte do mesmo fluxo. Praticar é viver cada momento por inteiro, sem se agarrar a ele.",
+      "felicidade": "Não está em chegar a algum lugar, e sim em estar inteiro no que se faz agora, mesmo nas tarefas mais simples.",
+      "relacoes": "Trata os outros com atenção e sem julgamentos prontos. A compaixão nasce de ver que ninguém está separado de nada."
+    },
+    "thinkerIds": [
+      "dogen",
+      "shunryu-suzuki",
+      "alan-watts"
+    ]
+  },
+  {
+    "id": "utilitarismo",
+    "name": "Utilitarismo",
+    "familyId": "razao",
+    "quote": "Antes de decidir, pergunto o que vai trazer mais bem-estar e menos sofrimento para todos os envolvidos.",
+    "summary": "Corrente moral de Jeremy Bentham e John Stuart Mill que julga as ações pelas suas consequências. A escolha certa é a que produz mais felicidade e menos sofrimento no mundo, contando o bem-estar de cada pessoa como igualmente importante.",
+    "lida": {
+      "sofrimento": "Leva a sério toda dor, a sua e a dos outros, inclusive a dos animais. Reduzir o sofrimento no mundo é um dever.",
+      "morte": "Pesa pelo bem-estar que interrompe e pela dor que causa a quem fica. O foco é fazer a vida render o máximo de bem.",
+      "felicidade": "É prazer e ausência de dor, mas Mill lembra que há prazeres mais altos, como o conhecimento, a arte e a amizade.",
+      "relacoes": "Cada pessoa conta como uma, e nenhuma vale mais que outra. Ajuda quem você pode ajudar, mesmo quem está longe."
+    },
+    "thinkerIds": [
+      "bentham",
+      "stuart-mill",
+      "peter-singer"
+    ]
+  },
+  {
+    "id": "kantismo",
+    "name": "Kantismo",
+    "familyId": "razao",
+    "quote": "Ajo como gostaria que todos agissem. Faço o certo por dever, mesmo quando ninguém está olhando.",
+    "summary": "A ética de Immanuel Kant, que baseia a moral na razão e não nas consequências ou nos sentimentos. Ensina a agir só segundo regras que você aceitaria como lei para todos e a tratar cada pessoa sempre como um fim, nunca apenas como um meio.",
+    "lida": {
+      "sofrimento": "Não deixa que ele decida o que você faz. Mesmo na dor, cumpre o dever e mantém a própria dignidade.",
+      "morte": "A razão não consegue provar o que vem depois. Kant via a esperança numa vida futura como algo que a moral torna razoável, mas o essencial é viver com dignidade agora.",
+      "felicidade": "Importa, mas vem depois do dever. Mais do que ser feliz, o objetivo é ser digno de ser feliz.",
+      "relacoes": "Respeita cada pessoa como alguém com dignidade própria. Não mente nem usa os outros como ferramenta para seus fins."
+    },
+    "thinkerIds": [
+      "kant"
+    ]
+  },
+  {
+    "id": "pragmatismo",
+    "name": "Pragmatismo",
+    "familyId": "razao",
+    "quote": "Uma ideia vale pelo que muda na prática. Testo, aprendo com o resultado e ajusto o caminho.",
+    "summary": "Corrente americana de William James e John Dewey que julga as ideias pelos efeitos que elas têm na vida real. Vê o conhecimento como ferramenta para resolver problemas e o crescimento contínuo, pela experiência e pela educação, como o centro de uma boa vida.",
+    "lida": {
+      "sofrimento": "Trata como um problema a enfrentar com ação e experimento. Pergunta o que dá para fazer agora para melhorar a situação.",
+      "morte": "Não se prende a debates que não mudam nada na prática. Para James, quando a evidência não decide, crer ou não crer pode ser uma escolha legítima.",
+      "felicidade": "Vem de crescer, aprender e participar de projetos que valem a pena. A vida boa é um processo, não um ponto de chegada.",
+      "relacoes": "Vê a democracia como um jeito de viver junto, conversando e resolvendo problemas em comum. Cooperar ensina mais do que mandar."
+    },
+    "thinkerIds": [
+      "william-james",
+      "john-dewey"
+    ]
+  },
+  {
+    "id": "humanismo-secular",
+    "name": "Humanismo secular",
+    "familyId": "razao",
+    "quote": "Confio na razão, na ciência e na bondade entre as pessoas para viver bem e com sentido.",
+    "summary": "Visão de mundo herdeira do Iluminismo que confia na razão, na ciência e na tolerância para guiar a vida. Coloca a dignidade e o bem-estar das pessoas no centro e busca uma ética que não dependa de dogmas religiosos.",
+    "lida": {
+      "sofrimento": "Busca causas e soluções concretas, com a ajuda da ciência e da solidariedade. Aliviar a dor dos outros é tarefa humana.",
+      "morte": "Aceita a morte como parte natural da vida, sem medo de castigos. Pensar que a vida pode ser uma só torna cada dia mais valioso.",
+      "felicidade": "Nasce do conhecimento, do amor e de uma vida útil aos outros. A curiosidade pelo universo é fonte de alegria.",
+      "relacoes": "Defende a liberdade de pensar e a igualdade de todos, homens e mulheres. Discorda com argumentos, nunca com perseguição."
+    },
+    "thinkerIds": [
+      "bertrand-russell",
+      "carl-sagan",
+      "voltaire"
+    ]
+  },
+  {
+    "id": "transcendentalismo",
+    "name": "Transcendentalismo",
+    "familyId": "sentido",
+    "quote": "Confio na minha própria voz e vou à natureza para lembrar o que é essencial.",
+    "summary": "Movimento americano do século XIX, com Emerson e Thoreau, que via em cada pessoa e na natureza uma centelha do divino. Ensinava a confiar na intuição, a viver de forma simples e independente e a resistir à pressão da sociedade e do consumo.",
+    "lida": {
+      "sofrimento": "Procura a natureza e a solidão para recuperar o equilíbrio. Cada dificuldade é uma chance de conhecer melhor a si mesmo.",
+      "morte": "Faz parte dos ciclos da natureza, como o inverno que prepara a primavera. O que conta é ter vivido de verdade.",
+      "felicidade": "Vem da simplicidade e da autenticidade. Quanto menos coisas você precisa, mais rica fica a vida.",
+      "relacoes": "Valoriza a amizade sincera, mas não se dobra à opinião da maioria. Recusa obedecer a leis que considera injustas."
+    },
+    "thinkerIds": [
+      "emerson",
+      "thoreau"
     ]
   }
 ]

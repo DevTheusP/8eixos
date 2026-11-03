@@ -7,8 +7,8 @@ test('8 eixos na ordem e com params únicos', () => {
   expect(axes.find(a => a.id === 'mundo')).toMatchObject({ poleA: 'Bom', poleB: 'Hostil' });
 });
 
-test('famílias da v1', () => {
-  expect(getFamilies().map(f => f.id)).toEqual(['virtude', 'oriente', 'sentido', 'prazer', 'duvida', 'cristas']);
+test('famílias do catálogo', () => {
+  expect(getFamilies().map(f => f.id)).toEqual(['virtude', 'oriente', 'sentido', 'prazer', 'duvida', 'cristas', 'razao']);
 });
 
 test('cada polo tem uma descrição curta', () => {
