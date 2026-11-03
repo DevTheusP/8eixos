@@ -131,3 +131,35 @@ test('ao concluir registra as perguntas vistas, e o próximo sorteio evita repet
   const sorteadas: string[] = JSON.parse(localStorage.getItem('quiz:curta')!).questionIds;
   expect(sorteadas.filter(id => id.startsWith('controle_') && Number(id.slice(-2)) <= 8).sort()).toEqual(['controle_01', 'controle_02']);
 });
+
+const retrato = [
+  { id: 'feliz', pergunta: 'Uma vida feliz é…', opcoes: [
+    { id: 'a', texto: 'Ser boa pessoa', efeitos: { bemviver: 0, rotina: 20 } },
+    { id: 'b', texto: 'Aproveitar tudo', efeitos: { bemviver: 100, rotina: 90 } },
+  ] },
+];
+
+test('depois da última pergunta vem o retrato final, que entra no resultado', async () => {
+  saveState({ formato: 'curta', questionIds: [pool[0].id], answers: {}, index: 0 });
+  render(<QuizRunner formato="curta" pool={pool} retrato={retrato} />);
+  fireEvent.click(await screen.findByRole('button', { name: 'Concordo totalmente' }));
+  expect(push).not.toHaveBeenCalled();
+  expect(screen.getByText('Seu retrato final')).toBeTruthy();
+  expect(screen.getByText('Uma vida feliz é…')).toBeTruthy();
+  fireEvent.click(screen.getByRole('button', { name: 'Aproveitar tudo' }));
+  expect(push).toHaveBeenCalledWith('/resultado?c=0&b=100&s=50&m=50&e=50&r=90&g=50&v=50');
+});
+
+test('pular o retrato vai direto ao resultado das perguntas normais', async () => {
+  saveState({ formato: 'curta', questionIds: [pool[0].id], answers: {}, index: 0 });
+  render(<QuizRunner formato="curta" pool={pool} retrato={retrato} />);
+  fireEvent.click(await screen.findByRole('button', { name: 'Concordo totalmente' }));
+  fireEvent.click(screen.getByRole('button', { name: /Pular/ }));
+  expect(push).toHaveBeenCalledWith('/resultado?c=0&b=50&s=50&m=50&e=50&r=50&g=50&v=50');
+});
+
+test('o retrato retoma de onde parou', async () => {
+  saveState({ formato: 'curta', questionIds: [pool[0].id], answers: { [pool[0].id]: 0 }, index: 1, retrato: {} });
+  render(<QuizRunner formato="curta" pool={pool} retrato={retrato} />);
+  expect(await screen.findByText('Uma vida feliz é…')).toBeTruthy();
+});

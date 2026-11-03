@@ -8,6 +8,8 @@ export interface QuizState {
   index: number;
   /** Perguntas que a pessoa pulou com "Trocar": não voltam a aparecer. */
   skipped?: string[];
+  /** Presente quando a pessoa chegou ao retrato final: id da pergunta → alternativa escolhida. */
+  retrato?: Record<string, string>;
 }
 
 const key = (f: Formato) => `quiz:${f}`;
@@ -84,7 +86,9 @@ export function loadState(formato: Formato): QuizState | null {
     if (!raw) return null;
     const s = JSON.parse(raw);
     const valido = s && s.formato === formato && Array.isArray(s.questionIds) && typeof s.answers === 'object'
-      && s.answers !== null && Number.isInteger(s.index) && s.index >= 0 && s.index <= s.questionIds.length;
+      && s.answers !== null && Number.isInteger(s.index) && s.index >= 0 && s.index <= s.questionIds.length
+      && (s.retrato === undefined || (typeof s.retrato === 'object' && s.retrato !== null
+        && Object.values(s.retrato).every(v => typeof v === 'string')));
     return valido ? (s as QuizState) : null;
   } catch {
     return null;

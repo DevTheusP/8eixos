@@ -1,0 +1,277 @@
+[
+  {
+    "id": "dificil",
+    "pergunta": "Num período muito difícil, o que mais te sustenta?",
+    "opcoes": [
+      {
+        "id": "a",
+        "texto": "Cuidar só do que depende de mim e deixar o resto",
+        "efeitos": {
+          "controle": 15,
+          "guia": 15,
+          "sentido": 20
+        }
+      },
+      {
+        "id": "b",
+        "texto": "Lembrar que tudo passa e soltar o apego",
+        "efeitos": {
+          "controle": 10,
+          "rotina": 30,
+          "mundo": 45
+        }
+      },
+      {
+        "id": "c",
+        "texto": "A fé de que isso tem um sentido, mesmo que eu não veja agora",
+        "efeitos": {
+          "sentido": 0,
+          "verdade": 15,
+          "mundo": 35
+        }
+      },
+      {
+        "id": "d",
+        "texto": "Brigar com a situação e mudar o que der",
+        "efeitos": {
+          "controle": 90,
+          "rotina": 60
+        }
+      },
+      {
+        "id": "e",
+        "texto": "Ter os amigos e a família por perto",
+        "efeitos": {
+          "eu": 90,
+          "mundo": 30,
+          "guia": 65
+        }
+      },
+      {
+        "id": "f",
+        "texto": "Aceitar que a vida é dura e seguir mesmo assim",
+        "efeitos": {
+          "mundo": 75,
+          "sentido": 90,
+          "controle": 60
+        }
+      }
+    ]
+  },
+  {
+    "id": "perda",
+    "pergunta": "Quando você perde alguém que ama, o que mais te ajuda?",
+    "opcoes": [
+      {
+        "id": "a",
+        "texto": "Aceitar que tudo passa e soltar aos poucos",
+        "efeitos": {
+          "controle": 10,
+          "verdade": 55
+        }
+      },
+      {
+        "id": "b",
+        "texto": "Acreditar que essa pessoa continua de algum jeito",
+        "efeitos": {
+          "sentido": 5,
+          "verdade": 15,
+          "mundo": 30
+        }
+      },
+      {
+        "id": "c",
+        "texto": "Transformar a dor em algo que honre a memória dela",
+        "efeitos": {
+          "controle": 65,
+          "eu": 70,
+          "sentido": 25
+        }
+      },
+      {
+        "id": "d",
+        "texto": "Viver o luto inteiro, sem pressa de entender",
+        "efeitos": {
+          "guia": 85,
+          "rotina": 70
+        }
+      },
+      {
+        "id": "e",
+        "texto": "Lembrar que a morte faz parte da natureza",
+        "efeitos": {
+          "controle": 20,
+          "guia": 25,
+          "sentido": 30
+        }
+      }
+    ]
+  },
+  {
+    "id": "feliz",
+    "pergunta": "Uma vida feliz, para você, é…",
+    "opcoes": [
+      {
+        "id": "a",
+        "texto": "Ser uma boa pessoa, mesmo quando custa",
+        "efeitos": {
+          "bemviver": 5,
+          "rotina": 25
+        }
+      },
+      {
+        "id": "b",
+        "texto": "Ter paz, pouca dor e bons amigos",
+        "efeitos": {
+          "bemviver": 75,
+          "controle": 25,
+          "eu": 55
+        }
+      },
+      {
+        "id": "c",
+        "texto": "Aproveitar com intensidade cada prazer que aparece",
+        "efeitos": {
+          "bemviver": 100,
+          "rotina": 90,
+          "guia": 80
+        }
+      },
+      {
+        "id": "d",
+        "texto": "Viver em harmonia, deixando as coisas fluírem",
+        "efeitos": {
+          "rotina": 90,
+          "controle": 10,
+          "guia": 70
+        }
+      },
+      {
+        "id": "e",
+        "texto": "Cumprir bem o meu papel com a família e a comunidade",
+        "efeitos": {
+          "eu": 95,
+          "rotina": 10,
+          "bemviver": 20
+        }
+      },
+      {
+        "id": "f",
+        "texto": "Criar algo meu, com a minha marca",
+        "efeitos": {
+          "sentido": 95,
+          "controle": 85,
+          "eu": 10
+        }
+      }
+    ]
+  },
+  {
+    "id": "relacoes",
+    "pergunta": "Nas suas relações, o que mais importa?",
+    "opcoes": [
+      {
+        "id": "a",
+        "texto": "Lealdade e dever, mesmo quando cansa",
+        "efeitos": {
+          "eu": 90,
+          "bemviver": 15,
+          "rotina": 15
+        }
+      },
+      {
+        "id": "b",
+        "texto": "Liberdade: cada um no seu espaço",
+        "efeitos": {
+          "eu": 5,
+          "rotina": 70
+        }
+      },
+      {
+        "id": "c",
+        "texto": "Poucos amigos, mas de verdade",
+        "efeitos": {
+          "bemviver": 80,
+          "eu": 40,
+          "mundo": 30
+        }
+      },
+      {
+        "id": "d",
+        "texto": "Sinceridade total, mesmo que doa",
+        "efeitos": {
+          "eu": 15,
+          "guia": 30,
+          "mundo": 65
+        }
+      },
+      {
+        "id": "e",
+        "texto": "Compaixão por todos, até por quem me fez mal",
+        "efeitos": {
+          "eu": 80,
+          "mundo": 15,
+          "controle": 20
+        }
+      }
+    ]
+  },
+  {
+    "id": "grandes",
+    "pergunta": "Sobre as grandes perguntas (Deus, morte, sentido da vida), você…",
+    "opcoes": [
+      {
+        "id": "a",
+        "texto": "Tem uma fé ou convicção firme",
+        "efeitos": {
+          "verdade": 5,
+          "sentido": 5
+        }
+      },
+      {
+        "id": "b",
+        "texto": "Acha que dá para chegar às respostas pensando bem",
+        "efeitos": {
+          "verdade": 20,
+          "guia": 10,
+          "sentido": 35
+        }
+      },
+      {
+        "id": "c",
+        "texto": "Prefere não decidir: dá para viver bem sem resposta",
+        "efeitos": {
+          "verdade": 95,
+          "controle": 25
+        }
+      },
+      {
+        "id": "d",
+        "texto": "Acha que não existe resposta pronta, e cada um cria a sua",
+        "efeitos": {
+          "sentido": 100,
+          "verdade": 45,
+          "controle": 85
+        }
+      },
+      {
+        "id": "e",
+        "texto": "Acha que não existe resposta e nada faz muito sentido",
+        "efeitos": {
+          "sentido": 95,
+          "mundo": 85,
+          "verdade": 80
+        }
+      },
+      {
+        "id": "f",
+        "texto": "Sente que existe algo, mas não sabe explicar",
+        "efeitos": {
+          "guia": 85,
+          "sentido": 30,
+          "verdade": 60
+        }
+      }
+    ]
+  }
+]

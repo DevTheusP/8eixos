@@ -2,9 +2,9 @@ import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import type { z } from 'zod';
 import {
-  axisSchema, bookSchema, familySchema, questionSchema, schoolSchema, thinkerSchema, vectorsSchema,
+  axisSchema, bookSchema, familySchema, questionSchema, retratoSchema, schoolSchema, thinkerSchema, vectorsSchema,
 } from './schemas';
-import type { Axis, Book, Family, Question, School, Thinker, Vector } from './types';
+import type { Axis, Book, Family, Question, RetratoPergunta, School, Thinker, Vector } from './types';
 
 const DATA_DIR = path.join(process.cwd(), 'data');
 
@@ -19,6 +19,7 @@ function load<T>(file: string, schema: z.ZodType<T>, empty: T): T {
 export const getAxes = (): Axis[] => load('axes.json', axisSchema.array(), []) as Axis[];
 export const getFamilies = (): Family[] => load('families.json', familySchema.array(), []);
 export const getQuestions = (): Question[] => load('questions.json', questionSchema.array(), []) as Question[];
+export const getRetrato = (): RetratoPergunta[] => load('retrato.json', retratoSchema.array(), []) as RetratoPergunta[];
 export const getSchools = (): School[] => load('schools.json', schoolSchema.array(), []);
 export const getThinkers = (): Thinker[] => load('thinkers.json', thinkerSchema.array(), []);
 export const getBooks = (): Book[] => load('books.json', bookSchema.array(), []);
