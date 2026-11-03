@@ -39,14 +39,18 @@ function shuffle<T>(items: T[], rng: () => number): T[] {
   return a;
 }
 
-export function selectQuestions(pool: Question[], formato: Formato, rng: () => number = Math.random): Question[] {
+// `vistas` conta quantas vezes cada pergunta já apareceu pra esta pessoa: quem refaz o quiz recebe primeiro as que ainda não viu.
+export function selectQuestions(
+  pool: Question[], formato: Formato, rng: () => number = Math.random, vistas: Record<string, number> = {},
+): Question[] {
+  const menosVistas = (qs: Question[]) => shuffle(qs, rng).sort((a, b) => (vistas[a.id] ?? 0) - (vistas[b.id] ?? 0));
   const { porEixo } = FORMATOS[formato];
   const perAxis = new Map<AxisId, Question[]>();
   for (const axis of AXIS_IDS) {
     const doEixo = pool.filter(q => q.axis === axis);
     const chosen = formato === 'profunda'
       ? doEixo
-      : (['A', 'B'] as const).flatMap(p => shuffle(doEixo.filter(q => q.polarity === p), rng).slice(0, porEixo / 2));
+      : (['A', 'B'] as const).flatMap(p => menosVistas(doEixo.filter(q => q.polarity === p)).slice(0, porEixo / 2));
     perAxis.set(axis, shuffle(chosen, rng));
   }
 

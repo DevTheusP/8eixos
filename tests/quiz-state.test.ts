@@ -1,3 +1,4 @@
+import { loadVistas, registrarVistas } from '@/lib/quiz-state';
 import { advance, answer, back, canSwap, isDone, loadLastResult, loadState, saveLastResult, saveState, select, swap, type QuizState } from '@/lib/quiz-state';
 import type { Question } from '@/lib/types';
 
@@ -90,4 +91,17 @@ test('resumo salvo com dados estranhos é descartado (só os parâmetros ficam)'
   expect(loadLastResult()).toEqual({ params: 'c=1&b=2&s=3&m=4&e=5&r=6&g=7&v=8', resumo: undefined });
   localStorage.setItem('quiz:ultimo-resultado', JSON.stringify({ params: 'javascript:alert(1)' }));
   expect(loadLastResult()).toBeNull();
+});
+
+test('histórico de perguntas vistas soma a cada quiz e ignora lixo do navegador', () => {
+  const mem = new Map<string, string>();
+  vi.stubGlobal('localStorage', { getItem: (k: string) => mem.get(k) ?? null, setItem: (k: string, v: string) => mem.set(k, v), removeItem: (k: string) => mem.delete(k) });
+  expect(loadVistas()).toEqual({});
+  registrarVistas(['controle_01', 'eu_03']);
+  registrarVistas(['controle_01']);
+  expect(loadVistas()).toEqual({ controle_01: 2, eu_03: 1 });
+  mem.set('quiz:vistas', JSON.stringify({ controle_01: 'x', '<script>': 3, eu_03: -1, guia_02: 4 }));
+  expect(loadVistas()).toEqual({ guia_02: 4 });
+  mem.set('quiz:vistas', 'não é json');
+  expect(loadVistas()).toEqual({});
 });

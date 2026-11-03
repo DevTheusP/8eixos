@@ -91,6 +91,30 @@ export function loadState(formato: Formato): QuizState | null {
   }
 }
 
+const VISTAS = 'quiz:vistas';
+const ID_OK = /^[a-z]+_\d{2}$/;
+
+// Quantas vezes cada pergunta já apareceu neste navegador, pra variar as perguntas quando a pessoa refaz o quiz.
+export function loadVistas(): Record<string, number> {
+  try {
+    const v = JSON.parse(localStorage.getItem(VISTAS) ?? '{}') as unknown;
+    if (!v || typeof v !== 'object' || Array.isArray(v)) return {};
+    return Object.fromEntries(Object.entries(v).filter(([id, n]) => ID_OK.test(id) && Number.isInteger(n) && (n as number) > 0)) as Record<string, number>;
+  } catch {
+    return {};
+  }
+}
+
+export function registrarVistas(ids: string[]): void {
+  const vistas = loadVistas();
+  for (const id of ids) vistas[id] = (vistas[id] ?? 0) + 1;
+  try {
+    localStorage.setItem(VISTAS, JSON.stringify(vistas));
+  } catch {
+    // sem storage: o próximo quiz só não sabe o que já foi visto
+  }
+}
+
 const ULTIMO = 'quiz:ultimo-resultado';
 
 export interface ResumoResultado { escola: string; familia: string; cor: string; score: number }
