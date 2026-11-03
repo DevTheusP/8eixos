@@ -44,9 +44,10 @@
   {
     "id": "controle_07",
     "axis": "controle",
-    "kind": "likert",
+    "kind": "forced",
     "polarity": "A",
-    "text": "A serenidade vale mais do que vencer uma disputa."
+    "textLeft": "Aceitar uma doença grave e viver em paz com ela.",
+    "textRight": "Lutar contra uma doença grave com todo tratamento possível."
   },
   {
     "id": "controle_08",
@@ -88,7 +89,7 @@
     "axis": "controle",
     "kind": "likert",
     "polarity": "B",
-    "text": "O destino é, em grande parte, o que a gente faz dele."
+    "text": "Quando não consigo algo que quero muito, insisto até o último recurso."
   },
   {
     "id": "controle_14",
@@ -178,7 +179,7 @@
     "axis": "bemviver",
     "kind": "likert",
     "polarity": "A",
-    "text": "Sinto que devo algo ao mundo, não só a mim mesmo."
+    "text": "Eu abriria mão de uma noite de diversão para cumprir um compromisso pequeno que ninguém ia cobrar."
   },
   {
     "id": "bemviver_11",
@@ -199,7 +200,7 @@
     "axis": "bemviver",
     "kind": "likert",
     "polarity": "B",
-    "text": "Não vejo mal em buscar o que me faz sentir bem, desde que não prejudique ninguém."
+    "text": "Se um trabalho paga bem e é tranquilo, não preciso que ele tenha um propósito maior."
   },
   {
     "id": "bemviver_14",
@@ -255,7 +256,7 @@
     "axis": "sentido",
     "kind": "likert",
     "polarity": "A",
-    "text": "Sinto que faço parte de algo maior do que eu."
+    "text": "Acredito que existe um plano para a minha vida, mesmo nas partes ruins."
   },
   {
     "id": "sentido_07",
@@ -290,14 +291,14 @@
     "axis": "sentido",
     "kind": "likert",
     "polarity": "B",
-    "text": "Os valores são criações humanas, e isso não os torna menos importantes."
+    "text": "Os valores que guiam a minha vida foram escolhas minhas, não descobertas."
   },
   {
     "id": "sentido_12",
     "axis": "sentido",
     "kind": "likert",
     "polarity": "B",
-    "text": "Somos resultado do acaso, e isso nos deixa livres."
+    "text": "A humanidade surgiu por acaso, sem nenhum propósito por trás."
   },
   {
     "id": "sentido_13",
@@ -316,9 +317,10 @@
   {
     "id": "sentido_15",
     "axis": "sentido",
-    "kind": "likert",
+    "kind": "forced",
     "polarity": "B",
-    "text": "Prefiro construir minhas próprias respostas a seguir respostas prontas."
+    "textLeft": "Inventar um propósito que seja meu.",
+    "textRight": "Descobrir o propósito para o qual eu existo."
   },
   {
     "id": "mundo_01",
@@ -332,14 +334,15 @@
     "axis": "mundo",
     "kind": "likert",
     "polarity": "A",
-    "text": "Apesar de tudo, a vida vale muito a pena."
+    "text": "Se eu deixar a carteira cair na rua, acho provável que alguém devolva."
   },
   {
     "id": "mundo_03",
     "axis": "mundo",
-    "kind": "likert",
+    "kind": "forced",
     "polarity": "A",
-    "text": "O mundo está cheio de coisas bonitas esperando para ser notadas."
+    "textLeft": "Notícias ruins são exceção; quase tudo funciona bem.",
+    "textRight": "Notícias ruins mostram como o mundo é de verdade."
   },
   {
     "id": "mundo_04",
@@ -360,7 +363,7 @@
     "axis": "mundo",
     "kind": "likert",
     "polarity": "A",
-    "text": "O sofrimento existe, mas não é a última palavra."
+    "text": "No fim, o bem costuma vencer."
   },
   {
     "id": "mundo_07",
@@ -416,7 +419,7 @@
     "axis": "mundo",
     "kind": "likert",
     "polarity": "B",
-    "text": "Por trás das aparências, a existência é absurda."
+    "text": "Colocar alguém no mundo é expor essa pessoa a muito sofrimento."
   },
   {
     "id": "mundo_15",
@@ -506,7 +509,7 @@
     "axis": "eu",
     "kind": "likert",
     "polarity": "A",
-    "text": "Cada um é responsável pela própria felicidade."
+    "text": "Eu me mudaria para longe da família por uma oportunidade que só eu quero."
   },
   {
     "id": "eu_12",
@@ -527,7 +530,7 @@
     "axis": "eu",
     "kind": "likert",
     "polarity": "B",
-    "text": "Ajudar os outros é a melhor forma de me realizar."
+    "text": "Eu abriria mão de uma promoção para ficar perto da minha família."
   },
   {
     "id": "eu_15",
@@ -562,7 +565,7 @@
     "axis": "rotina",
     "kind": "likert",
     "polarity": "A",
-    "text": "Disciplina é uma forma de liberdade."
+    "text": "Acordo no mesmo horário mesmo nos dias em que poderia dormir mais."
   },
   {
     "id": "rotina_05",
@@ -581,9 +584,10 @@
   {
     "id": "rotina_07",
     "axis": "rotina",
-    "kind": "likert",
+    "kind": "forced",
     "polarity": "A",
-    "text": "Moderação em tudo é o melhor caminho."
+    "textLeft": "Uma viagem com roteiro definido dia a dia.",
+    "textRight": "Uma viagem sem roteiro, decidindo na hora."
   },
   {
     "id": "rotina_08",
@@ -632,7 +636,7 @@
     "axis": "rotina",
     "kind": "likert",
     "polarity": "B",
-    "text": "A vida acontece no improviso."
+    "text": "Já tomei decisões grandes por impulso e não me arrependo."
   },
   {
     "id": "rotina_15",
@@ -681,14 +685,14 @@
     "axis": "guia",
     "kind": "likert",
     "polarity": "A",
-    "text": "Consigo separar o que sinto do que é verdade."
+    "text": "Se a lógica aponta para um lado e meu instinto para o outro, fico com a lógica."
   },
   {
     "id": "guia_07",
     "axis": "guia",
     "kind": "likert",
     "polarity": "A",
-    "text": "Pensar bem é o primeiro passo para viver bem."
+    "text": "Para escolher entre dois empregos, eu faria uma lista de prós e contras."
   },
   {
     "id": "guia_08",
@@ -721,9 +725,10 @@
   {
     "id": "guia_12",
     "axis": "guia",
-    "kind": "likert",
+    "kind": "forced",
     "polarity": "B",
-    "text": "Arte e música me ensinam mais sobre a vida do que livros de argumentos."
+    "textLeft": "A casa que me deu uma sensação boa logo que entrei.",
+    "textRight": "A casa que ganhou na comparação de preço e localização."
   },
   {
     "id": "guia_13",
@@ -800,7 +805,7 @@
     "axis": "verdade",
     "kind": "likert",
     "polarity": "B",
-    "text": "Quanto mais aprendo, mais percebo que não sei."
+    "text": "Não sei se existe vida após a morte, e acho que ninguém tem como saber."
   },
   {
     "id": "verdade_09",
@@ -847,8 +852,9 @@
   {
     "id": "verdade_15",
     "axis": "verdade",
-    "kind": "likert",
+    "kind": "forced",
     "polarity": "B",
-    "text": "Duvidar é a forma mais honesta de pensar."
+    "textLeft": "Viver sem respostas definitivas para as grandes perguntas.",
+    "textRight": "Ter respostas firmes, mesmo podendo estar errado."
   }
 ]
