@@ -34,9 +34,11 @@ test('escolha forçada mostra as duas frases e 5 opções', async () => {
   const forced = pool.find(q => q.kind === 'forced')!;
   saveState({ formato: 'curta', questionIds: [forced.id], answers: {}, index: 0 });
   render(<QuizRunner formato="curta" pool={pool} />);
-  expect(await screen.findByText(forced.textLeft!)).toBeTruthy();
-  expect(screen.getByText(forced.textRight!)).toBeTruthy();
-  for (const t of ['Muito mais a da esquerda', 'Mais a da esquerda', 'Igual', 'Mais a da direita', 'Muito mais a da direita']) {
+  // No celular as frases ficam uma embaixo da outra: a etiqueta A/B vale nas duas disposições.
+  expect((await screen.findByText(forced.textLeft!)).closest('[data-frase]')?.getAttribute('data-frase')).toBe('A');
+  expect(screen.getByText(forced.textRight!).closest('[data-frase]')?.getAttribute('data-frase')).toBe('B');
+  expect(document.body.textContent).not.toMatch(/esquerda|direita/);
+  for (const t of ['Muito mais a frase\u00a0A', 'Mais a frase\u00a0A', 'Igual', 'Mais a frase\u00a0B', 'Muito mais a frase\u00a0B']) {
     expect(screen.getByRole('button', { name: t })).toBeTruthy();
   }
 });
@@ -125,7 +127,7 @@ test('ao concluir registra as perguntas vistas, e o próximo sorteio evita repet
   const todasMenosDuas = Object.fromEntries(pool.filter(x => x.axis === 'controle' && x.polarity === 'A').slice(2).map(x => [x.id, 5]));
   localStorage.setItem('quiz:vistas', JSON.stringify(todasMenosDuas));
   render(<QuizRunner formato="curta" pool={pool} />);
-  await screen.findByRole('button', { name: /Concordo totalmente|Muito mais a da esquerda/ });
+  await screen.findByRole('button', { name: /Concordo totalmente|Muito mais a frase\u00a0A/ });
   const sorteadas: string[] = JSON.parse(localStorage.getItem('quiz:curta')!).questionIds;
   expect(sorteadas.filter(id => id.startsWith('controle_') && Number(id.slice(-2)) <= 8).sort()).toEqual(['controle_01', 'controle_02']);
 });

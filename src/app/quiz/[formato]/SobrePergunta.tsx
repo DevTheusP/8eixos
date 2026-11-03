@@ -26,8 +26,8 @@ export function SobrePergunta({ q, eixo, exemplos, onClose }: {
   const ladoDe = (l: 'A' | 'B') => ({ lado: l, nome: l === 'A' ? eixo.poleA : eixo.poleB, desc: l === 'A' ? eixo.descA : eixo.descB });
   const [primeiro, segundo] = q.polarity === 'A' ? [ladoDe('A'), ladoDe('B')] : [ladoDe('B'), ladoDe('A')];
   const cartoes = [
-    { ...primeiro, quando: forcada ? 'Se você escolhe a da esquerda' : 'Se você concorda', cor: forcada ? '#8fb3ff' : '#5ef2c0' },
-    { ...segundo, quando: forcada ? 'Se você escolhe a da direita' : 'Se você discorda', cor: forcada ? '#ffd98a' : '#ff8fb1' },
+    { ...primeiro, quando: forcada ? 'Se você escolhe a frase A' : 'Se você concorda', cor: forcada ? '#8fb3ff' : '#5ef2c0' },
+    { ...segundo, quando: forcada ? 'Se você escolhe a frase B' : 'Se você discorda', cor: forcada ? '#ffd98a' : '#ff8fb1' },
   ];
 
   return (
