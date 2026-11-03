@@ -6,7 +6,8 @@ import { SiteHeader } from '@/components/SiteHeader';
 import { Section } from '@/components/result/Section';
 import { compareVectors, nomeSeguro, resumoComparacao } from '@/lib/compare';
 import { whatsappComparacao } from '@/lib/share';
-import { getAxes, getThinkers, getVectors } from '@/lib/data';
+import { resolverAlvo } from '@/lib/alvos';
+import { getAxes } from '@/lib/data';
 import { matchScore } from '@/lib/matching';
 import type { Vector } from '@/lib/types';
 import { paramsToVector, parseResultLink, vectorToParams } from '@/lib/url';
@@ -15,12 +16,7 @@ export const metadata: Metadata = { title: 'Comparar resultados', robots: { inde
 
 function resolveOutro(outro: string | undefined): { nome: string; vector: Vector } | null {
   if (!outro) return null;
-  if (outro.startsWith('pensador:')) {
-    const id = outro.slice('pensador:'.length);
-    const t = getThinkers().find(x => x.id === id);
-    const v = getVectors().thinkers[id];
-    return t && v ? { nome: t.name, vector: v } : null;
-  }
+  if (/^(pensador|escola):/.test(outro)) return resolverAlvo(outro);
   const v = parseResultLink(outro);
   return v ? { nome: 'A outra pessoa', vector: v } : null;
 }
