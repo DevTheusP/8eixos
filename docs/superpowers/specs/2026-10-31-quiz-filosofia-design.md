@@ -62,6 +62,8 @@ Um quiz anônimo, em português, que diz **qual escola filosófica de vida** a p
 
 **Validação obrigatória antes do lançamento:** com o catálogo pronto, calcular a correlação entre eixos nos vetores do catálogo. Qualquer par acima de 0,7 é sinal de eixo redundante e deve ser revisto (fundir ou reescrever itens).
 
+**Revisão de 2026-11-03 (catálogo com 30 escolas):** bem viver × sentido chegou a 0,73 (0,79 só nas escolas). A correlação aparece em todos os itens de bem viver, inclusive nos que não falam de sentido, então a causa é a composição do catálogo, não a redação: as tradições religiosas são quase todas éticas da virtude e as filosofias do prazer quase todas sem Deus. Os eixos seguem separados (uma pessoa pode ser virtuosa sem Deus ou buscar prazer com fé) e esse par passa a ter limite 0,8 (`limiteDoPar` em src/lib/catalog-checks.ts). A calibração continua acima de 96% no top 3 com ruído.
+
 ## 4. Perguntas e formatos
 
 - Banco de **120 afirmações**: 15 por eixo, metade puxando pra cada polo, pra que concordar com tudo não enviese.

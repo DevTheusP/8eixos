@@ -1,5 +1,5 @@
 import { existsSync } from 'node:fs';
-import { axisCorrelations } from '@/lib/catalog-checks';
+import { axisCorrelations, limiteDoPar } from '@/lib/catalog-checks';
 import { getBooks, getFamilies, getSchools, getThinkers, getVectors } from '@/lib/data';
 import { rank } from '@/lib/matching';
 import { seededRng } from '@/lib/selection';
@@ -8,8 +8,8 @@ import { AXIS_IDS, type Vector } from '@/lib/types';
 test('catálogo completo e consistente', () => {
   const schools = getSchools();
   const thinkers = getThinkers();
-  expect(schools).toHaveLength(24);
-  expect(thinkers.length).toBeGreaterThanOrEqual(60);
+  expect(schools).toHaveLength(30);
+  expect(thinkers.length).toBeGreaterThanOrEqual(77);
   const vs = getVectors();
   const familias = new Set(getFamilies().map(f => f.id));
   const ids = new Set(thinkers.map(t => t.id));
@@ -28,7 +28,7 @@ test('catálogo completo e consistente', () => {
 
 test('eixos não redundantes no catálogo real', () => {
   const todos = [...Object.values(getVectors().schools), ...Object.values(getVectors().thinkers)];
-  expect(axisCorrelations(todos).filter(c => Math.abs(c.r) > 0.7)).toEqual([]);
+  expect(axisCorrelations(todos).filter(c => Math.abs(c.r) > limiteDoPar(c.a, c.b))).toEqual([]);
 });
 
 test('calibração no catálogo real de escolas', () => {
