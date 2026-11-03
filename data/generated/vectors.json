@@ -130,6 +130,26 @@
       "guia": 73.3,
       "verdade": 60
     },
+    "humanismo-secular": {
+      "controle": 71.7,
+      "bemviver": 45,
+      "sentido": 86.7,
+      "mundo": 23.3,
+      "eu": 43.3,
+      "rotina": 46.7,
+      "guia": 16.7,
+      "verdade": 70
+    },
+    "kantismo": {
+      "controle": 50,
+      "bemviver": 6.7,
+      "sentido": 25,
+      "mundo": 48.3,
+      "eu": 36.7,
+      "rotina": 10,
+      "guia": 3.3,
+      "verdade": 31.7
+    },
     "logoterapia": {
       "controle": 60,
       "bemviver": 15,
@@ -150,6 +170,26 @@
       "guia": 40,
       "verdade": 83.3
     },
+    "platonismo": {
+      "controle": 40,
+      "bemviver": 8.3,
+      "sentido": 8.3,
+      "mundo": 48.3,
+      "eu": 63.3,
+      "rotina": 23.3,
+      "guia": 8.3,
+      "verdade": 35
+    },
+    "pragmatismo": {
+      "controle": 71.7,
+      "bemviver": 46.7,
+      "sentido": 73.3,
+      "mundo": 31.7,
+      "eu": 58.3,
+      "rotina": 50,
+      "guia": 40,
+      "verdade": 70
+    },
     "taoismo": {
       "controle": 8.3,
       "bemviver": 71.7,
@@ -159,6 +199,46 @@
       "rotina": 83.3,
       "guia": 73.3,
       "verdade": 75
+    },
+    "tomismo": {
+      "controle": 51.7,
+      "bemviver": 13.3,
+      "sentido": 1.7,
+      "mundo": 25,
+      "eu": 81.7,
+      "rotina": 13.3,
+      "guia": 15,
+      "verdade": 13.3
+    },
+    "transcendentalismo": {
+      "controle": 53.3,
+      "bemviver": 31.7,
+      "sentido": 25,
+      "mundo": 31.7,
+      "eu": 13.3,
+      "rotina": 66.7,
+      "guia": 73.3,
+      "verdade": 46.7
+    },
+    "utilitarismo": {
+      "controle": 73.3,
+      "bemviver": 51.7,
+      "sentido": 63.3,
+      "mundo": 36.7,
+      "eu": 63.3,
+      "rotina": 46.7,
+      "guia": 16.7,
+      "verdade": 43.3
+    },
+    "zen": {
+      "controle": 16.7,
+      "bemviver": 43.3,
+      "sentido": 45,
+      "mundo": 35,
+      "eu": 41.7,
+      "rotina": 28.3,
+      "guia": 58.3,
+      "verdade": 68.3
     }
   },
   "thinkers": {
@@ -171,6 +251,16 @@
       "rotina": 26.7,
       "guia": 46.7,
       "verdade": 16.7
+    },
+    "alan-watts": {
+      "controle": 21.7,
+      "bemviver": 81.7,
+      "sentido": 53.3,
+      "mundo": 30,
+      "eu": 30,
+      "rotina": 86.7,
+      "guia": 76.7,
+      "verdade": 76.7
     },
     "antistenes": {
       "controle": 23.3,
@@ -202,6 +292,26 @@
       "guia": 8.3,
       "verdade": 25
     },
+    "bentham": {
+      "controle": 76.7,
+      "bemviver": 65,
+      "sentido": 63.3,
+      "mundo": 43.3,
+      "eu": 43.3,
+      "rotina": 31.7,
+      "guia": 15,
+      "verdade": 31.7
+    },
+    "bertrand-russell": {
+      "controle": 73.3,
+      "bemviver": 43.3,
+      "sentido": 86.7,
+      "mundo": 30,
+      "eu": 38.3,
+      "rotina": 46.7,
+      "guia": 18.3,
+      "verdade": 73.3
+    },
     "buda": {
       "controle": 16.7,
       "bemviver": 33.3,
@@ -221,6 +331,26 @@
       "rotina": 71.7,
       "guia": 46.7,
       "verdade": 66.7
+    },
+    "carl-sagan": {
+      "controle": 70,
+      "bemviver": 43.3,
+      "sentido": 86.7,
+      "mundo": 21.7,
+      "eu": 48.3,
+      "rotina": 46.7,
+      "guia": 16.7,
+      "verdade": 60
+    },
+    "chesterton": {
+      "controle": 65,
+      "bemviver": 38.3,
+      "sentido": 5,
+      "mundo": 21.7,
+      "eu": 90,
+      "rotina": 50,
+      "guia": 66.7,
+      "verdade": 8.3
     },
     "cioran": {
       "controle": 20,
@@ -262,6 +392,16 @@
       "guia": 46.7,
       "verdade": 50
     },
+    "dogen": {
+      "controle": 16.7,
+      "bemviver": 36.7,
+      "sentido": 45,
+      "mundo": 35,
+      "eu": 48.3,
+      "rotina": 10,
+      "guia": 56.7,
+      "verdade": 60
+    },
     "dostoievski": {
       "controle": 55,
       "bemviver": 28.3,
@@ -270,6 +410,16 @@
       "eu": 80,
       "rotina": 65,
       "guia": 80,
+      "verdade": 50
+    },
+    "emerson": {
+      "controle": 48.3,
+      "bemviver": 31.7,
+      "sentido": 25,
+      "mundo": 21.7,
+      "eu": 13.3,
+      "rotina": 71.7,
+      "guia": 73.3,
       "verdade": 50
     },
     "epicteto": {
@@ -312,6 +462,66 @@
       "guia": 73.3,
       "verdade": 53.3
     },
+    "hannah-arendt": {
+      "controle": 71.7,
+      "bemviver": 28.3,
+      "sentido": 68.3,
+      "mundo": 46.7,
+      "eu": 45,
+      "rotina": 58.3,
+      "guia": 33.3,
+      "verdade": 55
+    },
+    "hipatia": {
+      "controle": 38.3,
+      "bemviver": 11.7,
+      "sentido": 6.7,
+      "mundo": 40,
+      "eu": 61.7,
+      "rotina": 20,
+      "guia": 6.7,
+      "verdade": 28.3
+    },
+    "hume": {
+      "controle": 38.3,
+      "bemviver": 66.7,
+      "sentido": 70,
+      "mundo": 43.3,
+      "eu": 48.3,
+      "rotina": 41.7,
+      "guia": 65,
+      "verdade": 80
+    },
+    "iris-murdoch": {
+      "controle": 38.3,
+      "bemviver": 21.7,
+      "sentido": 45,
+      "mundo": 48.3,
+      "eu": 58.3,
+      "rotina": 48.3,
+      "guia": 51.7,
+      "verdade": 55
+    },
+    "john-dewey": {
+      "controle": 75,
+      "bemviver": 46.7,
+      "sentido": 76.7,
+      "mundo": 30,
+      "eu": 76.7,
+      "rotina": 40,
+      "guia": 28.3,
+      "verdade": 68.3
+    },
+    "kant": {
+      "controle": 50,
+      "bemviver": 8.3,
+      "sentido": 25,
+      "mundo": 48.3,
+      "eu": 41.7,
+      "rotina": 10,
+      "guia": 3.3,
+      "verdade": 31.7
+    },
     "kierkegaard": {
       "controle": 58.3,
       "bemviver": 18.3,
@@ -342,6 +552,16 @@
       "guia": 26.7,
       "verdade": 13.3
     },
+    "machado-de-assis": {
+      "controle": 28.3,
+      "bemviver": 71.7,
+      "sentido": 75,
+      "mundo": 81.7,
+      "eu": 38.3,
+      "rotina": 35,
+      "guia": 40,
+      "verdade": 93.3
+    },
     "marco-aurelio": {
       "controle": 23.3,
       "bemviver": 10,
@@ -350,6 +570,26 @@
       "eu": 76.7,
       "rotina": 20,
       "guia": 5,
+      "verdade": 35
+    },
+    "martha-nussbaum": {
+      "controle": 76.7,
+      "bemviver": 38.3,
+      "sentido": 50,
+      "mundo": 31.7,
+      "eu": 55,
+      "rotina": 45,
+      "guia": 55,
+      "verdade": 46.7
+    },
+    "mary-wollstonecraft": {
+      "controle": 76.7,
+      "bemviver": 8.3,
+      "sentido": 30,
+      "mundo": 43.3,
+      "eu": 25,
+      "rotina": 36.7,
+      "guia": 11.7,
       "verdade": 35
     },
     "mencio": {
@@ -392,6 +632,16 @@
       "guia": 58.3,
       "verdade": 43.3
     },
+    "peter-singer": {
+      "controle": 75,
+      "bemviver": 28.3,
+      "sentido": 65,
+      "mundo": 35,
+      "eu": 66.7,
+      "rotina": 45,
+      "guia": 13.3,
+      "verdade": 43.3
+    },
     "pirro": {
       "controle": 15,
       "bemviver": 63.3,
@@ -401,6 +651,36 @@
       "rotina": 43.3,
       "guia": 48.3,
       "verdade": 100
+    },
+    "platao": {
+      "controle": 43.3,
+      "bemviver": 8.3,
+      "sentido": 8.3,
+      "mundo": 48.3,
+      "eu": 66.7,
+      "rotina": 21.7,
+      "guia": 8.3,
+      "verdade": 35
+    },
+    "plotino": {
+      "controle": 6.7,
+      "bemviver": 11.7,
+      "sentido": 3.3,
+      "mundo": 40,
+      "eu": 28.3,
+      "rotina": 23.3,
+      "guia": 23.3,
+      "verdade": 18.3
+    },
+    "rousseau": {
+      "controle": 45,
+      "bemviver": 51.7,
+      "sentido": 20,
+      "mundo": 66.7,
+      "eu": 31.7,
+      "rotina": 80,
+      "guia": 85,
+      "verdade": 41.7
     },
     "sartre": {
       "controle": 85,
@@ -442,6 +722,16 @@
       "guia": 38.3,
       "verdade": 95
     },
+    "shunryu-suzuki": {
+      "controle": 16.7,
+      "bemviver": 45,
+      "sentido": 45,
+      "mundo": 28.3,
+      "eu": 45,
+      "rotina": 35,
+      "guia": 58.3,
+      "verdade": 75
+    },
     "simone-de-beauvoir": {
       "controle": 91.7,
       "bemviver": 41.7,
@@ -451,6 +741,36 @@
       "rotina": 71.7,
       "guia": 31.7,
       "verdade": 51.7
+    },
+    "simone-weil": {
+      "controle": 26.7,
+      "bemviver": 0,
+      "sentido": 11.7,
+      "mundo": 68.3,
+      "eu": 56.7,
+      "rotina": 28.3,
+      "guia": 36.7,
+      "verdade": 50
+    },
+    "socrates": {
+      "controle": 36.7,
+      "bemviver": 10,
+      "sentido": 20,
+      "mundo": 40,
+      "eu": 55,
+      "rotina": 43.3,
+      "guia": 15,
+      "verdade": 63.3
+    },
+    "stuart-mill": {
+      "controle": 71.7,
+      "bemviver": 40,
+      "sentido": 66.7,
+      "mundo": 33.3,
+      "eu": 35,
+      "rotina": 56.7,
+      "guia": 30,
+      "verdade": 60
     },
     "thich-nhat-hanh": {
       "controle": 35,
@@ -472,6 +792,16 @@
       "guia": 68.3,
       "verdade": 46.7
     },
+    "tomas-de-aquino": {
+      "controle": 51.7,
+      "bemviver": 13.3,
+      "sentido": 1.7,
+      "mundo": 25,
+      "eu": 80,
+      "rotina": 13.3,
+      "guia": 15,
+      "verdade": 15
+    },
     "viktor-frankl": {
       "controle": 60,
       "bemviver": 15,
@@ -481,6 +811,26 @@
       "rotina": 36.7,
       "guia": 50,
       "verdade": 33.3
+    },
+    "voltaire": {
+      "controle": 70,
+      "bemviver": 60,
+      "sentido": 63.3,
+      "mundo": 71.7,
+      "eu": 33.3,
+      "rotina": 53.3,
+      "guia": 18.3,
+      "verdade": 70
+    },
+    "william-james": {
+      "controle": 73.3,
+      "bemviver": 40,
+      "sentido": 58.3,
+      "mundo": 40,
+      "eu": 31.7,
+      "rotina": 53.3,
+      "guia": 63.3,
+      "verdade": 68.3
     },
     "zhuangzi": {
       "controle": 8.3,

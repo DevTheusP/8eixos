@@ -381,7 +381,7 @@
     "name": "Henry David Thoreau",
     "descriptor": "Escritor e naturalista americano",
     "years": "1817–1862",
-    "schoolId": null,
+    "schoolId": "transcendentalismo",
     "bio": "Viveu dois anos numa cabana à beira do lago Walden para viver de forma simples e deliberada. Defendeu a desobediência civil contra leis injustas.",
     "portrait": {
       "file": "thoreau.webp",
@@ -425,6 +425,353 @@
     "portrait": {
       "file": "aristipo.webp",
       "source": "https://commons.wikimedia.org/wiki/File:Aristippus.jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "platao",
+    "name": "Platão",
+    "descriptor": "Filósofo grego, discípulo de Sócrates",
+    "years": "c. 428–348 a.C.",
+    "schoolId": "platonismo",
+    "bio": "Discípulo de Sócrates e mestre de Aristóteles, fundou em Atenas a Academia. Em diálogos como A República, defendeu que a alma deve ser guiada pela razão e que a justiça é a base de uma vida feliz.",
+    "portrait": {
+      "file": "platao.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Plato_Silanion_Musei_Capitolini_MC1377_(cropped).jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "socrates",
+    "name": "Sócrates",
+    "descriptor": "Filósofo grego de Atenas",
+    "years": "c. 470–399 a.C.",
+    "schoolId": "platonismo",
+    "bio": "Não deixou nada escrito, e conhecemos suas ideias por discípulos como Platão. Andava por Atenas fazendo perguntas, dizia que a vida sem exame não vale a pena ser vivida e aceitou a condenação à morte bebendo cicuta.",
+    "portrait": {
+      "file": "socrates.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Socrates_Louvre.jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "plotino",
+    "name": "Plotino",
+    "descriptor": "Filósofo grego, fundador do neoplatonismo",
+    "years": "c. 204–270",
+    "schoolId": "platonismo",
+    "bio": "Nascido no Egito romano, ensinou filosofia em Roma e deu nova vida às ideias de Platão. Seus textos, reunidos pelo aluno Porfírio nas Enéadas, descrevem a alma voltando ao Uno, a fonte de tudo, pela purificação e pela contemplação.",
+    "portrait": {
+      "file": "plotino.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Plotinos.jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "hipatia",
+    "name": "Hipátia de Alexandria",
+    "descriptor": "Matemática e filósofa neoplatônica",
+    "years": "c. 360–415",
+    "schoolId": "platonismo",
+    "bio": "Ensinou matemática, astronomia e a filosofia de Platão em Alexandria e foi respeitada por alunos pagãos e cristãos. Foi assassinada por uma multidão em 415, em meio a disputas políticas e religiosas que dividiam a cidade.",
+    "portrait": {
+      "file": "hipatia.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Hypatia_Sanzio.png",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "iris-murdoch",
+    "name": "Iris Murdoch",
+    "descriptor": "Romancista e filósofa irlandesa-britânica",
+    "years": "1919–1999",
+    "schoolId": "platonismo",
+    "bio": "Nascida em Dublin, ensinou filosofia em Oxford e escreveu mais de vinte romances. Em A Soberania do Bem, defendeu que a vida moral depende de aprender a olhar o mundo e os outros com atenção amorosa, tirando o ego do centro.",
+    "portrait": null
+  },
+  {
+    "id": "tomas-de-aquino",
+    "name": "Tomás de Aquino",
+    "descriptor": "Frade dominicano, teólogo e filósofo",
+    "years": "c. 1225–1274",
+    "schoolId": "tomismo",
+    "bio": "Frade dominicano italiano, escreveu a Suma Teológica e é um dos maiores pensadores da Igreja Católica. Mostrou que fé e razão se completam e usou a filosofia de Aristóteles para explicar a doutrina cristã.",
+    "portrait": {
+      "file": "tomas-de-aquino.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Saint_Thomas_Aquinas_(Crivelli,_15th-century).jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "chesterton",
+    "name": "G. K. Chesterton",
+    "descriptor": "Escritor e jornalista inglês",
+    "years": "1874–1936",
+    "schoolId": "tomismo",
+    "bio": "Autor de Ortodoxia e das histórias do Padre Brown, ficou conhecido pelo humor e pelos paradoxos. Converteu-se ao catolicismo em 1922, escreveu uma biografia de Tomás de Aquino e via na fé uma fonte de espanto e gratidão diante da vida.",
+    "portrait": {
+      "file": "chesterton.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:G._K._Chesterton.jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "dogen",
+    "name": "Dōgen",
+    "descriptor": "Mestre zen japonês",
+    "years": "1200–1253",
+    "schoolId": "zen",
+    "bio": "Monge japonês que estudou na China e levou ao Japão a escola Sōtō do zen. Ensinava que sentar em meditação já é a própria iluminação e que cada tarefa do dia, até cozinhar, pode ser prática espiritual.",
+    "portrait": {
+      "file": "dogen.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Dogen_(cropped).jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "shunryu-suzuki",
+    "name": "Shunryu Suzuki",
+    "descriptor": "Monge zen japonês",
+    "years": "1904–1971",
+    "schoolId": "zen",
+    "bio": "Mestre da escola Sōtō que se mudou para os Estados Unidos em 1959 e fundou o San Francisco Zen Center. Seu livro Mente Zen, Mente de Principiante ensina a viver cada momento com a abertura de quem vê tudo pela primeira vez.",
+    "portrait": {
+      "file": "shunryu-suzuki.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Shunryu_Suzuki_at_Zen_Mountain_Center_(cropped).png",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "alan-watts",
+    "name": "Alan Watts",
+    "descriptor": "Escritor e palestrante britânico",
+    "years": "1915–1973",
+    "schoolId": "zen",
+    "bio": "Nascido na Inglaterra e radicado nos Estados Unidos, ajudou a levar o zen e o taoísmo ao público ocidental com livros e palestras. Em obras como O Caminho do Zen, convidava a soltar a ansiedade e a viver plenamente o presente.",
+    "portrait": {
+      "file": "alan-watts.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Alan_Watts_UVM_15_June_1958_Hon._D.D.jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "bentham",
+    "name": "Jeremy Bentham",
+    "descriptor": "Filósofo e jurista inglês",
+    "years": "1748–1832",
+    "schoolId": "utilitarismo",
+    "bio": "Fundador do utilitarismo moderno, propôs que o certo é aquilo que gera a maior felicidade para o maior número de pessoas. Defendeu reformas nas leis e nas prisões e pediu que o sofrimento dos animais também fosse levado em conta.",
+    "portrait": {
+      "file": "bentham.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Jeremy_Bentham_by_Henry_William_Pickersgill.jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "stuart-mill",
+    "name": "John Stuart Mill",
+    "descriptor": "Filósofo e economista britânico",
+    "years": "1806–1873",
+    "schoolId": "utilitarismo",
+    "bio": "Educado pelo pai desde pequeno com enorme rigor, renovou o utilitarismo ao defender que alguns prazeres valem mais que outros. Em Sobre a Liberdade e A Sujeição das Mulheres, defendeu a liberdade individual e a igualdade entre os sexos.",
+    "portrait": {
+      "file": "stuart-mill.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:John-stuart-mill-sized.jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "peter-singer",
+    "name": "Peter Singer",
+    "descriptor": "Filósofo australiano",
+    "years": "1946–",
+    "schoolId": "utilitarismo",
+    "bio": "Professor em Princeton por muitos anos, escreveu Libertação Animal, livro que ajudou a criar o movimento pelos direitos dos animais. Defende que quem pode aliviar a pobreza extrema sem grande sacrifício tem o dever moral de ajudar.",
+    "portrait": {
+      "file": "peter-singer.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Peter_Singer_01.jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "kant",
+    "name": "Immanuel Kant",
+    "descriptor": "Filósofo alemão",
+    "years": "1724–1804",
+    "schoolId": "kantismo",
+    "bio": "Viveu toda a vida em Königsberg, na Prússia, e mudou os rumos da filosofia com a Crítica da Razão Pura. Ensinou que a moral nasce da razão e que cada pessoa tem uma dignidade que não pode ser trocada por preço nenhum.",
+    "portrait": {
+      "file": "kant.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Immanuel_Kant_portrait_c1790.jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "william-james",
+    "name": "William James",
+    "descriptor": "Filósofo e psicólogo americano",
+    "years": "1842–1910",
+    "schoolId": "pragmatismo",
+    "bio": "Um dos fundadores da psicologia moderna e do pragmatismo, era irmão do romancista Henry James. Em As Variedades da Experiência Religiosa, estudou a fé com respeito e defendeu que as crenças se medem pelo que fazem na vida de quem as tem.",
+    "portrait": {
+      "file": "william-james.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:William_James_b1842c.jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "john-dewey",
+    "name": "John Dewey",
+    "descriptor": "Filósofo e educador americano",
+    "years": "1859–1952",
+    "schoolId": "pragmatismo",
+    "bio": "Um dos principais nomes do pragmatismo, transformou a educação ao defender que se aprende fazendo. Via a democracia como um modo de vida baseado no diálogo e o crescimento contínuo como o grande objetivo moral.",
+    "portrait": {
+      "file": "john-dewey.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:John_Dewey_in_1902.jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "bertrand-russell",
+    "name": "Bertrand Russell",
+    "descriptor": "Filósofo e matemático britânico",
+    "years": "1872–1970",
+    "schoolId": "humanismo-secular",
+    "bio": "Um dos fundadores da filosofia analítica, recebeu o Nobel de Literatura em 1950. Defendeu a paz e a liberdade de pensamento e escreveu que a boa vida é inspirada pelo amor e guiada pelo conhecimento.",
+    "portrait": {
+      "file": "bertrand-russell.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Bertrand_Russell_in_1936.jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "carl-sagan",
+    "name": "Carl Sagan",
+    "descriptor": "Astrônomo e divulgador científico americano",
+    "years": "1934–1996",
+    "schoolId": "humanismo-secular",
+    "bio": "Apresentou a série Cosmos e escreveu livros como Pálido Ponto Azul e O Mundo Assombrado pelos Demônios. Defendia o pensamento científico e via na vastidão do universo um motivo de humildade e de cuidado com a Terra.",
+    "portrait": {
+      "file": "carl-sagan.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Astronomer_Carl_Sagan_in_1987.jpg",
+      "license": "CC BY-SA 4.0"
+    }
+  },
+  {
+    "id": "mary-wollstonecraft",
+    "name": "Mary Wollstonecraft",
+    "descriptor": "Escritora e filósofa inglesa",
+    "years": "1759–1797",
+    "schoolId": null,
+    "bio": "Em Reivindicação dos Direitos da Mulher, de 1792, defendeu que as mulheres são tão capazes de razão quanto os homens e merecem a mesma educação. É vista como uma das fundadoras do feminismo e foi mãe de Mary Shelley, autora de Frankenstein.",
+    "portrait": {
+      "file": "mary-wollstonecraft.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Mary_Wollstonecraft_by_John_Opie_(c._1797).jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "voltaire",
+    "name": "Voltaire",
+    "descriptor": "Escritor e filósofo francês do Iluminismo",
+    "years": "1694–1778",
+    "schoolId": "humanismo-secular",
+    "bio": "Nome adotado por François-Marie Arouet, que combateu a intolerância religiosa, a censura e a injustiça com ironia afiada. Acreditava num Deus criador, mas criticava duramente as igrejas, e terminou o romance Cândido com o conselho de cultivar o próprio jardim.",
+    "portrait": {
+      "file": "voltaire.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Nicolas_de_Largillière_-_Portrait_de_Voltaire_(1694-1778)_en_1718_-_P208_-_musée_Carnavalet.jpg",
+      "license": "CC0"
+    }
+  },
+  {
+    "id": "emerson",
+    "name": "Ralph Waldo Emerson",
+    "descriptor": "Ensaísta e poeta americano",
+    "years": "1803–1882",
+    "schoolId": "transcendentalismo",
+    "bio": "Ex-pastor que se tornou a principal voz do transcendentalismo americano e amigo próximo de Thoreau. No ensaio Autoconfiança, defendeu que cada pessoa deve confiar na própria intuição em vez de se moldar às expectativas da sociedade.",
+    "portrait": {
+      "file": "emerson.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Ralph_Waldo_Emerson_by_Josiah_Johnson_Hawes_1857.jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "hume",
+    "name": "David Hume",
+    "descriptor": "Filósofo escocês do Iluminismo",
+    "years": "1711–1776",
+    "schoolId": "ceticismo",
+    "bio": "Filósofo de Edimburgo que duvidou do poder da razão de provar causas, milagres e verdades sobre o além. Defendeu que a razão serve às paixões e que a moral nasce dos sentimentos humanos, como a simpatia pelos outros.",
+    "portrait": {
+      "file": "hume.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:David_Hume_Ramsay.jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "simone-weil",
+    "name": "Simone Weil",
+    "descriptor": "Filósofa e mística francesa",
+    "years": "1909–1943",
+    "schoolId": "platonismo",
+    "bio": "Professora de filosofia, trabalhou em fábricas e foi à Guerra Civil Espanhola para viver de perto a condição dos mais pobres. Depois de experiências místicas cristãs, escreveu sobre a atenção, a graça e o enraizamento, e morreu aos 34 anos na Inglaterra.",
+    "portrait": {
+      "file": "simone-weil.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Simone_Weil_1943.jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "martha-nussbaum",
+    "name": "Martha Nussbaum",
+    "descriptor": "Filósofa americana",
+    "years": "1947–",
+    "schoolId": "aristotelismo",
+    "bio": "Professora da Universidade de Chicago, estuda os gregos antigos, as emoções e a justiça. Inspirada em Aristóteles, desenvolveu ao lado de Amartya Sen a abordagem das capacidades, que pergunta o que cada pessoa realmente consegue ser e fazer para viver bem.",
+    "portrait": {
+      "file": "martha-nussbaum.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Martha_Nussbaum_2010_(cropped).jpg",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  {
+    "id": "hannah-arendt",
+    "name": "Hannah Arendt",
+    "descriptor": "Filósofa política alemã-americana",
+    "years": "1906–1975",
+    "schoolId": null,
+    "bio": "Judia alemã que fugiu do nazismo e se estabeleceu nos Estados Unidos, escreveu As Origens do Totalitarismo e A Condição Humana. Ao acompanhar o julgamento de Eichmann, falou da banalidade do mal e defendeu que pensar e agir junto com os outros é o que nos faz humanos.",
+    "portrait": {
+      "file": "hannah-arendt.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Hannah_Arendt_1933.jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "rousseau",
+    "name": "Jean-Jacques Rousseau",
+    "descriptor": "Filósofo e escritor genebrino",
+    "years": "1712–1778",
+    "schoolId": null,
+    "bio": "Nascido em Genebra, escreveu O Contrato Social e Emílio. Defendeu que o ser humano nasce bom e é corrompido pela sociedade, e valorizou a natureza, os sentimentos e uma educação que respeite o ritmo da criança.",
+    "portrait": {
+      "file": "rousseau.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Maurice_Quentin_de_La_Tour_-_Portrait_de_Jean-Jacques_Rousseau_(1712-1778),_écrivain_et_philosophe_-_P210_-_Musée_Carnavalet.jpg",
+      "license": "Public domain"
+    }
+  },
+  {
+    "id": "machado-de-assis",
+    "name": "Machado de Assis",
+    "descriptor": "Escritor brasileiro",
+    "years": "1839–1908",
+    "schoolId": null,
+    "bio": "Neto de escravizados libertos, foi o primeiro presidente da Academia Brasileira de Letras e escreveu Memórias Póstumas de Brás Cubas e Dom Casmurro. Seus livros olham com ironia, ceticismo e certo pessimismo para a vaidade, o interesse e as ilusões humanas.",
+    "portrait": {
+      "file": "machado-de-assis.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Machado_de_Assis_1904.jpg",
       "license": "Public domain"
     }
   }

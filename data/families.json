@@ -4,5 +4,6 @@
   { "id": "sentido", "name": "Filosofias do sentido", "color": "#b4562a", "soft": "#f5e0d4" },
   { "id": "prazer", "name": "Filosofias do prazer", "color": "#b0365f", "soft": "#f3d9e3" },
   { "id": "duvida", "name": "Filosofias da dúvida", "color": "#4a4f5c", "soft": "#e0e2e7" },
-  { "id": "cristas", "name": "Tradições cristãs", "color": "#5b3a86", "soft": "#e7dff3" }
+  { "id": "cristas", "name": "Tradições cristãs", "color": "#5b3a86", "soft": "#e7dff3" },
+  { "id": "razao", "name": "Razão e sociedade", "color": "#8a6d1f", "soft": "#f1e6c8" }
 ]

@@ -1,3 +1,4 @@
+import { getSchools } from '@/lib/data';
 import * as vs from '@/app/escolas/[id]/vs/[outro]/page';
 import sitemap from '@/app/sitemap';
 import { parecidos } from '@/lib/catalogo';
@@ -9,9 +10,10 @@ test('pensadores parecidos: os mais próximos, sem o próprio', () => {
   expect(r[0].score).toBeGreaterThanOrEqual(r[3].score);
 });
 
-test('uma página por par de escolas (120), sempre na mesma ordem', () => {
+test('uma página por par de escolas, sempre na mesma ordem', () => {
   const ps = vs.generateStaticParams();
-  expect(ps).toHaveLength(120);
+  const n = getSchools().length;
+  expect(ps).toHaveLength((n * (n - 1)) / 2);
   for (const p of ps) expect(p.id < p.outro).toBe(true);
 });
 
