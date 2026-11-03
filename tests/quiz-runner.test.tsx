@@ -113,3 +113,19 @@ test('Recomeçar volta pra primeira pergunta', async () => {
   fireEvent.click(screen.getByRole('button', { name: /Recomeçar/ }));
   expect(document.body.textContent).toContain('Pergunta 1 de 32');
 });
+
+test('ao concluir registra as perguntas vistas, e o próximo sorteio evita repetir', async () => {
+  const [q, trocada] = [pool[0], pool[1]];
+  saveState({ formato: 'curta', questionIds: [q.id], answers: {}, index: 0, skipped: [trocada.id] });
+  const { unmount } = render(<QuizRunner formato="curta" pool={pool} />);
+  fireEvent.click(await screen.findByRole('button', { name: 'Concordo totalmente' }));
+  expect(JSON.parse(localStorage.getItem('quiz:vistas')!)).toEqual({ [q.id]: 1, [trocada.id]: 1 });
+  unmount();
+
+  const todasMenosDuas = Object.fromEntries(pool.filter(x => x.axis === 'controle' && x.polarity === 'A').slice(2).map(x => [x.id, 5]));
+  localStorage.setItem('quiz:vistas', JSON.stringify(todasMenosDuas));
+  render(<QuizRunner formato="curta" pool={pool} />);
+  await screen.findByRole('button', { name: /Concordo totalmente|Muito mais a da esquerda/ });
+  const sorteadas: string[] = JSON.parse(localStorage.getItem('quiz:curta')!).questionIds;
+  expect(sorteadas.filter(id => id.startsWith('controle_') && Number(id.slice(-2)) <= 8).sort()).toEqual(['controle_01', 'controle_02']);
+});

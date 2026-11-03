@@ -37,3 +37,31 @@ test('formatos com os números do spec e nenhum texto promete 100%', () => {
   expect(FORMATOS.profunda).toMatchObject({ perguntas: 120, porEixo: 15, minutos: 20, recomendado: false });
   expect(JSON.stringify(FORMATOS)).not.toMatch(/100\s*%/);
 });
+
+test('prefere as perguntas que a pessoa ainda não viu', () => {
+  const primeira = selectQuestions(pool, 'completa', seededRng(3));
+  const vistas = Object.fromEntries(primeira.map(q => [q.id, 1]));
+  const segunda = selectQuestions(pool, 'completa', seededRng(3), vistas);
+  // Cada polo tem 7 ou 8 perguntas e a completa usa 4: na segunda vez só repete o que faltar.
+  for (const ax of AXIS_IDS) for (const p of ['A', 'B'] as const) {
+    const novas = segunda.filter(q => q.axis === ax && q.polarity === p && !vistas[q.id]);
+    const disponiveis = pool.filter(q => q.axis === ax && q.polarity === p && !vistas[q.id]).length;
+    expect(novas.length).toBe(Math.min(4, disponiveis));
+  }
+});
+
+test('na curta, quatro rodadas passam por todas as perguntas antes de repetir', () => {
+  const vistas: Record<string, number> = {};
+  const ids = new Set<string>();
+  for (let i = 0; i < 4; i++) {
+    for (const q of selectQuestions(pool, 'curta', seededRng(i), vistas)) {
+      ids.add(q.id);
+      vistas[q.id] = (vistas[q.id] ?? 0) + 1;
+    }
+  }
+  // 8 eixos × (8 + 7) = 120, mas 4 rodadas × 2 por polo = 8 por polo: cobre os de 7 e quase todos os de 8.
+  for (const ax of AXIS_IDS) for (const p of ['A', 'B'] as const) {
+    const total = pool.filter(q => q.axis === ax && q.polarity === p).length;
+    expect(pool.filter(q => q.axis === ax && q.polarity === p && ids.has(q.id)).length).toBe(total);
+  }
+});

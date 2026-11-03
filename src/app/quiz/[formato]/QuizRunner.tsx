@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 import { useCallback, useEffect, useMemo, useState, type CSSProperties } from 'react';
 import { AXIS_ICONS } from '@/lib/icons';
 import {
-  advance, back, canSwap, clearState, isDone, loadState, saveState, select, swap, type QuizState,
+  advance, back, canSwap, clearState, isDone, loadState, loadVistas, registrarVistas, saveState, select, swap, type QuizState,
 } from '@/lib/quiz-state';
 import { computeVector } from '@/lib/scoring';
 import { selectQuestions, type Formato } from '@/lib/selection';
@@ -36,7 +36,7 @@ const FORCADA: Opcao[] = [
 const PREF_AUTO = 'quiz:avancar-ao-responder';
 
 function freshState(formato: Formato, pool: Question[]): QuizState {
-  return { formato, questionIds: selectQuestions(pool, formato).map(q => q.id), answers: {}, index: 0 };
+  return { formato, questionIds: selectQuestions(pool, formato, Math.random, loadVistas()).map(q => q.id), answers: {}, index: 0 };
 }
 
 function lerPreferencia(): boolean {
@@ -74,6 +74,7 @@ export function QuizRunner({ formato, pool, axes = [], exemplos }: {
   const commit = useCallback((next: QuizState) => {
     if (isDone(next)) {
       const v = computeVector(next.questionIds.map(id => byId.get(id)!), next.answers);
+      registrarVistas([...next.questionIds, ...(next.skipped ?? [])]);
       clearState(formato);
       track('quiz_fim', { formato });
       router.push(`/resultado?${vectorToParams(v)}`);
