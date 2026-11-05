@@ -9,7 +9,7 @@ test('catálogo completo e consistente', () => {
   const schools = getSchools();
   const thinkers = getThinkers();
   expect(schools).toHaveLength(30);
-  expect(thinkers.length).toBeGreaterThanOrEqual(77);
+  expect(thinkers.length).toBeGreaterThanOrEqual(76);
   const vs = getVectors();
   const familias = new Set(getFamilies().map(f => f.id));
   const ids = new Set(thinkers.map(t => t.id));
@@ -42,4 +42,9 @@ test('calibração no catálogo real de escolas', () => {
     total++;
   }
   expect(acertos / total).toBeGreaterThanOrEqual(0.9);
+});
+
+test('todo pensador tem foto e todo livro tem capa', () => {
+  expect(getThinkers().filter(t => !t.portrait).map(t => t.id)).toEqual([]);
+  expect(getBooks().filter(b => !existsSync(`public/capas/${b.id}.webp`)).map(b => b.id)).toEqual([]);
 });

@@ -1,10 +1,11 @@
 // @vitest-environment jsdom
+import { Pensadores } from '@/components/result/Pensadores';
 import { render, screen } from '@testing-library/react';
 import { Escolas } from '@/components/result/Escolas';
 import { Hero } from '@/components/result/Hero';
 import { Tracos } from '@/components/result/Tracos';
 import { getFamilies, getSchools, getVectors } from '@/lib/data';
-import { tracosFortes } from '@/lib/labels';
+import { perfilEquilibrado, tracosFortes } from '@/lib/labels';
 import { buildResult } from '@/lib/result';
 import { AXIS_IDS, type Vector } from '@/lib/types';
 
@@ -93,4 +94,21 @@ test('traços: completa até 3 com leves tendências quando a pessoa ficou perto
   expect(t[1].nome).toBe('Emoção');
   render(<Tracos vector={v} />);
   expect(screen.getAllByText(/Leve tendência/)).toHaveLength(2);
+});
+
+test('parecidos em cada área mostram a área, sem porcentagem (que só valeria para 2 ou 3 eixos)', () => {
+  const r = buildResult(getVectors().schools.estoicismo);
+  const { container } = render(<Pensadores result={r} />);
+  for (const d of r.byDimension) {
+    const cartao = container.querySelector(`a[href="/pensadores/${d.thinker.id}"]`)!;
+    expect(cartao.textContent).toMatch(/Na ação|No sentido|No pensar/);
+    expect(cartao.textContent).not.toMatch(/%/);
+  }
+});
+
+test('perfil muito equilibrado ganha aviso no topo; perfil decidido não', () => {
+  const quaseNeutro = { ...neutro, controle: 58, guia: 44 };
+  render(<Hero result={buildResult(quaseNeutro)} params="c=58" />);
+  expect(screen.getByText(/perfil bem equilibrado/i)).toBeTruthy();
+  for (const v of Object.values(getVectors().schools)) expect(perfilEquilibrado(v)).toBe(false);
 });

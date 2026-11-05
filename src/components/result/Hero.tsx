@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import type { CSSProperties, ReactNode } from 'react';
 import { InView } from '@/components/InView';
+import { perfilEquilibrado } from '@/lib/labels';
 import type { Result } from '@/lib/result';
 import { Retrato } from '../Retrato';
 
@@ -27,6 +28,11 @@ export function Hero({ result, params, share, cardSrc }: { result: Result; param
         </InView>
         <blockquote className="relative mt-6 text-xl leading-snug sm:text-2xl">“{school.quote}”</blockquote>
         <p className="relative mt-4 max-w-prose text-sm leading-relaxed text-white/85">{school.summary}</p>
+        {perfilEquilibrado(result.vector) && (
+          <p className="relative mt-3 max-w-prose rounded-xl bg-white/10 px-3 py-2 text-sm text-white/90">
+            Você tem um perfil bem equilibrado: não pende muito para nenhum lado, então várias escolas ficam parecidas com você. Veja as escolas próximas e os seus eixos.
+          </p>
+        )}
         <div className="relative mt-6 flex items-center gap-3 rounded-2xl bg-white/10 p-3 pr-4">
           <Retrato thinker={thinker} size={52} />
           <div className="min-w-0 flex-1">

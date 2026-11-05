@@ -60,8 +60,8 @@
     "bio": "Escreveu Sobre a Natureza das Coisas, um longo poema que explica o universo como átomos em movimento. Queria libertar as pessoas do medo da morte e dos deuses.",
     "portrait": {
       "file": "lucrecio.webp",
-      "source": "https://commons.wikimedia.org/wiki/File:Lucretius_pointing_to_the_casus.jpg",
-      "license": "Public domain"
+      "source": "https://commons.wikimedia.org/wiki/File:Lucretius1.png",
+      "license": "CC0"
     }
   },
   {
@@ -73,7 +73,7 @@
     "bio": "Morava num barril em Atenas e fazia da própria vida um protesto contra as convenções. Dizem que pediu a Alexandre, o Grande, só que saísse da frente do sol.",
     "portrait": {
       "file": "diogenes.webp",
-      "source": "https://commons.wikimedia.org/wiki/File:Diogenes_Mosaic_R%C3%B6misch-Germanisches_Museum.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Jean-L%C3%A9on_G%C3%A9r%C3%B4me_-_Diogenes_-_Walters_37131.jpg",
       "license": "Public domain"
     }
   },
@@ -164,7 +164,7 @@
     "bio": "Figura lendária a quem se atribui o Tao Te Ching. Ensinava que a água, macia e humilde, vence o que é duro.",
     "portrait": {
       "file": "lao-tse.webp",
-      "source": "https://commons.wikimedia.org/wiki/File:Zhang_Lu-Laozi_Riding_an_Ox_(cropped).jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Lao_Tzu.png",
       "license": "Public domain"
     }
   },
@@ -177,7 +177,7 @@
     "bio": "Contador de histórias e paradoxos que levou o taoísmo ao bom humor. Sonhou que era uma borboleta e acordou sem saber se era um homem que sonhou ser borboleta ou o contrário.",
     "portrait": {
       "file": "zhuangzi.webp",
-      "source": "https://commons.wikimedia.org/wiki/File:Zhuangzi.png",
+      "source": "https://commons.wikimedia.org/wiki/File:Hui_Zuli_%E8%8F%AF%E7%A5%96%E7%AB%8B%E2%80%94Zhuang_Zhou_%E8%8E%8A%E5%AD%90_(1326).jpg",
       "license": "Public domain"
     }
   },
@@ -359,7 +359,7 @@
     "bio": "Mestre chinês que ensinou a cultivar a virtude pelo estudo, pelo respeito aos rituais e pelos laços de família. Seus ensinamentos moldaram a cultura do Leste Asiático.",
     "portrait": {
       "file": "confucio.webp",
-      "source": "https://commons.wikimedia.org/wiki/File:Confucius,_fresco_from_a_Western_Han_tomb_of_Dongping_County,_Shandong_province,_China_(cropped).jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:%E5%AD%94%E5%AD%90%E7%87%95%E5%B1%85%E5%83%8F.png",
       "license": "Public domain"
     }
   },
@@ -479,15 +479,6 @@
       "source": "https://commons.wikimedia.org/wiki/File:Hypatia_Sanzio.png",
       "license": "Public domain"
     }
-  },
-  {
-    "id": "iris-murdoch",
-    "name": "Iris Murdoch",
-    "descriptor": "Romancista e filósofa irlandesa-britânica",
-    "years": "1919–1999",
-    "schoolId": "platonismo",
-    "bio": "Nascida em Dublin, ensinou filosofia em Oxford e escreveu mais de vinte romances. Em A Soberania do Bem, defendeu que a vida moral depende de aprender a olhar o mundo e os outros com atenção amorosa, tirando o ego do centro.",
-    "portrait": null
   },
   {
     "id": "tomas-de-aquino",
@@ -834,7 +825,11 @@
     "years": "c. 1058–1111",
     "schoolId": "sufismo",
     "bio": "Professor famoso em Bagdá, passou por uma crise de dúvida, largou o cargo e viveu anos como sufi itinerante. Na obra A Revivificação das Ciências Religiosas, uniu a lei islâmica à vida interior e mostrou que a fé precisa ser vivida no coração.",
-    "portrait": null
+    "portrait": {
+      "file": "al-ghazali.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Al-Ghaz%C4%81l%C4%AB,_Sayr_mulhimah_min_al-Sharq_wa-al-Gharb.png",
+      "license": "Public domain"
+    }
   },
   {
     "id": "maimonides",
