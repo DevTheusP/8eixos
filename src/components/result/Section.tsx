@@ -26,8 +26,8 @@ export function Section({ id, title, icon: Icone, children, className = '' }: {
 export function Ring({ score, size = 'md' }: { score: number; size?: 'sm' | 'md' }) {
   const pct = Math.max(0, Math.min(100, score));
   return (
-    <InView className={`flex-none ${size === 'md' ? 'w-32' : 'w-24'}`}>
-      <p className="flex items-baseline justify-end gap-1 text-brand">
+    <InView className={`flex-none ${size === 'md' ? 'min-w-32' : 'min-w-24'}`}>
+      <p className="flex items-baseline gap-1 whitespace-nowrap text-brand sm:justify-end">
         <span className={`font-display font-bold ${size === 'md' ? 'text-3xl' : 'text-xl'}`}>{Math.round(score)}%</span>
         <span className="text-xs font-semibold">compatível</span>
       </p>

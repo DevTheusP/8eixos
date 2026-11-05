@@ -16,7 +16,7 @@ export function Hero({ result, params, share, cardSrc }: { result: Result; param
         <span aria-hidden className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-white/10" />
         <span aria-hidden className="pointer-events-none absolute -bottom-24 right-24 h-40 w-40 rounded-full bg-white/5" />
         <span className="relative inline-block rounded-full bg-white/15 px-3 py-1 text-xs font-semibold">{family.name}</span>
-        <p className="relative mt-4 font-display text-5xl font-bold leading-none tracking-tight sm:text-6xl">{school.name}</p>
+        <p className="relative mt-4 font-display text-[clamp(2.25rem,11vw,3.75rem)] font-bold leading-none tracking-tight [hyphens:auto] [overflow-wrap:anywhere]">{school.name}</p>
         <InView className="relative mt-5 max-w-sm">
           <p className="flex items-baseline gap-1.5">
             <span className="font-display text-3xl font-bold">{Math.round(score)}%</span>

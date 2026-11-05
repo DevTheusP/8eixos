@@ -22,7 +22,7 @@ test('cartão do fim só aparece quando a pessoa chega ao fim, fecha e não volt
   expect(screen.queryByRole('dialog')).toBeNull();
   act(() => avisar!([{ isIntersecting: true }]));
   expect(screen.getByRole('dialog', { name: /Gostou do seu resultado/ })).toBeTruthy();
-  expect(screen.getByRole('button', { name: /Compartilhar no story/ })).toBeTruthy();
+  expect(screen.getByRole('button', { name: /story do Instagram/ })).toBeTruthy();
   fireEvent.click(screen.getByRole('button', { name: 'Fechar' }));
   expect(screen.queryByRole('dialog')).toBeNull();
   unmount();
