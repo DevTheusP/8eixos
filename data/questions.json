@@ -186,7 +186,7 @@
     "axis": "bemviver",
     "kind": "likert",
     "polarity": "B",
-    "text": "Ser feliz é o objetivo principal da vida."
+    "text": "O que mais importa na vida é me sentir bem."
   },
   {
     "id": "bemviver_12",
@@ -377,7 +377,7 @@
     "axis": "mundo",
     "kind": "likert",
     "polarity": "B",
-    "text": "A vida é, em grande parte, sofrimento."
+    "text": "No balanço geral, a vida traz mais dor do que alegria."
   },
   {
     "id": "mundo_09",
@@ -551,7 +551,7 @@
     "axis": "rotina",
     "kind": "likert",
     "polarity": "A",
-    "text": "Costumes e tradições guardam uma sabedoria que não devemos descartar."
+    "text": "Gosto de ter horários fixos para as coisas importantes do meu dia."
   },
   {
     "id": "rotina_03",
@@ -608,7 +608,7 @@
     "axis": "rotina",
     "kind": "likert",
     "polarity": "B",
-    "text": "Seguir o fluxo costuma dar mais certo do que forçar um plano."
+    "text": "Gosto de dias sem nada planejado."
   },
   {
     "id": "rotina_11",
@@ -622,7 +622,7 @@
     "axis": "rotina",
     "kind": "likert",
     "polarity": "B",
-    "text": "Tradições devem ser questionadas, não apenas seguidas."
+    "text": "Planos muito detalhados me deixam sufocado."
   },
   {
     "id": "rotina_13",
@@ -699,7 +699,7 @@
     "axis": "guia",
     "kind": "likert",
     "polarity": "A",
-    "text": "Paixões fortes costumam nos levar a erros."
+    "text": "Uma decisão só é boa se eu conseguir explicá-la com argumentos."
   },
   {
     "id": "guia_09",
@@ -805,7 +805,7 @@
     "axis": "verdade",
     "kind": "likert",
     "polarity": "B",
-    "text": "Não sei se existe vida após a morte, e acho que ninguém tem como saber."
+    "text": "Desconfio de qualquer sistema que pretenda explicar tudo."
   },
   {
     "id": "verdade_09",
@@ -819,7 +819,7 @@
     "axis": "verdade",
     "kind": "likert",
     "polarity": "B",
-    "text": "Mudo de opinião com facilidade quando encontro bons argumentos."
+    "text": "Ficar em dúvida me incomoda menos do que acreditar em algo errado."
   },
   {
     "id": "verdade_11",
@@ -833,7 +833,7 @@
     "axis": "verdade",
     "kind": "likert",
     "polarity": "B",
-    "text": "Nossos sentidos e nossa mente nos enganam com frequência."
+    "text": "Acho difícil ter certeza absoluta de qualquer coisa."
   },
   {
     "id": "verdade_13",
