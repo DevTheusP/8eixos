@@ -2,7 +2,7 @@
 
 # 8eixos
 
-Um quiz de filosofia de vida que mede você em oito eixos independentes e mostra quais das 30 escolas filosóficas e dos 77 pensadores mais se parecem com o seu jeito de viver.
+Um quiz de filosofia de vida que mede você em oito eixos independentes e mostra quais das 30 escolas filosóficas e dos 76 pensadores mais se parecem com o seu jeito de viver.
 
 **[8eixos.vercel.app](https://8eixos.vercel.app)** · em português · sem cadastro · grátis
 
@@ -36,7 +36,7 @@ Um quiz anônimo. Você responde a frases numa escala de concordância (ou escol
 ### O que o diferencia
 
 - **Eixos medidos de forma independente.** O resultado guarda tensões e combinações incomuns, em vez de forçar um rótulo único.
-- **Catálogo variado.** Tem tradições gregas, orientais, cristãs, judaica, islâmica, espírita, africana e modernas, com 7 mulheres entre os pensadores e um brasileiro, Machado de Assis.
+- **Catálogo variado.** Tem tradições gregas, orientais, cristãs, judaica, islâmica, espírita, africana e modernas, com 6 mulheres entre os pensadores e um brasileiro, Machado de Assis.
 - **Perfis calculados, não colocados à mão.** Cada escola e cada pensador respondeu às mesmas 120 perguntas que você responde, e a posição dele vem dessas respostas.
 - **Card pronto para o story**, comparação eixo a eixo com amigos, pensadores ou escolas, e um link que refaz o resultado sem guardar nada em servidor.
 
