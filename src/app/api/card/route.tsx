@@ -4,6 +4,7 @@ import { cardFonts, CORES_EIXO, escurecer, iconeSvg, retratoDataUri } from '@/li
 import { getAxes, getFamilies } from '@/lib/data';
 import { POLE_ICONS } from '@/lib/icons';
 import { poloDoCard } from '@/lib/labels';
+import { DIMENSOES } from '@/lib/matching';
 import { buildResult } from '@/lib/result';
 import { qrDataUri } from '@/lib/share';
 import { SITE_URL } from '@/lib/site';
@@ -139,7 +140,7 @@ export async function GET(req: Request) {
                 <div key={d.dim} style={{ display: 'flex', alignItems: 'center', padding: '8px 0' }}>
                   <Foto t={d.thinker} tamanho={64} raio={999} cor={cor} />
                   <span style={{ display: 'flex', flex: 1, margin: '0 14px 0 16px', fontSize: 26, fontWeight: 600, lineHeight: 1.15 }}>{d.thinker.name}</span>
-                  <span style={{ fontFamily: 'Bricolage', fontWeight: 800, fontSize: 32 }}>{`${Math.round(d.score)}%`}</span>
+                  <span style={{ display: 'flex', fontSize: 20, fontWeight: 600, opacity: 0.7, flexShrink: 0 }}>{DIMENSOES[d.dim].label.toLowerCase()}</span>
                 </div>
               ))}
             </Painel>

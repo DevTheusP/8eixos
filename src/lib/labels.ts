@@ -1,5 +1,5 @@
 import { getAxes } from './data';
-import type { Axis, Vector } from './types';
+import { AXIS_IDS, type Axis, type Vector } from './types';
 
 export type IntensityLabel = 'Equilibrado' | 'Tende' | 'Forte' | 'Muito forte';
 
@@ -44,4 +44,9 @@ export function tracosPrincipais(v: Vector, n: number) {
       axis, pole: p.lado, nome: p.nome, percent: p.percent, label: info.label,
       desc: p.lado === 'A' ? axis.descA : axis.descB, leve: info.pole === null,
     }));
+}
+
+// Quem fica perto do meio em quase tudo casa razoavelmente com várias escolas; o resultado avisa em vez de fingir certeza.
+export function perfilEquilibrado(v: Vector): boolean {
+  return AXIS_IDS.reduce((s, a) => s + Math.abs(v[a] - 50), 0) / AXIS_IDS.length < 8;
 }

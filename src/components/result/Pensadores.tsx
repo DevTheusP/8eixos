@@ -23,10 +23,7 @@ export function Pensadores({ result }: { result: Result }) {
       <div className="mt-2 grid gap-3 sm:grid-cols-3">
         {result.byDimension.map(d => (
           <Link key={d.dim} href={`/pensadores/${d.thinker.id}`} className="lift press flex flex-col items-start rounded-2xl border border-line bg-card p-4">
-            <div className="flex w-full items-start justify-between gap-2">
-              <Retrato thinker={d.thinker} size={64} />
-              <span className="font-display text-xl font-bold text-brand">{Math.round(d.score)}%</span>
-            </div>
+            <Retrato thinker={d.thinker} size={64} />
             <p className="mt-3 text-xs font-semibold text-brand">{DIMENSOES[d.dim].label}</p>
             <p className="font-display text-lg font-bold leading-tight">{d.thinker.name}</p>
             <p className="text-xs text-mute">{d.thinker.descriptor}</p>
